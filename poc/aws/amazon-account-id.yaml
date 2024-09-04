@@ -1,0 +1,29 @@
+id: amazon-account-id
+
+info:
+  name: Amazon Web Services Account ID - Detect
+  author: DhiyaneshDK
+  severity: info
+  description: Amazon Web Services Account ID token was detected.
+  reference:
+    - https://github.com/praetorian-inc/noseyparker/blob/main/data/default/rules/aws.yml
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    verified: true
+  tags: aws,amazon,token,file
+
+file:
+  - extensions:
+      - all
+
+    extractors:
+      - type: regex
+        part: body
+        regex:
+          - '(?i)aws_?(?:account)_?(?:id)?["''`]?\s{0,30}(?::|=>|=)\s{0,30}["''`]?([0-9]{4}-?[0-9]{4}-?[0-9]{4})'
+
+# Enhanced by md on 2023/05/04
+# digest: 490a0046304402205389747c4b766d2eabc321eed84410d0dc58fb73d6c34ca8f2a9f04f959db2c902203f4493b71cbf4c1fc4714eac9912185979e2254c89a3942054b90c573b7ca0ea:922c64590222798bb761d5b6d8e72950
