@@ -1,0 +1,39 @@
+name: Daily Update Nuclei POCs
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 12 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests tqdm
+
+      - name: Run NucleiPocGather script
+        run: python NucleiPocGather.py
+
+      - name: 6 Delete Nuclei
+        run: rm -rf nuclei
+
+      - name: Commit and Push changes
+        run: |
+          echo $(date +'%Y%m%d') > date.txt
+          git add .
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Update POCs $(date +'%Y%m%d')"
+          git push
