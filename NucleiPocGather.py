@@ -388,7 +388,7 @@ def getPocName():
 
 def run():
     # 1. 读取文件中的poc库地址，并下载
-    repo_file = "repo.csv"
+    repo_file = "repo.txt"
     clone_dir = "clone-templates"
     manager = RepoManager(repo_file, clone_dir)
     manager.run()
