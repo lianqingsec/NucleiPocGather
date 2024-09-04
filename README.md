@@ -27,7 +27,7 @@ cd NucleiPocGather
 
 ### 配置
 
-在 `repo.csv` 文件中配置监控 GitHub 项目信息。
+在 `repo.txt` 文件中配置监控 GitHub 项目信息。
 
 ### 运行脚本
 
@@ -46,7 +46,7 @@ python NucleiPocGather.py
 ## 文件结构
 
 - `NucleiPocGather.py`: 收集全网 Nuclei POC 的脚本文件。
-- `repo.csv`: Nuclei POC 仓库列表。
+- `repo.txt`: Nuclei POC 仓库列表。
 - `poc.txt`: 已存档 POC 列表。
 - `poc/`: 存放分类后的 Nuclei POC 文件夹。
 
