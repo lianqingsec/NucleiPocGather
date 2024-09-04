@@ -1,11 +1,13 @@
-# Nuclei POCs
-<a href="https://github.com/adysec/nuclei_poc/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/adysec/nuclei_poc?color=yellow&logo=riseup&logoColor=yellow&style=flat-square"></a>
-<a href="https://github.com/adysec/nuclei_poc/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/adysec/nuclei_poc?color=orange&style=flat-square"></a>
-<a href="https://github.com/adysec/nuclei_poc/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/adysec/nuclei_poc?color=red&style=flat-square"></a>
+# Nuclei Poc 全网收集
 
-Nuclei POC，每日更新
+<a href="https://github.com/2897087026/NucleiPocGather/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/2897087026/NucleiPocGather?color=yellow&logo=riseup&logoColor=yellow&style=flat-square"></a>
+<a href="https://github.com/2897087026/NucleiPocGather/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/2897087026/NucleiPocGather?color=orange&style=flat-square"></a>
+<a href="https://github.com/2897087026/NucleiPocGather/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/2897087026/NucleiPocGather?color=red&style=flat-square"></a>
 
-这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub Action 每日自动运行脚本。
+NucleiPocGather，每日更新
+
+这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub
+Action 每日自动运行脚本。
 
 ## 如何使用
 
@@ -14,13 +16,13 @@ Nuclei POC，每日更新
 克隆这个项目到本地：
 
 ```bash
-git clone https://github.com/adysec/nuclei_poc.git
+git clone https://github.com/2897087026/NucleiPocGather.git
 ```
 
 进入项目目录：
 
 ```bash
-cd nuclei_poc
+cd NucleiPocGather
 ```
 
 ### 配置
@@ -32,7 +34,7 @@ cd nuclei_poc
 运行 Python 脚本：
 
 ```bash
-python main.py
+python NucleiPocGather.py
 ```
 
 ### GitHub Action
@@ -43,11 +45,8 @@ python main.py
 
 ## 文件结构
 
-- `main.py`: 批量运行脚本文件。
-- `1-clone_repos.py`: 批量克隆监控的 GitHub 项目。
-- `2-remove_duplicated.py`: 删除重复POC脚本，并归档到分类文件夹。
-- `3-get_pocname.py`: 读取并将POC列表写入`poc.txt`。
-- `repo.csv`: Nuclei POC仓库列表。
-- `poc.txt`: 已存档POC列表。
+- `NucleiPocGather.py`: 收集全网 Nuclei POC 的脚本文件。
+- `repo.csv`: Nuclei POC 仓库列表。
+- `poc.txt`: 已存档 POC 列表。
 - `poc/`: 存放分类后的 Nuclei POC 文件夹。
 
