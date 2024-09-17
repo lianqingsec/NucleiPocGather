@@ -21,7 +21,7 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install requests tqdm yaml
+        run: pip install requests tqdm PyYAML
 
       - name: Run NucleiPocGather script
         run: python NucleiPocGather.py
