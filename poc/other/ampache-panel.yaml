@@ -7,14 +7,17 @@ info:
   description: Ampache login panel was detected.
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:ampache:ampache:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    max-request: 3
+    product: ampache
     shodan-query: http.title:"For the Love of Music"
+    vendor: ampache
+    verified: true
   tags: panel,ampache
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -24,6 +27,7 @@ requests:
     host-redirects: true
     max-redirects: 2
     stop-at-first-match: true
+
     matchers-condition: and
     matchers:
       - type: word
@@ -41,5 +45,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2022/11/09
+# digest: 490a00463044022026ff670001f355854261f51aa9568db44aab6ef281df0e668e39bca7245c0c22022018267c7949b2c76dfc72631a00c2dc64303405e61e78e4c3e6ec00de060befbe:922c64590222798bb761d5b6d8e72950

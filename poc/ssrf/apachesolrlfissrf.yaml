@@ -2,7 +2,7 @@ id: CVE-2021-27905
 
 info:
   name: Apache Solr <= 8.8.1 SSRF & Arbitrary File Read
-  author: nithisshapachesolrlfissrf
+  author: hackergautam
   severity: critical
   tags: cve2021-27905,lfi,apache,solr,ssrf
   reference: |

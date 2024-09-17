@@ -9,14 +9,17 @@ info:
     - https://github.com/runatlantis/atlantis
   classification:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
+    cpe: cpe:2.3:a:runatlantis:atlantis:*:*:*:*:*:*:*:*
   metadata:
-    verified: true
+    max-request: 1
+    product: atlantis
     shodan-query: http.favicon.hash:-1706783005
-  tags: panel,atlantis
+    vendor: runatlantis
+    verified: true
+  tags: panel,atlantis,runatlantis
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -33,5 +36,4 @@ requests:
       - type: status
         status:
           - 200
-
-# Enhanced by md on 2023/01/09
+# digest: 4a0a00473045022100f82fc01481176024c052e1e298f7cffd05aaf1868b51e2cf87b6e0d0b6799cba02200bb85fcae7ccbc15a106bdb1d32dfe806412d78574a92c3565b72a0eebf329ec:922c64590222798bb761d5b6d8e72950
