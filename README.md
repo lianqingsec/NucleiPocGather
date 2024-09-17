@@ -1,14 +1,25 @@
 # Nuclei Poc 全网收集
-
-<a href="https://github.com/2897087026/NucleiPocGather/stargazers"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/2897087026/NucleiPocGather?color=yellow&logo=riseup&logoColor=yellow&style=flat-square"></a>
-<a href="https://github.com/2897087026/NucleiPocGather/network/members"><img alt="GitHub forks" src="https://img.shields.io/github/forks/2897087026/NucleiPocGather?color=orange&style=flat-square"></a>
-<a href="https://github.com/2897087026/NucleiPocGather/issues"><img alt="GitHub issues" src="https://img.shields.io/github/issues/2897087026/NucleiPocGather?color=red&style=flat-square"></a>
-
 NucleiPocGather，每日更新
 
-这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub
-Action 每日自动运行脚本。
+这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub Action 每日自动运行脚本。
+# POC 详情统计
 
+> **当前项目 POC 更新时间：**`2024-09-18 04:49`
+
+| ID | 标签      | 数量 | 目录       | 数量 | 严重性   | 数量 |
+|:---| :-------- | :--- | :--------- | :--- | :------- | :--- |
+| 1 | cve | 28159 | cve | 18464 | medium | 15214 |
+| 2 | wordpress | 25595 | other | 12397 | high | 9751 |
+| 3 | wp-plugin | 23666 | sql | 1511 | info | 5894 |
+| 4 | medium | 11968 | wordpress | 1361 | low | 5716 |
+| 5 | high | 5534 | auth | 1035 | critical | 4450 |
+| 6 | low | 4738 | remote_code_execution | 968 | unknown | 51 |
+| 7 | critical | 1962 | detect | 902 | informative | 17 |
+| 8 | panel | 1620 | microsoft | 881 | meduim | 16 |
+| 9 | exposure | 1486 | exposed | 589 | hight | 15 |
+| 10 | wp-theme | 1481 | api | 509 | cretical | 2 |
+
+**81 个目录，44572 个文件**
 ## 如何使用
 
 ### 克隆项目
@@ -16,7 +27,7 @@ Action 每日自动运行脚本。
 克隆这个项目到本地：
 
 ```bash
-git clone https://github.com/2897087026/NucleiPocGather.git
+git clone https://github.com/lianqingsec/NucleiPocGather.git
 ```
 
 进入项目目录：
@@ -46,6 +57,8 @@ python NucleiPocGather.py
 ## 文件结构
 
 - `NucleiPocGather.py`: 收集全网 Nuclei POC 的脚本文件。
+- `DeWeight.py`: 对现有的 Nuclei POC 进行进一步去重的脚本文件。
+- `WirteREADME.py`: 统计现有的 POC 并更新 README.md 文件。
 - `repo.txt`: Nuclei POC 仓库列表。
 - `poc.txt`: 已存档 POC 列表。
 - `poc/`: 存放分类后的 Nuclei POC 文件夹。

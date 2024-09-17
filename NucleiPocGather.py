@@ -5,6 +5,8 @@ import requests
 from collections import defaultdict
 from tqdm import tqdm
 import concurrent.futures
+import WirteREADME
+from DeWeight import deWeight
 
 
 class RepoManager:
@@ -413,6 +415,12 @@ def run():
 
     # 6. 获取所有的 POC 名字并写入文件中
     getPocName()
+
+    # 7.对当前poc进行进一步的去重
+    deWeight()
+
+    # 8.更新 README 文件
+    WirteREADME.wirte_readme()
 
 
 if __name__ == '__main__':
