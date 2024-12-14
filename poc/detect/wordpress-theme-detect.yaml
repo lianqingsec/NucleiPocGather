@@ -1,12 +1,14 @@
 id: wordpress-themes-detect
 
 info:
-  name: WordPress Theme Detection
-  author: 0xcrypto
+  name: Find Wordpress Themes
+  author: micro.
   severity: info
-  tags: fuzz,wordpress
+  description: It detect the wordpress themes.
+  metadata:
+    max-request: 24434
 
-requests:
+http:
   - raw:
       - |
         GET /wp-content/themes/{{themeSlug}}/readme.txt HTTP/1.1
@@ -15,7 +17,6 @@ requests:
     payloads:
       themeSlug: helpers/wordlists/wordpress-themes.txt
 
-    threads: 50
     matchers-condition: and
     matchers:
       - type: status
