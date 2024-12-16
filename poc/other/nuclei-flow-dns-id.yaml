@@ -11,9 +11,9 @@ flow: |
   dns(1);
   template["nameservers"].forEach(nameserver => {
     set("nameserver",nameserver);
-    dns(2);
+    dns("probe-ns");
   });
-  
+
 dns:
   - name: "{{FQDN}}"
     type: NS
@@ -29,7 +29,8 @@ dns:
         regex:
           - "IN\tNS\t(.+)"
 
-  - name: "{{nameserver}}"
+  - id: "probe-ns"
+    name: "{{nameserver}}"
     type: A
     class: inet
     retries: 3
