@@ -7,21 +7,15 @@ info:
 
 flow: dns() && http()
 
+
 dns:
   - name: "{{FQDN}}"
     type: CNAME
-
-    extractors:
-      - type: dsl
-        name: cname
-        internal: true
-        dsl:
-            - cname
         
 http:
   - method: GET
     path:
-      - "{{BaseURL}}?ref={{cname}}"
+      - "{{BaseURL}}?ref={{dns_cname}}"
 
     matchers:
       - type: word
