@@ -1,43 +1,19 @@
 id: host-header-injection
 
 info:
-  name: Host Header Injection
-  author: pdteam
-  severity: info
-  description: Host header injection
+  name: Host Header Injection (x-forwarded-host)
+  author: melbadry9
+  severity: low
 
-variables:
-  domain: "oast.fun"
-
-http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
-          - 'contains(path,"/host-header-lab")' # for integration testing only
-        condition: and
-    
-    fuzzing:
-      - part: header
-        type: replace
-        mode: single
-        fuzz:
-          X-Forwarded-For: "{{domain}}"
-          X-Forwarded-Host: "{{domain}}"
-          Forwarded: "{{domain}}"
-          X-Real-IP: "{{domain}}"
-          X-Original-URL: "{{domain}}"
-          X-Rewrite-URL: "{{domain}}"
-          Host: "{{domain}}"
-          # " Host": "{{domain}}" # space before host (not supported yet due to lack of unsafe mode)
-
+requests:
+  - method: GET
+    # Example of sending some headers to the servers
+    headers:
+      # MD5 hash of melbadry9
+      X-Forwarded-Host: "0021e78f48fe6525798294b7711c6f72.com"
+    path:
+      - "{{BaseURL}}/"
     matchers:
-      - type: status
-        status: 
-          - 200
-
       - type: word
-        part: body
         words:
-          - "Interactsh"
-    matchers-condition: and
+          - "0021e78f48fe6525798294b7711c6f72"
