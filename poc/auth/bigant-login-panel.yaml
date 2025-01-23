@@ -1,4 +1,5 @@
 id: bigant-login-panel
+
 info:
   name: BigAnt Admin Login Panel
   author: princechaddha
@@ -6,16 +7,19 @@ info:
   metadata:
     shodan-query: http.html:"BigAnt Admin"
   tags: panel,bigant
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/index.php/Home/login/index.html"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>BigAnt Admin </title>"
+
       - type: status
         status:
           - 200

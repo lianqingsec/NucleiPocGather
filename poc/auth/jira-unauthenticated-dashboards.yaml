@@ -6,13 +6,10 @@ id: jira-unauthenticated-dashboards
 info:
   name: Jira Unauthenticated Dashboards
   author: TechbrunchFR
-  severity: critical
-  metadata:
-    max-request: 1
-    shodan-query: http.component:"Atlassian Jira"
+  severity: info
   tags: atlassian,jira
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/rest/api/2/dashboard?maxResults=100"

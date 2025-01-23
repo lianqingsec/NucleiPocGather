@@ -1,4 +1,5 @@
 id: bedita-panel
+
 info:
   name: BEdita Panel Login
   author: pikpikcu,daffainfo
@@ -6,19 +7,23 @@ info:
   metadata:
     shodan-query: http.title:"BEdita"
   tags: panel,bedita
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
+
     matchers-condition: and
     matchers:
       - type: regex
         part: body
         regex:
           - 'BEdita(.*)</a><br>'
+
       - type: status
         status:
           - 200
+
     extractors:
       - type: regex
         part: body

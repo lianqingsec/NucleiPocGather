@@ -10,12 +10,11 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 3
     verified: true
     shodan-query: http.favicon.hash:-1105083093
   tags: panel,keycloak
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

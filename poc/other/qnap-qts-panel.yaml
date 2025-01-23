@@ -1,4 +1,5 @@
 id: qnap-qts-panel
+
 info:
   name: QNAP QTS Panel
   author: idealphase
@@ -11,16 +12,19 @@ info:
     verified: true
     shodan-query: product:"QNAP"
   tags: panel,qnap,qts
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/"
+
     matchers-condition: and
     matchers:
       - type: word
         part: body
         words:
           - "<title>QNAP Turbo NAS</title>"
+
       - type: status
         status:
           - 200

@@ -1,10 +1,19 @@
-# This currently does nothing. We have moved to GitHub action, but this is kept
-# until spf13 has disabled this project in AppVeyor.
-version: '{build}'
-clone_folder: C:\gopath\src\github.com\spf13\afero
+version: "build-{branch}-{build}"
+image: Visual Studio 2015
+clone_folder: c:\gopath\src\github.com\hashicorp\hcl
 environment:
-  GOPATH: C:\gopath
-build_script:
+  GOPATH: c:\gopath
+init:
+  - git config --global core.autocrlf false
+install:
 - cmd: >-
+    echo %Path%
+
     go version
 
+    go env
+
+    go get -t ./...
+
+build_script:
+- cmd: go test -v ./...

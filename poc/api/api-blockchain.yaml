@@ -1,4 +1,5 @@
 id: api-blockchain
+
 info:
   name: Blockchain API Test
   author: daffainfo
@@ -9,6 +10,7 @@ info:
   classification:
     cwe-id: CWE-200
   tags: token-spray,blockchain
+
 self-contained: true
 requests:
   - raw:
@@ -16,6 +18,7 @@ requests:
         GET https://api.blockchain.com/v3/exchange/accounts HTTP/1.1
         Host: api.blockchain.com
         X-API-Token: {{token}}
+
     matchers:
       - type: word
         part: body

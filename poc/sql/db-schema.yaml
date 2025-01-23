@@ -1,4 +1,4 @@
-id: db-schema
+id: db-schema.yaml
 
 info:
   name: Discover db schema files

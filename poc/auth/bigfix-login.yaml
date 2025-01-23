@@ -1,4 +1,5 @@
 id: bigfix-login
+
 info:
   name: HCL BigFix Login
   author: idealphase
@@ -10,10 +11,12 @@ info:
     shodan-query: http.title:"BigFix"
     google-query: intitle:"BigFix"
   tags: panel,bigfix
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/login"
+
     matchers-condition: and
     matchers:
       - type: word
@@ -22,6 +25,7 @@ requests:
           - "<title> BigFix </title>"
           - '<div class="bigfix-logo">'
         condition: or
+
       - type: status
         status:
           - 200

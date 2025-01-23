@@ -1,4 +1,5 @@
 id: netscaler-aaa-login
+
 info:
   name: NetScaler AAA Login Panel
   author: dhiyaneshDk
@@ -6,6 +7,7 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/6898
   tags: panel,netscaler,login
+
 requests:
   - method: GET
     path:
