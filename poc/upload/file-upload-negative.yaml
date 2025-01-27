@@ -1,5 +1,5 @@
 id: file-upload
-
+# template for testing when file upload is disabled
 info:
   name: Basic File Upload
   author: pdteam
