@@ -1,4 +1,4 @@
-id: watcheezy
+id: watcheezy-e1ebfac4696c7257766cde25e61f556d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ee1a3105-ebb2-44ce-bbbe-3ab95d69670a?source=api-scan
   classification:
     cvss-metrics: 

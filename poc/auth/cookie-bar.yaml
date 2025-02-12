@@ -1,14 +1,15 @@
-id: cookie-bar
+id: cookie-bar-ef09d24377e89dfa5f1e2972ad2bb1cd
 
 info:
   name: >
-    Cookie Bar <= 1.8.8 - Admin+ Stored Cross-Site Scripting
+    Cookie Bar <= 2.0 - Authenticated(Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/11401ad7-6064-475c-92f6-ce72a56e9a83?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/80afca9d-8f9c-412f-b2dd-f0078ec8173c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/cookie-bar/"
     google-query: inurl:"/wp-content/plugins/cookie-bar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,cookie-bar,high
+  tags: cve,wordpress,wp-plugin,cookie-bar,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.8.8')
+          - compare_versions(version, '< 2.1')

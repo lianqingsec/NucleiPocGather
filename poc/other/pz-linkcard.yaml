@@ -1,14 +1,15 @@
-id: pz-linkcard
+id: pz-linkcard-a332004a616ec4782ffdd2e8a348494b
 
 info:
   name: >
-    Pz-LinkCard <= 2.5.2 - Reflected Cross-Site Scripting
+    Pz-LinkCard <= 2.5.2 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a222c714-7c54-4c86-b6af-abdfeb966250?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e0a0303a-2c8e-4ac5-ad89-df3774db9679?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/pz-linkcard/"
     google-query: inurl:"/wp-content/plugins/pz-linkcard/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,pz-linkcard,medium
+  tags: cve,wordpress,wp-plugin,pz-linkcard,low
 
 http:
   - method: GET

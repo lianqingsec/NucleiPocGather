@@ -1,4 +1,4 @@
-id: widget-post-slider
+id: widget-post-slider-f67c4ba5d4d764e1602e71fc960e34d8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/74e15c52-4245-41b0-8005-41e9ac2c2edc?source=api-scan
   classification:
     cvss-metrics: 

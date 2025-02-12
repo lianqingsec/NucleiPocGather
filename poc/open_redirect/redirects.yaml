@@ -1,14 +1,15 @@
-id: redirects
+id: redirects-9ecc68ca832cd9de5325c83691b71b0b
 
 info:
   name: >
-    Redirects <= 1.2.1 - Missing Authorization
+    Redirects <= 1.2.1 - Missing Authorization via save
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/903161b0-b64c-4986-8c94-b90221bc911b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7c6be7f2-5526-4fba-9fe0-003b8460c926?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

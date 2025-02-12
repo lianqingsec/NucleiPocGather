@@ -1,14 +1,15 @@
-id: otter-pro
+id: otter-pro-cfb8b66bdaff8c0c06a73753a0e14f9f
 
 info:
   name: >
-    Otter Blocks PRO <= 2.6.3 - Unauthenticated Stored Cross-Site Scripting via SVG Upload
+    Otter Blocks PRO – Gutenberg Blocks, Page Builder for Gutenberg Editor & FSE <= 2.6.11 - Authenticated (Subscriber+) Information Exposure
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/77838bf8-7809-4dd6-87f1-a9bda40275a6?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ec9de0f-5af7-4664-b8ef-72a51b1661d7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/otter-pro/"
     google-query: inurl:"/wp-content/plugins/otter-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,otter-pro,high
+  tags: cve,wordpress,wp-plugin,otter-pro,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.6.3')
+          - compare_versions(version, '<= 2.6.11')

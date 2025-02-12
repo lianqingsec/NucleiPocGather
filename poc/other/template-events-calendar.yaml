@@ -1,14 +1,15 @@
-id: template-events-calendar
+id: template-events-calendar-5f7d93553aeedc16250d18f1490b143e
 
 info:
   name: >
-    Titan Framework <= (Various Versions) - Reflected Cross-Site Scripting
+    Events Shortcodes & Templates For The Events Calendar <= 2.3.1 - Authenticated (Contributor+) SQL Injection via shortcode
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fcae647f-7eed-4ecd-83b8-482b55b86ec9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1d9ee9f-d8d0-4a9d-b414-bc79c4255b4e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/template-events-calendar/"
     google-query: inurl:"/wp-content/plugins/template-events-calendar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,template-events-calendar,medium
+  tags: cve,wordpress,wp-plugin,template-events-calendar,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.7.2')
+          - compare_versions(version, '<= 2.3.1')

@@ -1,14 +1,15 @@
-id: shortcodes-finder
+id: shortcodes-finder-7269cb4fad206ab33c69c660271e7bd4
 
 info:
   name: >
-    Shortcodes Finder <= 1.5.3 - Reflected Cross-Site Scripting
+    Shortcodes Finder <= 1.5.4 - Reflected Cross-Site Scripting via nonce
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/299c4290-dc7e-44fb-887e-e3e53d3c070b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8eb77a53-4aea-46c3-8eea-a16f728dfa23?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.3')
+          - compare_versions(version, '<= 1.5.4')

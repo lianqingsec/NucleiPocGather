@@ -1,14 +1,15 @@
-id: wp-comment-remix
+id: wp-comment-remix-9b3f31e84664a6a1174d5c1e6093e44e
 
 info:
   name: >
-    WP Comment Remix < 1.4.4 - SQL Injection
+    WP Comment Remix < 1.4.4 - Cross-Site Request Forgery
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5de56a2e-f8e2-47d9-8a2b-989de640f018?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0459d852-4d6b-4457-ad8d-47a3cddded8b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-comment-remix/"
     google-query: inurl:"/wp-content/plugins/wp-comment-remix/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-comment-remix,critical
+  tags: cve,wordpress,wp-plugin,wp-comment-remix,medium
 
 http:
   - method: GET

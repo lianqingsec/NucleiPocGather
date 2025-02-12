@@ -1,14 +1,15 @@
-id: sharebar
+id: sharebar-04d7e1a7982a597197910d4762ec33f1
 
 info:
   name: >
-    Sharebar <= 1.2.1 - SQL Injection
+    Sharebar <= 1.4.1 - Cross-Site Request Forgery to Settings Update & Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/04d8b1bf-d514-4908-a30e-6ff7b8e03f82?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0b08fe5c-dbf4-4c22-a403-f5a6495de2f5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/sharebar/"
     google-query: inurl:"/wp-content/plugins/sharebar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,sharebar,critical
+  tags: cve,wordpress,wp-plugin,sharebar,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.2.2')
+          - compare_versions(version, '<= 1.4.1')

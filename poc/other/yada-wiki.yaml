@@ -1,4 +1,4 @@
-id: yada-wiki
+id: yada-wiki-0e04c450c7a6033c90d580fe0890dc93
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/63b272f5-08d1-4c5b-a500-d919903793b7?source=api-scan
   classification:
     cvss-metrics: 

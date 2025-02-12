@@ -5,11 +5,12 @@ info:
   author: pussycat0x
   severity: high
   metadata:
+    max-request: 1
     verified: true
     shodan-query: http.title:"PMM Installation Wizard"
   tags: misconfig,exposure,install,pmm
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/password-page/ovf/account-credentials-ovf"

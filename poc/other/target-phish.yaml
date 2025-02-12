@@ -8,8 +8,9 @@ info:
     A target phishing website was detected
   reference:
     - https://target.com
+  metadata:
+    max-request: 1
   tags: phishing,target,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"target.com")'
-# digest: 4b0a0048304602210085a4b06f19306b2fc9576304ff723b19b46d590c747ac1ae7789ed2fed0495a1022100c1c7386975786d5670139a6a6608b922fac4db654ccf62f337a20ed90bf6af2d:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402203841862979ca2ca0061b6b0f562c6164fccc3e0717e436305b68afa3c927126e02207046dca0ed9171bdd328d21fcb3e8b546ab31545d54a13823b21d931edeadfaf:922c64590222798bb761d5b6d8e72950

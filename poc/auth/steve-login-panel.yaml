@@ -13,12 +13,13 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 2
     verified: true
     shodan-query: http.title:"SteVe - Steckdosenverwaltung"
     google-query: intitle:"SteVe - Steckdosenverwaltung"
   tags: panel,steve
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/manager/signin"

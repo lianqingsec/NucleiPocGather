@@ -1,4 +1,4 @@
-id: system-dashboard
+id: system-dashboard-1dfb8188d7a9718c678f19c012d0d45c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9d1a33b-2518-48f7-90b6-a94a34473d1e?source=api-scan
   classification:
     cvss-metrics: 

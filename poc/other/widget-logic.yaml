@@ -1,4 +1,4 @@
-id: widget-logic
+id: widget-logic-2e4fc9315a2cb39af9752dc0cfacd51c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a4999de1-07b7-49ef-8897-267b836bc469?source=api-scan
   classification:
     cvss-metrics: 

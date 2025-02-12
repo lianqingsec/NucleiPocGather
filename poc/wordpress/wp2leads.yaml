@@ -1,4 +1,4 @@
-id: wp2leads
+id: wp2leads-cd655e6f5c0aeb070d6df9340bac1b09
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f7f77ca2-c69e-4f59-ad7b-a244863de424?source=api-scan
   classification:
     cvss-metrics: 

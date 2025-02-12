@@ -1,4 +1,4 @@
-id: echosign
+id: echosign-66a67f525cbd222bf1ed230c309bd4da
 
 info:
   name: >
@@ -8,7 +8,8 @@ info:
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f3fc1686-06a0-4d48-bb79-470e63cd3600?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a3302110-60ae-4ad1-8a8c-3511027da3a8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

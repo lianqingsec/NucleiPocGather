@@ -1,4 +1,4 @@
-id: wp-schema-pro
+id: wp-schema-pro-5cc51dadcc0149f2efee68d0df7ac347
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dafc355c-18e7-4312-bd16-8ef65ad54dad?source=api-scan
   classification:
     cvss-metrics: 

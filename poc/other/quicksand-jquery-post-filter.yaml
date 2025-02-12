@@ -1,4 +1,4 @@
-id: quicksand-jquery-post-filter
+id: quicksand-jquery-post-filter-33d7a15e5a4b91a8bfa88f864f0c04eb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4dd63ea6-7821-42b8-9b52-e721a8b2382d?source=api-scan
   classification:
     cvss-metrics: 

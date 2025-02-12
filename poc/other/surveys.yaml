@@ -1,14 +1,15 @@
-id: surveys
+id: surveys-ca939e995ace459d20f876c0cdc01a41
 
 info:
   name: >
-    Surveys 1.01.8 - Authenticated SQL Injection
+    surveys <= 1.01.8 - Authenticated SQL Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f1c5ce2b-9ac4-4fd2-9e49-ccb8538ba100?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4488d982-4e57-4614-b336-f1bba8dfa91d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -1,4 +1,4 @@
-id: bluet-keywords-tooltip-generator
+id: bluet-keywords-tooltip-generator-71ffb92be6862dd3422bd8a61ad3a3ae
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/04a79c2c-8178-4311-9c1f-f4eb5128dec9?source=api-scan
   classification:
     cvss-metrics: 

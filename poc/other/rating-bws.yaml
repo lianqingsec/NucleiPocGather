@@ -1,4 +1,4 @@
-id: rating-bws
+id: rating-bws-8e5aafd762f8234dee17745d4d843002
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5c23952-3732-4316-aa43-ddab88a6ba79?source=api-scan
   classification:
     cvss-metrics: 

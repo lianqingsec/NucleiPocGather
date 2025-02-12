@@ -1,4 +1,4 @@
-id: secure-file-manager
+id: secure-file-manager-f246e7800bff92325c50ae85d0881b35
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a955d4f-6609-4aa8-806c-48af0c6dbac1?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: plezi
+id: plezi-4a635b36fc2f020e6e97470ee9033e55
 
 info:
   name: >
-    Plezi < 1.0.3 - Unauthenticated Stored Cross-Site Scripting
+    Plezi <= 1.0.6 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b7c0efd8-08c0-4283-a0bf-2f6ca3998668?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/67768957-45be-48d9-ad5e-147290ef4cd5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/plezi/"
     google-query: inurl:"/wp-content/plugins/plezi/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,plezi,high
+  tags: cve,wordpress,wp-plugin,plezi,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.0.3')
+          - compare_versions(version, '<= 1.0.6')

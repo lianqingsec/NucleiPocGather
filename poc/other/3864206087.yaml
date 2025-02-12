@@ -1,21 +1,20 @@
 id: iscsi
 info:
-  name: StarWind iSCSI
+  name: Synology DSM iSCSI
   author: nmap,cn-kali-team
   tags: detect,tech,iscsi,service
   severity: info
   metadata:
-    operating_system: Windows
-    rarity: 0
-    version: $1 build $2
+    rarity: 7
 tcp:
-- name: 'null'
+- name: giop
   inputs:
-  - data: ''
+  - data: GIOP\x01\x00\x01\x00$\x00\x00\x00\x00\x00\x00\x00\x01\x00\x00\x00\x01\x00\x00\x00\x06\x00\x00\x00abcdef\x00\x00\x04\x00\x00\x00get\x00\x00\x00\x00\x00
   host:
   - '{{Hostname}}'
+  port: '2481'
   extractors:
   - name: iscsi
     type: regex
     regex:
-    - ^\x1b\[2JStarWind iSCSI SAN Software v([\w._-]+) \(Build (\d+), Win32\)\r\nCopyright \(c\) StarWind Software \d+-\d+\. All rights reserved\.\r\n\r\n\r\n$
+    - ^#\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\0\x02\0\0\0\0\0\0\0\0\0\0\0

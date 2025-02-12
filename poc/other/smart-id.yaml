@@ -1,4 +1,4 @@
-id: smart-id
+id: smart-id-41fec7d43b4652d6b9b461e6d557fd1e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/121022ad-a569-4a80-96ee-c7911db81a30?source=api-scan
   classification:
     cvss-metrics: 

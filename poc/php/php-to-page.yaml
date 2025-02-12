@@ -1,4 +1,4 @@
-id: php-to-page
+id: php-to-page-e4781ed7ffbbfa6cd8ed7141a7a77596
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/83e5a0dc-fc51-4565-945f-190cf9175874?source=api-scan
   classification:
     cvss-metrics: 

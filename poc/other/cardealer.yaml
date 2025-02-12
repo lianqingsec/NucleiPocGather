@@ -1,4 +1,4 @@
-id: cardealer
+id: cardealer-968eb61e35d9af2f88d2e8ccac087b9f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/621e3b3f-9647-41ec-aa06-e961e3525fea?source=api-scan
   classification:
     cvss-metrics: 

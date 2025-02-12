@@ -1,14 +1,15 @@
-id: quizlord
+id: quizlord-fdfbc8d00ad283e207c146b8374655e6
 
 info:
   name: >
-    Quizlord <= 2.0 - Authenticated Stored Cross-Site Scripting
+    Quizlord <= 2.0 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e54f2e28-7320-4d2d-a416-e46202c08375?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c85f6c1b-673d-4fe9-acef-a15d90fcf414?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

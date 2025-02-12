@@ -1,4 +1,4 @@
-id: wp-page-post-widget-clone
+id: wp-page-post-widget-clone-9997f9a8186b41189d969392229c23a0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7006aa50-8fcf-46ad-921b-b47cbdb7d9e3?source=api-scan
   classification:
     cvss-metrics: 

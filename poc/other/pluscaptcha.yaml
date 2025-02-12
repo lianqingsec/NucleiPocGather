@@ -1,4 +1,4 @@
-id: pluscaptcha
+id: pluscaptcha-ee4806bcf17b954ab11f0ba352f9f92e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ff18222-5796-432e-a810-d01fd5fbec4e?source=api-scan
   classification:
     cvss-metrics: 

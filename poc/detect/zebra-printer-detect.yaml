@@ -7,11 +7,12 @@ info:
   reference:
     - https://www.zebra.com/kr/ko/products/printers.html
   metadata:
+    max-request: 1
     verified: true
     shodan-query: html:"Zebra Technologies"
   tags: iot,zebra,printer
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -1,23 +1,22 @@
-id: salem
+id: salem-28ccd65649bbd5625cb36532497fee66
 
 info:
-  name: >
-    Salem Theme <= 1.5.5 - DOM-based Cross-Site Scripting
+  name: "Salem Theme <= 1.5.5 - DOM-based Cross-Site Scripting"
   author: topscoder
-  severity: high
-  description: >
-    
+  severity: medium
+  description: "The Salem Theme plugin for WordPress is vulnerable to DOM-based Cross-Site Scripting in versions up to, and including, 1.5.5 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c6b95cc2-c40b-40db-abd2-d66978cf55d1?source=api-scan
+    - http://web.archive.org/web/20210817191831/https%3A//themeforest.net/item/salem-clean-and-bold-one-page-wordpress-theme/10329778
+    - https://wpscan.com/vulnerability/82dea85b-78d9-4e4c-8a5f-bf5bbdbe4e80
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cve-id:
   metadata:
     fofa-query: "wp-content/themes/salem/"
     google-query: inurl:"/wp-content/themes/salem/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,salem,high
+  tags: cve,wordpress,wp-theme,salem,medium
 
 http:
   - method: GET

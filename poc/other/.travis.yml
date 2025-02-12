@@ -1,13 +1,28 @@
 language: go
-
-go:
-  - tip
-
-install:
-  - export GOPATH="$HOME/gopath"
-  - mkdir -p "$GOPATH/src/golang.org/x"
-  - mv "$TRAVIS_BUILD_DIR" "$GOPATH/src/golang.org/x/oauth2"
-  - go get -v -t -d golang.org/x/oauth2/...
-
-script:
-  - go test -v golang.org/x/oauth2/...
+matrix:
+    include:
+        - os: linux
+          go: tip
+        - os: linux
+          go: tip
+          env:
+            - JS=1
+        - os: osx
+          go: tip
+        - os: windows
+          go: 1.x
+#Added power jobs
+        - os: linux
+          go: tip
+          arch: ppc64le
+        - os: linux
+          go: tip
+          arch: ppc64le
+          env:
+            - JS=1
+script: bash .travis.sh script
+notifications:
+  webhooks: https://coveralls.io/webhook
+  email:
+    on_success: never
+    on_failure: change

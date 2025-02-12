@@ -1,23 +1,24 @@
-id: user-login-history
+id: user-login-history-92886ca513d7e11a2e23a0b6e8ca159a
 
 info:
   name: >
-    User Login History Plugin <= 1.5.2 - Cross-Site Scripting
+    User Login History <= 1.7.0 - SQL Injection via Order By
   author: topscoder
-  severity: high
+  severity: low
   description: >
-    
+    The User Login History for WordPress is vulnerable to  SQL Injection via the 'orderby' parameter in versions up to, and including, 1.7.0 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for authenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3b5dc0af-90cf-41dd-a77b-4b99f267c0d9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2c25a344-4876-4ba8-bbc6-d1a32f4b1d08?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/user-login-history/"
     google-query: inurl:"/wp-content/plugins/user-login-history/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,user-login-history,high
+  tags: cve,wordpress,wp-plugin,user-login-history,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.6')
+          - compare_versions(version, '1.7.0')

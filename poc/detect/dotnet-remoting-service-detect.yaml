@@ -22,7 +22,7 @@ tcp:
 
     host:
       - "{{Hostname}}"
-    port: 8080
+      - "{{Host}}:8080"
 
     matchers-condition: and
     matchers:
@@ -34,3 +34,5 @@ tcp:
       - type: regex
         regex:
           - ".NET CLR ([0-9.]+)"
+
+# Enhanced by md on 2023/03/29

@@ -1,4 +1,4 @@
-id: rustolat
+id: rustolat-0e6a07f3b4e4c139f78eb46e001de921
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d07d8c3a-5e97-422a-ba20-e0bc206dda59?source=api-scan
   classification:
     cvss-metrics: 

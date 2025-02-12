@@ -13,11 +13,12 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
+    max-request: 200
     verified: true
     shodan-query: title:"Oracle PeopleSoft Sign-in"
   tags: default-login,peoplesoft,oracle,fuzz
 
-requests:
+http:
   - method: POST
     path:
       - "{{BaseURL}}/psc/ps/?&cmd=login&languageCd=ENG"

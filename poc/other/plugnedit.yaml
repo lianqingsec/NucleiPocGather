@@ -1,4 +1,4 @@
-id: plugnedit
+id: plugnedit-085952c40b2b1710b56d311f886b3e1b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e9160c10-8e10-44b2-b08a-612856869689?source=api-scan
   classification:
     cvss-metrics: 

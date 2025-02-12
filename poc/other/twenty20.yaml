@@ -1,4 +1,4 @@
-id: twenty20
+id: twenty20-ec4317c0293c4ae932ec8f42d2c0c547
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a992dd59-ac56-4da0-9be7-fe32df440e5b?source=api-scan
   classification:
     cvss-metrics: 

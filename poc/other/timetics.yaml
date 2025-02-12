@@ -1,15 +1,15 @@
-id: timetics
+id: timetics-6b111a9e8f0627bd221a37ac44ac4423
 
 info:
   name: >
-    Timetics- AI-powered Appointment Booking with Visual Seat Plan and ultimate Calendar Scheduling Plugin <= 1.0.21 - Missing Authorization to Limited Privilege Escalation
+    WP Timetics- AI-powered Appointment Booking Calendar and Online Scheduling Plugin <= 1.0.25 - Insecure Direct Object Reference to Unauthenticated Arbitrary User Password/Email Reset/Account Takeover
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/76fe8746-582e-49a5-b0c1-19d2aaef44df?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/74bd595b-d2fa-4c62-82d2-dba2c2b128f0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/timetics/"
     google-query: inurl:"/wp-content/plugins/timetics/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,timetics,high
+  tags: cve,wordpress,wp-plugin,timetics,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.21')
+          - compare_versions(version, '<= 1.0.25')

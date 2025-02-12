@@ -1,23 +1,19 @@
 id: asterisk
 info:
-  name: Asterisk Call Manager
-  author: nmap,cn-kali-team
-  tags: detect,tech,asterisk,service
+  name: asterisk
+  author: cn-kali-team
+  tags: detect,tech,asterisk
   severity: info
   metadata:
     product: asterisk
-    rarity: 0
-    vendor: digium
-    verified: true
-    version: $1
-tcp:
-- name: 'null'
-  inputs:
-  - data: ''
-  host:
-  - '{{Hostname}}'
-  extractors:
-  - name: asterisk
-    type: regex
-    regex:
-    - ^Asterisk Call Manager/([\d.]+)\r\n
+    vendor: 00_unknown
+    verified: false
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - asterisk_rawmanpath
+    case-insensitive: true

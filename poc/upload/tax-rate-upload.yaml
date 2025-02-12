@@ -1,4 +1,4 @@
-id: tax-rate-upload
+id: tax-rate-upload-253b91473f886c2c0935f927fe3f8968
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bddbbcdf-dfcb-47dd-97e7-8563eaf70cbd?source=api-scan
   classification:
     cvss-metrics: 

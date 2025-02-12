@@ -1,23 +1,25 @@
-id: 5star
+id: 5star-6d6f52d617e0e68dde0f7f7c86a75d84
 
 info:
-  name: >
-    5 Star (Unspecified Version) - Cross-Site Request Forgery to Arbitrary File Upload
+  name: "5 Star (Unspecified Version) - Cross-Site Request Forgery to Arbitrary File Upload"
   author: topscoder
-  severity: medium
-  description: >
-    
+  severity: high
+  description: "The 5 Star theme for WordPress is vulnerable to Arbitrary File Upload via CSRF. This makes it possible for unauthenticated attackers to gain otherwise unauthorized access to actions that will allow for remote file upload."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b2cea890-b131-47cd-9050-a484fb1895f6?source=api-scan
+    - https://en.0day.today/exploits/22091
+    - https://patchstack.com/database/vulnerability/5-star/wordpress-5star-theme-cross-site-request-forgery
+    - https://wpscan.com/vulnerability/80537e03-34fd-47c7-8a8c-6002b109a726
+    - https://templatic.com/wordpress-hotel-themes/5-star
+    - https://themesinfo.com/5star-best-hotel-wordpress-theme-bp7m/palmspelicancove.com-h94z2
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+    cve-id:
   metadata:
     fofa-query: "wp-content/themes/5star/"
     google-query: inurl:"/wp-content/themes/5star/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,5star,medium
+  tags: cve,wordpress,wp-theme,5star,high
 
 http:
   - method: GET
@@ -55,4 +57,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= *')
+          - compare_versions(version, '>0')

@@ -5,10 +5,11 @@ info:
   author: dhiyaneshDk,daffainfo
   severity: info
   metadata:
+    max-request: 1
     shodan-query: http.title:"XenForo"
   tags: tech,xenforo
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/index.php'

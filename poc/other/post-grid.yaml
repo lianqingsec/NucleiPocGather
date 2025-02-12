@@ -1,17 +1,18 @@
-id: post-grid
+id: post-grid-f2d7c7f2cc97a31a649fe636e2268f8a
 
 info:
   name: >
-    Post Grid Combo – 36+ Gutenberg Blocks <= 2.2.64 - Authenticated (Contributor+) Cross-Site Scripting
+    Post Grid <= 2.1.12 - Contributor+ SQL Injection
   author: topscoder
   severity: low
   description: >
-    
+    The Post Grid plugin for WordPress is vulnerable to blind SQL Injection via post metadata in versions up to, and including, 2.1.12 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for authenticated attackers with contributor-level permissions and above to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ab777672-6eef-4078-932d-24bb784107fa?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a321b112-ce37-4a0e-800f-f3feef6ac799?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/post-grid/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.64')
+          - compare_versions(version, '< 2.1.13')

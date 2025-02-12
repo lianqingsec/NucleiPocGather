@@ -1,14 +1,15 @@
-id: wp-lister-for-ebay
+id: wp-lister-for-ebay-2fcccfd74cb4a5df1bc99522367e4fea
 
 info:
   name: >
-    WP-Lister Lite for eBay <= 3.5.11 - Authenticated (Shop Manager+) Arbitrary File Upload
+    WP-Lister Lite for eBay <= 3.5.11 - Authenticated (Shop Manager+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7179fe0d-8cfa-4b43-82d6-5523d65ff780?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/613b4ad3-9aea-4c1c-9d73-1fb51da26477?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

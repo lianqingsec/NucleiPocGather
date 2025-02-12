@@ -1,23 +1,23 @@
-id: pagerestrict
+id: pagerestrict-8ee2ed353a9a0e2e3ab343d3dc65f097
 
 info:
-  name: >
-    Page Restrict <= 2.2.1 - Stored Cross-Site Scripting
+  name: "Page Restrict <= 2.2.1 - Stored Cross-Site Scripting"
   author: topscoder
-  severity: low
-  description: >
-    The Page Restrict plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'message' parameter in versions up to, and including, 2.2.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with admin level permissions to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This can also be exploited via Cross-Site Request Forgery.
+  severity: medium
+  description: "The Page Restrict plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'message' parameter in versions up to, and including, 2.2.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with admin level permissions to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This can also be exploited via Cross-Site Request Forgery."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/148cc174-c6cf-46d7-98d7-1a07e19055e1?source=api-prod
+    - http://cinu.pl/research/wp-plugins/mail_a500500efe291b914d73894a3759c015.html
+    - http://blog.cinu.pl/2015/11/php-static-code-analysis-vs-top-1000-wordpress-plugins.html
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-page-restrict-cross-site-scripting-2-2-1/
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:L/A:N
     cvss-score: 6.5
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/pagerestrict/"
     google-query: inurl:"/wp-content/plugins/pagerestrict/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,pagerestrict,low
+  tags: cve,wordpress,wp-plugin,pagerestrict,medium
 
 http:
   - method: GET

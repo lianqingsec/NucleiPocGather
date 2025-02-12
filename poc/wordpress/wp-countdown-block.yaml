@@ -1,4 +1,4 @@
-id: wp-countdown-block
+id: wp-countdown-block-c2a5df5a08d113c7d5c4fae264df3201
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0a656052-3b8a-4a93-b4f8-372b448a8373?source=api-scan
   classification:
     cvss-metrics: 

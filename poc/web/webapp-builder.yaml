@@ -1,4 +1,4 @@
-id: webapp-builder
+id: webapp-builder-14af5d71ba7ee0911c2f9375c22839fc
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb866476-14c0-4ade-90b0-670418b397fb?source=api-scan
   classification:
     cvss-metrics: 

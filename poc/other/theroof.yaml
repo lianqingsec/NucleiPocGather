@@ -1,4 +1,4 @@
-id: theroof
+id: theroof-062d8108158d7137f5bf24132b1852b1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/624d9627-0ffc-409f-beb7-60e80177aa9b?source=api-scan
   classification:
     cvss-metrics: 

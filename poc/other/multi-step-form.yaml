@@ -1,14 +1,15 @@
-id: multi-step-form
+id: multi-step-form-e635aad92640b8d5c172d878285ea114
 
 info:
   name: >
-    Multi Step Form <= 1.2.5 - Reflected Cross-Site Scripting
+    Multi Step Form <= 1.7.16 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/38de34cd-b985-4552-a260-53da2106a4af?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a5e6b508-35ef-45da-bf17-c038d3b7ce52?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/multi-step-form/"
     google-query: inurl:"/wp-content/plugins/multi-step-form/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,multi-step-form,medium
+  tags: cve,wordpress,wp-plugin,multi-step-form,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.2.6')
+          - compare_versions(version, '<= 1.7.16')

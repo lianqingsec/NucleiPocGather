@@ -1,4 +1,4 @@
-id: acf-better-search
+id: acf-better-search-92227a17c1f36e5836a835a2974c3c9c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b536563f-b978-4ba6-8a28-d8ee6b87964a?source=api-scan
   classification:
     cvss-metrics: 

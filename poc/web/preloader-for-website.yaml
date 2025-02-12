@@ -1,4 +1,4 @@
-id: preloader-for-website
+id: preloader-for-website-33acb906c3b959724533cbd329ed9660
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5cfc38c0-f940-4c4d-ba7b-0d772146ea2d?source=api-scan
   classification:
     cvss-metrics: 

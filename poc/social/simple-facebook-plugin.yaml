@@ -1,4 +1,4 @@
-id: simple-facebook-plugin
+id: simple-facebook-plugin-3265dc23201af59af978ea869917791d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f81df26f-4390-4626-8539-367a52f8a027?source=api-scan
   classification:
     cvss-metrics: 

@@ -5,11 +5,12 @@ info:
   author: DhiyaneshDK
   severity: info
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"Yellowfin Information Collaboration"
   tags: yellowfin,panel,login
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

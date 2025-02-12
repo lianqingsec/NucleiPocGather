@@ -1,4 +1,4 @@
-id: bws-smtp
+id: bws-smtp-c2718576a760c8b3363b94d7d9930c13
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ff464d0-7aa4-4a79-a8d2-ea51398c40f9?source=api-scan
   classification:
     cvss-metrics: 

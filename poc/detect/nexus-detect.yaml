@@ -2,7 +2,7 @@ id: nexus-detect
 
 info:
   name: Nexus Repository Manager (NRM) Instance Detection Template
-  author: righettod
+  author: righettod, shelled
   severity: info
   description: Try to detect the presence of a NRM instance via the REST API OpenDocument descriptor
   tags: tech,nexus
@@ -11,6 +11,7 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/service/rest/swagger.json"
+      - "{{BaseURL}}/nexus/service/rest/swagger.json"
 
     matchers-condition: and
     matchers:

@@ -1,17 +1,18 @@
-id: zero-bs-crm
+id: zero-bs-crm-cebec5e814e1c5be04dce3b015572948
 
 info:
   name: >
-    Jetpack CRM <= 5.4.2 - Authenticated (Administrator+) Cross-Site Scripting
+    Jetpack CRM <= 5.5.0 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
-    
+    The Jetpack CRM plugin for WordPress is vulnerable to Stored Cross-Site Scripting via admin settings in versions up to, and including, 5.5.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with administrator-level access, and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This only affects multi-site installations and installations where unfiltered_html has been disabled.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/de0fbcf0-64c6-4b33-8a9d-9c9c5d826a4d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/32f2fc21-165c-483f-ab81-48d8f221e4be?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 4.4
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/zero-bs-crm/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.4.2')
+          - compare_versions(version, '<= 5.5.0')

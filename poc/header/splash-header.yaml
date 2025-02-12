@@ -1,4 +1,4 @@
-id: splash-header
+id: splash-header-ae1af7b8de10cb8ae21a4838e673d47b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b6c9814e-e854-4420-9ec1-d843187bd9e7?source=api-scan
   classification:
     cvss-metrics: 

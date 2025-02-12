@@ -1,4 +1,4 @@
-id: phastpress
+id: phastpress-6b35bbfd8685572f477ce7413f5fa351
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8027fa07-6bc2-4e63-89d0-98079729921d?source=api-scan
   classification:
     cvss-metrics: 

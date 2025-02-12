@@ -1,4 +1,4 @@
-id: chamber-dashboard-business-directory
+id: chamber-dashboard-business-directory-f668d9f9123582d05b7d3f90058561ce
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a2ed28cd-44e6-416a-a252-8341104f5ef3?source=api-scan
   classification:
     cvss-metrics: 

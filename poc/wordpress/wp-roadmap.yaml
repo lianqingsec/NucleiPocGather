@@ -1,4 +1,4 @@
-id: wp-roadmap
+id: wp-roadmap-7e3122605112af28a9af70aa035a1854
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/24fc2554-375a-4216-91bf-41921cc4b436?source=api-scan
   classification:
     cvss-metrics: 

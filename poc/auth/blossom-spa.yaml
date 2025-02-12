@@ -1,4 +1,4 @@
-id: blossom-spa
+id: blossom-spa-d424e1a8cc915ae711720e08b8e44f06
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5e54dbf9-a5d1-413d-96ac-93dd499c21a4?source=api-scan
   classification:
     cvss-metrics: 

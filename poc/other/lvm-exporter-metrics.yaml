@@ -5,11 +5,12 @@ info:
   author: DhiyaneshDk
   severity: low
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"LVM Exporter"
   tags: lvm,exposure,debug
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/metrics"
@@ -25,8 +26,6 @@ requests:
         part: body
         words:
           - "lvm_"
-          - "promhttp"
-        condition: or
 
       - type: status
         status:

@@ -7,8 +7,10 @@ info:
   reference:
     - https://github.com/vernemq/vernemq
   tags: misconfig,vernemq,status
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/status'

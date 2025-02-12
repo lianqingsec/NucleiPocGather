@@ -1,4 +1,4 @@
-id: user-spam-remover
+id: user-spam-remover-f492b35d307325ed75ebfd03ea9d7e46
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6efadbe7-ee9b-44cb-b7c6-4c38a872abf2?source=api-scan
   classification:
     cvss-metrics: 

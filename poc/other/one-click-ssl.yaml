@@ -1,4 +1,4 @@
-id: one-click-ssl
+id: one-click-ssl-1302332bd88b458021c40b103b39cfe9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2a296dd3-fbcb-4443-a905-9cbaa87faf7d?source=api-scan
   classification:
     cvss-metrics: 

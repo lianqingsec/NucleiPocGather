@@ -1,14 +1,15 @@
-id: team
+id: team-9f214d2d0b43c932c0c20f490727942d
 
 info:
   name: >
-    Team Showcase <= 1.22.15 - Object Injection
+    Team Showcase <= 1.22.23 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1da8894c-fd19-4ea1-9c05-e519c0131061?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f702fef0-8f07-4c94-bbf7-394d66f9ddde?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.22.16')
+          - compare_versions(version, '<= 1.22.23')

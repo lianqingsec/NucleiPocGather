@@ -1,14 +1,15 @@
-id: postmash
+id: postmash-991efd6bcdd95bb5ba5164127a0860da
 
 info:
   name: >
-    postMash – custom post order <= 1.2.0 - Unauthenticated SQL Injection
+    postMash – custom post order <= 1.2.0 - Reflected Cross-Site Scripting via m
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1cab1bef-c8c5-45ee-921e-0d01736e74c6?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f219b6ea-58b9-455e-a99d-8412661c8e39?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/postmash/"
     google-query: inurl:"/wp-content/plugins/postmash/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,postmash,low
+  tags: cve,wordpress,wp-plugin,postmash,medium
 
 http:
   - method: GET

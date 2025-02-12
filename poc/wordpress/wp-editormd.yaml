@@ -1,4 +1,4 @@
-id: wp-editormd
+id: wp-editormd-5039ee7a3e48f78cb73e586042e681ee
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bdc46d3e-dfb7-4586-86d2-8e4b3805ec22?source=api-scan
   classification:
     cvss-metrics: 

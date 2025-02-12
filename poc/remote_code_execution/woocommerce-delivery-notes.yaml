@@ -1,14 +1,15 @@
-id: woocommerce-delivery-notes
+id: woocommerce-delivery-notes-8559a4be1435340111a3c9ce4fd04e6a
 
 info:
   name: >
-    Multiple Plugins by tychesoftwares <= (Various Versions) - Missing Authorization to Notice Dismissal
+    Print Invoice & Delivery Notes for WooCommerce <= 5.4.0 - Missing Authorization to Authenticated (Subscriber+) Logo Deletion
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a07d293-4c50-4be0-955f-b7c4a0eaef4b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8883d4fe-3ca6-4591-9972-219b114126d3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/woocommerce-delivery-notes/"
     google-query: inurl:"/wp-content/plugins/woocommerce-delivery-notes/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,woocommerce-delivery-notes,high
+  tags: cve,wordpress,wp-plugin,woocommerce-delivery-notes,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.8.1')
+          - compare_versions(version, '<= 5.4.0')

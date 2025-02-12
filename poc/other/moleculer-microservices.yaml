@@ -7,11 +7,12 @@ info:
   description: |
     Moleculer microservice was able to be accessed with no required authentication in place.
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"Moleculer Microservices Project"
   tags: misconfig,microservice,moleculer,exposure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

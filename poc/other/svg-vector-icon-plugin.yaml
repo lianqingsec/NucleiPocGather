@@ -1,4 +1,4 @@
-id: svg-vector-icon-plugin
+id: svg-vector-icon-plugin-0d1886f00477a3e51ff41d5a1b5c879d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e8c16dd9-0c04-42b9-a2d3-28b442cecdb3?source=api-scan
   classification:
     cvss-metrics: 

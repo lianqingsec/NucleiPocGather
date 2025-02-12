@@ -1,14 +1,15 @@
-id: simple-buttons-creator
+id: simple-buttons-creator-61b7afec161e6455ff828bcf90d6ba6d
 
 info:
   name: >
-    Simple Buttons Creator <=1.04 - Unauthenticated Stored Cross-Site Scripting via Add Button
+    Simple Buttons Creator <=1.04 - Cross-Site Request Forgery to Arbitrary Button Deletion
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ffbf5930-50f3-44ca-8333-7b934dcd5ef7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/448ec796-e92f-410e-aa40-aaf296c1afeb?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/simple-buttons-creator/"
     google-query: inurl:"/wp-content/plugins/simple-buttons-creator/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,simple-buttons-creator,low
+  tags: cve,wordpress,wp-plugin,simple-buttons-creator,medium
 
 http:
   - method: GET

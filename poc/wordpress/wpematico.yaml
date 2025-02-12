@@ -1,4 +1,4 @@
-id: wpematico
+id: wpematico-ec832e52a1347479f81a04d23ebf54b8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a62a3a71-0dbb-48d6-ba1a-f218fefac871?source=api-scan
   classification:
     cvss-metrics: 

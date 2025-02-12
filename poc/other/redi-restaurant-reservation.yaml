@@ -1,4 +1,4 @@
-id: redi-restaurant-reservation
+id: redi-restaurant-reservation-aa9b5d64429799bdafdac1ccc2f956cb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4945931f-764d-45cf-9157-5dddfb264086?source=api-scan
   classification:
     cvss-metrics: 

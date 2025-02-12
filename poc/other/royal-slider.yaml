@@ -1,4 +1,4 @@
-id: royal-slider
+id: royal-slider-b1e104606e917b13d3c81a7d2d1eae78
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/66a65270-182b-44b1-968b-4fc2d8de1ea6?source=api-scan
   classification:
     cvss-metrics: 

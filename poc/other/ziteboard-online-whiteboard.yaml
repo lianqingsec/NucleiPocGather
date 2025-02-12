@@ -1,4 +1,4 @@
-id: ziteboard-online-whiteboard
+id: ziteboard-online-whiteboard-c16785a982491df1b520c7d29fd557a1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f5608f50-e17a-471f-b644-dceb64d82f0c?source=api-scan
   classification:
     cvss-metrics: 

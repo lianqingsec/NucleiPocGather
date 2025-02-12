@@ -1,4 +1,4 @@
-id: pure-chat
+id: pure-chat-114d9f033135b2489f017edef16793a9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5d03c798-dc77-407c-8674-d0bd2f1ada8c?source=api-scan
   classification:
     cvss-metrics: 

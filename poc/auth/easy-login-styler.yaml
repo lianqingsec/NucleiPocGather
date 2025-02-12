@@ -1,4 +1,4 @@
-id: easy-login-styler
+id: easy-login-styler-b1cf983848821a6fe74627177474923d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bbb65d61-c7e1-4884-8b10-a26df504724c?source=api-scan
   classification:
     cvss-metrics: 

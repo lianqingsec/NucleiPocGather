@@ -1,4 +1,4 @@
-id: portfolio-by-lisa-westlund
+id: portfolio-by-lisa-westlund-fa3677e7d8f9bf4eb5373c217552f173
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/198a24e6-af98-42ed-bf58-73b7ec99838b?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: underconstruction
+id: underconstruction-260ef8a7e4c528807ac210f452665df6
 
 info:
   name: >
-    underConstruction < 1.09 - Cross-Site Request Forgery
+    underConstruction <= 1.19 - Cross-Site Request Forgery to Construction Mode Disabled
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/90bab2a1-7c19-45d2-909f-05014fb24740?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/da9b1132-fb02-443d-8d56-9e89658aad89?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.09')
+          - compare_versions(version, '< 1.20')

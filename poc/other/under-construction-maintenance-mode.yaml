@@ -1,23 +1,24 @@
-id: under-construction-maintenance-mode
+id: under-construction-maintenance-mode-79d8a43bcbf153511ed20ffef197fc39
 
 info:
   name: >
     Under Construction, Coming Soon & Maintenance Mode <= 1.1.1 - Server Side Request Forgery
   author: topscoder
-  severity: medium
+  severity: high
   description: >
-    The Under Construction, Coming Soon & Maintenance Mode plugin for WordPress is vulnerable to Server Side Request Forgery (SSRF) in versions up to, and including,1.1.1. This is due to the 'apiKey' POST parameter being improperly sanitized. This makes it possible for unauthenticated attackers to execute arbitrary scripting in other users' browsers, leading to the disclosure of sensitive data or subsequent attacks.
+    The Under Construction, Coming Soon & Maintenance Mode Plugin for WordPress is vulnerable to Server Side Request Forgery in versions up to, and including, 1.1.1.  This is due to missing or incorrect nonce validation on the 'ucmm_mc_api' function. This makes it possible for unauthenticated attackers to exploit via direct access to the affected file, and the application that supports data imports from URLs or allows them to read data from URLs
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5f6b88fb-1070-427b-a51f-23fbede3dd59?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/86c1b729-e8fe-46e8-8d57-c6312087c6b2?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/under-construction-maintenance-mode/"
     google-query: inurl:"/wp-content/plugins/under-construction-maintenance-mode/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,under-construction-maintenance-mode,medium
+  tags: cve,wordpress,wp-plugin,under-construction-maintenance-mode,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.1')
+          - compare_versions(version, '< 1.1.2')

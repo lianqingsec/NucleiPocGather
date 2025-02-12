@@ -1,4 +1,4 @@
-id: utm-tracker
+id: utm-tracker-e2421e5bfab9ee04dfabba860e8b34fb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/077ec165-edd3-4c2c-b1ea-01ca5b80f779?source=api-scan
   classification:
     cvss-metrics: 

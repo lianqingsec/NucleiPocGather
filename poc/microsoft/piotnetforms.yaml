@@ -1,14 +1,15 @@
-id: piotnetforms
+id: piotnetforms-e862d42087b0ab803a6d5f6b8ab8dd09
 
 info:
   name: >
-    Piotnet Forms <= 1.0.28 - Unauthenticated Arbitrary File Upload
+    Piotnet Forms Plugin <= 1.0.28 - Unauthenticated Arbitrary File Upload
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/af2b7eac-a3f5-408f-b139-643e70b3f27a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2f52298b-344b-4561-b1bf-93bea95a3e53?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/piotnetforms/"
     google-query: inurl:"/wp-content/plugins/piotnetforms/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,piotnetforms,low
+  tags: cve,wordpress,wp-plugin,piotnetforms,critical
 
 http:
   - method: GET

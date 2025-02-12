@@ -1,4 +1,4 @@
-id: wp-cal
+id: wp-cal-10df629232b28c787efd1524d5692dd9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7bb7ee83-f75a-4f19-8595-f5cf2ee97ae0?source=api-scan
   classification:
     cvss-metrics: 

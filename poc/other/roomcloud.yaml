@@ -1,4 +1,4 @@
-id: roomcloud
+id: roomcloud-0b3c37e51b9b13a61c72700b1d1aee44
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/dfb2dda8-1389-4b19-a5cd-d6b3436ab3b6?source=api-scan
   classification:
     cvss-metrics: 

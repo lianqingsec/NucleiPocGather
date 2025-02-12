@@ -1,4 +1,4 @@
-id: wp-cookie-user-info
+id: wp-cookie-user-info-d2666c85e1e86cfe042cf280f363f5ef
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e61a5989-ea75-4c11-a937-66488ecdb10d?source=api-scan
   classification:
     cvss-metrics: 

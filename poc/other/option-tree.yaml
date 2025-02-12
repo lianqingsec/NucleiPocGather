@@ -1,14 +1,15 @@
-id: option-tree
+id: option-tree-87848c43cf8b0042980175814b151326
 
 info:
   name: >
-    Option Tree <= 2.6.0 - PHP Object Injection
+    Option Tree <= 2.7.2 - Object Injection Bypass
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ec29bc37-db27-4bf3-b55f-15c4a7274acd?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f8381b6c-46f4-4b9d-9975-c90310d066d7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.6.0')
+          - compare_versions(version, '<= 2.7.2')

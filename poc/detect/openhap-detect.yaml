@@ -7,11 +7,12 @@ info:
   reference:
     - https://www.openhab.org/
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: http.title:"openHAB"
   tags: tech,iot,openhab
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -5,11 +5,12 @@ info:
   author: notnotnotveg,tess
   severity: low
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"ffserver Status"
   tags: exposures,logs,ffserver
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

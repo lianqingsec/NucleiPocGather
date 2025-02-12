@@ -1,4 +1,4 @@
-id: seo-title-tag
+id: seo-title-tag-0e65fba5bc0a58883acc8f54a8da58a7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f9c9f8db-26e4-4f79-88a3-9be1f5772ebe?source=api-scan
   classification:
     cvss-metrics: 

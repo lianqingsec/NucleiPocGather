@@ -1,18 +1,18 @@
-id: uncanny-learndash-toolkit
+id: uncanny-learndash-toolkit-095f7cc1935c28be88f8231eddd4f94b
 
 info:
-  name: >
-    Uncanny Toolkit for LearnDash <= 3.6.3 - Cross-Site Request Forgery
+  name: "Uncanny Toolkit for LearnDash <= 3.6.3 - Cross-Site Request Forgery"
   author: topscoder
   severity: high
-  description: >
-    The Uncanny Toolkit for LearnDash plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 3.6.3. This is due to missing  nonce validation on several functions such as the ajax_activate_deactivate_module function. This makes it possible for unauthenticated attackers to change plugin settings, via forged request granted they can trick a site administrator into performing an action such as clicking on a link.
+  description: "The Uncanny Toolkit for LearnDash plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 3.6.3. This is due to missing  nonce validation on several functions such as the ajax_activate_deactivate_module function. This makes it possible for unauthenticated attackers to change plugin settings, via forged request granted they can trick a site administrator into performing an action such as clicking on a link."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/61992821-a053-4bc6-853a-1a826d096746?source=api-prod
+    - https://plugins.trac.wordpress.org/changeset/2822397/uncanny-learndash-toolkit/trunk/src/admin-menu.php?old=2645394&old_path=uncanny-learndash-toolkit%2Ftrunk%2Fsrc%2Fadmin-menu.php
+    - https://plugins.trac.wordpress.org/changeset/2822397/uncanny-learndash-toolkit/trunk?contextall=1&old=2743722&old_path=%2Funcanny-learndash-toolkit%2Ftrunk
+    - https://wordpress.org/plugins/uncanny-learndash-toolkit/#developers
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
     cvss-score: 8.8
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/uncanny-learndash-toolkit/"
     google-query: inurl:"/wp-content/plugins/uncanny-learndash-toolkit/"

@@ -1,4 +1,4 @@
-id: vc_clipboard
+id: vc_clipboard-f26a60478d494731a4c5a6b075915213
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/57a12c21-4a5d-4fbd-8720-93e78164f216?source=api-scan
   classification:
     cvss-metrics: 

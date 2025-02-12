@@ -1,4 +1,4 @@
-id: wp-gallery-exporter
+id: wp-gallery-exporter-3f1adc6ccbb78d095c27d60e9e3bd3d1
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b871883c-509b-4776-b550-349b3f5aa365?source=api-scan
   classification:
     cvss-metrics: 

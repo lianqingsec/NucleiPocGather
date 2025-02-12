@@ -1,4 +1,4 @@
-id: simple-revisions-delete
+id: simple-revisions-delete-2d149130ff9bc2412b56842acbdc306e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/50212e01-4055-4e63-8cf2-6ee434f46604?source=api-scan
   classification:
     cvss-metrics: 

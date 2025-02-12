@@ -13,12 +13,13 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 1
     verified: true
     shodan-query: http.title:'JumpServer'
     zoomeye-query: title:'JumpServer'
   tags: panel,jumpserver
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/core/auth/login/"

@@ -8,8 +8,10 @@ info:
     - https://github.com/streaak/keyhacks#Razorpay-keys
     - https://docs.gitguardian.com/secrets-detection/detectors/specifics/razorpay_apikey
   tags: exposure,token,razorpay
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

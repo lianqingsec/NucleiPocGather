@@ -1,4 +1,4 @@
-id: listingo
+id: listingo-2bd365b7028f3163c9f782e4b69d29be
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/62bc53ae-7cdb-491c-a315-5bf8fa80c27b?source=api-scan
   classification:
     cvss-metrics: 

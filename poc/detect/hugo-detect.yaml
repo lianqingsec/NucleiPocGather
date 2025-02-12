@@ -6,11 +6,12 @@ info:
   severity: info
   description: Hugo is a fast and modern static site generator written in Go
   metadata:
+    max-request: 1
     verified: true
     shodan-query: http.html:'Hugo'
   tags: tech,hugo
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

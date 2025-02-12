@@ -1,13 +1,12 @@
 id: rtsp-proxy
 info:
-  name: Blue Coat rtsp proxy
+  name: RTSP Proxy Reference Implementation
   author: nmap,cn-kali-team
   tags: detect,tech,rtsp-proxy,service
   severity: info
   metadata:
     fallback:
     - get-request
-    info: Unlicensed
     rarity: 5
 tcp:
 - name: rtsprequest
@@ -20,4 +19,4 @@ tcp:
   - name: rtsp-proxy
     type: regex
     regex:
-    - '^RTSP/1\.0 403 Forbidden: Proxy not licensed\r\nSession: \w+\r\n\r\n'
+    - ^RTSP/1\.0 451 Parameter Not Understood\r\n\r\n$

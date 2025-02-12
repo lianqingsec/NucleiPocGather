@@ -1,14 +1,15 @@
-id: views-for-wpforms-lite
+id: views-for-wpforms-lite-e1e6ef7422e9825abd84f53bc49fe1ad
 
 info:
   name: >
-    Views for WPForms <= 3.2.2 - Missing Authorization via save_view
+    Views for WPForms <= 3.2.2 - Cross-Site Request Forgery via create_view
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3c4c8113-4c46-4179-9c7f-9d5d4337254d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/34c0c676-37f9-49f2-ad50-2d70831fda53?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/views-for-wpforms-lite/"
     google-query: inurl:"/wp-content/plugins/views-for-wpforms-lite/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,views-for-wpforms-lite,high
+  tags: cve,wordpress,wp-plugin,views-for-wpforms-lite,medium
 
 http:
   - method: GET

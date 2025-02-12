@@ -1,14 +1,15 @@
-id: motors-car-dealership-classified-listings
+id: motors-car-dealership-classified-listings-d85a69d138dee758ca7852bbf60b7c01
 
 info:
   name: >
-    Motors – Car Dealer, Classifieds & Listing <= 1.4.0 - Stored Cross-Site Scripting
+    Motors – Car Dealer & Classified Ads <= 1.4.5 - Cross-Site Request Forgery via Multiple Functions
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1638145c-2bc8-45d4-904e-b1aba124a0e3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ca9e920-3c7a-4991-8c24-2e55c4f4767c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/motors-car-dealership-classified-listings/"
     google-query: inurl:"/wp-content/plugins/motors-car-dealership-classified-listings/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,motors-car-dealership-classified-listings,high
+  tags: cve,wordpress,wp-plugin,motors-car-dealership-classified-listings,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.4.1')
+          - compare_versions(version, '<= 1.4.5')

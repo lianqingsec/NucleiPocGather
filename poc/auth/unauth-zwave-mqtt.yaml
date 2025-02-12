@@ -7,11 +7,12 @@ info:
   reference:
     - https://github.com/OpenZWave/Zwave2Mqtt
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"ZWave To MQTT"
   tags: misconfig,zwave,mqtt,unauth
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

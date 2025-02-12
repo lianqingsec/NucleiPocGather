@@ -1,10 +1,10 @@
 id: thinkcmf-detection
 
 info:
-  name: Detect ThinkCMF
-  author: pikpikcu,daffainfo
+  name: ThinkCMF Detection
+  author: pikpikcu
   severity: info
-  tags: panel,thinkcmf,login
+  tags: thinkcmf
 
 requests:
   - method: GET
@@ -13,10 +13,12 @@ requests:
 
     matchers-condition: and
     matchers:
+
       - type: word
-        part: body
         words:
-          - '<meta name="author" content="ThinkCMF">'
+          - "X-Powered-By: ThinkCMF"
+        part: header
+        condition: and
 
       - type: status
         status:

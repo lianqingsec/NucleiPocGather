@@ -1,4 +1,4 @@
-id: play-ht
+id: play-ht-3c219350e35b8705870cb2eb15af2d3b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/83a595b7-379c-4202-abdd-d8ba4a30c6a4?source=api-scan
   classification:
     cvss-metrics: 

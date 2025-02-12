@@ -1,4 +1,4 @@
-id: quiz-expert
+id: quiz-expert-fdc3f1ee4d1b437017771844d1ce9c56
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/32ee3eb8-18b7-47da-b4f9-cb252ffabc71?source=api-scan
   classification:
     cvss-metrics: 

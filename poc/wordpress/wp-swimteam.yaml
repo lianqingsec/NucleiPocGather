@@ -1,4 +1,4 @@
-id: wp-swimteam
+id: wp-swimteam-1397cd8d0077101418e687b086fddf47
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/98d008a4-5dbf-410f-8753-d5aeb28b4447?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: wp-planet
+id: wp-planet-af79f1d6514b75194d0332f0bb36620b
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6e520850-5cc7-40f8-9222-e7e50d21f347?source=api-scan
   classification:
     cvss-metrics: 

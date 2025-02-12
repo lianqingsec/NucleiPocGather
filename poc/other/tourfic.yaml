@@ -1,14 +1,15 @@
-id: tourfic
+id: tourfic-ce2ce806eb629579df5d15b725e9fd1d
 
 info:
   name: >
-    Tourfic <= 2.11.7 - Reflected Cross-Site Scripting
+    Tourfic – Ultimate Hotel Booking, Travel Booking & Apartment Booking WordPress Plugin | WooCommerce Booking <= 2.15.3 - Authenticated (Subscriber+) SQL Injection
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/32d4c259-b56d-4f8f-84b8-7ef451fd02ad?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/35eebcc8-a6bf-4cbb-9cc6-f49bd1625d6b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/tourfic/"
     google-query: inurl:"/wp-content/plugins/tourfic/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,tourfic,medium
+  tags: cve,wordpress,wp-plugin,tourfic,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.11.7')
+          - compare_versions(version, '<= 2.15.3')

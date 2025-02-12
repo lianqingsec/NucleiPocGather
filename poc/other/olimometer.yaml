@@ -1,4 +1,4 @@
-id: olimometer
+id: olimometer-88ad97cfc2ca978e41d0c48dcea1cb08
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c148372b-e0d2-4164-b7e7-91921720adcf?source=api-scan
   classification:
     cvss-metrics: 

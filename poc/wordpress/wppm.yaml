@@ -1,4 +1,4 @@
-id: wppm
+id: wppm-001d3d294b88e8a97742fe62dafb5bf3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa178e13-b4a5-4847-ac0e-9f14f8c9b446?source=api-scan
   classification:
     cvss-metrics: 

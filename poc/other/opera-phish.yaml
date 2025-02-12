@@ -8,8 +8,9 @@ info:
     A opera phishing website was detected
   reference:
     - https://opera.com
+  metadata:
+    max-request: 1
   tags: phishing,opera,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"opera.com")'
-# digest: 4b0a004830460221009dbca39272d980a4659daffceb27a8fc3805f8a61eae296955f15453ff0a63db022100fbbbcda56dd131e9dd7938e9effe0a8d76fbbd54fd4d3741a46a0f2e428afe73:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100dab90ea45e161cadaaa7a2d24db4c13a92395669b7e20f4bc7497c2aedf49334022100b351954299f110ee433ec5b2a1f55e831db8fd8429b6fe7ffec6ad4a84b90f22:922c64590222798bb761d5b6d8e72950

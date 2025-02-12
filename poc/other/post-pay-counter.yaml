@@ -1,14 +1,15 @@
-id: post-pay-counter
+id: post-pay-counter-436c8b346938851ba046fc1d7cbff2c5
 
 info:
   name: >
-    Post Pay Counter < 2.731 - Arbitrary Settings Change
+    Post Pay Counter <= 2.789 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/951b2a15-04c1-4c5b-9cef-146628079c36?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a9fce6d-d5c2-4ab7-87ea-8dd6e4d92e07?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/post-pay-counter/"
     google-query: inurl:"/wp-content/plugins/post-pay-counter/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,post-pay-counter,low
+  tags: cve,wordpress,wp-plugin,post-pay-counter,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.731')
+          - compare_versions(version, '<= 2.789')

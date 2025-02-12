@@ -1,4 +1,4 @@
-id: seo-slider
+id: seo-slider-87ae8809d403ed896d8e9df18344a8e2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/32bc88a7-93ed-4d67-9383-b6d935a0df4d?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: telephone-number-linker
+id: telephone-number-linker-4c037cfa6ac8f8aa5d4871e05951ab0d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/06424d9f-0064-4101-b819-688489a18eee?source=api-scan
   classification:
     cvss-metrics: 

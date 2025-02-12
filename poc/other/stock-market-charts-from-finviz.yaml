@@ -1,4 +1,4 @@
-id: stock-market-charts-from-finviz
+id: stock-market-charts-from-finviz-d442b7969aa9c88e8d5f25d71fe0f7f2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5d6b5a4c-1dc9-4d86-ac41-61880637fcbb?source=api-scan
   classification:
     cvss-metrics: 

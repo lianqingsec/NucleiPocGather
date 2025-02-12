@@ -5,11 +5,12 @@ info:
   author: pussycat0x
   severity: info
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"Veriz0wn"
   tags: veriz0wn,panel
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

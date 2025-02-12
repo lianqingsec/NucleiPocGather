@@ -1,14 +1,15 @@
-id: schema-and-structured-data-for-wp
+id: schema-and-structured-data-for-wp-5f85329e309d2d027f7c26059014014a
 
 info:
   name: >
-    Schema & Structured Data for WP & AMP <= 1.23 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Schema & Structured Data for WP & AMP <= 1.29 - Authenticated (Contributor+) Stored Cross-Site Scripting via How To and FAQ Blocks
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0752b4f3-b9f0-4c39-8e4c-2db188600087?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e004bba3-d281-4f84-a941-a6c5b64b9dcd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.23')
+          - compare_versions(version, '<= 1.29')

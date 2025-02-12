@@ -13,11 +13,12 @@ info:
     cvss-score: 6.1
     cwe-id: CWE-79
   metadata:
+    max-request: 2
     verified: true
     shodan-query: http.html:"Flatpress"
   tags: flatpress,xss,authenticated,oss
 
-requests:
+http:
   - raw:
       - |
         POST /login.php HTTP/1.1

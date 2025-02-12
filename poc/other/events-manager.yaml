@@ -1,18 +1,19 @@
-id: events-manager
+id: events-manager-a07bd3936811d9512b1195d41c0e9b8d
 
 info:
-  name: >
-    Events Manager <= 6.4.5 - Reflected Cross-Site Scripting
+  name: "Events Manager <= 5.9.7.1 - CSV Injection"
   author: topscoder
   severity: medium
-  description: >
-    
+  description: "The Events Manager plugin for WordPress is vulnerable to CSV Injection in versions up to, and including, 5.9.7.1 through the use of the Microsoft Excel DDE function. This allows low-privileged attackers to embed untrusted input into exported CSV files, which can result in code execution when these files are downloaded and opened on a local system with a vulnerable configuration."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9053cf91-0af1-44f8-9fdf-7ecbd457545b?source=api-scan
+    - https://wp-events-plugin.com/blog/2020/02/05/events-manager-5-9-7-2-pro-2-6-7-2/
+    - https://fortiguard.com/zeroday/FG-VD-20-034
+    - https://wpscan.com/vulnerability/10062
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-events-manager-csv-injection-5-9-7-1/
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:L/UI:R/S:C/C:L/I:L/A:L
+    cvss-score: 5.5
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/events-manager/"
     google-query: inurl:"/wp-content/plugins/events-manager/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.4.5')
+          - compare_versions(version, '<= 5.9.7.1')

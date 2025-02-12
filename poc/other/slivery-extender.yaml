@@ -1,4 +1,4 @@
-id: slivery-extender
+id: slivery-extender-512a413d433dee19cfe8034cdc9d03e4
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ceb25a7b-da93-41eb-bae7-8bffa96f7a1c?source=api-scan
   classification:
     cvss-metrics: 

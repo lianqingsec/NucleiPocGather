@@ -1,18 +1,21 @@
-id: super-interactive-maps
+id: super-interactive-maps-bb907682bc2600f44ff6f958cf0fb94f
 
 info:
-  name: >
-    Super Store Finder <= 6.1, Super Interactive Maps <= 1.9, Super Logo Showcase <= 2.2  - Arbitrary File Upload
+  name: "Super Store Finder <= 6.1, Super Interactive Maps <= 1.9, Super Logo Showcase <= 2.2  - Arbitrary File Upload"
   author: topscoder
   severity: high
-  description: >
-    The Super Store Finder, Super Interactive Maps, and Super Logo Showcase plugins for WordPress are vulnerable to arbitrary file uploads due to missing file type validation in the /pages/import.php file in versions up to, and including, 6.1, 1.9. and 2.2 respectively. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
+  description: "The Super Store Finder, Super Interactive Maps, and Super Logo Showcase plugins for WordPress are vulnerable to arbitrary file uploads due to missing file type validation in the /pages/import.php file in versions up to, and including, 6.1, 1.9. and 2.2 respectively. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/23f0315f-5523-4e16-8adf-f9fe9254032a?source=api-prod
+    - http://superstorefinder.net/support/forums/topic/security-patch-updates-post-penetration-test/
+    - https://codecanyon.net/item/super-store-finder-for-wordpress/11334595
+    - https://codecanyon.net/item/super-interactive-maps-for-wordpress/15712620
+    - https://codecanyon.net/item/super-logos-showcase-for-wordpress/13359116
+    - https://packetstormsecurity.com/files/159627/
+    - https://wpscan.com/vulnerability/1f113757-181e-4261-872f-3c0f2e5b0ef4
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
     cvss-score: 8.8
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/super-interactive-maps/"
     google-query: inurl:"/wp-content/plugins/super-interactive-maps/"

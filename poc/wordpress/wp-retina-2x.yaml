@@ -1,14 +1,15 @@
-id: wp-retina-2x
+id: wp-retina-2x-f291435eb2908a72536774b45ad34352
 
 info:
   name: >
-    Perfect Images <= 5.2.2 - Cross-Site Scripting
+    WP Retina 2x <= 6.4.5 - Sensitive Information Exposure
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f9f3349e-de64-498e-bb82-5ceff1456265?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/52c2aae5-17c2-45eb-b55f-bb27555fb1f7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-retina-2x/"
     google-query: inurl:"/wp-content/plugins/wp-retina-2x/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-retina-2x,high
+  tags: cve,wordpress,wp-plugin,wp-retina-2x,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 5.2.3')
+          - compare_versions(version, '<= 6.4.5')

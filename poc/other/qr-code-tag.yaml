@@ -1,4 +1,4 @@
-id: qr-code-tag
+id: qr-code-tag-43d87a358beb09519bd8dd76ed9f6b32
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/be004002-a3ac-46e9-b0c1-258f05f97b2a?source=api-scan
   classification:
     cvss-metrics: 

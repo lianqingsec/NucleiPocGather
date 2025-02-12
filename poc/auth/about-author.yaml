@@ -1,23 +1,23 @@
-id: about-author
+id: about-author-9314fbf4903e6130c210a434371628c6
 
 info:
-  name: >
-    About Author <= 1.3.9 - Authenticated Stored Cross-Site Scripting
+  name: "About Author <= 1.3.9 - Authenticated Stored Cross-Site Scripting"
   author: topscoder
-  severity: low
-  description: >
-    The About Author plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the ‘post_title’ parameter in versions up to, and including, 1.3.9 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
+  severity: medium
+  description: "The About Author plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the ‘post_title’ parameter in versions up to, and including, 1.3.9 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ff67beb-638e-4d74-8d0e-6aece9207bb9?source=api-prod
+    - https://nitesculucian.github.io/2019/10/25/about-author-1-3-9-authentificated-stored-xss-vulnerability/
+    - https://plugins.svn.wordpress.org/about-author/trunk/readme.txt
+    - https://plugins.trac.wordpress.org/changeset/2180131
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 6.4
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/about-author/"
     google-query: inurl:"/wp-content/plugins/about-author/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,about-author,low
+  tags: cve,wordpress,wp-plugin,about-author,medium
 
 http:
   - method: GET

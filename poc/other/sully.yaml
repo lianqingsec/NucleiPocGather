@@ -1,15 +1,15 @@
-id: sully
+id: sully-2ec7f0fa1e4f401a3f8a884fd9854aa9
 
 info:
   name: >
-    SULly <= 4.3 - Reflected Cross-Site Scripting
+    SULly <= 4.3.0 - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8b968849-32ef-4cc9-8ac6-5477b2906952?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8c89eea-f6b0-4771-ab7d-05e266324d58?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

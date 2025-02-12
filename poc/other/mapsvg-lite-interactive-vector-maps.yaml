@@ -1,4 +1,4 @@
-id: mapsvg-lite-interactive-vector-maps
+id: mapsvg-lite-interactive-vector-maps-ab0ee4ded82b62c4d7e9b29f2718ceef
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8073cc59-e5cc-4940-bce0-e501f0d959cc?source=api-scan
   classification:
     cvss-metrics: 

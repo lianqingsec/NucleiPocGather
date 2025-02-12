@@ -5,11 +5,12 @@ info:
   author: DhiyaneshDk
   severity: low
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"Named Process Exporter"
   tags: namedprocess,exposure,debug
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/metrics"

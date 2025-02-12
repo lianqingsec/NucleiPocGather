@@ -1,4 +1,4 @@
-id: microblog-poster
+id: microblog-poster-6d34916a3a5c94bb2a09fdff4c91c145
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6fbf8a8f-56f7-42ae-bf96-30a2df6da378?source=api-scan
   classification:
     cvss-metrics: 

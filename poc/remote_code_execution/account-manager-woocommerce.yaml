@@ -1,4 +1,4 @@
-id: account-manager-woocommerce
+id: account-manager-woocommerce-198aaf82d5ab4648c4ab1ac1d78a7c90
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/667547a9-0dc5-4810-aba9-025f0c222d24?source=api-scan
   classification:
     cvss-metrics: 

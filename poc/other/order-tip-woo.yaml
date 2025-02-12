@@ -1,4 +1,4 @@
-id: order-tip-woo
+id: order-tip-woo-6d652f6ad2f3c9b1f06ccbe3893a77e6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6f837d6b-d1fa-4019-892a-dca3c0f29ca7?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: vigilantor
+id: vigilantor-73be4c62f9293f02d1fffc1fa20b49ff
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ea71d63-27ce-4f24-b3ef-de38e6f25e0d?source=api-scan
   classification:
     cvss-metrics: 

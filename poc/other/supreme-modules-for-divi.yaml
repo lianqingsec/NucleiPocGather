@@ -1,4 +1,4 @@
-id: supreme-modules-for-divi
+id: supreme-modules-for-divi-4932a0fa9567fbe6f10cef5ce986a1ad
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/17508063-3cd7-4b61-b7be-23a71b75f6a2?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: wpsolr-search-engine
+id: wpsolr-search-engine-dca4735280329ed716c896f19810887f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/048077bc-30da-472c-97ea-24317dbde712?source=api-scan
   classification:
     cvss-metrics: 

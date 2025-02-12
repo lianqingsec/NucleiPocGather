@@ -1,23 +1,24 @@
-id: yith-woocommerce-product-vendors
+id: yith-woocommerce-product-vendors-f5c3285c546d26859e884d10b1091900
 
 info:
   name: >
-    YITH WooCommerce Multi Vendor <= 3.8.0 - Reflected Cross-Site Scripting
+    YITH plugins by YITHEMES <= (Various Versions) - Missing Authorization
   author: topscoder
-  severity: medium
+  severity: low
   description: >
-    The YITH WooCommerce Multi Vendor plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘page’ parameter in versions up to, and including, 3.8.0 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
+    Several YITHEMES plugins for WordPress are vulnerable to authorization bypass due to a missing capability check on the create_log_file function. This makes it possible for authenticated attackers, with subscriber-level permissions and above, to download the logs of the plugin which can contain sensitive information. Please note that the unpatched plugins from this developer are the FREE versions of the plugin that were available on the WordPress.org repository. The developer is still maintaining the premium versions of the plugins which have been patched.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b924261f-1e1a-4565-a22e-ba592912d270?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b948574a-0aab-4596-83e6-04be21f78bc1?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:L/A:N
+    cvss-score: 7.1
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/yith-woocommerce-product-vendors/"
     google-query: inurl:"/wp-content/plugins/yith-woocommerce-product-vendors/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,yith-woocommerce-product-vendors,medium
+  tags: cve,wordpress,wp-plugin,yith-woocommerce-product-vendors,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.8.1')
+          - compare_versions(version, '<= 3.9.0')

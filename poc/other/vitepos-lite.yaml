@@ -1,4 +1,4 @@
-id: vitepos-lite
+id: vitepos-lite-8c4a380d197ea3da5c4f42c46f10d063
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6ece7e74-ffd9-48f9-b66b-58708233b24b?source=api-scan
   classification:
     cvss-metrics: 

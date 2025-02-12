@@ -1,4 +1,4 @@
-id: simple-gmail-login
+id: simple-gmail-login-e58d7da2eda94d2627f40ca52aa5d586
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fe685a64-a84c-4d29-b002-05d40f540391?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: amazon-s3-and-cloudfront
+id: amazon-s3-and-cloudfront-14dacd4964899160e8e4ffa4f92ad327
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2638bb80-7066-45c0-ab74-4ba407d50cae?source=api-scan
   classification:
     cvss-metrics: 

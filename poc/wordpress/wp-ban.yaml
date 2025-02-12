@@ -1,4 +1,4 @@
-id: wp-ban
+id: wp-ban-dbb371ba25c31b61b65e05237053d68c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5be89866-f60d-4cc6-ac00-80ad15a07fe3?source=api-scan
   classification:
     cvss-metrics: 

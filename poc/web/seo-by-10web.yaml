@@ -1,14 +1,15 @@
-id: seo-by-10web
+id: seo-by-10web-f8d493ffe0996d609f126a713059768b
 
 info:
   name: >
-    Seo By 10Web <= 1.2.9 - Reflected Cross-Site Scripting
+    SEO By 10Web <= 1.2.6 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b4533554-52e4-44b4-9230-b6e3feb2e4a1?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1a850176-973c-49aa-a420-e379223b6dc3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/seo-by-10web/"
     google-query: inurl:"/wp-content/plugins/seo-by-10web/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,seo-by-10web,medium
+  tags: cve,wordpress,wp-plugin,seo-by-10web,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.9')
+          - compare_versions(version, '<= 1.2.6')

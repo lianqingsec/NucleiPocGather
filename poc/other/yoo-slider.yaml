@@ -1,4 +1,4 @@
-id: yoo-slider
+id: yoo-slider-23e0ef03bee299378775083d68fa3feb
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5a3a5dd8-1608-4a73-a571-25da811e4605?source=api-scan
   classification:
     cvss-metrics: 

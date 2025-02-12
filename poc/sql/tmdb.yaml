@@ -10,9 +10,11 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   tags: osint,osint-social,tmdb
+  metadata:
+    max-request: 1
 
 self-contained: true
-requests:
+http:
   - method: GET
     path:
       - "https://www.themoviedb.org/u/{{user}}"
@@ -31,5 +33,3 @@ requests:
           - 200
 
 # Enhanced by md on 2023/03/15
-
-# Enhanced by cs 03/17/2023

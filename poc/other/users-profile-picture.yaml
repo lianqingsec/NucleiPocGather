@@ -1,14 +1,15 @@
-id: users-profile-picture
+id: users-profile-picture-e9d7fd99a52a92e3d16911bfa4b11260
 
 info:
   name: >
-    User Profile Picture <= 2.4.0 - Sensitive Information Disclosure
+    User Profile Picture < 2.6.0 - Authenticated Insecure Direct Object Reference
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6535f932-3aa4-4686-adf6-4e7a1f494e02?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0f963cd2-0069-4e58-a5e5-8a9bfea65168?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.5.0')
+          - compare_versions(version, '< 2.6.0')

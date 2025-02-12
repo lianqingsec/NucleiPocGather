@@ -1,4 +1,4 @@
-id: updraft
+id: updraft-4620653f7ae004c7771b7b6b022eaf00
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/02bfc849-0f36-4647-9290-eddbacdb419b?source=api-scan
   classification:
     cvss-metrics: 

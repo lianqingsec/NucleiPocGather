@@ -5,8 +5,10 @@ info:
   author: w4cky_
   severity: info
   tags: tech,basic-auth
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

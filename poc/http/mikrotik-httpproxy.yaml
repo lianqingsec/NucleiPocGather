@@ -5,11 +5,12 @@ info:
   author: its0x08,DhiyaneshDk
   severity: info
   metadata:
+    max-request: 1
     verified: true
     shodan-query: 'Server: mikrotik httpproxy'
   tags: tech,mikrotik
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

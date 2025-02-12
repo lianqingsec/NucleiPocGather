@@ -1,23 +1,23 @@
-id: cms-tree-page-view
+id: cms-tree-page-view-28ff9c6d0aa4f2cd4c989ea154314ae9
 
 info:
-  name: >
-    CMS Tree Page View < 0.8.9 - Cross-Site Scripting
+  name: "CMS Tree Page View < 1.4 - Missing Authorization Checks"
   author: topscoder
-  severity: high
-  description: >
-    
+  severity: medium
+  description: "The CMS Tree Page View plugin for WordPress is vulnerable to authorization bypass due to a missing capability check on the cms_tpv_move_page function in versions before 1.4. This makes it possible for authenticated attackers with subscriber-level privileges to move pages."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f4052ab-ff9e-48a6-8406-72e9b6237668?source=api-scan
+    - https://advisories.dxw.com/advisories/cms-tree-page-view-allows-any-logged-in-users-to-move-pages-regardless-of-permissions/
+    - https://en-gb.wordpress.org/plugins/cms-tree-page-view/#developers
+    - https://plugins.trac.wordpress.org/changeset/1746899
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
+    cvss-score: 4.3
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/cms-tree-page-view/"
     google-query: inurl:"/wp-content/plugins/cms-tree-page-view/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,cms-tree-page-view,high
+  tags: cve,wordpress,wp-plugin,cms-tree-page-view,medium
 
 http:
   - method: GET
@@ -55,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 0.8.9')
+          - compare_versions(version, '< 1.4')

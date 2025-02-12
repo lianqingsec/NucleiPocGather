@@ -7,11 +7,12 @@ info:
   reference:
     - https://github.com/pagekit/pagekit
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"Pagekit Installer"
   tags: misconfig,pagekit,install,exposure
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/installer'

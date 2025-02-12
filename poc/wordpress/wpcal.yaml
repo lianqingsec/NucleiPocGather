@@ -1,4 +1,4 @@
-id: wpcal
+id: wpcal-1e492620e8a7e81b2eec48aa4fd7a9b8
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/020df8cb-a9ce-4f04-b88f-ceb988beeb75?source=api-scan
   classification:
     cvss-metrics: 

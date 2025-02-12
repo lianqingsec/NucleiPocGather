@@ -1,4 +1,4 @@
-id: wp-crm
+id: wp-crm-f8cd8127f7c06c91fe2d1f8bc6dc468d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/313af4a0-f32b-443f-a976-e06499d3c94b?source=api-scan
   classification:
     cvss-metrics: 

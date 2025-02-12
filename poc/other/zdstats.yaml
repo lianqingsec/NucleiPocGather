@@ -1,4 +1,4 @@
-id: zdstats
+id: zdstats-dd99647c6c9240da906956718e35bb49
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f04166e0-9f43-43ad-9552-618b81ab2d6f?source=api-scan
   classification:
     cvss-metrics: 

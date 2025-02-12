@@ -1,14 +1,15 @@
-id: sensei-lms
+id: sensei-lms-ef4f55a1a9193b0f96c64942d4d06097
 
 info:
   name: >
-    Sensei LMS <= 4.17.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Sensei LMS – Online Courses, Quizzes, & Learning <= 4.24.1 - Unauthenticated Email Template Disclosure
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/031995fb-48c4-4f56-8b64-d66a47b2fbe9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1df16802-c102-4ff2-b8ff-8a588905d3f7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.17.0')
+          - compare_versions(version, '<= 4.24.1')

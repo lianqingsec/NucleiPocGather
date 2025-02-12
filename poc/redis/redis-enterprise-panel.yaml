@@ -5,11 +5,12 @@ info:
   author: tess
   severity: info
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: title:"Enterprise-Class Redis for Developers"
   tags: panel,redis,enterprise
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/#/login"

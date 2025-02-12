@@ -1,4 +1,4 @@
-id: stageshow
+id: stageshow-d270974a736e4886c538e6a9b4e2729f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bbc8ccc1-7b72-44fb-8bf5-e7cb46081ed5?source=api-scan
   classification:
     cvss-metrics: 

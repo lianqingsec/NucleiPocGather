@@ -1,4 +1,4 @@
-id: sitewide-notice-wp
+id: sitewide-notice-wp-58a86416f6928ffaebea7ce6e0d13c21
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/66082207-33b6-45e4-ae93-24c9a9611300?source=api-scan
   classification:
     cvss-metrics: 

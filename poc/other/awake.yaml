@@ -1,23 +1,23 @@
-id: awake
+id: awake-830e98587267dfe9506ac2ec99b23b91
 
 info:
-  name: >
-    Awake <= 3.3 - Arbitrary File Download
+  name: "Awake <= 3.3 - Arbitrary File Download"
   author: topscoder
-  severity: low
-  description: >
-    
+  severity: high
+  description: "The Awake Theme for WordPress is vulnerable to Arbitrary File Download in versions up to, and including, 3.3. This is due to the '_mysite_download_skin' parameter in the 'dl-skin.php' file. This makes it possible for unauthenticated attackers to download any file within the server of the vulnerable service."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2510cee-d9d7-4b30-bf94-254a1dec9bd8?source=api-scan
+    - https://web.archive.org/web/20150509073639/http%3A//mysitemyway.com/docs/Awake_Changelog
+    - https://web.archive.org/web/20150308194209/http%3A//www.securityfocus.com/bid/64501
+    - https://www.exploit-db.com/exploits/30443
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cve-id:
   metadata:
     fofa-query: "wp-content/themes/awake/"
     google-query: inurl:"/wp-content/themes/awake/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,awake,low
+  tags: cve,wordpress,wp-theme,awake,high
 
 http:
   - method: GET

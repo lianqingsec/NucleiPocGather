@@ -1,4 +1,4 @@
-id: wp-booking-system-premium
+id: wp-booking-system-premium-4ee14ea52446e374869ed6fbf44c10e2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ae35a02c-ba33-478d-a054-98b486e2192a?source=api-scan
   classification:
     cvss-metrics: 

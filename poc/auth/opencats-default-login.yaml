@@ -10,11 +10,12 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
+    max-request: 4
     verified: true
     shodan-query: title:"opencats"
   tags: default-login,opencats
 
-requests:
+http:
   - raw:
       - |
         POST /index.php?m=login&a=attemptLogin HTTP/1.1

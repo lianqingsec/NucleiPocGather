@@ -1,20 +1,31 @@
 id: apache-flink
 info:
-  name: apache-flink
-  author: cn-kali-team
-  tags: detect,tech,apache-flink
-  severity: info
-  metadata:
-    product: flink
-    vendor: apache
-    verified: true
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - <img alt="apache flink dashboard" src="images/flink-logo.png
-    - <title>apache flink web dashboard</title>
-    case-insensitive: true
+  name: Apache Flink Web Dashboard Detection
+  author: ads
+  severity: high
+  tags: apache, flink, web
+
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}/"
+    matchers:
+      - type: word
+        words:
+          - "<title>Apache Flink Web Dashboard</title>"
+        condition: or
+      - type: word
+        words:
+          - '<img alt="apache flink dashboard" src="images/flink-logo.png'
+        condition: or
+
+    # Optional: You can also add matchers to check for specific status codes or headers
+    matchers-condition: and
+    matchers:
+      - type: status
+        status:
+          - 200
+      - type: status
+        status:
+          - 0
+

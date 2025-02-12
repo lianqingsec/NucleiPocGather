@@ -1,4 +1,4 @@
-id: wp-ultimate-recipe
+id: wp-ultimate-recipe-2d65c6dc9565ab4417ed9acd6ba2b362
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c7d4401-33aa-43c4-8659-a5664b3cf1da?source=api-scan
   classification:
     cvss-metrics: 

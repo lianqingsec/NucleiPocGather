@@ -1,4 +1,4 @@
-id: stockdio-historical-chart
+id: stockdio-historical-chart-7637d6e9f2a0ebb7c20783b5f1b148b0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/57162a5e-5f5d-4b22-bb7f-0ff65332910b?source=api-scan
   classification:
     cvss-metrics: 

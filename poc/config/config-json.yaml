@@ -10,11 +10,12 @@ info:
     cvss-score: 5.3
     cwe-id: CWE-200
   metadata:
+    max-request: 4
     verified: true
     github-query: filename:config.json
   tags: config,exposure,files
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/config/default.json"

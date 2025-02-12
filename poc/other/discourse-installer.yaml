@@ -5,11 +5,12 @@ info:
   author: DhiyaneshDk
   severity: unknown
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"Discourse Setup"
   tags: misconfig,discourse,install
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/finish-installation/register'

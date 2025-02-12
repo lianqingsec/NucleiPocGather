@@ -5,11 +5,12 @@ info:
   author: DhiyaneshDk
   severity: medium
   metadata:
+    max-request: 1
     verified: true
     shodan-query: html:"sendgrid.env"
   tags: exposure,sendgrid,key,api,files
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/sendgrid.env"

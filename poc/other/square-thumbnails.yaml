@@ -1,4 +1,4 @@
-id: square-thumbnails
+id: square-thumbnails-60b378f159c56f82b36a42a9678a5805
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/31cc30c7-262d-4582-8976-fc8095bdca5f?source=api-scan
   classification:
     cvss-metrics: 

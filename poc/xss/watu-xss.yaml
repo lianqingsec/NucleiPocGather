@@ -12,10 +12,11 @@ info:
     - https://wordpress.org/plugins/watu/
     - https://plugins.trac.wordpress.org/changeset?reponame=&new=2114019%40watu&old=2112579%40watu&
   metadata:
-    verified: "true"
-  tags: xss,watu,quiz,authenticated
+    max-request: 2
+    verified: true
+  tags: watu,quiz,authenticated,wpscan,xss
 
-requests:
+http:
   - raw:
       - |
         POST /wp-login.php HTTP/1.1

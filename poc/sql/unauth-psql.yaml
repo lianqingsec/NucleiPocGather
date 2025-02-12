@@ -12,7 +12,7 @@ info:
     max-request: 2
     shodan-query: port:5432 product:"PostgreSQL"
     verified: "true"
-  tags: network,postgresql,db,unauth,misconfig
+  tags: network,postgresql,db,unauth
 
 tcp:
   - inputs:
@@ -26,7 +26,6 @@ tcp:
       - "{{Hostname}}"
       - "{{Host}}:5432"
 
-    matchers-condition: and
     matchers:
       - type: word
         part: raw
@@ -35,12 +34,3 @@ tcp:
           - "Locale Provider"
           - "Owner"
         condition: and
-
-      - type: word
-        part: raw
-        words:
-          - "FTP"
-          - "HTTP"
-          - "500"
-        condition: or
-        negative: true

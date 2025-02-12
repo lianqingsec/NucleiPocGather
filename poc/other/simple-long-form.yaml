@@ -1,4 +1,4 @@
-id: simple-long-form
+id: simple-long-form-3cc0cac5f345be7226ac380ec33c94e0
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/68c22e71-c704-44c1-86e6-856f6244393d?source=api-scan
   classification:
     cvss-metrics: 

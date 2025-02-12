@@ -1,4 +1,4 @@
-id: unconfirmed
+id: unconfirmed-abc400f143f0254b15b00169f8369d29
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/62128061-1ecc-484c-a054-4925f9ac6105?source=api-scan
   classification:
     cvss-metrics: 

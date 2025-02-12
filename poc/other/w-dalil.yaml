@@ -1,4 +1,4 @@
-id: w-dalil
+id: w-dalil-f9a63940cad0aac580def4fb3be102e6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c6f4890-8bc9-4ead-8d69-478fa51c2176?source=api-scan
   classification:
     cvss-metrics: 

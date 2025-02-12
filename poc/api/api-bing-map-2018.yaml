@@ -1,4 +1,4 @@
-id: api-bing-map-2018
+id: api-bing-map-2018-bdd86a2dc395718687e612b89b6cd720
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5abc627d-2d8e-44e6-8e8e-ad9f55cbb0d8?source=api-scan
   classification:
     cvss-metrics: 

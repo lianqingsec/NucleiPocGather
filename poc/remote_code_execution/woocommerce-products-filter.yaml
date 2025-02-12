@@ -1,4 +1,4 @@
-id: woocommerce-products-filter
+id: woocommerce-products-filter-009ecbc00fbfa94eaf9674633b9cf91f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/748bc714-25ba-404e-ac3d-e588fd95b2f9?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: photoracer
+id: photoracer-52c7ca6b4501696b446461835caa1a1f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e920caeb-5ee6-4428-9b53-edee316ee39f?source=api-scan
   classification:
     cvss-metrics: 

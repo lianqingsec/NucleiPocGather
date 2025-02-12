@@ -1,13 +1,12 @@
 id: ident
 info:
-  name: Nullidentd
+  name: midentd
   author: nmap,cn-kali-team
   tags: detect,tech,ident,service
   severity: info
   metadata:
     info: broken
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +17,4 @@ tcp:
   - name: ident
     type: regex
     regex:
-    - '^nullidentd -- version (\d[-.\w]+)\nCopyright '
+    - ^flock\(\) on closed filehandle .*midentd

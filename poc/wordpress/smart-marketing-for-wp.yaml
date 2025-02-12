@@ -1,14 +1,15 @@
-id: smart-marketing-for-wp
+id: smart-marketing-for-wp-9730906988033bfae8062aec3f96a7aa
 
 info:
   name: >
-    Smart Marketing SMS and Newsletters Forms < 2.0.0 - Cross-Site Scripting
+    Smart Marketing SMS and Newsletters Forms <= 5.0.9 - Missing Authorization
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/351c7d18-6c1b-4a52-98ae-478dee5aaff2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6125a734-c185-4a97-a4fe-a739aa20de13?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.0.0')
+          - compare_versions(version, '<= 5.0.9')

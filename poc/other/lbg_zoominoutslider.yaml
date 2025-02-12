@@ -1,18 +1,17 @@
-id: lbg_zoominoutslider
+id: lbg_zoominoutslider-e2220a1ac521b6582eddfff8c1a00be0
 
 info:
-  name: >
-    Responsive Zoom In/Out Slider WordPress Plugin (Unknown Versions) - Cross-Site Scripting
+  name: "Responsive Zoom In/Out Slider WordPress Plugin (Unknown Versions) - Cross-Site Scripting"
   author: topscoder
   severity: medium
-  description: >
-    The Responsive Zoom In/Out Slider WordPress Plugin plugin for WordPress is vulnerable to Cross-Site Scripting via the 'add_banner.php' file due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser.
+  description: "The Responsive Zoom In/Out Slider WordPress Plugin plugin for WordPress is vulnerable to Cross-Site Scripting via the 'add_banner.php' file due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3fb6a84-2339-4d5c-a88a-f8e08a940840?source=api-prod
+    - https://packetstormsecurity.com/files/123367/
+    - https://codecanyon.net/item/responsive-zoom-inout-slider-wordpress-plugin/2950062?irgwc=1&clickid=3Jf1XMS7MxyIRdiyiVVdHSJvUkD1X1QZyza9y00&iradid=275988&irpid=1257987&iradtype=ONLINE_TRACKING_LINK&irmptype=mediapartner&mp_value1=&utm_campaign=af_impact_radius_1257987&utm_medium=affiliate&utm_source=impact_radius
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/lbg_zoominoutslider/"
     google-query: inurl:"/wp-content/plugins/lbg_zoominoutslider/"
@@ -55,4 +54,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= *')
+          - compare_versions(version, '>0')

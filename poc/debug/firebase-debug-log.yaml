@@ -7,11 +7,12 @@ info:
   reference:
     - https://github.com/maurosoria/dirsearch/blob/master/db/dicc.txt
   metadata:
+    max-request: 1
     verified: true
     github-query: filename:firebase-debug.log
   tags: exposure,firebase,logs,debug
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/firebase-debug.log"

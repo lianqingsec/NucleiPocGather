@@ -1,14 +1,15 @@
-id: shariff
+id: shariff-39b81e9f559c9ee66dd9a7503ed705e6
 
 info:
   name: >
-    Shariff Wrapper <= 4.6.9 - Authenticated(Contributor+) Stored Cross-Site Scripting via Shortcode
+    Shariff Wrapper <= 4.6.13 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cac2a45e-f09e-4639-9a45-68d528a5094e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9baa8bbf-a318-4bc5-8bfd-2bd64536965e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.6.9')
+          - compare_versions(version, '<= 4.6.13')

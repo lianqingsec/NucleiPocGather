@@ -1,14 +1,15 @@
-id: organizer
+id: organizer-c9948f8c8b6294ec509411d0b1b0be2b
 
 info:
   name: >
-    Organizer <= 1.2.1 - Path Disclosure
+    Organizer <= 1.2.1 - Multiple Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/718615b1-9c25-4119-bc30-683ef51e5861?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/805a7bef-d56b-4678-8db9-798ad401352f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/organizer/"
     google-query: inurl:"/wp-content/plugins/organizer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,organizer,low
+  tags: cve,wordpress,wp-plugin,organizer,high
 
 http:
   - method: GET

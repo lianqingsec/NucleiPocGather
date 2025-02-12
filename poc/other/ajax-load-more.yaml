@@ -1,23 +1,27 @@
-id: ajax-load-more
+id: ajax-load-more-3df586ba3dcfe4dd4c93c854bfbed430
 
 info:
-  name: >
-    Ajax Load More plugin < 5.3.2 - SQL Injection
+  name: "WordPress Infinite Scroll – Ajax Load More <= 2.8.1.1 - Arbitrary File Upload"
   author: topscoder
-  severity: critical
-  description: >
-    
+  severity: high
+  description: "The WordPress Infinite Scroll – Ajax Load More plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the 'alm_save_repeater()' function called via an AJAX action in versions up to, and including, 2.8.1.2. This makes it possible for authenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/20eff8fc-0572-40b9-ab28-758c7ab8ed73?source=api-scan
+    - https://wordpress.org/plugins/ajax-load-more/changelog/
+    - https://wpscan.com/vulnerability/9f0c926e-0609-4c89-a724-88e16bcfa82a
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-wordpress-infinite-scroll-ajax-load-more-arbitrary-file-upload-2-8-1-1/
+    - https://www.exploit-db.com/exploits/38484
+    - https://www.exploit-db.com/exploits/38660
+    - https://packetstormsecurity.com/files/134285/WordPress-Ajax-Load-More-PHP-Upload.html
+    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1258606%40ajax-load-more&new=1258606%40ajax-load-more&sfp_email=&sfph_mail=
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/ajax-load-more/"
     google-query: inurl:"/wp-content/plugins/ajax-load-more/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ajax-load-more,critical
+  tags: cve,wordpress,wp-plugin,ajax-load-more,high
 
 http:
   - method: GET
@@ -55,4 +59,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 5.3.2')
+          - compare_versions(version, '<= 2.8.1.1')

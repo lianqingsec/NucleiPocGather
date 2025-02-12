@@ -1,4 +1,4 @@
-id: use-your-drive
+id: use-your-drive-2906f641d0d2a920801d7c49702b8c58
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1087f744-44c2-4fa1-92d9-872a5bfd571d?source=api-scan
   classification:
     cvss-metrics: 

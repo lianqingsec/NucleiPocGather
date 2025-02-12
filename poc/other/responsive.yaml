@@ -1,14 +1,15 @@
-id: responsive
+id: responsive-c567878f616fa78cef0a6bc18a4ad518
 
 info:
   name: >
-    Responsive <= 5.0.2 - Missing Authorization to HTML Injection
+    Responsive <= 5.0.3 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dbe0cc57-a17d-4f91-887f-fe819b32f6b3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/741c479a-520b-46d7-b145-ffa8e6382788?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/responsive/"
     google-query: inurl:"/wp-content/themes/responsive/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,responsive,high
+  tags: cve,wordpress,wp-theme,responsive,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.0.2')
+          - compare_versions(version, '<= 5.0.3')

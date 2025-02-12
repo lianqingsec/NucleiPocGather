@@ -1,4 +1,4 @@
-id: credit-tracker
+id: credit-tracker-2fde541f2278766f1674a8e26eb35024
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b611f3ba-ac36-49fc-a75f-10003c5ca955?source=api-scan
   classification:
     cvss-metrics: 

@@ -5,11 +5,12 @@ info:
   author: tess
   severity: low
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"Pa11y Dashboard"
   tags: misconfig,exposure,pa11y
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

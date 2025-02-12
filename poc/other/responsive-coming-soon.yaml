@@ -1,23 +1,23 @@
-id: responsive-coming-soon
+id: responsive-coming-soon-61f0b2f74b8506c1fec273c74044943b
 
 info:
-  name: >
-    Coming Soon Page & Maintenance Mode <= 2.2.1 - Maintenance Mode Bypass
+  name: "Coming Soon Page & Maintenance Mode <= 1.8.1 - Stored Cross Site Scripting"
   author: topscoder
-  severity: low
-  description: >
-    
+  severity: high
+  description: "The WordPress Coming Soon Page & Maintenance Mode plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the logo_width, logo_height, rcsp_logo_url, home_sec_link_txt, rcsp_headline and rcsp_description parameters in versions up to, and including, 1.8.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e3c52d6e-b3f4-4ba8-aee4-b9f11704e1de?source=api-scan
+    - https://blog.nintechnet.com/unauthenticated-stored-xss-in-wordpress-coming-soon-page-and-maintenance-mode-plugin/
+    - https://plugins.trac.wordpress.org/changeset/2123149/responsive-coming-soon
+    - https://plugins.trac.wordpress.org/changeset/2121321/responsive-coming-soon
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/responsive-coming-soon/"
     google-query: inurl:"/wp-content/plugins/responsive-coming-soon/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,responsive-coming-soon,low
+  tags: cve,wordpress,wp-plugin,responsive-coming-soon,high
 
 http:
   - method: GET
@@ -55,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.1')
+          - compare_versions(version, '< 1.8.2')

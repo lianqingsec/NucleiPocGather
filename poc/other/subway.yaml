@@ -1,4 +1,4 @@
-id: subway
+id: subway-2b8e716877a949d34d2ed5b1f428b82e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5b80638b-4dd1-47f5-9a70-6bd626ac6986?source=api-scan
   classification:
     cvss-metrics: 

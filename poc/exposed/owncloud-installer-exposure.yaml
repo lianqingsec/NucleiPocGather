@@ -5,11 +5,12 @@ info:
   author: DhiyaneshDk
   severity: high
   metadata:
+    max-request: 2
     verified: true
     shodan-query: title:"owncloud"
   tags: misconfig,owncloud,exposure,install
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

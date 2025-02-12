@@ -9,11 +9,12 @@ info:
   reference:
     - https://github.com/chvancooten/NimPlant
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: "nimplant C2 server"
   tags: tech,nimplant,c2
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -1,4 +1,4 @@
-id: save-grab
+id: save-grab-c7f3fe7970d9e693b344523722d81793
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7cd4b1da-faee-4c4e-b323-e77c4c033149?source=api-scan
   classification:
     cvss-metrics: 

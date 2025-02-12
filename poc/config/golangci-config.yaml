@@ -13,11 +13,12 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 4
     verified: true
     github-query: filename:golangci.yml
   tags: exposure,golang,devops,cicd
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.golangci.yml"

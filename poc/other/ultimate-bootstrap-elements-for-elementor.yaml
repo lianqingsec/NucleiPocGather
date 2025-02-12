@@ -1,4 +1,4 @@
-id: ultimate-bootstrap-elements-for-elementor
+id: ultimate-bootstrap-elements-for-elementor-8d35b6474e10d2e5da9a67dd5005d77e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0cb43deb-63f6-42d8-8dd6-55a59fca31ae?source=api-scan
   classification:
     cvss-metrics: 

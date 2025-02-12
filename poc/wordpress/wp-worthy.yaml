@@ -1,4 +1,4 @@
-id: wp-worthy
+id: wp-worthy-613445afc1a6c598d0d4018f4be1c01f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7717cd0f-6aac-4cb0-b27e-2517d5d7ecd9?source=api-scan
   classification:
     cvss-metrics: 

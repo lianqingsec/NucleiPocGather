@@ -1,14 +1,15 @@
-id: wp-pipes
+id: wp-pipes-aceb3fa4277ee08aee7b8aaddac7c32c
 
 info:
   name: >
-    WP Pipes <= 1.4.0 - Cross-Site Request Forgery to Settings Update
+    WP Pipes <= 1.4.1 - Reflected Cross-Site Scripting via x1 Parameter
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/094bf4e2-b774-4015-b6c6-c829c16556eb?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3aa56fc7-8d48-4149-afa7-8f9885de0674?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.4.1')
+          - compare_versions(version, '<= 1.4.1')

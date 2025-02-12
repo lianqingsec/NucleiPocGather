@@ -1,14 +1,15 @@
-id: svgator
+id: svgator-fc0fac78065a9f51ec2b8da4542a9bb6
 
 info:
   name: >
-    SVGator – Add Animated SVG Easily <= 1.2.4 - Cross-Site Request Forgery
+    SVGator – Add Animated SVG Easily <= 1.2.6 - Authenticated (Author+) Stored Cross-Site Scripting via SVG
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/db4b92ba-b98f-4e9d-bd1e-75bf89d83977?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a82fd49e-6e95-4743-900a-fa53b870ec0b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/svgator/"
     google-query: inurl:"/wp-content/plugins/svgator/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,svgator,medium
+  tags: cve,wordpress,wp-plugin,svgator,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.4')
+          - compare_versions(version, '<= 1.2.6')

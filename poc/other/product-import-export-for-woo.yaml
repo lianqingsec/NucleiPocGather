@@ -1,14 +1,15 @@
-id: product-import-export-for-woo
+id: product-import-export-for-woo-918875e76828b72e975ab2a83a860805
 
 info:
   name: >
-    Product Import Export for WooCommerce <= 1.7.4 - Missing Authorization to CSV Import
+    Product Import Export for WooCommerce <= 2.3.7 - Authenticated(Shop Manager+) Arbitrary File Upload via upload_import_file
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cab1d5a0-66e0-4017-8563-f8e582a6f964?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cee6a100-cda5-48a6-9f9c-ea17f80c4165?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/product-import-export-for-woo/"
     google-query: inurl:"/wp-content/plugins/product-import-export-for-woo/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,product-import-export-for-woo,high
+  tags: cve,wordpress,wp-plugin,product-import-export-for-woo,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.7.5')
+          - compare_versions(version, '<= 2.3.7')

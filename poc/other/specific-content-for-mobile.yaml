@@ -1,4 +1,4 @@
-id: specific-content-for-mobile
+id: specific-content-for-mobile-37b68d5492b4cc3fca7774252f9e229f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/51ac25ef-e5b9-4f5c-a792-fff4ceba96e1?source=api-scan
   classification:
     cvss-metrics: 

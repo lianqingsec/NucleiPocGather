@@ -1,4 +1,4 @@
-id: oss-aliyun
+id: oss-aliyun-a4d424a8cc9067bf0f9c39b56c3903c9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/738eb021-1166-4fbe-a502-2db12c6533c3?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,15 +1,15 @@
-id: revisionary
+id: revisionary-3aafa78ebcd158bbbaa4c3fd1c7af382
 
 info:
   name: >
-    PublishPress Revisions: Duplicate Posts, Submit, Approve and Schedule Content Changes <= 3.5.14 - Reflected Cross-Site Scripting
+    PublishPress Revisions: Duplicate Posts, Submit, Approve and Schedule Content Changes <= 3.5.15 - Missing Authorization to Authenticated (Subscriber+) Sensitive Information Exposure
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/982bc924-1dcd-47b5-b15a-4ff0ad123ad1?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c785b7a0-5091-4d89-87d3-cd7d9984553e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/revisionary/"
     google-query: inurl:"/wp-content/plugins/revisionary/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,revisionary,medium
+  tags: cve,wordpress,wp-plugin,revisionary,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.5.14')
+          - compare_versions(version, '<= 3.5.15')

@@ -1,4 +1,4 @@
-id: simply-excerpts
+id: simply-excerpts-50e92f998e53d2b6c26d2f6e1767b358
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5e6a7f09-2166-426e-a548-daafb23363a6?source=api-scan
   classification:
     cvss-metrics: 

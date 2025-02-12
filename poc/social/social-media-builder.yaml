@@ -1,4 +1,4 @@
-id: social-media-builder
+id: social-media-builder-eb084e9b381fd5681699f84efd1107a5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9c17d18a-090f-4b35-a257-cfc0a16d5459?source=api-scan
   classification:
     cvss-metrics: 

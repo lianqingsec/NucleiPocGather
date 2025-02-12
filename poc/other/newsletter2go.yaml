@@ -1,4 +1,4 @@
-id: newsletter2go
+id: newsletter2go-c675c3de00f619e3730503e322955ac9
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/766ac399-7280-4186-8972-94da813da85e?source=api-scan
   classification:
     cvss-metrics: 

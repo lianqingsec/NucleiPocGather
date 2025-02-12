@@ -1,14 +1,15 @@
-id: sell-media
+id: sell-media-98b7688b2e1703d06f2f657c6e254c8c
 
 info:
   name: >
-    Sell Media <= 2.5.5 - Cross-Site Request Forgery Bypass
+    Sell Media <= 2.5.8.5 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/da4592b6-5e84-4a89-9ade-6cc227740d32?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a35f0bb-691f-4acf-a30d-4ddabe3b919c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/sell-media/"
     google-query: inurl:"/wp-content/plugins/sell-media/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,sell-media,medium
+  tags: cve,wordpress,wp-plugin,sell-media,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.5')
+          - compare_versions(version, '<= 2.5.8.5')

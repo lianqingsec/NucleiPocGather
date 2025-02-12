@@ -1,23 +1,23 @@
-id: mapsmarker
+id: mapsmarker-9fe34af19e1f35c56afd1adea7b5bacd
 
 info:
-  name: >
-    Leaflet Maps Marker Pro < 1.5.8 - Path Traversal
+  name: "Leaflet Maps Marker Pro < 1.5.8 - Arbitrary File Upload"
   author: topscoder
-  severity: high
-  description: >
-    The Maps Marker Pro plugin for WordPress is vulnerable to Path Traversal in versions up to, and including, 1.5.7. This allows unauthenticated attackers to read the contents of arbitrary files on the server, which can contain sensitive information.
+  severity: critical
+  description: "The Leaflet Maps Marker Pro plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in versions up to, and including, 1.5.7. This makes it possible for attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/875b15a1-c747-4a74-a77e-d541f92468a3?source=api-prod
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-leaflet-maps-marker-pro-multiple-vulnerabilities-1-5-7/
+    - https://www.mapsmarker.com/news/pro-v1-5-8-with-wordpress-3-9-compatibility-improvements-based-on-a-security-audit-by-the-city-of-vienna-is-available
+    - https://web.archive.org/web/20161203161806/http%3A//secunia.com/advisories/57644/
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/mapsmarker/"
     google-query: inurl:"/wp-content/plugins/mapsmarker/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mapsmarker,high
+  tags: cve,wordpress,wp-plugin,mapsmarker,critical
 
 http:
   - method: GET

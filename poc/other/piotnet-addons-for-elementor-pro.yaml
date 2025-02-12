@@ -1,4 +1,4 @@
-id: piotnet-addons-for-elementor-pro
+id: piotnet-addons-for-elementor-pro-12fa3efc679c710d792a19cec22a065f
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/67856d6b-9be9-494a-b713-f36d5e29e7f1?source=api-scan
   classification:
     cvss-metrics: 

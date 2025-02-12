@@ -1,14 +1,15 @@
-id: ultimate-faqs
+id: ultimate-faqs-05ec18ff75d85d58d73305c4f3d40d9e
 
 info:
   name: >
-    Ultimate Faqs <= 1.8.21 - Cross-Site Scripting
+    Ultimate FAQ <= 2.1.1 - Missing Authorization to Arbitrary FAQ Creation
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a1818e80-e580-45d4-88ab-018cb1723947?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/80b3c2d3-b8dc-429f-b2d7-6a697ad47a9a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.8.22')
+          - compare_versions(version, '< 2.1.2')

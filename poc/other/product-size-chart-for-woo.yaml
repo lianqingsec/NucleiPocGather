@@ -1,4 +1,4 @@
-id: product-size-chart-for-woo
+id: product-size-chart-for-woo-a27d9c9bab3948c28d63eccab28aa8f2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7e15f804-f5a9-4e29-8aeb-4ba2b116dc46?source=api-scan
   classification:
     cvss-metrics: 

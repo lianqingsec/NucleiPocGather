@@ -14,11 +14,12 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
+    max-request: 3
     verified: true
     shodan-query: http.favicon.hash:2056442365
   tags: default-login,kanboard
 
-requests:
+http:
   - raw:
       - |
         GET /?controller=AuthController&action=login HTTP/1.1

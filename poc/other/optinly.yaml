@@ -1,4 +1,4 @@
-id: optinly
+id: optinly-187394b25d4f91e64503ba2cebf3ceaa
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/13b0f306-cfd1-4c36-b694-de7968f0ae1c?source=api-scan
   classification:
     cvss-metrics: 

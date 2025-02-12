@@ -1,14 +1,15 @@
-id: wpforo
+id: wpforo-1d51b22e96a973d76e6cd2a2b23973bf
 
 info:
   name: >
-    wpForo Forum <= 2.2.5 - Missing Authorization
+    wpForo Forum <= 2.1.7 - Authenticated (Subscriber+) Local File Include, Server-Side Request Forgery, and PHAR Deserialization via file_get_contents
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/71078aaf-9803-4b46-bc94-dbcb43745629?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/800fa098-b29f-4979-b7bd-b1186a4dafcb?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wpforo/"
     google-query: inurl:"/wp-content/plugins/wpforo/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wpforo,high
+  tags: cve,wordpress,wp-plugin,wpforo,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.5')
+          - compare_versions(version, '<= 2.1.7')

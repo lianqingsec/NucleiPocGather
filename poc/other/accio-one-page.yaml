@@ -1,4 +1,4 @@
-id: accio-one-page
+id: accio-one-page-e903e78e9ac34a4fa7c22d1c61f80794
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a0099f55-651c-4997-bf6d-97125c4260e1?source=api-scan
   classification:
     cvss-metrics: 

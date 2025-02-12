@@ -1,23 +1,21 @@
-id: bookingpress-appointment-booking
+id: bookingpress-appointment-booking-ce8f10f3d1bfc5579a02e4e64b4f0f6f
 
 info:
-  name: >
-    BookingPress <= 1.0.81 - Authenticated (Customer+) Insecure Direct Object Reference
+  name: "BookingPress – Appointments Booking Calendar Plugin and Online Scheduling Plugin <= 1.0.13 - SQL Injection"
   author: topscoder
-  severity: low
-  description: >
-    
+  severity: medium
+  description: "The BookingPress – Appointments Booking Calendar Plugin and Online Scheduling Plugin for WordPress is vulnerable to SQL Injection via many parameters in versions up to, and including, 1.0.13."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a86fc949-6caf-48b7-beda-ca0c653c9b29?source=api-scan
+    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=2707031%40bookingpress-appointment-booking&new=2707031%40bookingpress-appointment-booking&sfp_email=&sfph_mail=
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 6.4
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/bookingpress-appointment-booking/"
     google-query: inurl:"/wp-content/plugins/bookingpress-appointment-booking/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,bookingpress-appointment-booking,low
+  tags: cve,wordpress,wp-plugin,bookingpress-appointment-booking,medium
 
 http:
   - method: GET
@@ -55,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.81')
+          - compare_versions(version, '<= 1.0.13')

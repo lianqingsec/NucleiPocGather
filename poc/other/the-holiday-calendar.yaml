@@ -1,4 +1,4 @@
-id: the-holiday-calendar
+id: the-holiday-calendar-2d99d6c7b1aa0437b1504a366c3afc83
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f4211712-26b2-4f59-82b8-928e405cd08d?source=api-scan
   classification:
     cvss-metrics: 

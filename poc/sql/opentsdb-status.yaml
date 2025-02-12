@@ -7,11 +7,12 @@ info:
   reference: |
      http://opentsdb.net/
   metadata:
-    verified: "true"
+    max-request: 1
+    verified: true
     shodan-query: http.favicon.hash:407286339
   tags: opentsdb,exposure,logs
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/stats?json"

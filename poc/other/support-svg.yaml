@@ -1,15 +1,15 @@
-id: support-svg
+id: support-svg-108b7823fe9b1674d1b2bbf51f4ed1b3
 
 info:
   name: >
-    Support SVG <= 1.0.0 - Authenticated (Author+) Stored Cross-site Scripting via SVG
+    Support SVG – Upload svg files in wordpress without hassle <= 1.1.0 -  Authenticated (Author+) Stored Cross-site Scripting via SVG File Upload
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e7bb5c89-93db-4454-a16d-b99fc14737f8?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d9207baf-348c-4d3b-a6f0-cbfcd2624f78?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.0')
+          - compare_versions(version, '<= 1.1.0')

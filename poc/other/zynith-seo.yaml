@@ -1,14 +1,15 @@
-id: zynith-seo
+id: zynith-seo-15c840deced407ba53e3cbbb241ee24f
 
 info:
   name: >
-    Zynith SEO <= 7.4.9 - Unauthenticated Stored Cross-Site Scripting
+    Zynith SEO <= 7.4.9 - Missing Authorization to Unauthenticated Arbitrary Option Deletion
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f8e32a0-c67c-41cc-97ba-920f3ea5ea93?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/813532fd-0613-47df-a4d0-54d6b33f37b3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

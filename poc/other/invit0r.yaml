@@ -1,18 +1,19 @@
-id: invit0r
+id: invit0r-545fbfeff79af9fac2f43df78c929bd5
 
 info:
-  name: >
-    Invit0r <= 0.22 - Arbitrary File Upload
+  name: "Invit0r <= 0.22 - Arbitrary File Upload"
   author: topscoder
   severity: critical
-  description: >
-    The Invit0r plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the ofc_upload_image.php file in versions up to, and including, 0.22. This makes it possible for attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
+  description: "The Invit0r plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the ofc_upload_image.php file in versions up to, and including, 0.22. This makes it possible for attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/66a6569b-88ec-42d8-8396-6e62f1c51b24?source=api-prod
+    - https://packetstormsecurity.com/files/113639/
+    - https://wordpress.org/plugins/invit0r/#developers
+    - https://web.archive.org/web/20200229122743/http%3A//www.securityfocus.com/bid/53995
+    - https://web.archive.org/web/20120619202317/http%3A//www.opensyscom.fr/Actualites/wordpress-plugins-invit0r-arbitrary-file-upload-vulnerability.html
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/invit0r/"
     google-query: inurl:"/wp-content/plugins/invit0r/"

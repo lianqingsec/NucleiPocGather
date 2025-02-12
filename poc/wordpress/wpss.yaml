@@ -1,14 +1,15 @@
-id: wpss
+id: wpss-dde0b4042cb813635f713b6f2175eb90
 
 info:
   name: >
-    WordPress Spreadsheet (wpSS) <= 0.62 - Cross-Site Scripting
+    WordPress Spreadsheet <= 0.6 - Unauthenticated SQL Injection
   author: topscoder
-  severity: high
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8650383a-712b-4830-894f-cd7ec7b0d5bc?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/424ebeb4-eb53-4c87-9a86-aff1c784aa3c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wpSS/"
     google-query: inurl:"/wp-content/plugins/wpSS/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wpSS,high
+  tags: cve,wordpress,wp-plugin,wpSS,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.62')
+          - compare_versions(version, '<= 0.6')

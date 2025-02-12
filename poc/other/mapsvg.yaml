@@ -1,4 +1,4 @@
-id: mapsvg
+id: mapsvg-f5a60c7fe40d9d9d12ca4f1174a1c1ab
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1816a385-0b50-4f0d-848c-f583c247c8fc?source=api-scan
   classification:
     cvss-metrics: 

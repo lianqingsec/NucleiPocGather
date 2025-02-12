@@ -1,20 +1,15 @@
 linters:
-  enable:
-    - cyclop
-    - exportloopref
-    - gocritic
-    - gosec
-    - ineffassign
-    - misspell
-    - prealloc
-    - unconvert
-    - unparam
-    - goimports
-    - whitespace
+  enable-all: true
+  disable:
+    - gochecknoglobals
+    - gomnd
+    # TODO: re-enable these
+    - errcheck
+    - funlen
+    # TODO: maybe re-enable these
+    - godox
+    - wsl
 
 linters-settings:
-  whitespace:
-    multi-func: true
-  goimports:
-    local-prefixes: gorm.io/gorm
-
+  govet:
+    check-shadowing: true

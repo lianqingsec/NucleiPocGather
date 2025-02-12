@@ -1,4 +1,4 @@
-id: whats-new-genarator
+id: whats-new-genarator-4081bc0e9ab29aafe2395b06da972ee6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/da11abe7-49fa-496b-bcd7-c666eef63896?source=api-scan
   classification:
     cvss-metrics: 

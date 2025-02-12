@@ -1,4 +1,4 @@
-id: pb-oembed-html5-audio-with-cache-support
+id: pb-oembed-html5-audio-with-cache-support-06bacd2cadd11c4394be5371ca184a6d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/067bfeaf-f3dd-4188-b53a-72b2d81a87eb?source=api-scan
   classification:
     cvss-metrics: 

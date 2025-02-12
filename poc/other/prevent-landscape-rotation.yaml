@@ -1,4 +1,4 @@
-id: prevent-landscape-rotation
+id: prevent-landscape-rotation-b9de3d6b4c45d29d850678a97dfd8e61
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4235f279-0975-4814-b156-b45b011e3ce6?source=api-scan
   classification:
     cvss-metrics: 

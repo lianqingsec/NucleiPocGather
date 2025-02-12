@@ -1,4 +1,4 @@
-id: zopim-live-chat
+id: zopim-live-chat-772dea4c5c0f7c77cb8ca4d08a21143a
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ee1b6961-1453-4f59-b03a-ab78b2e3f9d4?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: wp-catalogue
+id: wp-catalogue-67e82a02cf8270563c1b0e63d732722c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5684d4b7-8a3e-47ee-9d7b-195cb5db9a66?source=api-scan
   classification:
     cvss-metrics: 

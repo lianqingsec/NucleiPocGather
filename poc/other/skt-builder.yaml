@@ -1,4 +1,4 @@
-id: skt-builder
+id: skt-builder-4bd16f8f24d2e7611b44c8722a5fa5fe
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3164b96f-d876-4cbc-bddf-51e9d9becee6?source=api-scan
   classification:
     cvss-metrics: 

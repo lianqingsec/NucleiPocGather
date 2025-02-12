@@ -1,14 +1,15 @@
-id: woo-thank-you-page-nextmove-lite
+id: woo-thank-you-page-nextmove-lite-8b8aed3229273478da7fa853d29de127
 
 info:
   name: >
-    NextMove Lite <= 2.18.1 - Cross-Site Request Forgery
+    NextMove Lite – Thank You Page for WooCommerce & Finale Lite – Sales Countdown Timer & Discount for WooCommerce <= 2.17.0 - Missing Authorization to Unauthenticated System Information Disclosure
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b8add6b9-8d53-4239-bbbc-d32a562fd9b9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3d9332be-2cf0-46cd-81e4-6436aeec0f83?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/woo-thank-you-page-nextmove-lite/"
     google-query: inurl:"/wp-content/plugins/woo-thank-you-page-nextmove-lite/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,woo-thank-you-page-nextmove-lite,medium
+  tags: cve,wordpress,wp-plugin,woo-thank-you-page-nextmove-lite,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.18.1')
+          - compare_versions(version, '<= 2.18.0')

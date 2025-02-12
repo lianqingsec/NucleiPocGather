@@ -1,4 +1,4 @@
-id: wp-private-message
+id: wp-private-message-e3607a176486a0dfcfec3fab338dc7c2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/14026e96-7e21-45db-b258-13b014ec478c?source=api-scan
   classification:
     cvss-metrics: 

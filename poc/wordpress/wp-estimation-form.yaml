@@ -1,14 +1,15 @@
-id: wp-estimation-form
+id: wp-estimation-form-baed5234d839a4fa094bf5a1c42dad23
 
 info:
   name: >
-    WP Cost Estimation & Payment Forms Builder <= 10.1.75 - Reflected Cross-Site Scripting
+    WP Cost Estimation & Payment Forms Builder <= 10.1.75 - Authenticated (Contributor+) SQL Injection
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0bf1fe22-2cee-4828-bd68-7269b66152b3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ae916a0-b0a8-4722-9d8a-3d1f163bc8e5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-estimation-form/"
     google-query: inurl:"/wp-content/plugins/wp-estimation-form/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-estimation-form,medium
+  tags: cve,wordpress,wp-plugin,wp-estimation-form,low
 
 http:
   - method: GET

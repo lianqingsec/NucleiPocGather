@@ -1,14 +1,15 @@
-id: wp-travel
+id: wp-travel-b8f7841fb0c32e20017b52871e04e0c5
 
 info:
   name: >
-    WP Travel <= 7.7.0 - Missing Authorization via Multiple AJAX Actions
+    WP Travel – Ultimate Travel Booking System, Tour Management Engine <= 10.0.0 - Authenticated (Subscriber+) SQL Injection
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d23d2cdf-206e-4714-9753-198519ba737b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e0f38db-84bb-4ba9-9068-40937e78010d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-travel/"
     google-query: inurl:"/wp-content/plugins/wp-travel/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-travel,high
+  tags: cve,wordpress,wp-plugin,wp-travel,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 7.7.0')
+          - compare_versions(version, '<= 10.0.0')

@@ -1,11 +1,11 @@
 id: textui
 info:
-  name: Satel INT-TSI keypad telnetd
+  name: HP LaserJet telnet_debug
   author: nmap,cn-kali-team
   tags: detect,tech,textui,service
   severity: info
   metadata:
-    device_type: security-misc
+    device_type: printer
     rarity: 0
 tcp:
 - name: 'null'
@@ -17,4 +17,4 @@ tcp:
   - name: textui
     type: regex
     regex:
-    - ^l\0o\0g\0i\0n\0 \0a\0s\0:\0 \0
+    - '^\r\n\*{52}\r\n\* Welcome to telnet_debug {26}\*\r\n\* Type "help" to see a list of supported commands\. \*\r\n\*{52}\r\n\r\ntelnet_debug> '

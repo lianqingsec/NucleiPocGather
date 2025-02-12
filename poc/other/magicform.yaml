@@ -1,4 +1,4 @@
-id: magicform
+id: magicform-f669d1843c636592c1f580d48f4000d3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/21c31df6-7515-48f5-ad74-fe116e836da8?source=api-scan
   classification:
     cvss-metrics: 

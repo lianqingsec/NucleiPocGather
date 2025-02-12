@@ -1,4 +1,4 @@
-id: per-page-add-to
+id: per-page-add-to-112d349f6b1cd715ebb035fdfcd1657c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c000a424-4060-4dcc-bae3-fa8cfc00ddda?source=api-scan
   classification:
     cvss-metrics: 

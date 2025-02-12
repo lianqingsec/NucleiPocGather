@@ -1,4 +1,4 @@
-id: sparkpost
+id: sparkpost-349c391bc70d6962fbe5cd1df5e9a7d6
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ab86ddc9-9b43-4949-b150-7b944bc40558?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: our-team-enhanced
+id: our-team-enhanced-103c1622ba32df699329acf71b480e8e
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a7ea99e7-2502-42a2-b037-2040114a8055?source=api-scan
   classification:
     cvss-metrics: 

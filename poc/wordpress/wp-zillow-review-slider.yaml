@@ -1,4 +1,4 @@
-id: wp-zillow-review-slider
+id: wp-zillow-review-slider-3f8ef1bc763aff50de90878c47c4a9e5
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f3d52baf-0f2b-4791-96ce-ec57502ed646?source=api-scan
   classification:
     cvss-metrics: 

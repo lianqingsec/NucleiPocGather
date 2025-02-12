@@ -1,4 +1,4 @@
-id: sliderpro
+id: sliderpro-2be39365a489fe862f51105c35650c44
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f813cb1a-5922-48a5-a026-66ec9aaac294?source=api-scan
   classification:
     cvss-metrics: 

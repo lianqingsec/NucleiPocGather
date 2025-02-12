@@ -1,4 +1,4 @@
-id: stetic
+id: stetic-27fffcd6100c8aabcfaa8112096523d2
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3469ba0d-8ef3-41d0-becb-cf2eb43758f1?source=api-scan
   classification:
     cvss-metrics: 

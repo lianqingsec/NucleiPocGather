@@ -1,4 +1,4 @@
-id: zenlite
+id: zenlite-089839b1b6c74af0cfd3626a2e10f83d
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/68042416-efa6-4814-a8d9-c74ab652c4ed?source=api-scan
   classification:
     cvss-metrics: 

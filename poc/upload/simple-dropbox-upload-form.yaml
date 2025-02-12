@@ -1,4 +1,4 @@
-id: simple-dropbox-upload-form
+id: simple-dropbox-upload-form-67bab22ca77d8bd7dd493392fc241212
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/89904362-4ac2-450a-89ac-8935fdb4976d?source=api-scan
   classification:
     cvss-metrics: 

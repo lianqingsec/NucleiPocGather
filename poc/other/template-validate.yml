@@ -1,30 +1,24 @@
 name: 🛠 Template Validate
 
-on: [ push, pull_request ]
+on:
+  pull_request:
+  workflow_dispatch:
 
 jobs:
-  build:
+  validate:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
 
-      - name: Get latest Nuclei release version
-        id: nuclei-latest
-        uses: actions/github-script@v5
-        with:
-          result-encoding: string
-          script: |
-            const release = await github.rest.repos.getLatestRelease({
-              owner: 'projectdiscovery',
-              repo: 'nuclei',
-            });
-
-            return release.data.name
+      - name: Get Github tag
+        id: meta
+        run: |
+          curl --silent "https://api.github.com/repos/projectdiscovery/nuclei/releases/latest" | jq -r .tag_name | xargs -I {} echo TAG={} >> $GITHUB_OUTPUT
 
       - name: Setup Nuclei
-        if: steps.nuclei-latest.outputs.result != ''
+        if: steps.meta.outputs.TAG != ''
         env:
-          VERSION: ${{ steps.nuclei-latest.outputs.result }}
+          VERSION: ${{ steps.meta.outputs.TAG }}
         run: |
           wget -q https://github.com/projectdiscovery/nuclei/releases/download/${VERSION}/nuclei_${VERSION:1}_linux_amd64.zip
           sudo unzip nuclei*.zip -d /usr/local/bin
@@ -33,5 +27,5 @@ jobs:
       - name: Template Validation
         run: |
           cp -r ${{ github.workspace }} $HOME
-          nuclei -validate -t .
-          nuclei -validate -w ./workflows
+          nuclei -validate -lfa
+          nuclei -validate -lfa -w ./workflows

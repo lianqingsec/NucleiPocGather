@@ -1,14 +1,15 @@
-id: patreon-connect
+id: patreon-connect-ae5eb45dd55715073a400a3d21d5a0d2
 
 info:
   name: >
-    Patreon WordPress < 1.2.2 - PHP Object Injection
+    Patreon WordPress <= 1.8.1 - Authenticated Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ebb80964-761b-410c-998f-4408439e0d48?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eff9fcce-01b2-4698-a2c2-ee5991bfd963?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.2.2')
+          - compare_versions(version, '< 1.8.2')

@@ -7,11 +7,12 @@ info:
   reference:
     - https://raw.githubusercontent.com/maurosoria/dirsearch/master/db/dicc.txt
   metadata:
+    max-request: 2
     verified: true
     shodan-query: title:"Eureka"
   tags: misconfig,springboot,exposure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/jolokia"
@@ -33,6 +34,8 @@ requests:
           - "application/json"
           - "application/vnd.spring-boot.actuator"
           - "application/vnd.spring-boot.actuator.v1+json"
+          - "application/vnd.spring-boot.actuator.v2+json"
+          - "application/vnd.spring-boot.actuator.v3+json"
           - "text/plain"
         condition: or
 

@@ -10,12 +10,13 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
+    max-request: 1
     verified: true
     fofa-query: title="piwigo"
     google-query: "Powered by Piwigo"
   tags: panel,piwigo
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/identification.php"

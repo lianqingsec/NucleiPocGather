@@ -1,4 +1,4 @@
-id: support-genix-lite
+id: support-genix-lite-64c576dc3e88ee994a3bf9f765a979d3
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/40ade684-57a2-43be-9d4a-1c0a653807eb?source=api-scan
   classification:
     cvss-metrics: 

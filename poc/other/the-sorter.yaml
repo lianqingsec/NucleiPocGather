@@ -1,4 +1,4 @@
-id: the-sorter
+id: the-sorter-4a4ca4cb2eb7c46af3d4f3f1f1725128
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/64b10a7d-ca11-47ec-ba8a-e2b838fd8a2a?source=api-scan
   classification:
     cvss-metrics: 

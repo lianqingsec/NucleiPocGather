@@ -1,14 +1,15 @@
-id: godaddy-email-marketing-sign-up-forms
+id: godaddy-email-marketing-sign-up-forms-88cb9e7a1bf0c963477b1779dac6ec90
 
 info:
   name: >
-    GoDaddy Email Marketing <= 1.4.3 - Missing Authorization
+    GoDaddy Email Marketing < 1.1.4 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c8d9d19e-a080-40e9-8a71-01888393f618?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bfb53b61-f476-4b92-b87a-de10e18428a3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/godaddy-email-marketing-sign-up-forms/"
     google-query: inurl:"/wp-content/plugins/godaddy-email-marketing-sign-up-forms/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,godaddy-email-marketing-sign-up-forms,high
+  tags: cve,wordpress,wp-plugin,godaddy-email-marketing-sign-up-forms,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.3')
+          - compare_versions(version, '< 1.1.4')

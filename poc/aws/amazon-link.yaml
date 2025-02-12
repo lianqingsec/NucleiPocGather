@@ -1,4 +1,4 @@
-id: amazon-link
+id: amazon-link-5d8154f4ea4000f6c444ffb129902dae
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f25cdb02-4624-4a46-a622-28665e1d856e?source=api-scan
   classification:
     cvss-metrics: 

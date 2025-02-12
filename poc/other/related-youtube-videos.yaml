@@ -1,4 +1,4 @@
-id: related-youtube-videos
+id: related-youtube-videos-542163f455d6a26e4a74283e28649c17
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1375ac68-31e4-4473-9757-bd86411c716f?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,12 +1,13 @@
 id: wordpress-seo-by-rank-math
 
 info:
-  name: Rank Math SEO with AI Best SEO Tools Detection
+  name: Rank Math SEO Detection
   author: ricardomaia
   severity: info
   reference:
     - https://wordpress.org/plugins/seo-by-rank-math/
   metadata:
+    max-request: 1
     plugin_namespace: seo-by-rank-math
     wpscan: https://wpscan.com/plugin/seo-by-rank-math
   tags: tech,wordpress,wp-plugin,top-100,top-200

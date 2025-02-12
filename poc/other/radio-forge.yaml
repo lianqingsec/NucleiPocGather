@@ -1,4 +1,4 @@
-id: radio-forge
+id: radio-forge-fb3be7c6485896b74d9e34a32075e1ed
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad20ddd2-33d0-4d49-bca0-ea2a829da6c8?source=api-scan
   classification:
     cvss-metrics: 

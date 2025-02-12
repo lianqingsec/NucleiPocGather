@@ -1,4 +1,4 @@
-id: virim
+id: virim-7c6c0ef3d1d6e8ab370c1530c13ee8ef
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b12deaa4-246e-4502-8091-fcbe5a2eae15?source=api-scan
   classification:
     cvss-metrics: 

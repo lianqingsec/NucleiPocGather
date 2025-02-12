@@ -1,4 +1,4 @@
-id: wp-custom-author-url
+id: wp-custom-author-url-9d6398bdd4c420319df453b315e9a390
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4f3a57ce-eead-4631-93da-ba1a0a33ec2d?source=api-scan
   classification:
     cvss-metrics: 

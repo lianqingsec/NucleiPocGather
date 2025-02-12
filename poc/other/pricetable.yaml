@@ -1,4 +1,4 @@
-id: pricetable
+id: pricetable-dc87d217be0ea09078bac463bdc3ce08
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/23f58949-6cc7-45a3-a6a0-58213bb03679?source=api-scan
   classification:
     cvss-metrics: 

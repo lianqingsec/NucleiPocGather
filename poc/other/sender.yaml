@@ -1,4 +1,4 @@
-id: sender
+id: sender-a9f970b84dd045af0e8b2787e1397784
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/de957e90-5758-46f3-90f8-521b47d247ff?source=api-scan
   classification:
     cvss-metrics: 

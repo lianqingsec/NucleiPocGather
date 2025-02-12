@@ -1,4 +1,4 @@
-id: searchwp
+id: searchwp-54558f07f2f7a5b1de1d3962cd65e882
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/00a1b66d-d81c-4539-846b-ff66301a94ca?source=api-scan
   classification:
     cvss-metrics: 

@@ -7,11 +7,12 @@ info:
   reference:
     - https://www.lutron.com
   metadata:
+    max-request: 1
     verified: true
     shodan-query: html:"HomeWorks Illumination Web Keypad"
   tags: misconfig,iot,homeworks
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

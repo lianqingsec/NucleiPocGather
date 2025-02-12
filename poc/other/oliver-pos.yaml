@@ -1,4 +1,4 @@
-id: oliver-pos
+id: oliver-pos-22fd1bbb53a912f5ebb04ed526f4c4f4
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/88d16ce2-a1cf-4402-b140-3cab17f8c638?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,14 +1,15 @@
-id: gnucommerce
+id: gnucommerce-2f287de30f5f2366b05f96610c84acf8
 
 info:
   name: >
-    GNUCommerce < 1.4.2 - Stored Cross-Site Scripting
+    GNUCommerce < 0.5.7-BETA - Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0bbdbd0f-19cc-4a1e-9167-fbdb6d45ffbe?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a5e6817c-02e7-4d28-9446-c316a9ff8cbe?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.4.2')
+          - compare_versions(version, '< 0.5.7-beta')

@@ -1,14 +1,15 @@
-id: post-indexer
+id: post-indexer-c7b209550d7f81f6722b83acfbdc05e3
 
 info:
   name: >
-    Post Indexer <= 3.0.6.1 - PHP Object Injection
+    Post Indexer <= 3.0.6.1 - Authenticated (Super Admin+) SQL Injection
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e43cf06-8356-40cd-a0d8-b9f7ab95d793?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5ecc0811-916d-4c60-9047-a09242de36bd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

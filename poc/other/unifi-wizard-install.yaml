@@ -5,11 +5,12 @@ info:
   author: DhiyaneshDk
   severity: high
   metadata:
+    max-request: 1
     verified: true
     shodan-query: title:"UniFi Wizard"
   tags: misconfig,install,unifi,exposure
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/manage/wizard/"

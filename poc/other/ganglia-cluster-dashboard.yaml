@@ -1,17 +1,18 @@
 id: ganglia-cluster-dashboard
 
 info:
-  name: Ganglia Cluster Dashboard - Exposure
+  name: Ganglia Cluster Dashboard - Detect
   author: ritikchaddha
   severity: low
   description: |
-    It exposes the Ganglia cluster dashboard to the unauth users.
+    Ganglia Cluster dashboard was detected.
   metadata:
+    max-request: 2
     verified: true
     shodan-query: html:"ganglia_form.submit()"
   tags: misconfig,ganglia,dashboard
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -28,3 +29,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2023/03/08

@@ -1,13 +1,14 @@
-id: wp-page-duplicator
+id: wp-page-duplicator-be65ad55f4da905c8cc51fe26685a61e
 
 info:
   name: >
     Page Duplicator <= 0.1.1 - Missing Authorization to Unauthenticated Post/Page Duplication
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/bcc10e91-4810-4a0d-919c-de3e87137f76?source=api-scan
   classification:
     cvss-metrics: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-page-duplicator/"
     google-query: inurl:"/wp-content/plugins/wp-page-duplicator/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-page-duplicator,low
+  tags: cve,wordpress,wp-plugin,wp-page-duplicator,high
 
 http:
   - method: GET

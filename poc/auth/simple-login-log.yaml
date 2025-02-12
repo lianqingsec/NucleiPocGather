@@ -1,4 +1,4 @@
-id: simple-login-log
+id: simple-login-log-484555f2d833efce2d42e164ac2f9385
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c741350a-e083-499c-992d-727f46ca57f9?source=api-scan
   classification:
     cvss-metrics: 

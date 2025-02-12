@@ -1,4 +1,4 @@
-id: share-on-diaspora
+id: share-on-diaspora-2c8dd167a6a71e82acb669135dd5ecc7
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/01b55b59-3107-4711-8be2-8b0803c0fa69?source=api-scan
   classification:
     cvss-metrics: 

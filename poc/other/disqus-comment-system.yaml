@@ -1,23 +1,23 @@
-id: disqus-comment-system
+id: disqus-comment-system-5da3e3f08e0a7f75ba15cada14e76cc1
 
 info:
-  name: >
-    Disqus Comment System < 2.76 -  Remote Code Execution
+  name: "Disqus Comment System < 2.68 - Reflected Cross-Site Scripting"
   author: topscoder
-  severity: critical
-  description: >
-    The Disqus Comment System plugin for WordPress is vulnerable to Remote Code Execution in versions up to, and including, 2.75 via the 'getNextToken()' function that parsed user supplied data through the eval() function. This allows unauthenticated attackers to execute code on the server.
+  severity: high
+  description: "The Disqus Comment System plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the User-Agent HTTP Header in versions before 2.68 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c7476f2c-c32f-4ff7-ad32-70cf68387342?source=api-prod
+    - https://web.archive.org/web/20121105043857/http%3A//www.ethicalhack3r.co.uk/security/wordpress-plugin-disqus-comment-system-xss/
+    - https://wordpress.org/plugins/disqus-comment-system/#developers
+    - https://plugins.trac.wordpress.org/changeset/444390
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L
+    cvss-score: 7.1
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/disqus-comment-system/"
     google-query: inurl:"/wp-content/plugins/disqus-comment-system/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,disqus-comment-system,critical
+  tags: cve,wordpress,wp-plugin,disqus-comment-system,high
 
 http:
   - method: GET
@@ -55,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.76')
+          - compare_versions(version, '< 2.68')

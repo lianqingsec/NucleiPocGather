@@ -1,4 +1,4 @@
-id: pixiv-custom
+id: pixiv-custom-5d898145396c89d16d93fe047e5b3e70
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7327f439-0088-4ad8-898a-30740fc62d6e?source=api-scan
   classification:
     cvss-metrics: 

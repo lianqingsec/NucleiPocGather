@@ -1,4 +1,4 @@
-id: formcraft3
+id: formcraft3-1abcc6fd96ea11726161daf8ff61e96c
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0d943691-66cf-4018-9eb6-5f20db0a95a9?source=api-scan
   classification:
     cvss-metrics: 

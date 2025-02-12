@@ -1,4 +1,4 @@
-id: exchange-rates-widget
+id: exchange-rates-widget-26e99f5e449f6511cade6c9c60710d35
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2970bea4-4641-4885-b996-2bf0b848e1ec?source=api-scan
   classification:
     cvss-metrics: 

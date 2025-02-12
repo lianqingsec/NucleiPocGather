@@ -1,14 +1,15 @@
-id: responsive-menu
+id: responsive-menu-45259e2bce35b395b9416241bd6c6d3e
 
 info:
   name: >
-    Responsive Menu <= 3.1.3 - Cross-Site Request Forgery
+    Responsive Menu <= 4.0.3 - Cross-Site Request Forgery to Arbitrary File Upload
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8bcf22c7-bea5-4108-8fb4-ff9ff566c618?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5ac47137-eecf-4f85-a29d-88a86b2a9c48?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.1.4')
+          - compare_versions(version, '< 4.0.4')

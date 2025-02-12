@@ -1,4 +1,4 @@
-id: simply-exclude
+id: simply-exclude-ccc1c932d367b3e4c21fce923f106208
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2f9a3883-9755-4de8-9d60-113238b3c0ac?source=api-scan
   classification:
     cvss-metrics: 

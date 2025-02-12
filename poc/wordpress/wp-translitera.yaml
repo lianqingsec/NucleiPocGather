@@ -1,4 +1,4 @@
-id: wp-translitera
+id: wp-translitera-c44c3d8701e8df4a729b26b1cb1fb4ed
 
 info:
   name: >
@@ -8,6 +8,7 @@ info:
   description: >
     
   reference:
+    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad427bea-1b0e-46bb-85fc-53c51fb40a17?source=api-scan
   classification:
     cvss-metrics: 
