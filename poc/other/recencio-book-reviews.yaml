@@ -1,4 +1,4 @@
-id: recencio-book-reviews-fec332bbcb67f4dd4e1d0795af385412
+id: recencio-book-reviews
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/23ee5d94-5a51-4ee3-945c-422f3f07634e?source=api-scan
   classification:
     cvss-metrics: 

@@ -7,14 +7,12 @@ info:
   reference:
     - https://wordpress.org/plugins/wp-reset/
   metadata:
-    max-request: 1
     plugin_namespace: wp-reset
     wpscan: https://wpscan.com/plugin/wp-reset
   tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/wp-reset/readme.txt"
 
@@ -48,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4b0a00483046022100dfa315c56b765f888bf142e30f9b4d496ed695ab9d7b39cefd47b1d520aba4fc022100add25bcf4498310e3bd46d36c06b929575c6e9900c24f11e1700c8ac7ac0acfb:922c64590222798bb761d5b6d8e72950

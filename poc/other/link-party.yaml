@@ -1,15 +1,14 @@
-id: link-party-4cce7f8c336af5d4a6ba5c8e8e35b2fd
+id: link-party
 
 info:
   name: >
-    illi Link Party! <= 1.0 - Missing Authorization to Unauthenticated Arbitrary Link Deletion
+    illi Link Party! <= 1.0 - Cross-Site Request Forgery to Settings Update
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3d68293a-b98b-41e0-9f79-ccd2c0108e82?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/acd6b604-45dd-4688-a9b9-fabb12c418e2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/link-party/"
     google-query: inurl:"/wp-content/plugins/link-party/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,link-party,high
+  tags: cve,wordpress,wp-plugin,link-party,medium
 
 http:
   - method: GET

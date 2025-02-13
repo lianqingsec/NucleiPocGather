@@ -1,4 +1,4 @@
-id: webengage-c50307d2c43335962383eda32cef7359
+id: webengage
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f82845c-55db-491a-90c1-326884abb5d6?source=api-scan
   classification:
     cvss-metrics: 

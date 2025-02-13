@@ -1,15 +1,14 @@
-id: bricks-72e642df382d0e09bb9a28d4cfbcd00a
+id: bricks
 
 info:
   name: >
-    Bricks 1.0 - 1.5.3 - Missing Authorization to Arbitrary Content Creation/Modification
+    Bricks <= 1.9.6 - Unauthenticated Remote Code Execution
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a711984-4eb2-4d96-b2b9-0ecd840679b1?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b97b1c86-22a4-462b-9140-55139cf02c7a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/themes/bricks/"
     google-query: inurl:"/wp-content/themes/bricks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,bricks,high
+  tags: cve,wordpress,wp-theme,bricks,low
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>= 1.0', '<= 1.5.3')
+          - compare_versions(version, '<= 1.9.6')

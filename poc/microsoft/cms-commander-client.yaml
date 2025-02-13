@@ -1,23 +1,23 @@
-id: cms-commander-client-7a6bcc733acf1cf925e3c17432a790dd
+id: cms-commander-client
 
 info:
-  name: "CMS Commander – Manage Multiple Sites Plugin <= 2.21 - PHP Object Injection"
+  name: >
+    CMS Commander – Manage Multiple Sites Plugin <= 2.21 - PHP Object Injection
   author: topscoder
-  severity: high
-  description: "The CMS Commander – Manage Multiple Sites plugin for WordPress is vulnerable to PHP Object Injection in versions up to, and including, 2.21 via deserialization of untrusted input in the cmsc_authenticate() function. This allows unauthenticated attackers to inject a PHP Object. No POP chain is present in the vulnerable plugin. If a POP chain is present via an additional plugin or theme installed on the target system, it could allow the attacker to delete arbitrary files, retrieve sensitive data, or execute code."
+  severity: low
+  description: >
+    
   reference:
-    - https://sumofpwn.nl/advisory/2016/cms_commander_client_wordpress_plugin_unauthenticated_php_object_injection_vulnerability.html
-    - https://seclists.org/fulldisclosure/2017/Jan/71
-    - https://plugins.trac.wordpress.org/changeset/1473100/cms-commander-client
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a859505e-87ba-49f0-910b-de6141976f86?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 8.5
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/cms-commander-client/"
     google-query: inurl:"/wp-content/plugins/cms-commander-client/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,cms-commander-client,high
+  tags: cve,wordpress,wp-plugin,cms-commander-client,low
 
 http:
   - method: GET

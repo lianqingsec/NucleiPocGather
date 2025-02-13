@@ -1,4 +1,4 @@
-id: wp-masquerade-6946da31a080f78d4bab5bc4d9e08e98
+id: wp-masquerade
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d79dc179-8f0e-47e3-9697-82d9c9d44be2?source=api-scan
   classification:
     cvss-metrics: 

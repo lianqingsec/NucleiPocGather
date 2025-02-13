@@ -1,4 +1,4 @@
-id: wxsync-1a66502e3ff7e1e2836205bd89ae2579
+id: wxsync
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c85c13ed-6981-4062-8aca-800721b28b88?source=api-scan
   classification:
     cvss-metrics: 

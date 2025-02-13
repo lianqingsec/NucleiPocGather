@@ -1,15 +1,14 @@
-id: mystickymenu-06cf49ae642af70434aa9c50262c21e5
+id: mystickymenu
 
 info:
   name: >
-    myStickymenu <= 2.6.4 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Form Lead Deletion
+    My Sticky Bar <= 2.6.6 - Cross-Site Request Forgery to Sensitive Information Exposure
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/102bab51-2dc7-4013-8273-21e2ff6cdf79?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/be0ab40f-cff7-48bd-8dae-cc50af047151?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/mystickymenu/"
     google-query: inurl:"/wp-content/plugins/mystickymenu/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mystickymenu,low
+  tags: cve,wordpress,wp-plugin,mystickymenu,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.6.4')
+          - compare_versions(version, '<= 2.6.6')

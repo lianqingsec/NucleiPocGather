@@ -1,4 +1,4 @@
-id: pdq-csv-01b678a59c250be17cfe85410e02fd6d
+id: pdq-csv
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/014ccad9-a836-4a40-92d3-8c3320fbead8?source=api-scan
   classification:
     cvss-metrics: 

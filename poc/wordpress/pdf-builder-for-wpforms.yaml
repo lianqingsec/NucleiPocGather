@@ -1,4 +1,4 @@
-id: pdf-builder-for-wpforms-98ef94cb69fb27042b64bec0c722e68b
+id: pdf-builder-for-wpforms
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8d9bba8c-0e75-4170-a006-16fa4bd0d0ed?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: gutenverse-40a79e4610379f5cd721264ce32ca881
+id: gutenverse
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8056af63-e81f-4321-991e-d201ad1095c4?source=api-scan
   classification:
     cvss-metrics: 

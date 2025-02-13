@@ -1,4 +1,4 @@
-id: web-application-firewall-844b9d1d24421cab341a4ecc56416b51
+id: web-application-firewall
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6347f588-a3fd-4909-ad57-9d78787b5728?source=api-scan
   classification:
     cvss-metrics: 

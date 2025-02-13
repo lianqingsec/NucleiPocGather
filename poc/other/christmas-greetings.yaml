@@ -1,4 +1,4 @@
-id: christmas-greetings-7e867cc9e95382b0e2f9c7ac84f1f7ee
+id: christmas-greetings
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/466d6087-1e4d-4010-b3c7-87e9e2d64f06?source=api-scan
   classification:
     cvss-metrics: 

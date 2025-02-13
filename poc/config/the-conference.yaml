@@ -1,4 +1,4 @@
-id: the-conference-22b4ad0345c7f065a84ce9174ab4fe7e
+id: the-conference
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/abdd2653-d50c-4eee-9cab-36519fd2b209?source=api-scan
   classification:
     cvss-metrics: 

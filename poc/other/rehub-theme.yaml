@@ -1,15 +1,14 @@
-id: rehub-theme-d88091638c053b25c85dff446a3501e9
+id: rehub-theme
 
 info:
   name: >
-    Rehub <= 19.6.1 - Unauthenticated Local File Inclusion
+    Rehub <= 19.6.1 - Authenticated (Subscriber+) SQL Injection
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e188b3a4-ddb2-405b-840f-4f13db5dbf3a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b23ab054-11c9-4229-9adc-6eef6f81c3f9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/themes/rehub-theme/"
     google-query: inurl:"/wp-content/themes/rehub-theme/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,rehub-theme,critical
+  tags: cve,wordpress,wp-theme,rehub-theme,low
 
 http:
   - method: GET

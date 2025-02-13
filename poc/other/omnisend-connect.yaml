@@ -1,4 +1,4 @@
-id: omnisend-connect-53c1606124c872b35d51fa9fe3e0f22b
+id: omnisend-connect
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f54f1e41-788b-45e5-b84f-06e664f5c597?source=api-scan
   classification:
     cvss-metrics: 

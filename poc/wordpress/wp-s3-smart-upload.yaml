@@ -1,4 +1,4 @@
-id: wp-s3-smart-upload-0e654c0d9359d018606c7100ba8cabb1
+id: wp-s3-smart-upload
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d488cfef-8ee7-483a-94f2-c172e5576005?source=api-scan
   classification:
     cvss-metrics: 

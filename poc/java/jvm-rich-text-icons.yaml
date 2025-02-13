@@ -1,15 +1,14 @@
-id: jvm-rich-text-icons-9692dd044e7e43531f766ce763f74fa4
+id: jvm-rich-text-icons
 
 info:
   name: >
-    JVM rich text icons <= 1.2.6 - Directory Traversal to Authenticated(Subscriber+) Arbitrary File Deletion
+    JVM rich text icons <= 1.2.3 - Authenticated(Subscriber+) Arbitrary File Upload
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a3e54f9b-db12-42ef-a0fa-2d40c0f7908c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ca064db0-2718-4521-9467-335b59208858?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.6')
+          - compare_versions(version, '<= 1.2.3')

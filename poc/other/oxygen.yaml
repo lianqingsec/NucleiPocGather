@@ -1,4 +1,4 @@
-id: oxygen-a66852bb10b2ff3f331da7994b42a7b5
+id: oxygen
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/34fb7647-76e2-4985-816e-c6420c01a048?source=api-scan
   classification:
     cvss-metrics: 

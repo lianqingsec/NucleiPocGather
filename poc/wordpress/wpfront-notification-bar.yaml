@@ -1,15 +1,14 @@
-id: wpfront-notification-bar-d99ab14c5ed607193d86b0919aead6c1
+id: wpfront-notification-bar
 
 info:
   name: >
-    WPFront Notification Bar <= 3.3.2 - Authenticated (Admin+) Stored Cross-Site Scripting via wpfront-notification-bar-options[custom_class]
+    WPFront Notification Bar <= 3.3.2 - Authenticated (Editor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/19a5a9f3-637c-42af-9775-5651a14cf516?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/16b37992-a87e-42bb-ab0f-cb32506874e9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

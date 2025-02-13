@@ -1,22 +1,23 @@
-id: blog2social-3c50eaad83400d180a7a1e849c918d50
+id: blog2social
 
 info:
-  name: "Blog2Social: Social Media Auto Post & Scheduler < 5.0.1 - PHP Object Injection"
+  name: >
+    Blog2Social <= 6.8.6 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
-  description: "The Blog2Social: Social Media Auto Post & Scheduler plugin for WordPress is vulnerable to PHP Object Injection in versions up to, and including, 5.0.0 via deserialization of untrusted input in the vulnerable function named curationShare. This allows authenticated attackers to inject a PHP Object. No POP chain is present in the vulnerable plugin. If a POP chain is present via an additional plugin or theme installed on the target system, it could allow the attacker to delete arbitrary files, retrieve sensitive data, or execute code."
+  severity: medium
+  description: >
+    
   reference:
-    - https://plugins.trac.wordpress.org/changeset?reponame=&new=1944620%40blog2social&old=1942896%40blog2social
-    - https://web.archive.org/web/20210619021442/https%3A//www.pluginvulnerabilities.com/2018/09/21/our-proactive-monitoring-caught-an-authenticated-php-object-injection-vulnerability-in-blog2social-social-media-auto-post-scheduler/
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7817f343-1ed6-4b76-afbe-1054de892422?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:L
-    cvss-score: 7.4
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/blog2social/"
     google-query: inurl:"/wp-content/plugins/blog2social/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,blog2social,high
+  tags: cve,wordpress,wp-plugin,blog2social,medium
 
 http:
   - method: GET
@@ -54,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 5.0.1')
+          - compare_versions(version, '<= 6.8.6')

@@ -1,24 +1,23 @@
-id: paytium-0c915a7a9f68386ef5daf99ffe0beabb
+id: paytium
 
 info:
-  name: "Paytium <= 3.1.1 - Stored Cross-Site Scripting"
+  name: >
+    Paytium: Mollie payment forms & donations <= 4.3.7 - Missing Authorization in 'create_mollie_account'
   author: topscoder
-  severity: medium
-  description: "The Paytium plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'get_field_data_html()' function in versions up to, and including, 3.1.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  severity: low
+  description: >
+    The Paytium: Mollie payment forms & donations plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the create_mollie_account function in versions up to, and including, 4.3.7. This makes it possible for authenticated attackers with subscriber-level access to set up a mollie account.
   reference:
-    - https://medium.com/%40jonathanbouman/stored-xss-in-paytium-3-0-13-wordpress-plugin-3157ee37eb8f
-    - https://vulners.com/wpvulndb/WPVDB-ID%3A546E14AC-76E4-47C1-AD59-2AD7DD063952
-    - https://wpscan.com/vulnerability/546e14ac-76e4-47c1-ad59-2ad7dd063952
-    - https://wordpress.org/plugins/paytium/#developers
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d4491b89-2120-4edb-a396-e45ba09b3b99?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
-    cve-id:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:H/A:L
+    cvss-score: 7.1
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/paytium/"
     google-query: inurl:"/wp-content/plugins/paytium/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,paytium,medium
+  tags: cve,wordpress,wp-plugin,paytium,low
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.1.1')
+          - compare_versions(version, '<= 4.3.7')

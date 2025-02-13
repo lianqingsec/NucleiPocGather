@@ -1,4 +1,4 @@
-id: wp-source-control-1c031a30792c8eeff23b48219d4181d7
+id: wp-source-control
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9cec4d7a-81e0-489a-b549-5848ed9a8449?source=api-scan
   classification:
     cvss-metrics: 

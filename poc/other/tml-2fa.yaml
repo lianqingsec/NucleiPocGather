@@ -1,4 +1,4 @@
-id: tml-2fa-7080ada6b8d340af71911df8ff308968
+id: tml-2fa
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1398e296-9b20-4f8e-85f2-896888abc67e?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,6 +1,6 @@
 id: sieve
 info:
-  name: pysieved
+  name: Dovecot Pigeonhole sieve
   author: nmap,cn-kali-team
   tags: detect,tech,sieve,service
   severity: info
@@ -17,4 +17,4 @@ tcp:
   - name: sieve
     type: regex
     regex:
-    - '^/usr/share/pysieved/plugins/dovecot\.py:27: DeprecationWarning: The popen2 module is deprecated\.  Use the subprocess module\.\n  import popen2\n\"IMPLEMENTATION\" \"pysieved ([\w._+-]+)\"\r\n'
+    - ^\"IMPLEMENTATION\" \"Dovecot Pigeonhole\"\r\n\"SIEVE\" \"[\w._;-]+(?:\s+[\w._;-]+)*\"\r\n\"NOTIFY\" \"mailto\"\r\n\"SASL\" \"[\w._;-]*(?:\s+[\w._;-]+)*\"\r\n\"STARTTLS\"\r\n\"VERSION\" \"([\w._-]+)\"\r\nOK \"[^"]*\"\r\n$

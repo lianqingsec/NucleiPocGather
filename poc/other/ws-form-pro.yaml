@@ -1,4 +1,4 @@
-id: ws-form-pro-aeab7d2d818c60e62d1151d3930578ad
+id: ws-form-pro
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c2990ed9-061e-4d35-aae0-99282a4f3737?source=api-scan
   classification:
     cvss-metrics: 

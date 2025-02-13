@@ -1,4 +1,4 @@
-id: payment-forms-for-paystack-9e71ae11056f9c8a0f3c1bdcd525390c
+id: payment-forms-for-paystack
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/98f80608-f24f-4019-a757-de71cba9902f?source=api-scan
   classification:
     cvss-metrics: 

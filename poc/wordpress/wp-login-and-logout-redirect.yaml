@@ -1,4 +1,4 @@
-id: wp-login-and-logout-redirect-bcc9e091fa98d610ac79a7162207c92e
+id: wp-login-and-logout-redirect
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4c293c3a-383d-4e3c-bf1b-4d64e9cd3eb5?source=api-scan
   classification:
     cvss-metrics: 

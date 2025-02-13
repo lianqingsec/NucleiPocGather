@@ -1,4 +1,4 @@
-id: woo-popup-7de99f2b034f4f8cb60a078f94c0d157
+id: woo-popup
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/568d9b75-3ac9-47eb-b958-4f1781a6edc4?source=api-scan
   classification:
     cvss-metrics: 

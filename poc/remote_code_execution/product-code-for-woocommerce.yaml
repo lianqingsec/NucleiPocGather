@@ -1,4 +1,4 @@
-id: product-code-for-woocommerce-5ee4216503e0a22cb26fb4c72e6a4204
+id: product-code-for-woocommerce
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0be84866-2a49-42da-b498-962fc1bcb811?source=api-scan
   classification:
     cvss-metrics: 

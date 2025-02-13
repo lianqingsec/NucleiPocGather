@@ -1,4 +1,4 @@
-id: flash-video-player-b1a529c85b0bb0ed072e22233e2d192c
+id: flash-video-player
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6d3bb015-5a01-4450-80d3-c37d5d7d8926?source=api-scan
   classification:
     cvss-metrics: 

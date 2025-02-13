@@ -1,20 +1,18 @@
 id: wordpress-shortcodes-ultimate
 
 info:
-  name: WordPress Shortcodes Plugin — Shortcodes Ultimate Detection
+  name: WP Shortcodes Plugin — Shortcodes Ultimate Detection
   author: ricardomaia
   severity: info
   reference:
     - https://wordpress.org/plugins/shortcodes-ultimate/
   metadata:
-    max-request: 1
     plugin_namespace: shortcodes-ultimate
     wpscan: https://wpscan.com/plugin/shortcodes-ultimate
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/shortcodes-ultimate/readme.txt"
 
@@ -48,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a0047304502203fa83798fe4e1a7cef95078998735dcabb6d3c1812cd9baf7276d4281d8e27fa022100bc12bf3025f2f4b363024fedad2aa447d0bd1658c91b834a4a89e8c8d1589df4:922c64590222798bb761d5b6d8e72950

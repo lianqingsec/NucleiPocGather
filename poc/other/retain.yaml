@@ -1,4 +1,4 @@
-id: retain-849fc9a7d422c9511d2f7fb8512cd384
+id: retain
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5d276502-6154-468e-b028-eadf29debe56?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,20 +1,18 @@
 id: wordpress-wp-optimize
 
 info:
-  name: WP-Optimize – Cache, Clean, Compress. Detection
+  name: WP-Optimize – Cache, Compress images, Minify & Clean database to boost page speed & performance Detection
   author: ricardomaia
   severity: info
   reference:
     - https://wordpress.org/plugins/wp-optimize/
   metadata:
-    max-request: 1
     plugin_namespace: wp-optimize
     wpscan: https://wpscan.com/plugin/wp-optimize
   tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/wp-optimize/readme.txt"
 
@@ -48,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100c5c10d74e76edaab5e9070ecf1f7103697f05632f0d537b908b2f2346957cba202206a8051aee103d1b44afb7acbab8a0403985e9b8d670e5b2fcd069c310a095a53:922c64590222798bb761d5b6d8e72950

@@ -1,19 +1,18 @@
-id: salient-370f155d651ba9fb74615e1e26a386ed
+id: salient
 
 info:
-  name: "Salient < 5.5.53 - DOM Cross-Site Scripting"
+  name: >
+    Salient < 5.5.53 - DOM Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Salient theme for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 4.9 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser."
+  description: >
+    The Salient theme for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 4.9 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser.
   reference:
-    - https://themeforest.net/item/salient-responsive-multipurpose-theme/4363266
-    - https://github.com/scaron/prettyphoto/issues/149
-    - http://themenectar.com/changelogs/salient.html
-    - http://web.archive.org/web/20140726202131/http%3A//www.perucrack.net/2014/07/haciendo-un-xss-en-plugin-prettyphoto.html
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/39a74c20-42a2-4099-8e6c-9989a3ba081d?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/salient/"
     google-query: inurl:"/wp-content/themes/salient/"

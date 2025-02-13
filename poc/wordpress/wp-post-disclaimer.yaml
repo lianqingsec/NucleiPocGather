@@ -1,4 +1,4 @@
-id: wp-post-disclaimer-39b0cc2ca2caaa85bd201a141af3db0f
+id: wp-post-disclaimer
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb2829eb-3079-429e-ab0f-e23a2c32d616?source=api-scan
   classification:
     cvss-metrics: 

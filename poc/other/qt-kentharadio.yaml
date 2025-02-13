@@ -1,4 +1,4 @@
-id: qt-kentharadio-9228f35e5229f128df4807604aab3c64
+id: qt-kentharadio
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/93b5552e-bb24-4dfb-a779-8451f619ff50?source=api-scan
   classification:
     cvss-metrics: 

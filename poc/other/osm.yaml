@@ -1,15 +1,14 @@
-id: osm-9a01b04076cf781324261d056175d164
+id: osm
 
 info:
   name: >
-    OSM <= 6.1.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via osm_map and osm_map_v3 Shortcodes
+    OSM - OpenStreetMap <= 6.0.2 - Authenticated(Contributor+) Stored Cross-Site Scripting via shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/839ecd06-9c74-4ddc-b455-26ec3e627889?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6dac6353-9e70-482d-b54b-ffde661b212c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.1.0')
+          - compare_versions(version, '<= 6.0.2')

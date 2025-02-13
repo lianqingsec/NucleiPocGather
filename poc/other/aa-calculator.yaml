@@ -1,4 +1,4 @@
-id: aa-calculator-64eaa613ea8e0f06d31971ba4e3fe6a7
+id: aa-calculator
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/933ea8a2-3d1d-43a3-bb14-52f37576c9e5?source=api-scan
   classification:
     cvss-metrics: 

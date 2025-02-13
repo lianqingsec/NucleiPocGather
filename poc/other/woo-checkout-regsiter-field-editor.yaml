@@ -1,4 +1,4 @@
-id: woo-checkout-regsiter-field-editor-f57971c88366ce4728ba98246c03ebb0
+id: woo-checkout-regsiter-field-editor
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4f99d8b5-e71d-4b40-8223-f0e53b9dd84f?source=api-scan
   classification:
     cvss-metrics: 

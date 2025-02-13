@@ -1,4 +1,4 @@
-id: salert-544636c119a9da027cab3d5819a3ad96
+id: salert
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c9e45ae8-e5b5-460b-80f8-de562ae7c56a?source=api-scan
   classification:
     cvss-metrics: 

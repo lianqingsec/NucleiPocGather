@@ -1,15 +1,14 @@
-id: quiz-maker-66dd6a7fd4869c3d0a700a9e2df69ef7
+id: quiz-maker
 
 info:
   name: >
-    Quiz Maker <= 6.5.2.4 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Quiz Creation & Modification
+    Quiz Maker <= 6.3.9.4 - Content Spoofing
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7ba2b270-5f02-4cd8-8a22-1723c3873d67?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e285ce1-0896-4eef-aa83-59fb6641960b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.5.2.4')
+          - compare_versions(version, '<= 6.3.9.4')

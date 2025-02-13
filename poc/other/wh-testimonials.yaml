@@ -1,4 +1,4 @@
-id: wh-testimonials-1aa8d0c3c9eddc20c4923868bec0e4ed
+id: wh-testimonials
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b6fe5f1a-787e-4662-915f-c6f04961e194?source=api-scan
   classification:
     cvss-metrics: 

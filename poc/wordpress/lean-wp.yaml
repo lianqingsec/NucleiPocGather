@@ -1,18 +1,18 @@
-id: lean-wp-b8ed5de2d0473b87353c77ae0bc74c1c
+id: lean-wp
 
 info:
-  name: "Lean WP <= 1.4.0 - Cross-Site Request Forgery"
+  name: >
+    Lean WP <= 1.4.0 - Cross-Site Request Forgery
   author: topscoder
   severity: high
-  description: "The Lean WP plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.4.0. This is due to inclusion of a vulnerable version of the wp-dependency-installer library. This makes it possible for unauthenticated attackers to install and activate arbitrary plugins via a forged request granted they can trick a site administrator into performing an action such as clicking on a link."
+  description: >
+    The Lean WP plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.4.0. This is due to inclusion of a vulnerable version of the wp-dependency-installer library. This makes it possible for unauthenticated attackers to install and activate arbitrary plugins via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://ithemes.com/blog/wordpress-vulnerability-report-january-26-2022/
-    - https://wpscan.com/vulnerability/939b6f2f-1e62-4a32-bcb7-2e0a340f6cc6
-    - https://wordpress.org/plugins/lean-wp/
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/452e9acc-4029-4f43-9941-c1aa2a413e34?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
     cvss-score: 8.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/lean-wp/"
     google-query: inurl:"/wp-content/plugins/lean-wp/"

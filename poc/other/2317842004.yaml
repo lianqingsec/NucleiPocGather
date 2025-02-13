@@ -17,4 +17,4 @@ tcp:
   - name: cvspserver
     type: regex
     regex:
-    - '^Unknown command: `pserver''\n\nCVS commands are:\n'
+    - '^/usr/sbin/cvs-pserver: line \d+: .*cvs: No such file or directory\n'

@@ -1,15 +1,14 @@
-id: wp-dashboard-notes-3903f8e447033970afd46c47e90d2861
+id: wp-dashboard-notes
 
 info:
   name: >
-    WP Dashboard Notes <= 1.0.10 - Insecure Direct Object References to Authenticated Private Note Deletion
+    WP Dashboard Notes <= 1.0.10 - Missing Authorization to Arbitrary Private Notes Update
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a6f1233b-55d6-488a-8667-b5454f71020c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/64a36778-c17c-44ee-8b09-c221d27184f8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/wp-dashboard-notes/"
     google-query: inurl:"/wp-content/plugins/wp-dashboard-notes/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-dashboard-notes,low
+  tags: cve,wordpress,wp-plugin,wp-dashboard-notes,high
 
 http:
   - method: GET

@@ -1,18 +1,17 @@
-id: best-woocommerce-feed-680781b7706257efbca4d204fcfcc238
+id: best-woocommerce-feed
 
 info:
   name: >
-    Freemius SDK <= 2.2.3 - Missing Authorization to Arbitrary Options Update
+    Product Feed Manager <= 7.3.15 - Authenticated (Admin+) Directory Traversal
   author: topscoder
   severity: low
   description: >
-    The Freemius SDK for WordPress is vulnerable to authorization bypass due to a missing capability check on the _get_db_option and _set_db_option functions in versions up to, and including, 2.2.3. This makes it possible for authenticated attackers, with subscriber-level permissions and above, to change site settings and potentially take over the site.
+    
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3fda31fa-efc9-44b9-99ba-9e3e23aa2ee0?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7a20b65a-6d3a-41fc-80c5-94cce0459a6b?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 8.8
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/best-woocommerce-feed/"
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.2.3.1')
+          - compare_versions(version, '<= 7.3.15')

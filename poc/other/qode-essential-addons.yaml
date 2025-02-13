@@ -1,4 +1,4 @@
-id: qode-essential-addons-8f3c8f000ae431336ce3ed8ad5ba8ae7
+id: qode-essential-addons
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/443c59b9-275d-4d17-a870-9ae013c1a5c1?source=api-scan
   classification:
     cvss-metrics: 

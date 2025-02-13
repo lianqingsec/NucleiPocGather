@@ -1,15 +1,14 @@
-id: acymailing-288075cea07938a5b30e7747c4fb5139
+id: acymailing
 
 info:
   name: >
-    AcyMailing <= 9.7.2 - Authenticated (Subscriber+) Arbitrary File Upload via acym_extractArchive Function
+    AcyMailing SMTP Newsletter < 7.5.0 - Open Redirect
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0c747bc9-582c-4b9f-85a4-469c446d50f5?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1acc256-c8f5-4738-8788-d52b4e2b80ef?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 9.7.2')
+          - compare_versions(version, '< 7.5.0')

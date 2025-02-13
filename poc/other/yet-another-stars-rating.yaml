@@ -1,23 +1,23 @@
-id: yet-another-stars-rating-f93c2b40ed18576355479c8a53cbf41a
+id: yet-another-stars-rating
 
 info:
-  name: "Yet Another Stars Rating <= 1.8.6 - Unauthenticated PHP Object Injection"
+  name: >
+    Freemius SDK <= 2.4.2 - Missing Authorization Checks
   author: topscoder
-  severity: critical
-  description: "The Yet Another Stars Rating plugin for WordPress is vulnerable to PHP Object Injection in versions up to, and including, 1.8.6 via deserialization of untrusted input from the unserialize() function found in the yasr-shortcode-functions.php file. This allows unauthenticated attackers to inject a PHP Object. The additional presence of a POP chain allows attackers to remotely execute arbitrary code."
+  severity: medium
+  description: >
+    The Freemius SDK, as used by hundreds of WordPress plugin and theme developers, was vulnerable to Cross-Site Request Forgery and Information disclosure due to missing capability checks and nonce protection on the _get_debug_log, _get_db_option, and the _set_db_option functions in versions up to, and including 2.4.2. Any WordPress plugin or theme running a version of Freemius less than 2.4.3 is vulnerable.
   reference:
-    - https://plugins.trac.wordpress.org/changeset/2019911/yet-another-stars-rating/tags/1.8.7/lib/yasr-functions.php
-    - https://web.archive.org/web/20210623225727/https%3A//dannewitz.ninja/posts/php-unserialize-object-injection-yet-another-stars-rating-wordpress
-    - https://wpscan.com/vulnerability/3a252d33-52b2-40bf-96a7-23ec2e9fe7d2
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/39fb0499-9ab4-4a2f-b0db-ece86bcf4d42?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cve-id:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    cvss-score: 6.3
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/yet-another-stars-rating/"
     google-query: inurl:"/wp-content/plugins/yet-another-stars-rating/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,yet-another-stars-rating,critical
+  tags: cve,wordpress,wp-plugin,yet-another-stars-rating,medium
 
 http:
   - method: GET
@@ -55,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.8.6')
+          - compare_versions(version, '< 2.0.2')

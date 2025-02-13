@@ -1,15 +1,14 @@
-id: woo-smart-quick-view-f57a9bb09c6115f6da291aba1defee73
+id: woo-smart-quick-view
 
 info:
   name: >
-    Multiple Plugins <= (Various Versions) - Authenticated (Contributor+) Stored DOM-Based Cross-Site Scripting via FancyBox JavaScript Library
+    WPC Smart Quick View for WooCommerce <= 4.0.2 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d99d4b9a-aa09-434d-91a8-7afaa0e8b5db?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/45ac52e1-9f0e-499e-9125-2581940f5bdd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.1.1')
+          - compare_versions(version, '<= 4.0.2')

@@ -1,11 +1,12 @@
 id: pop3pw
 info:
-  name: poppassd
+  name: ApplePasswordServer pop3 password change daemon
   author: nmap,cn-kali-team
   tags: detect,tech,pop3pw,service
   severity: info
   metadata:
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +17,4 @@ tcp:
   - name: pop3pw
     type: regex
     regex:
-    - ^200 hello there, who are you\?\r\n
+    - '^\+OK ApplePasswordServer (\d[-.\w]+) password server at '

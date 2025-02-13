@@ -1,18 +1,18 @@
-id: stream-f639fe6745930d7bf95e9d1ea29b80d8
+id: stream
 
 info:
-  name: "Stream <= 3.0.5 - Sensitive Data Exposure"
+  name: >
+    Stream <= 3.9.2 - Missing Authorization via load_alerts_settings
   author: topscoder
   severity: high
-  description: "The Stream plugin for WordPress is vulnerable to Sensitive Data Exposure in versions up to, and including, 3.0.5. This can allow unauthenticated attackers to extract sensitive data including logged entries."
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/stream/changelog/
-    - https://wpscan.com/vulnerability/8fa150be-75c2-48b3-8d3b-bc623f25debd
-    - https://patchstack.com/database/vulnerability/stream/wordpress-stream-plugin-3-0-5-unauthenticated-events-export
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d58e4317-8ad5-40d5-98b8-f8f07ab37e1f?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/stream/"
     google-query: inurl:"/wp-content/plugins/stream/"
@@ -55,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.5')
+          - compare_versions(version, '< 3.9.3')

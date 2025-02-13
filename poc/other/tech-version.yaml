@@ -4,7 +4,7 @@ info:
   name: Tech version detect
   author: anonymous
   severity: info
-  tags: http,tech,noisy
+  tags: generic,tech,noisy
 
 http:
   - pre-condition:
@@ -31,6 +31,11 @@ http:
           - "PHP/"
           - "Python/"
           - "Werkzeug/"
+          - "Jetty("
+      - type: word
+        part: body
+        words:
+          - "Powered by Jetty://"
 
     extractors:
       - type: regex
@@ -67,3 +72,19 @@ http:
         group: 1
         regex:
           - "Werkzeug/([0-9.]+)"
+
+      - type: regex
+        part: header
+        name: jetty
+        group: 1
+        regex:
+          - "Jetty[(]([0-9.v]+)[)]"
+
+      - type: regex
+        part: header
+        name: jetty
+        group: 1
+        regex:
+          - "Powered by Jetty:// ([0-9.v]+)"
+
+

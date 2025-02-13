@@ -1,10 +1,10 @@
-id: woo-widget-product-slideshow-dd06a323af6885b5ff16bd2c940b262a
+id: woo-widget-product-slideshow
 
 info:
   name: >
     a3 Lazy Load <= 2.6.0 - Cross-Site Request Forgery to Settings Reset
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     The following plugins for WordPress are vulnerable to Cross-Site Request Forgery:
                         
@@ -12,7 +12,6 @@ info:
                         
                         This is due to missing nonce validation on the reset_settings() function. This makes it possible for unauthenticated attackers to reset the plugin's settings via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0a5a0ca6-f355-4110-a533-04e46c741ec9?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
@@ -22,7 +21,7 @@ info:
     fofa-query: "wp-content/plugins/woo-widget-product-slideshow/"
     google-query: inurl:"/wp-content/plugins/woo-widget-product-slideshow/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,woo-widget-product-slideshow,medium
+  tags: cve,wordpress,wp-plugin,woo-widget-product-slideshow,high
 
 http:
   - method: GET

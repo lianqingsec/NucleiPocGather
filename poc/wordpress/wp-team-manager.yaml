@@ -1,4 +1,4 @@
-id: wp-team-manager-9e7d4558952871da97a71a88ee648736
+id: wp-team-manager
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/62d1b4a2-5c1e-4381-a455-082bee734ff2?source=api-scan
   classification:
     cvss-metrics: 

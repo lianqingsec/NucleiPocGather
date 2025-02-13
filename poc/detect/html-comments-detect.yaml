@@ -4,7 +4,7 @@ info:
   name: HTML Comments Detection
   author: anonymous
   severity: info
-  tags: http,html,noisy
+  tags: html,comments,noisy
 
 flow: |
   http()

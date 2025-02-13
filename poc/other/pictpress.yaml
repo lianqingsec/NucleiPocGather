@@ -1,4 +1,4 @@
-id: pictpress-91ee7163faceb2b2c1465816bc63c65b
+id: pictpress
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c22b9505-6341-4db8-9d21-23796caf63d3?source=api-scan
   classification:
     cvss-metrics: 

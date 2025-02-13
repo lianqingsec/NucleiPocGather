@@ -1,4 +1,4 @@
-id: wordpress-file-upload-pro-9e8a31959c0d57b73d3e593da767fe13
+id: wordpress-file-upload-pro
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/23334d94-e5b8-4c88-8765-02ad19e17248?source=api-scan
   classification:
     cvss-metrics: 

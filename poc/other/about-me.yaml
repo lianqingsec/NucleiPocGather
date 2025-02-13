@@ -1,4 +1,4 @@
-id: about-me-1c00484b80475d773a4440d14a64dcad
+id: about-me
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ca21320a-ee26-47e9-bbf8-cfbb45d7a882?source=api-scan
   classification:
     cvss-metrics: 

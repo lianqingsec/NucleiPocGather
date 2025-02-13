@@ -1,4 +1,4 @@
-id: text-hover-24b521af0c177be82f6e6cdcfa3d1f1e
+id: text-hover
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3d8b8f54-b2af-42dd-af82-c1e8726c87e2?source=api-scan
   classification:
     cvss-metrics: 

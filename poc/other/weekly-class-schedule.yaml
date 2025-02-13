@@ -1,4 +1,4 @@
-id: weekly-class-schedule-a89f28bb11084468ab9a10f8d9fa5b0b
+id: weekly-class-schedule
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d6951a50-954b-4c2b-8499-7623027406c8?source=api-scan
   classification:
     cvss-metrics: 

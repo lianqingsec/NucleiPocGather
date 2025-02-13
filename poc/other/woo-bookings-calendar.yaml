@@ -1,4 +1,4 @@
-id: woo-bookings-calendar-64b84c24f84eca0229d4bd19c5a1be32
+id: woo-bookings-calendar
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6aff1ea6-c6d2-4195-899b-3a038b73a7f0?source=api-scan
   classification:
     cvss-metrics: 

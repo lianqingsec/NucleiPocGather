@@ -1,15 +1,14 @@
-id: salesking-cf278bbdd5fcf9c5c421951c59925fe9
+id: salesking
 
 info:
   name: >
-    SalesKing <= 1.6.15 - Unauthenticated Sensitive Information Exposure
+    SalesKing <= 1.6.15 - Missing Authorization to Settings Change
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/70b00cfc-4a9b-442a-9c80-fd080924ca34?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c86f157e-e7f2-4b00-977c-c4cc7c2b3b0b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/salesking/"
     google-query: inurl:"/wp-content/plugins/salesking/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,salesking,low
+  tags: cve,wordpress,wp-plugin,salesking,high
 
 http:
   - method: GET

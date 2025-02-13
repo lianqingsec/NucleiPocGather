@@ -1,15 +1,14 @@
-id: moveto-bd518d150bd45409930d0c55bb6822ae
+id: moveto
 
 info:
   name: >
-    MoveTo <= 6.2 - Unauthenticated Directory Traversal to Arbitrary File Deletion
+    MoveTo <= 6.2 - Unauthenticated Arbitrary File Upload
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ec4c14ec-d085-42c8-9e98-4155f7fa8c10?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/541551d8-5510-43ff-b685-783d0d94c4bb?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

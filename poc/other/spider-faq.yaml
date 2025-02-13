@@ -1,4 +1,4 @@
-id: spider-faq-884d1c6f0886a41a8a1c1b8ea8e7ffa9
+id: spider-faq
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/688d30ac-9b30-4298-a935-316e5503a31b?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: backup-wd-64ab5acbc42f53833d0f53612e02b34b
+id: backup-wd
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c73e6889-78f1-4118-ba76-4cd696d24800?source=api-scan
   classification:
     cvss-metrics: 

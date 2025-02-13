@@ -1,19 +1,18 @@
-id: dandelion-807a5f186b979dd24f6b659bfe72403a
+id: dandelion
 
 info:
-  name: "Dendelion < 2.6.6 - Arbitrary File Upload"
+  name: >
+    Dendelion < 2.6.6 - Arbitrary File Upload
   author: topscoder
   severity: critical
-  description: "The Dendelion theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the upload-handler.php file in versions before 2.6.6. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
+  description: >
+    The Dendelion theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the upload-handler.php file in versions before 2.6.6. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
   reference:
-    - https://packetstormsecurity.com/files/125098/
-    - https://www.exploit-db.com/exploits/31424
-    - https://themeforest.net/item/dandelion-powerful-elegant-wordpress-theme/136628
-    - http://pexetothemes.com/docs/dandelion/#v266
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d0fb6bf0-48b8-48cc-8080-8fe19c36ce7c?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/dandelion/"
     google-query: inurl:"/wp-content/themes/dandelion/"

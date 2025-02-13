@@ -1,23 +1,23 @@
-id: fma-products-tabs-pro-6d07f10e3beede9b85369e03d72fe22c
+id: fma-products-tabs-pro
 
 info:
-  name: "Woocommerce Tabs Plugin, Add Custom Product Tabs <= 1.0.1 - Cross-Site Request Forgery"
+  name: >
+    Woocommerce Tabs Plugin, Add Custom Product Tabs <= 1.0.1 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
-  description: "The Woocommerce Tabs Plugin, Add Custom Product Tabs plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.0.1. This is due to missing or incorrect nonce validation on several functions. This makes it possible for unauthenticated attackers to edit session information via a forged request granted they can trick a site administrator into performing an action such as clicking on a link."
+  severity: medium
+  description: >
+    The Woocommerce Tabs Plugin, Add Custom Product Tabs plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.0.1. This is due to missing or incorrect nonce validation on several functions. This makes it possible for unauthenticated attackers to edit session information via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://ithemes.com/blog/wordpress-vulnerability-report-july-7-2021/
-    - https://wpscan.com/vulnerability/c4835f86-68a8-40f8-9c6f-8bd57d5c04e0
-    - https://wordpress.org/plugins/fma-products-tabs-pro/
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/00f5812d-661e-4206-8c3d-127bc3d48961?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
     cvss-score: 8.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/fma-products-tabs-pro/"
     google-query: inurl:"/wp-content/plugins/fma-products-tabs-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fma-products-tabs-pro,high
+  tags: cve,wordpress,wp-plugin,fma-products-tabs-pro,medium
 
 http:
   - method: GET

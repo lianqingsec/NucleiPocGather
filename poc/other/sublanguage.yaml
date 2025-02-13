@@ -1,4 +1,4 @@
-id: sublanguage-5305ae387a953df0c829cc0495ff8c31
+id: sublanguage
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/50726c57-8d42-4143-9e75-d30513d8d0e2?source=api-scan
   classification:
     cvss-metrics: 

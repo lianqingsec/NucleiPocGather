@@ -1,4 +1,4 @@
-id: seraphinite-accelerator-156ac746f0e80d71dd86392ae25defe1
+id: seraphinite-accelerator
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/07287a85-df00-408a-8b02-978fd3116155?source=api-scan
   classification:
     cvss-metrics: 

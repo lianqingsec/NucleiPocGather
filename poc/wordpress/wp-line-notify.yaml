@@ -1,4 +1,4 @@
-id: wp-line-notify-66972579322ed7108ddeaa34127818a3
+id: wp-line-notify
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b4e7c02-48d3-4271-a3bc-e7d3256b7217?source=api-scan
   classification:
     cvss-metrics: 

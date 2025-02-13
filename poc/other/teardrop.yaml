@@ -1,4 +1,4 @@
-id: teardrop-b4d76613e7335efdff0b86f2400b044a
+id: teardrop
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/63d806ed-2cfc-4ac6-9ebb-75c13d2cfad4?source=api-scan
   classification:
     cvss-metrics: 

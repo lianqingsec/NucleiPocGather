@@ -1,4 +1,4 @@
-id: twb-woocommerce-reviews-ecc3d6d668632ad6733e2dc194d41185
+id: twb-woocommerce-reviews
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f85df8f1-9283-48d0-8f19-88a4a839d501?source=api-scan
   classification:
     cvss-metrics: 

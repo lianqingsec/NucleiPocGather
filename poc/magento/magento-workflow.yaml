@@ -4,8 +4,11 @@ info:
   name: Magento Security Checks
   author: TechbrunchFR
   description: A simple workflow that runs all Magento related nuclei templates on a given target.
+  tags: workflow
 
 workflows:
-  - template: http/technologies/magento-detect.yaml
+  - template: technologies/magento-detect.yaml
     subtemplates:
-      - tags: magento
+      - template: exposures/configs/magento-config.yaml
+      - template: exposed-panels/magento-admin-panel.yaml
+      - template: vulnerabilities/magento/

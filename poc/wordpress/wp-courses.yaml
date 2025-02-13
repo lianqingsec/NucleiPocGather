@@ -1,17 +1,16 @@
-id: wp-courses-f9175583dcae3a69263be7e4e3ea40f2
+id: wp-courses
 
 info:
   name: >
-    WP Courses LMS <= 3.2.3 - Cross-Site Request Forgery
+    WP Courses LMS <= 3.2.3 - Missing Authorization
   author: topscoder
   severity: medium
   description: >
-    The WP Courses LMS – Online Courses Builder, eLearning Courses, Courses Solution, Education Courses plugin for WordPress is vulnerable to Cross-Site Request Forgery in all versions up to, and including, 3.2.3. This is due to missing nonce validation on several functions hooked via AJAX in the ~/ajax/ajax-lesson-order.php file. This makes it possible for unauthenticated attackers to to perform several actions such as adding, deleting and renaming lesson modules via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
+    The WP Courses LMS – Online Courses Builder, eLearning Courses, Courses Solution, Education Courses plugin for WordPress is vulnerable to unauthorized modification of data due to missing capability checks on several functions in the ~/ajax/ajax-lesson-order.php file hooked via AJAX in all versions up to, and including, 3.2.3. This makes it possible for authenticated attackers, with subscriber-level access and above, to perform several actions such as adding, deleting and renaming lesson modules.
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/487e23c9-9100-4240-8992-c4c85930c4a6?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1127fe1e-4359-4dff-93a7-392a8bfded51?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
     cvss-score: 4.3
     cve-id: 
   metadata:

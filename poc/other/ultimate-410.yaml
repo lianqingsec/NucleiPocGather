@@ -1,4 +1,4 @@
-id: ultimate-410-5e4583445c390fe5fe925738f50af8c0
+id: ultimate-410
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7c10be28-43ff-4b43-8186-6ad9a487321e?source=api-scan
   classification:
     cvss-metrics: 

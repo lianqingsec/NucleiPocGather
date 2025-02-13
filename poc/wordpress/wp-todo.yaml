@@ -1,15 +1,14 @@
-id: wp-todo-d321c83fc92b177a4feede0546be070b
+id: wp-todo
 
 info:
   name: >
-    WP To Do <= 1.3.0 - Authenticated (Admin+) Stored Cross-Site Scripting via Task Comments
+    WP To Do <= 1.2.8 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b36b9b8a-41b0-4b57-92c7-5acebe2b0bae?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e5cbe1f-0a16-4301-a83c-af9456afe44d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.3.0')
+          - compare_versions(version, '<= 1.2.8')

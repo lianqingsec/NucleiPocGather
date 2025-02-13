@@ -1,4 +1,4 @@
-id: wp-integrator-a51a4c9717d9f8b8a4f1f84355d2f52e
+id: wp-integrator
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/615efe27-3f3f-4d99-ba8d-a575608121c8?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: seo-local-rank-41a9dd2b8d04631e7ae39b91b592c930
+id: seo-local-rank
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ce8ed18-2164-4b5a-b1d3-fda8d348ebf9?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: oembed-gist-90a93117e384f049c983b8fd1abb380b
+id: oembed-gist
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fed0e3bc-1401-410a-805d-1ea3e423024b?source=api-scan
   classification:
     cvss-metrics: 

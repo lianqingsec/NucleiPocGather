@@ -7,14 +7,12 @@ info:
   reference:
     - https://wordpress.org/plugins/post-types-order/
   metadata:
-    max-request: 1
     plugin_namespace: post-types-order
     wpscan: https://wpscan.com/plugin/post-types-order
-  tags: tech,wordpress,wp-plugin,top-200
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/post-types-order/readme.txt"
 
@@ -48,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a004730450220363c892c075b905e733a0483b23ab9ff759fa91b1291a1b1a143d91e23b79195022100cdc7c3d50268817e664560005f303c965dfd9cd0e4b4672f22312ba365b49bd9:922c64590222798bb761d5b6d8e72950

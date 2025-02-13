@@ -1,4 +1,4 @@
-id: yookassa-0d6079cde92dabe1a0bc023f069129fe
+id: yookassa
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7a027f8f-bec8-456c-804b-b18fdb9532db?source=api-scan
   classification:
     cvss-metrics: 

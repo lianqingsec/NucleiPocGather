@@ -1,14 +1,13 @@
-id: network-summary-e9f3444550083ad939a729677f709423
+id: network-summary
 
 info:
   name: >
     Network Summary <= 2.0.11 - Unauthenticated SQL Injection
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3320c182-b1f9-4e06-92ea-0fa670557dd0?source=api-scan
   classification:
     cvss-metrics: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/network-summary/"
     google-query: inurl:"/wp-content/plugins/network-summary/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,network-summary,critical
+  tags: cve,wordpress,wp-plugin,network-summary,low
 
 http:
   - method: GET

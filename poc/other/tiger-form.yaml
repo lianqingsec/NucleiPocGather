@@ -1,4 +1,4 @@
-id: tiger-form-a9c7778b2c1fe12201c4414e46e5cfe7
+id: tiger-form
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/286e52b4-2694-4f3b-9d1d-fd1ebf1d1e50?source=api-scan
   classification:
     cvss-metrics: 

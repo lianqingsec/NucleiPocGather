@@ -4,7 +4,7 @@ info:
   name: Tech version detect (helper)
   author: anonymous
   severity: info
-  tags: http,tech,noisy
+  tags: generic,tech,noisy
 
 flow: |
   http()
@@ -49,7 +49,7 @@ javascript:
           !["Python", "HTTP", "Werkzeug", "Apache", "nginx", "PHP"].includes(
             v.trim().split('/')[0]
           )
-      ).map(v => v.trim().split('/')[0]).join("\n")
+      ).map(v => v.trim()).join("\n")
 
     extractors:
       - type: regex

@@ -1,24 +1,23 @@
-id: opening-hours-1b6586fdc66a1a5686c3e8b03d13868e
+id: opening-hours
 
 info:
   name: >
-    We’re Open! <= 1.44 - Missing Authorization
+    We’re Open! <= 1.37 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
-    The We’re Open! plugin for WordPress is vulnerable to authorization bypass due to a missing capability checks on the admin_ajax function in versions up to, and including, 1.44. This function triggers multiple cases (google_business_credentials, google_data, google_business, separators, logo-delete, logo_delete, logo-remove, logo_remove, logo, structured-data, structured_data, google_data_preview, custom-styles, custom_styles, clear, cache, clear-cache, clear_cache, reset) and makes it possible for unauthenticated attackers to perform unauthorized administrative actions.
+    The We’re Open! plugin for WordPress is vulnerable to Stored Cross-Site Scripting via several of its setting parameters in versions up to, and including, 1.37 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with administrator-level permissions and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/82f4ad21-bc55-4daf-bc46-90969dcbabdd?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0004db27-9ea6-4387-ab1d-b95558784ed9?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
-    cvss-score: 4.3
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 5.5
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/opening-hours/"
     google-query: inurl:"/wp-content/plugins/opening-hours/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,opening-hours,high
+  tags: cve,wordpress,wp-plugin,opening-hours,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.44')
+          - compare_versions(version, '<= 1.37')

@@ -1,4 +1,4 @@
-id: gotowp-a8a9ebaab000a2633f29daccfd617391
+id: gotowp
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8d07dcb9-ec8c-4f38-b5c2-2f4020a1c610?source=api-scan
   classification:
     cvss-metrics: 

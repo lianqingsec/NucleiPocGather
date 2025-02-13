@@ -1,4 +1,4 @@
-id: gt3-photo-video-gallery-759789142aa898cbf91ae14cc440bd9d
+id: gt3-photo-video-gallery
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/06ef1f0c-fdcc-4aaf-9e48-19b5be52351d?source=api-scan
   classification:
     cvss-metrics: 

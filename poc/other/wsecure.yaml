@@ -1,15 +1,14 @@
-id: wsecure-c917422c7b20c95ad42e3d64368038c9
+id: wsecure
 
 info:
   name: >
-    wSecure Lite <= 2.5 - Authenticated (Administrator+) Stored Cross-Site Scripting via settings
+    wSecure Lite < 2.4 - Remote Code Execution
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/05f5addb-ab1d-4b67-b969-3b95d43be790?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bac57319-3b0c-4b83-af9e-7b5539ef087a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/wsecure/"
     google-query: inurl:"/wp-content/plugins/wsecure/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wsecure,low
+  tags: cve,wordpress,wp-plugin,wsecure,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5')
+          - compare_versions(version, '< 2.4')

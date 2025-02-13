@@ -1,4 +1,4 @@
-id: add-local-avatar-0fa062379a469f0ed99c12d21b300821
+id: add-local-avatar
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/241da621-b892-4263-8409-a40ac5a1ade3?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: contact-form-ready-3cc9e65fea99485cfa80961ff40561eb
+id: contact-form-ready
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5bdba43c-0156-4a6b-b7b9-3f74b506e8f8?source=api-scan
   classification:
     cvss-metrics: 

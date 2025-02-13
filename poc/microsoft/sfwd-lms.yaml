@@ -1,15 +1,14 @@
-id: sfwd-lms-f40ff5332d4441c4147f1185d13571ad
+id: sfwd-lms
 
 info:
   name: >
-    LearnDash LMS <= 4.6.0 - Authenticated (Subscriber+) Insecure Direct Object Reference to Arbitrary User Password Change
+    LearnDash LMS <= 4.10.2 - Sensitive Information Exposure via API
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2318b3e1-268d-45fa-83bf-c6e88f1b9013?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ae735117-e68b-448e-ad41-258d1be3aebc?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -25,7 +24,7 @@ http:
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/"
+      - "{{BaseURL}}/wp-content/plugins/sfwd-lms/readme.txt"
 
     extractors:
       - type: regex
@@ -34,14 +33,14 @@ http:
         group: 1
         internal: true
         regex:
-          - "(?mi)learndash_quiz_front.min.css\\?ver=([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
         name: version
         part: body
         group: 1
         regex:
-          - "(?mi)learndash_quiz_front.min.css\\?ver=([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.6.0')
+          - compare_versions(version, '<= 4.10.2')

@@ -1,4 +1,4 @@
-id: visitor-analytics-io-986a655e2d6acd7ec06135985fe4ea49
+id: visitor-analytics-io
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5a604c8d-1e4a-42c2-b7cf-ee6cae54730c?source=api-scan
   classification:
     cvss-metrics: 

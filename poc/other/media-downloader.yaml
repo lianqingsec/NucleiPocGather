@@ -1,15 +1,14 @@
-id: media-downloader-ec236d911920729748b62d64324ce2b4
+id: media-downloader
 
 info:
   name: >
-    Media Downloader <= 0.4.7.4 - Reflected Cross-Site Scripting
+    Media Downloader <= 0.1.992 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9638fb3b-e1dd-4917-8770-62b1598b85be?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8d2dd5e4-558b-44fe-a47c-fb2b5639f39c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.4.7.4')
+          - compare_versions(version, '<= 0.1.992')

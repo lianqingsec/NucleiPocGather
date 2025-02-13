@@ -1,4 +1,4 @@
-id: openid-a6c7002e97fa793aad22e8f97c135709
+id: openid
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6aa2be6c-299e-4769-9070-a3c337bce990?source=api-scan
   classification:
     cvss-metrics: 

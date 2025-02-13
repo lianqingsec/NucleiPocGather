@@ -1,4 +1,4 @@
-id: q2w3-inc-manager-a56e133a0387bc55ee96e5912919d68d
+id: q2w3-inc-manager
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6662c336-c8b6-4017-835f-a91f1abda400?source=api-scan
   classification:
     cvss-metrics: 

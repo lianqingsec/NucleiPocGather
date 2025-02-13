@@ -1,24 +1,23 @@
-id: premmerce-redirect-manager-5eda8dd51fcfd7420f9fa72bd8ff5f34
+id: premmerce-redirect-manager
 
 info:
   name: >
-    Premmerce Redirect Manager <= 1.0.11 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    Freemius SDK <= 2.4.2 - Missing Authorization Checks
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    The Premmerce Redirect Manager plugin for WordPress is vulnerable to Stored Cross-Site Scripting via admin settings in all versions up to 1.0.12 (exclusive) due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with administrator-level permissions and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This only affects multi-site installations and installations where unfiltered_html has been disabled.
+    The Freemius SDK, as used by hundreds of WordPress plugin and theme developers, was vulnerable to Cross-Site Request Forgery and Information disclosure due to missing capability checks and nonce protection on the _get_debug_log, _get_db_option, and the _set_db_option functions in versions up to, and including 2.4.2. Any WordPress plugin or theme running a version of Freemius less than 2.4.3 is vulnerable.
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b3d4f658-e9ce-490b-bcaa-1061a463dbb2?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/39fb0499-9ab4-4a2f-b0db-ece86bcf4d42?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 4.4
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
+    cvss-score: 6.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/premmerce-redirect-manager/"
     google-query: inurl:"/wp-content/plugins/premmerce-redirect-manager/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,premmerce-redirect-manager,low
+  tags: cve,wordpress,wp-plugin,premmerce-redirect-manager,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.0.12')
+          - compare_versions(version, '< 1.0.7')

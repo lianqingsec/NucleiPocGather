@@ -1,24 +1,23 @@
-id: erp-e11ffab2794c6ee91fb07c2744792308
+id: erp
 
 info:
   name: >
-    WP ERP <=1.10.5 - Sensitive Data Exposure
+    WP ERP <= 1.12.6 - Missing Authorization via admin notice dismissal
   author: topscoder
-  severity: medium
+  severity: high
   description: >
-    The WP ERP Plugin for WordPress is vulnerable to Sensitive Data Exposure in versions up to, and including, 1.10.5 due to missing authorization checks in a number of functions, including 'generate_csv_url', which leaks a nonce used to import CSV files.
+    
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/35cc980b-9c52-4f0b-aeb2-4afa6efacd8f?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/048277c4-f313-484d-a330-420e0682eee2?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
-    cvss-score: 6.3
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/erp/"
     google-query: inurl:"/wp-content/plugins/erp/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,erp,medium
+  tags: cve,wordpress,wp-plugin,erp,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.10.5')
+          - compare_versions(version, '<= 1.12.6')

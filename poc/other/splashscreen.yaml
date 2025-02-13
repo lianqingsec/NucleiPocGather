@@ -1,4 +1,4 @@
-id: splashscreen-e99cd6f52d6ff45048d4d7eaafac3dec
+id: splashscreen
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1088f498-e718-41bc-866e-7027352a2a5b?source=api-scan
   classification:
     cvss-metrics: 

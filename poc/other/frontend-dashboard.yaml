@@ -1,15 +1,14 @@
-id: frontend-dashboard-b8834e5a3e036dd5e61d34a3b1068be9
+id: frontend-dashboard
 
 info:
   name: >
-    Frontend Dashboard <= 2.2.1 - Authenticated (Subscriber+) Stored Cross-Site Scripting
+    Frontend Dashboard <= 2.2.2 -
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a9ca2479-10ce-42ec-a9f3-0f91119d9525?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2e96557-7341-4da9-81ca-2bd17a85559e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.1')
+          - compare_versions(version, '<= 2.2.2')

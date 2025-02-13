@@ -1,15 +1,14 @@
-id: simple-testimonials-showcase-e3d1267daf17e4c1180fb403eeab1cf1
+id: simple-testimonials-showcase
 
 info:
   name: >
-    Simple Testimonials Showcase  <= 1.1.5 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Simple Testimonials Showcase <= 1.1.5 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/717dfceb-dc0b-45ef-bc06-72658486d1f1?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b6008237-e4a8-4757-ae14-ac20c6f1b0af?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/simple-testimonials-showcase/"
     google-query: inurl:"/wp-content/plugins/simple-testimonials-showcase/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,simple-testimonials-showcase,low
+  tags: cve,wordpress,wp-plugin,simple-testimonials-showcase,medium
 
 http:
   - method: GET

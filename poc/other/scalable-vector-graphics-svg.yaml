@@ -1,4 +1,4 @@
-id: scalable-vector-graphics-svg-7ebcc23c4b2581aa9b5947fe9c79480d
+id: scalable-vector-graphics-svg
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ce8028a3-6fca-448f-b9a0-444db651148c?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: skysa-official-52fc01b601113634ef3877713d303e32
+id: skysa-official
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/596d1083-2030-41f0-92d4-82e98bf07331?source=api-scan
   classification:
     cvss-metrics: 

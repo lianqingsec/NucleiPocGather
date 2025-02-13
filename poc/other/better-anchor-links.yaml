@@ -1,4 +1,4 @@
-id: better-anchor-links-62fa7d640e53ed9fc2136c40f1511100
+id: better-anchor-links
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f51ea60-7bda-4627-9b65-d1ff402dfc88?source=api-scan
   classification:
     cvss-metrics: 

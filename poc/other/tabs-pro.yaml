@@ -1,4 +1,4 @@
-id: tabs-pro-07c3e9f28b3b9a38cbe150ab5e295ae3
+id: tabs-pro
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/08220b23-d6fa-4005-bbbb-019412d328a5?source=api-scan
   classification:
     cvss-metrics: 

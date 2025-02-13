@@ -1,4 +1,4 @@
-id: pubsubhubbub-8b9f60491d53b8c8e4056727f71c36e9
+id: pubsubhubbub
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f07b166b-3436-4797-a2df-096ff7c27a09?source=api-scan
   classification:
     cvss-metrics: 

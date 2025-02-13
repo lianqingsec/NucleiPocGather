@@ -1,4 +1,4 @@
-id: pliska-405fe484522342f309e572b6f863f171
+id: pliska
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b4da6327-9ad1-4a53-b2c4-a4c31f56d0e5?source=api-scan
   classification:
     cvss-metrics: 

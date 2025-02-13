@@ -1,15 +1,14 @@
-id: easy-social-share-buttons3-e0aa24259cf0a30b2f7bcdf9cdfc6d39
+id: easy-social-share-buttons3
 
 info:
   name: >
-    Easy Social Share Buttons <= 9.4 - Authenticated (Subscriber+) Local File Inclusion
+    Easy Social Share Buttons <= 9.4 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8fc28132-eae6-4082-988c-2d9e56ff1283?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/22b742d7-e9fe-48ea-ae7f-579bd3c32c44?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/easy-social-share-buttons3/"
     google-query: inurl:"/wp-content/plugins/easy-social-share-buttons3/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,easy-social-share-buttons3,low
+  tags: cve,wordpress,wp-plugin,easy-social-share-buttons3,high
 
 http:
   - method: GET

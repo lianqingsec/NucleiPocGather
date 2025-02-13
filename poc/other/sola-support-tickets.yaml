@@ -1,4 +1,4 @@
-id: sola-support-tickets-1bffe25930754329d14a4fef01783a53
+id: sola-support-tickets
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c78acf9d-89bf-4c8f-b333-31a330701614?source=api-scan
   classification:
     cvss-metrics: 

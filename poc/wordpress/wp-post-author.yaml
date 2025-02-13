@@ -1,24 +1,23 @@
-id: wp-post-author-e127ea612fe80b71f0ce2eef8ab7183f
+id: wp-post-author
 
 info:
   name: >
-    WP Post Author <= 3.2.3 - Privilege Escalation
+    WP Post Author – Enhance Your Posts with the Author Bio, Co-Authors, Guest Authors, and Post Rating System, including User Registration Form Builder <= 3.6.4 - Missing Authorization to Rating Manipulation
   author: topscoder
-  severity: low
+  severity: high
   description: >
-    The WP Post Author plugin for WordPress is vulnerable to privilege escalation in versions up to, and including, 3.2.3. This is due to insufficient controls on the /set-user-data REST API endpoint. This makes it possible for authenticated attackers to set their user role to administrator and gain complete access to the site. Attackers can easily obtain authenticated access using the /v1/frontend/register-user REST API endpoint, even when registration is disabled on the site.
+    
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/155e3de1-e115-4683-bb4d-a0c5667dc3d3?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a82a3b7-eb05-4f52-84b7-f1a97dddedf9?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/wp-post-author/"
     google-query: inurl:"/wp-content/plugins/wp-post-author/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-post-author,low
+  tags: cve,wordpress,wp-plugin,wp-post-author,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.2.3')
+          - compare_versions(version, '<= 3.6.4')

@@ -1,24 +1,22 @@
-id: supportboard-4cb4be74d03e511f6393f2f455bd0046
+id: supportboard
 
 info:
-  name: "Support Board <= 1.2.8 - Authenticated Stored Cross-Site Scripting"
+  name: "Support Board <= 3.4.1 - Authenticated SQL Injection"
   author: topscoder
-  severity: medium
-  description: "The Support Board plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 1.2.8 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  severity: high
+  description: "The Support Board plugin for WordPress is vulnerable to generic SQL Injection via several parameters in versions up to, and including, 3.4.1 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers with a low privilege to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
   reference:
-    - https://codecanyon.net/item/support-board-chat-and-help-desk/20752085
-    - https://patchstack.com/database/vulnerability/supportboard/wordpress-support-board-premium-plugin-1-2-8-stored-cross-site-scripting-xss-vulnerability
-    - https://www.cybersecurity-help.cz/vdb/SB2019061109
-    - https://wpscan.com/vulnerability/9351
+    - https://board.support/changes
+    - https://wpscan.com/vulnerability/c017cba2-b7b6-49d5-8632-c4476e45fa03
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id:
   metadata:
     fofa-query: "wp-content/plugins/supportboard/"
     google-query: inurl:"/wp-content/plugins/supportboard/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,supportboard,medium
+  tags: cve,wordpress,wp-plugin,supportboard,high
 
 http:
   - method: GET
@@ -56,4 +54,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.2.9')
+          - compare_versions(version, '< 3.4.2')

@@ -1,4 +1,4 @@
-id: udraw-0bbd08296bf7ec958d85a51b39a2749e
+id: udraw
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5629d479-143d-4a03-ac64-cb304954a5ca?source=api-scan
   classification:
     cvss-metrics: 

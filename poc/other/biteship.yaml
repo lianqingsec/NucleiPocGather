@@ -1,4 +1,4 @@
-id: biteship-8c3214c3a61a8360d72b6a3b3aa6df23
+id: biteship
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a0247ba6-d193-4b7d-969d-0cd239c57faa?source=api-scan
   classification:
     cvss-metrics: 

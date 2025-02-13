@@ -1,4 +1,4 @@
-id: theagency-7e1dd62e0b3f2d943deda56c57a08b8b
+id: theagency
 
 info:
   name: >
@@ -6,13 +6,12 @@ info:
   author: topscoder
   severity: high
   description: >
-    The TheAgency theme for WordPress is vulnerable to Cross-Site Scripting due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser.
+    
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ee837fd-a41e-44f2-81e8-258a7d8547bd?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ee837fd-a41e-44f2-81e8-258a7d8547bd?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/themes/theagency/"

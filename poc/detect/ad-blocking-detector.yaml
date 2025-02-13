@@ -1,4 +1,4 @@
-id: ad-blocking-detector-29a2fe62a95c9b7d06f91cd4f479a678
+id: ad-blocking-detector
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/054bb123-132c-4c32-9fd1-a9f289cfdc35?source=api-scan
   classification:
     cvss-metrics: 

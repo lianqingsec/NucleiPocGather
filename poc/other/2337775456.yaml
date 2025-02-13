@@ -1,14 +1,13 @@
 id: nntp
 info:
-  name: Diablo nntpd
+  name: Leafnode nntpd
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
     hostname: $1
-    operating_system: Unix
+    info: misconfigured
     rarity: 0
-    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +18,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - '^502 ([-\w_.]+): Transfer permission denied to [\d.]+ - [-\w_.@]+ \(DIABLO ([-\w_.]+)\)\r\n'
+    - ^\nLeafnode must have a fully-qualified and globally unique domain name,\nnot just \"([-\w_.]+)\"\.\n

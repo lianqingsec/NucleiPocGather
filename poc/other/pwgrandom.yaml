@@ -1,4 +1,4 @@
-id: pwgrandom-1aa979b3cc5c2a691e4af675add989c2
+id: pwgrandom
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e47528d-993c-434c-a077-9c614e56f39f?source=api-scan
   classification:
     cvss-metrics: 

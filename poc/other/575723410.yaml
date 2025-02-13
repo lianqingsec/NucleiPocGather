@@ -1,26 +1,24 @@
 id: http-proxy
 info:
-  name: Microsoft ISA Server http proxy
+  name: Squid
   author: nmap,cn-kali-team
   tags: detect,tech,http-proxy,service
   severity: info
   metadata:
-    fallback:
-    - get-request
-    operating_system: Windows
-    product: isa_server
-    rarity: 5
-    vendor: microsoft
+    product: squid
+    rarity: 8
+    vendor: squid-cache
     verified: true
+    version: $1
 tcp:
-- name: rtsprequest
+- name: nessus-tpv10
   inputs:
-  - data: OPTIONS / RTSP/1.0\r\n\r\n
+  - data: < NTP/1.0 >\n
   host:
   - '{{Hostname}}'
-  port: 80,554,3052,3372,5000,7070,8080,10000
+  port: '1241'
   extractors:
   - name: http-proxy
     type: regex
     regex:
-    - ^HTTP/1\.1 400 Bad Request \( The data is invalid\.  \)\r\n
+    - '^HTTP/1\.0 400 Bad Request\r\nServer: squid/([\w._+-]+)\r\n'

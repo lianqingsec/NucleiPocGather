@@ -1,4 +1,4 @@
-id: a-forms-512656fcb2cbebe803be4186d2a51d66
+id: a-forms
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e0755c8f-89c4-45a5-95a4-fcfe985f037f?source=api-scan
   classification:
     cvss-metrics: 

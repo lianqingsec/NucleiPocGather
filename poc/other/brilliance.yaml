@@ -1,19 +1,21 @@
-id: brilliance-d41d8cd98f00b204e9800998ecf8427e
+id: brilliance
 
 info:
-  name: "Epsilon Framework Themes (Various Versions) - Function Injection"
+  name: >
+    Epsilon Framework Themes (Various Versions) - Function Injection
   author: topscoder
   severity: low
-  description: "The following themes for WordPress are vulnerable to Function Injections in versions up to and including Shapely <= 1.2.7, NewsMag <= 2.4.1, Activello <= 1.4.0, Illdy <= 2.1.4, Allegiant <= 1.2.2, Newspaper X <= 1.3.1, Pixova Lite <= 2.0.5, Brilliance <= 1.2.7, MedZone Lite <= 1.2.4, Regina Lite <= 2.0.4, Transcend <= 1.1.8, Affluent <= 1.1.0, Bonkers <= 1.0.4, Antreas <= 1.0.2, Sparkling <= 2.4.8, and NatureMag Lite <= 1.0.4. This is due to epsilon_framework_ajax_action. This makes it possible for unauthenticated attackers to call functions and achieve remote code execution."
+  description: >
+    
   reference:
-
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5b75c322-539d-44e9-8f26-5ff929874b67?source=api-scan
   classification:
-    cvss-metrics:
-    cvss-score:
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    fofa-query: "wp-content/unknown/brilliance/"
-    google-query: inurl:"/wp-content/unknown/brilliance/"
+    fofa-query: "wp-content/themes/brilliance/"
+    google-query: inurl:"/wp-content/themes/brilliance/"
     shodan-query: 'vuln:'
   tags: cve,wordpress,wp-theme,brilliance,low
 
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<=  1.2.7')
+          - compare_versions(version, '<= 1.2.7')

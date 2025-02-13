@@ -1,15 +1,14 @@
-id: userplus-e58d515b8fd973ea70d83dd2fb820755
+id: userplus
 
 info:
   name: >
-    UserPlus <= 2.0 - Authenticated (Editor+) Registration Form Update to Privilege Escalation
+    UserPlus <= 2.0 - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1148b18d-7af1-41c6-bd7f-1b2d53cb44e6?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/acd0349b-7864-4e4e-84ba-6f0ec5b585f3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/userplus/"
     google-query: inurl:"/wp-content/plugins/userplus/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,userplus,low
+  tags: cve,wordpress,wp-plugin,userplus,medium
 
 http:
   - method: GET

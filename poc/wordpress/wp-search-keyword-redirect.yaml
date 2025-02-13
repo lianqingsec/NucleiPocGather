@@ -1,4 +1,4 @@
-id: wp-search-keyword-redirect-bf4ef59a087b3009bcd665ccc0df58a8
+id: wp-search-keyword-redirect
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/eb1f5fc6-9e0e-423a-bd71-32e12d201c37?source=api-scan
   classification:
     cvss-metrics: 

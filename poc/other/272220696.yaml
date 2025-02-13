@@ -1,11 +1,15 @@
 id: imap-proxy
 info:
-  name: imap proxy
+  name: PGP Universal imap proxy
   author: nmap,cn-kali-team
   tags: detect,tech,imap-proxy,service
   severity: info
   metadata:
+    info: disabled
+    product: universal_server
     rarity: 0
+    vendor: pgp
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +20,4 @@ tcp:
   - name: imap-proxy
     type: regex
     regex:
-    - ^\* OK IMAP4 proxy ready\r\n
+    - ^\* BYE PGP Universal no imap4 service here\r\n

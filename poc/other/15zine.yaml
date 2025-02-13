@@ -1,4 +1,4 @@
-id: 15zine-f08a166ce4339a39358a0f72ea6672b5
+id: 15zine
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ad5c8eb8-8e58-4bed-a39c-b54e2cfd9cd3?source=api-scan
   classification:
     cvss-metrics: 

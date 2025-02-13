@@ -1,18 +1,18 @@
-id: theme-test-drive-5d9f355e4f04f8d3c39d1127575cf009
+id: theme-test-drive
 
 info:
-  name: "Theme Test Drive <= 2.9 -  Reflected Cross-Site Scripting"
+  name: >
+    Theme Test Drive <= 2.9 -  Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Theme Test Drive plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘install_theme’ parameter in versions up to, and including, 2.9 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  description: >
+    The Theme Test Drive plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘install_theme’ parameter in versions up to, and including, 2.9 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - http://cinu.pl/research/wp-plugins/mail_38b543898e86d33a4df83f1424580267.html
-    - http://blog.cinu.pl/2015/11/php-static-code-analysis-vs-top-1000-wordpress-plugins.html
-    - https://wpscan.com/vulnerability/101162ea-b72a-460a-92b2-7a38631784a9
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f9de946c-941a-41d7-b1c4-440b4fcec9b0?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/theme-test-drive/"
     google-query: inurl:"/wp-content/plugins/theme-test-drive/"

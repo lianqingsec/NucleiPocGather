@@ -1,4 +1,4 @@
-id: ravpage-b5a51590524092b47fea1bc58ca48251
+id: ravpage
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a2fe6b69-7a89-4cd4-8a8c-f7e1e587fbbe?source=api-scan
   classification:
     cvss-metrics: 

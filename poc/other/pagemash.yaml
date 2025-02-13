@@ -1,4 +1,4 @@
-id: pagemash-a8a03884521f4beabd2bfc7d0ddac448
+id: pagemash
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/22a9c0f6-7a20-4ed1-9afa-887adc790c80?source=api-scan
   classification:
     cvss-metrics: 

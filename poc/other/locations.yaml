@@ -1,15 +1,14 @@
-id: locations-c7a54b1c9e4e9afe9e2af9f3348f4c27
+id: locations
 
 info:
   name: >
-    Locations <= 4.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Locations <= 3.2.1 - Cross-Site Request Forgery Bypass
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fe10acf6-2649-4e85-abd1-b6840169eb41?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3df9f237-a861-43fc-8623-d42f84d8d5d1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/locations/"
     google-query: inurl:"/wp-content/plugins/locations/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,locations,low
+  tags: cve,wordpress,wp-plugin,locations,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.0')
+          - compare_versions(version, '<= 3.2.1')

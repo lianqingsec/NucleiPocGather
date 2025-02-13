@@ -1,15 +1,14 @@
-id: wpbrutalai-e8059d693808efeea36f4ac57c767323
+id: wpbrutalai
 
 info:
   name: >
-    WP Brutal AI < 2.06 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    WP Brutal AI < 2.0.0 - Cross-Site Request Forgery to SQL Injection
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/227cf3fe-4e76-4827-ac92-788bca450b52?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b4eb5833-25cd-4a6c-9240-37a9f8c1b120?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/wpbrutalai/"
     google-query: inurl:"/wp-content/plugins/wpbrutalai/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wpbrutalai,low
+  tags: cve,wordpress,wp-plugin,wpbrutalai,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.06')
+          - compare_versions(version, '< 2.0.0')

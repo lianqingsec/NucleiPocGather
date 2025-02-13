@@ -1,4 +1,4 @@
-id: abitgone-commentsafe-c3a6ddfd689a765dd5c0a9e893fd5e7e
+id: abitgone-commentsafe
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2375027c-9619-40fc-811d-7f4ba02bee53?source=api-scan
   classification:
     cvss-metrics: 

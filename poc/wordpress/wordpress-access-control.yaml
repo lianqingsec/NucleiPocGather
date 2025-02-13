@@ -1,4 +1,4 @@
-id: wordpress-access-control-64609ca5853723316d464fc148568627
+id: wordpress-access-control
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/31f13524-2bd7-4157-b378-455ac4f822a1?source=api-scan
   classification:
     cvss-metrics: 

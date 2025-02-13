@@ -1,4 +1,4 @@
-id: wppdf-d39020d2dee3b5a64b7a9060b8b507f3
+id: wppdf
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/3de98970-06a3-4bde-a7cb-42b6456fea6c?source=api-scan
   classification:
     cvss-metrics: 

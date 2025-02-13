@@ -1,4 +1,4 @@
-id: connect-daily-web-calendar-3e7d1ba6b04983308dfe4dce116b6939
+id: connect-daily-web-calendar
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/650f7232-7279-401d-beb1-26f70c69164b?source=api-scan
   classification:
     cvss-metrics: 

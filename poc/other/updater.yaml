@@ -1,4 +1,4 @@
-id: updater-82ffad4935374f440ac2eb3b7fd90bf6
+id: updater
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/83157b37-75f6-4ab9-8759-3d9a9cb9303d?source=api-scan
   classification:
     cvss-metrics: 

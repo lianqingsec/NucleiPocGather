@@ -1,15 +1,14 @@
-id: yuki-84d1a88d10dcefe62e1fb00a46ef1187
+id: yuki
 
 info:
   name: >
-    Yuki <= 1.3.13 - Missing Authorization to Authenticated (Subscriber+) Theme Setting Reset
+    Yuki <= 1.3.14 - Cross-Site Request Forgery to Theme Setting Reset
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d964e0ef-f14e-463b-bf4e-3f25788df03c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dfb760fb-f281-4649-9bd3-92f8e281f07e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/themes/yuki/"
     google-query: inurl:"/wp-content/themes/yuki/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,yuki,low
+  tags: cve,wordpress,wp-theme,yuki,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.3.13')
+          - compare_versions(version, '<= 1.3.14')

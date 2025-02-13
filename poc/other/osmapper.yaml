@@ -1,4 +1,4 @@
-id: osmapper-4e9e4acdf2d724136e1ac0b8e9cc2630
+id: osmapper
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ba027271-b7f9-4bdb-a62b-801fd07f28fd?source=api-scan
   classification:
     cvss-metrics: 

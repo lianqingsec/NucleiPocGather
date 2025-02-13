@@ -1,15 +1,14 @@
-id: onetone-60ee4b6ef730f0c2d277d566d755a4d8
+id: onetone
 
 info:
   name: >
-    OneTone <= 3.0.6 & OneTone Companion <= 1.1.1 - Unauthenticated Settings Update
+    OneTone <= 3.0.6 & OneTone Companion <= 1.1.1 - Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8082c60-436d-42e3-8aa5-cd2cb8ce6355?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c2777158-baa4-4209-ae15-03da5adafc75?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/themes/onetone/"
     google-query: inurl:"/wp-content/themes/onetone/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,onetone,low
+  tags: cve,wordpress,wp-theme,onetone,high
 
 http:
   - method: GET

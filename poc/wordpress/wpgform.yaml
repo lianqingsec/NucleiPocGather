@@ -1,24 +1,23 @@
-id: wpgform-a04a0fd4c9d4f075add5d315bc888135
+id: wpgform
 
 info:
   name: >
-    Google Forms <= 0.90 - Unauthenticated PHP Object injection
+    Google Forms < 0.92 - Unauthenticated Server Side Request Forgery
   author: topscoder
-  severity: critical
+  severity: high
   description: >
-    The Google Forms plugin for WordPress is vulnerable to PHP Object Injection in versions up to, and including, 0.90 via deserialization of untrusted input. This allows unauthenticated attackers to inject a PHP Object. This vulnerability was confirmed to allow the unauthenticated attacker to remotely execute code.
+    The Google Forms plugin for WordPress is vulnerable to Server Side Request Forgery in versions before 0.92. This allowed Unauthenticated attackers to proxy requests through the plugin to an attacker-controlled host, which could also lead to a reflected Cross-Site Scripting scenario.
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cadd47e9-1d5b-4f04-8421-7707dad53ea6?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0c58c1c6-cdda-463c-9a76-4ace96138dcb?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/wpgform/"
     google-query: inurl:"/wp-content/plugins/wpgform/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wpgform,critical
+  tags: cve,wordpress,wp-plugin,wpgform,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 0.91')
+          - compare_versions(version, '< 0.92')

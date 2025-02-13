@@ -1,4 +1,4 @@
-id: seo-alert-ed7164344fe3c417c04410352fac8593
+id: seo-alert
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a19b102-e097-46b3-9804-71edb91b3daa?source=api-scan
   classification:
     cvss-metrics: 

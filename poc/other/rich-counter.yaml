@@ -1,4 +1,4 @@
-id: rich-counter-7ee1bb791c2b7646f3179ad270cfad0e
+id: rich-counter
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/070a5d26-9126-4d0e-9421-739090bea421?source=api-scan
   classification:
     cvss-metrics: 

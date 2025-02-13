@@ -1,16 +1,18 @@
-id: keep-backup-daily-d1864ffe8554cc8d1f5807c783cb041d
+id: keep-backup-daily
 
 info:
-  name: "Keep Backup Daily <= 2.0.3 - Reflected Cross-Site Scripting"
+  name: >
+    Keep Backup Daily <= 2.0.3 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Keep Backup Daily plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via any URL parameter in versions up to, and including, 2.0.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link. This is not likely to be exploitable in modern browsers."
+  description: >
+    The Keep Backup Daily plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via any URL parameter in versions up to, and including, 2.0.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link. This is not likely to be exploitable in modern browsers.
   reference:
-    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&new=2753024%40keep-backup-daily%2Ftrunk&old=2727789%40keep-backup-daily%2Ftrunk&sfp_email=&sfph_mail=
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/741ad2f5-d5cf-44bc-ac4a-7894df77a3d1?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/keep-backup-daily/"
     google-query: inurl:"/wp-content/plugins/keep-backup-daily/"

@@ -1,4 +1,4 @@
-id: randomtext-856196564d549d08908adae01d625306
+id: randomtext
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6badba6d-1ff1-4d6f-bccf-1f0278edb17d?source=api-scan
   classification:
     cvss-metrics: 

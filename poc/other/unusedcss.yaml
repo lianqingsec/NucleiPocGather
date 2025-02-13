@@ -1,15 +1,14 @@
-id: unusedcss-61bcbeb178decd5dc954edeed73a8242
+id: unusedcss
 
 info:
   name: >
-    RapidLoad – Optimize Web Vitals Automatically <= 2.4.2 - Missing Authorization to Authenticated (Subscriber+) Plugin Settings Modification and SQL Injection
+    RapidLoad Power-Up for Autoptimize <= 2.2.11 - Unauthenticated Server-Side Request Forgery
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2c8ff4ec-9b40-4d59-b3b0-382f91042a4a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ebdb591-4fd4-4ea3-a0db-b934c67176de?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4.2')
+          - compare_versions(version, '<= 2.2.11')

@@ -1,4 +1,4 @@
-id: wp-share-buttons-analytics-by-getsocial-043e79e594f1bca283522a3982b68305
+id: wp-share-buttons-analytics-by-getsocial
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/513124f6-ea14-46ca-94c5-f9fa15b19d8c?source=api-scan
   classification:
     cvss-metrics: 

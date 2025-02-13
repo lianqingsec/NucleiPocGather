@@ -1,19 +1,17 @@
-id: wp-post-to-pdf-6bc623f48aad56918ba089235a043154
+id: wp-post-to-pdf
 
 info:
-  name: >
-    WP Post to PDF <= 2.3.1 - Cross-Site Scripting
+  name: "WP Post to PDF <= 2.3.1 - Cross-Site Scripting"
   author: topscoder
   severity: medium
-  description: >
-    The WP Post to PDF plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 2.3.1 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser.
+  description: "The WP Post to PDF plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 2.3.1 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8f24743c-3894-40a8-9128-7d04bc2c8345?source=api-prod
+    - https://packetstormsecurity.com/files/125432/
+    - https://wpscan.com/vulnerability/48b44695-6da5-4e64-b40a-b0376c3d1c0d
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/wp-post-to-pdf/"
     google-query: inurl:"/wp-content/plugins/wp-post-to-pdf/"

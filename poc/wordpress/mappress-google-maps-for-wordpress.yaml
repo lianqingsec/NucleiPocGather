@@ -1,15 +1,14 @@
-id: mappress-google-maps-for-wordpress-ac33d0a575869b85ed8a4fb5cc1d5a5a
+id: mappress-google-maps-for-wordpress
 
 info:
   name: >
-    MapPress Maps for WordPress <=2.53.8 - Authenticated Map Creation/Deletion to Stored Cross-Site Scripting & Remote Code Execution
+    MapPress <= 2.88.16 - Authenticated (Contributor+) Stored Cross-Site Scripting via Map Settings
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bc5e3932-809c-46d7-bb8d-1dffac9877a4?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fce76126-0cfd-464f-b644-45d4301e958d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.53.9')
+          - compare_versions(version, '<= 2.88.16')

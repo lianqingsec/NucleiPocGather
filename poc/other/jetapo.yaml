@@ -1,17 +1,18 @@
-id: jetapo-7ed54c485b8098aef029d18f6f93ae8c
+id: jetapo
 
 info:
-  name: "Jetapo | Jobboard WordPress Theme and Jetapo | Jobboard WordPress Theme with WooCommerce < 1.1 - Cross-Site Scripting"
+  name: >
+    Jetapo | Jobboard WordPress Theme and Jetapo | Jobboard WordPress Theme with WooCommerce < 1.1 - Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Jetapo | Jobboard WordPress Theme and Jetapo | Jobboard WordPress Theme with WooCommerce for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘location’ parameter in versions up to, and including, 1.0.0 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  description: >
+    The Jetapo | Jobboard WordPress Theme and Jetapo | Jobboard WordPress Theme with WooCommerce for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘location’ parameter in versions up to, and including, 1.0.0 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://themeforest.net/item/jetapo-jobboard-wordpress-theme/25398118
-    - https://github.com/vladvector/vladvector.github.io/blob/master/exploit/2020-07-02-jetapo-jobboard-wordpress-theme-v1-0-0.txt
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/86f95721-ff77-4137-adba-61d74373ee06?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/jetapo/"
     google-query: inurl:"/wp-content/themes/jetapo/"

@@ -1,14 +1,13 @@
-id: sportspress-d5cbdf2071f42342c858ea33caee55c5
+id: sportspress
 
 info:
   name: >
     SportsPress – Sports Club & League Manager <= 2.7.17 - Missing Authorization to Unauthenticated Event Permalink Update
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/098dfee2-ba0b-420f-89ed-8ad1e41faec4?source=api-scan
   classification:
     cvss-metrics: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/sportspress/"
     google-query: inurl:"/wp-content/plugins/sportspress/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,sportspress,high
+  tags: cve,wordpress,wp-plugin,sportspress,low
 
 http:
   - method: GET

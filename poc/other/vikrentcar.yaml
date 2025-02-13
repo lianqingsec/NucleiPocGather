@@ -1,15 +1,14 @@
-id: vikrentcar-54bf14cfd042cbf6a248f2fcb13145e3
+id: vikrentcar
 
 info:
   name: >
-    VikRentCar Car Rental Management System < 1.1.10 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Vik Rent Car <= 1.1.6 - Cross-Site Request Forgery to Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/acbe0ccd-f814-4cdd-ab70-6b8d29166e25?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a79fda3-44eb-41fd-b049-971b959daecf?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/vikrentcar/"
     google-query: inurl:"/wp-content/plugins/vikrentcar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,vikrentcar,low
+  tags: cve,wordpress,wp-plugin,vikrentcar,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.1.10')
+          - compare_versions(version, '<= 1.1.6')

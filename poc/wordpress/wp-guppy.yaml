@@ -1,4 +1,4 @@
-id: wp-guppy-c55927dc6402e6af39078d4c3378b5b6
+id: wp-guppy
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1983cc82-c527-47d9-84ba-f903dda1b1ca?source=api-scan
   classification:
     cvss-metrics: 

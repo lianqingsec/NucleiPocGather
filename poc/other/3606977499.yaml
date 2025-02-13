@@ -1,17 +1,17 @@
 id: smtp
 info:
-  name: XMail SMTP server
+  name: Postfix smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
-    info: Linux/x86
+    hostname: $1
+    info: Debian
     operating_system: Linux
-    product: xmail
+    product: postfix
     rarity: 0
-    vendor: davide_libenzi
+    vendor: postfix
     verified: true
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -22,4 +22,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^421 \[XMail ([\d.]+) \(Linux/Ix86\) ESMTP Server\] - Server does not like Your IP\r\n
+    - ^220 ([\w._-]+) [\w._-]+ ESMTP Postfix \(Debian/GNU\)

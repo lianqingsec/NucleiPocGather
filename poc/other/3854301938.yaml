@@ -1,13 +1,14 @@
 id: pop3
 info:
-  name: Eudora Internet Mail Server pop3d
+  name: Eudora Worldmail pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
   metadata:
-    hostname: $1
+    hostname: $2
+    operating_system: Windows
     rarity: 0
-    version: $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +19,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK ([-.\w]+) running Eudora Internet Mail Server (\d[-.\w]+) <.*>\r\n
+    - ^\+OK POP3 server ready \(Worldmail ([\d.]+)\) <[\w.]+@([-\w_.]+)>\r\n

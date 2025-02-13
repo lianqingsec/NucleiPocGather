@@ -1,11 +1,13 @@
 id: ppp
 info:
-  name: pppd
+  name: SuSE Meta pppd
   author: nmap,cn-kali-team
   tags: detect,tech,ppp,service
   severity: info
   metadata:
+    operating_system: Linux
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +18,4 @@ tcp:
   - name: ppp
     type: regex
     regex:
-    - ^\x7e\xff\x7d\x23\xc0!}!}!} }4}\"}&} } } } }%}&\xf4\xd1\xa2\xf6}'}\"}\(}\"\xc7}#~~\xff}#\xc0!}!}!} }4}\"}&} } } } }%}&\xf4\xd1\xa2\xf6}'}\"}\(}\"\xc7}#~~\xff}#\xc0!}!}!} }4}\"}&} } } } }%}&\xf4\xd1\xa2\xf6}'}\"}\(}\"\xc7}#~~\xff}#\xc0!}!}!} }4}\"}&} } } } }%}&\xf4\xd1\xa2\xf6}'}\"}\(}\"\xc7}#~~\xff}#\xc0!}!}!} }4}\"}&} } } } }%}&\xf4\xd1\xa2\xf6}'}\"}\(}\"\xc7}#~~\xff}#\xc0!}!}!} }4}\"}&} } } } }%}&\xf4\xd1\xa2\xf6}'}\"}\(}\"\xc7}#~~\xff}#\xc0!}!}!} }4}\"}&} } } } }%}&\xf4\xd1\xa2\xf6\x7d\x27\x7d\x22\x7d\x28\x7d\x22\xc7\x7d\x23\x7e
+    - ^SuSE Meta pppd \(smpppd\), Version ([\d.]+)\r\n

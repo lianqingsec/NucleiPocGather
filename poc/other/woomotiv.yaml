@@ -1,4 +1,4 @@
-id: woomotiv-957f8fb22e8ce67dd33211a8cc7b396d
+id: woomotiv
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/ca1c1b43-def2-4f9f-b5c7-075ca188f6e7?source=api-scan
   classification:
     cvss-metrics: 

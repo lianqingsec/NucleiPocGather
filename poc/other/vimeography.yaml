@@ -1,4 +1,4 @@
-id: vimeography-4b74798f2e296d94c384699a1deb3f29
+id: vimeography
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/853516b2-ec50-4937-89d3-d16042a6f71c?source=api-scan
   classification:
     cvss-metrics: 

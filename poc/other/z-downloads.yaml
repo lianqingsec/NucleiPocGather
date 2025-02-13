@@ -1,15 +1,14 @@
-id: z-downloads-cc12ab78b5b7991e9f73e3990c3de767
+id: z-downloads
 
 info:
   name: >
-    Z-Downloads <= 1.11.7 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    Z-Downloads <= 1.11.3 - Authenticated (Admin+) Arbitrary File Upload
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aae94aa1-a7a9-43df-b958-4fcf0392335b?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3060dbda-97f3-410c-863e-ea76a6a018fd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.11.7')
+          - compare_versions(version, '<= 1.11.3')

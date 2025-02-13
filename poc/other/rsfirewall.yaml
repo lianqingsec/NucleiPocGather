@@ -1,4 +1,4 @@
-id: rsfirewall-265dc4143d82225bb1efb384ee2f7c52
+id: rsfirewall
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/64f43aee-01ee-4fbb-a174-966ed3c06b21?source=api-scan
   classification:
     cvss-metrics: 

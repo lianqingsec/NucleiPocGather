@@ -7,14 +7,12 @@ info:
   reference:
     - https://wordpress.org/plugins/ad-inserter/
   metadata:
-    max-request: 1
     plugin_namespace: ad-inserter
     wpscan: https://wpscan.com/plugin/ad-inserter
   tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/ad-inserter/readme.txt"
 
@@ -48,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 490a004630440220464e60edc47112dfc912d8a69d020eac3bf7e69357207c396cfae97a6305cb250220501c38c7a956ed631229faa015ab69a330451883cee04f5238ffdcc577b817fa:922c64590222798bb761d5b6d8e72950

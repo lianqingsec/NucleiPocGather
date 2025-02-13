@@ -1,4 +1,4 @@
-id: testimonial-ad017083574d0a9626fdaf46e635452f
+id: testimonial
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9be5e54c-286a-4fec-95fb-27e3517f3eb8?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: wp-social-bookmark-menu-6a0d3db5ac761579d8dc6a7f672dba3e
+id: wp-social-bookmark-menu
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/120a75c5-4fff-4a77-b376-d6968853b40e?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: wpc-composite-products-920beb83c12ac20f80bcda38eab4d2b5
+id: wpc-composite-products
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3bea017-9fc3-4e14-97c4-5bb525650cde?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: woo-product-bundle-507d74175387b5e628f0da72c84ef4a7
+id: woo-product-bundle
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5188dc72-a00d-4a07-b178-3f3ef26d7fc1?source=api-scan
   classification:
     cvss-metrics: 

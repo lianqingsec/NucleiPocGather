@@ -1,4 +1,4 @@
-id: templates-patterns-collection-fecc9d309709301fe4803b7f88855dfc
+id: templates-patterns-collection
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c59baad8-b888-4475-8371-645811a6b569?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,20 +1,18 @@
-id: wp-easy-gallery-00a5e2152ac3b2a0f41b02810e05a923
+id: wp-easy-gallery
 
 info:
-  name: "WP Easy Gallery <= 1.7 - Cross-Site Scripting"
+  name: >
+    WP Easy Gallery <= 2.7 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
-  description: "The WP Easy Gallery plugin for WordPress is vulnerable to Cross-Site Scripting via the 'select_gallery' and 'galleryId' parameters in versions up to, and including, 1.7 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser."
+  description: >
+    The WP Easy Gallery for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 2.7. This is due to missing or incorrect nonce validation on several functions. This makes it possible for unauthenticated attackers to gain otherwise restricted access to administrative actions via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://packetstormsecurity.com/files/112687/
-    - https://wpscan.com/vulnerability/dea14b66-400f-429a-a06e-42c1183f978e
-    - https://wordpress.org/plugins/wp-easy-gallery/#developers
-    - https://patchstack.com/database/vulnerability/wp-easy-gallery/wordpress-wp-easy-gallery-plugin-1-7-cross-site-scripting
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-wp-easy-gallery-select_gallery-parameter-cross-site-scripting-1-7/
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/327f645b-4990-4b5e-b39c-6c55ac4e66f0?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
-    cve-id:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/wp-easy-gallery/"
     google-query: inurl:"/wp-content/plugins/wp-easy-gallery/"
@@ -57,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.7')
+          - compare_versions(version, '<= 2.7')

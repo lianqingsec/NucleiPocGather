@@ -1,22 +1,23 @@
-id: calculated-fields-form-3164e04a21cdabbe3d9b6fd06f90b784
+id: calculated-fields-form
 
 info:
-  name: "Calculated Fields Form <= 1.0.11 - Cross-Site Request Forgery to SQL Injection"
+  name: >
+    Calculated Fields Form <= 1.2.28 - Authenticated (Contributor+) Open Redirect via Shortcode
   author: topscoder
-  severity: critical
-  description: "The Calculated Fields Form plugin for WordPress is vulnerable to SQL Injection via Cross-Site Request Forgery in versions up to, and including, 1.0.11 due to insufficient escaping on the user-supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
+  severity: low
+  description: >
+    
   reference:
-    - https://packetstormsecurity.com/files/130603/
-    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1092752%40calculated-fields-form&new=1092752%40calculated-fields-form&sfp_email=&sfph_mail=
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/85555a8f-5d23-458d-9166-d30f8f0551e0?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/calculated-fields-form/"
     google-query: inurl:"/wp-content/plugins/calculated-fields-form/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,calculated-fields-form,critical
+  tags: cve,wordpress,wp-plugin,calculated-fields-form,low
 
 http:
   - method: GET
@@ -54,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.11')
+          - compare_versions(version, '<= 1.2.28')

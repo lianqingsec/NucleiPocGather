@@ -1,4 +1,4 @@
-id: quickswish-cf340a4d2f98aee65dd01a48bd0b4193
+id: quickswish
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/b594b771-4d0b-46e1-b4c6-751c994992af?source=api-scan
   classification:
     cvss-metrics: 

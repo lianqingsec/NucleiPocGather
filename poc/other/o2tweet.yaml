@@ -1,4 +1,4 @@
-id: o2tweet-368c6debbd9ca3f89138be1d01618389
+id: o2tweet
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/8b4921c8-8e53-4f9d-be21-cf365869a435?source=api-scan
   classification:
     cvss-metrics: 

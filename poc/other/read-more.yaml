@@ -1,15 +1,14 @@
-id: read-more-948d18a9ecd43f2950c17fb1b54f2e66
+id: read-more
 
 info:
   name: >
-    Read more By Adam <= 1.1.8 - Missing Authorization to Authenticated (Subscriber+) Read More Button Deletion
+    Read more By Adam <= 1.1.8 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4ebc8d0d-04b6-49a0-96c1-7c6d930009d8?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3a6316d8-1d64-4d28-b28a-00ca0b5facee?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/read-more/"
     google-query: inurl:"/wp-content/plugins/read-more/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,read-more,low
+  tags: cve,wordpress,wp-plugin,read-more,medium
 
 http:
   - method: GET

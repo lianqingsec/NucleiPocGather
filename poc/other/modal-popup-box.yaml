@@ -1,4 +1,4 @@
-id: modal-popup-box-41103c3e0c44dc2cead0c35c7de296fe
+id: modal-popup-box
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fca3d106-49df-49fc-a90d-e0cb26bd34b6?source=api-scan
   classification:
     cvss-metrics: 

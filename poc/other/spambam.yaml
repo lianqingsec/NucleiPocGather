@@ -1,4 +1,4 @@
-id: spambam-1d9d7391ee3a91b6cb87990bf1c723d1
+id: spambam
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/835b254a-9135-4b9d-8607-7122304601bc?source=api-scan
   classification:
     cvss-metrics: 

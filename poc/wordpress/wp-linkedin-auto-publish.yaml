@@ -1,4 +1,4 @@
-id: wp-linkedin-auto-publish-8582218e44d2062c67132b1ffa25abd7
+id: wp-linkedin-auto-publish
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0c1c8310-76c3-4505-9504-993e594804a4?source=api-scan
   classification:
     cvss-metrics: 

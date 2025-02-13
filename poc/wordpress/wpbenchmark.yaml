@@ -1,4 +1,4 @@
-id: wpbenchmark-afb04ab8c9c989ba1f80c9974d8ee221
+id: wpbenchmark
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f26a6ace-4623-4931-a4e4-8176d799d274?source=api-scan
   classification:
     cvss-metrics: 

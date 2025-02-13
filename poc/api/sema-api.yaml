@@ -1,15 +1,14 @@
-id: sema-api-9ec9b6547592027bf7806a9137a21610
+id: sema-api
 
 info:
   name: >
-    SEMA API <= 5.27 - Reflected Cross-Site Scripting via catid Parameter
+    SEMA API <= 3.64 - SQL Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/42b9e16c-8e53-452d-9c0b-34c424d6f508?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5183d676-eb91-4c03-8d12-c15c68839f02?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/sema-api/"
     google-query: inurl:"/wp-content/plugins/sema-api/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,sema-api,medium
+  tags: cve,wordpress,wp-plugin,sema-api,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.27')
+          - compare_versions(version, '<= 3.64')

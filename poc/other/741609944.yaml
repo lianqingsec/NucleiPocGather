@@ -1,12 +1,10 @@
 id: telnet
 info:
-  name: LinuxNode telnetd
+  name: Slirp PPP/SLIP-on-terminal emulator telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    hostname: $2
-    operating_system: Linux
     rarity: 0
     version: $1
 tcp:
@@ -19,4 +17,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^rsconfig: port rose not active\n\xff\xfd\"\r\nLinuxNode v([\d.]+) \(([-\w_.]+)\)\r\n\r\nlogin: '
+    - '^Slirp v([\w._-]+)(?: \(BETA\))?(?: FULL_BOLT)?\n\nCopyright \(c\) 1995,1996 Danny Gasparovski and others\.\n'

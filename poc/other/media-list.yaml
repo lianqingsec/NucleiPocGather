@@ -1,15 +1,14 @@
-id: media-list-b45b56389de453506b7abd584a88bcc2
+id: media-list
 
 info:
   name: >
-    Medialist <= 1.3.9 - Authenticated (Contributor+) Stored Cross-Site Scripting via shortcode
+    Medialist <= 1.4.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/45c7f8fb-3fd0-425f-89a1-8971f67d5755?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6a583966-f58a-41a0-8856-7b7b6a0eb559?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.3.9')
+          - compare_versions(version, '<= 1.4.0')

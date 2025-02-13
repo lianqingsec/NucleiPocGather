@@ -1,4 +1,4 @@
-id: wp-twitter-mega-fan-box-ee639ce3d7a3dd2cb1f60f8e48ef1caf
+id: wp-twitter-mega-fan-box
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/64225f1c-3981-4bae-bb6a-95d1a27ad6aa?source=api-scan
   classification:
     cvss-metrics: 

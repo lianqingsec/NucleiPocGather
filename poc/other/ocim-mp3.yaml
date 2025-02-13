@@ -1,4 +1,4 @@
-id: ocim-mp3-974c1e22e19ebae7821b766cf5bcc665
+id: ocim-mp3
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/96a9f567-6cf8-4988-bf8e-77eade71c5f6?source=api-scan
   classification:
     cvss-metrics: 

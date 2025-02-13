@@ -1,4 +1,4 @@
-id: the-pack-addon-4952bf8397606d3182d92a110769b1fc
+id: the-pack-addon
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/42de41f1-cfb2-4413-8841-c63d0e764be3?source=api-scan
   classification:
     cvss-metrics: 

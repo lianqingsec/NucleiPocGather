@@ -1,15 +1,14 @@
-id: anycomment-f1ad8462f777602616a53334b98a53e3
+id: anycomment
 
 info:
   name: >
-    AnyComment <= 0.3.4 - Open Redirect via redirect parameter
+    AnyComment <= 0.2.17 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/786d147b-2013-476b-a684-d070f07a166d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/feecd1f9-a933-43f5-971b-459bb27340d4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/anycomment/"
     google-query: inurl:"/wp-content/plugins/anycomment/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,anycomment,low
+  tags: cve,wordpress,wp-plugin,anycomment,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 0.3.5')
+          - compare_versions(version, '< 0.2.18')

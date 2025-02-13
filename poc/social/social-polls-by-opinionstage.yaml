@@ -1,19 +1,16 @@
-id: social-polls-by-opinionstage-f9b48b4d33019dae5af22504d993bfd9
+id: social-polls-by-opinionstage
 
 info:
-  name: >
-    Poll, Survey & Quiz Maker Plugin by Opinion Stage <= 19.6.24 - Unauthenticated Stored Cross-Site Scripting
+  name: "Poll, Survey & Quiz Maker Plugin by Opinion Stage <= 19.6.25 - Unauthenticated Stored Cross-Site Scripting"
   author: topscoder
   severity: high
-  description: >
-    The Poll, Survey & Quiz Maker Plugin by Opinion Stage plugin for WordPress is vulnerable to Stored Cross-Site Scripting via several parameters in versions up to, and including, 19.6.24 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
+  description: "The Poll, Survey & Quiz Maker Plugin by Opinion Stage plugin for WordPress is vulnerable to Stored Cross-Site Scripting via several parameters in versions up to, and including, 19.6.25 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e0f19403-af02-4a29-b4f3-778da4c2df17?source=api-prod
+
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
-    cve-id: 
+    cvss-metrics:
+    cvss-score:
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/social-polls-by-opinionstage/"
     google-query: inurl:"/wp-content/plugins/social-polls-by-opinionstage/"
@@ -56,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 19.6.24')
+          - compare_versions(version, '<=  19.6.25')

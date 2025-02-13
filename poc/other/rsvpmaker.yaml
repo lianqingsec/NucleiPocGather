@@ -1,18 +1,18 @@
-id: rsvpmaker-49cba54d19d48362186c4d1942251101
+id: rsvpmaker
 
 info:
-  name: "RSVPMaker <= 7.8.1 - Unauthenticated SQL Injection via 'event_count'"
+  name: >
+    RSVPMaker <= 9.2.5 - Unauthenticated SQL Injection
   author: topscoder
   severity: critical
-  description: "The RSVPMaker plugin for WordPress is vulnerable to SQL Injection via the 'event_count' parameter called via the 'signed_up' AJAX in versions up to, and including, 7.8.1 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
+  description: >
+    
   reference:
-    - https://github.com/CBiu/wp-plugins-vuln/blob/master/SQLi/rsvpmaker.md
-    - https://wpscan.com/vulnerability/7abffced-fa65-4cea-945a-3e67cd12c373
-    - https://plugins.trac.wordpress.org/changeset/2361930/rsvpmaker/tags/7.8.2/rsvpmaker-display.php
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6031edec-4274-4e42-9e3a-ce0c94958b17?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/rsvpmaker/"
     google-query: inurl:"/wp-content/plugins/rsvpmaker/"
@@ -55,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 7.8.2')
+          - compare_versions(version, '<= 9.2.5')

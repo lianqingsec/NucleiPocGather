@@ -1,4 +1,4 @@
-id: solid-affiliate-e75a78ce06dfe93026a1dd7494b0574a
+id: solid-affiliate
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/1d5f9fc7-fc85-4326-9295-470e8208c35a?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: plerdy-heatmap-b0bd4af414ed0c61a6b55b28713a79bc
+id: plerdy-heatmap
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/db18ac07-2e7a-466d-b00c-a598401f8633?source=api-scan
   classification:
     cvss-metrics: 

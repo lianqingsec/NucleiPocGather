@@ -1,4 +1,4 @@
-id: side-menu-430de7326939fc4920dc6c0b1c973492
+id: side-menu
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9b821fb6-abc5-411f-ad6b-00b20954142c?source=api-scan
   classification:
     cvss-metrics: 

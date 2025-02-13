@@ -1,17 +1,18 @@
-id: flexible-shipping-f15de3254f4cc9f5839892856607205d
+id: flexible-shipping
 
 info:
-  name: "Table Rate Shipping Method for WooCommerce by Flexible Shipping <= 4.11.8 - Reflected Cross-Site Scripting"
+  name: >
+    Table Rate Shipping Method for WooCommerce by Flexible Shipping <= 4.11.8 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Table Rate Shipping Method for WooCommerce by Flexible Shipping plugin for WordPress is vulnerable to Reflected Cross-Site Scripting due to the use of add_query_arg without appropriate escaping on the URL in versions up to, and including, 4.11.8. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  description: >
+    The Table Rate Shipping Method for WooCommerce by Flexible Shipping plugin for WordPress is vulnerable to Reflected Cross-Site Scripting due to the use of add_query_arg without appropriate escaping on the URL in versions up to, and including, 4.11.8. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://wpscan.com/vulnerability/c24a891e-00f1-4ff0-8ec4-96c2c0981710
-    - https://patchstack.com/database/vulnerability/flexible-shipping-/wordpress-flexible-shipping-plugin-4-11-8-reflected-cross-site-scripting-xss-vulnerability
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3363149f-a522-49a1-94c8-a3bcd865f911?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/flexible-shipping/"
     google-query: inurl:"/wp-content/plugins/flexible-shipping/"

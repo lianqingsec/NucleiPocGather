@@ -1,4 +1,4 @@
-id: rename-media-files-a51d83897337c427fbe2cd08d1f310c6
+id: rename-media-files
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/c22c2c17-c9c5-46eb-877a-a49ccf1a74ef?source=api-scan
   classification:
     cvss-metrics: 

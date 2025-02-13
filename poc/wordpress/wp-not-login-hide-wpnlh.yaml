@@ -1,4 +1,4 @@
-id: wp-not-login-hide-wpnlh-81ce2cf8e5a66e2b35ea3e14f6c2d06a
+id: wp-not-login-hide-wpnlh
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9fc46de4-af1c-4e38-9caa-55b7b18a69ae?source=api-scan
   classification:
     cvss-metrics: 

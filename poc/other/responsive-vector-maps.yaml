@@ -1,4 +1,4 @@
-id: responsive-vector-maps-4b6402ad5aee4335f893a17e8bf58f4b
+id: responsive-vector-maps
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e414a36f-7212-47b9-8e7f-6bf0ae6518af?source=api-scan
   classification:
     cvss-metrics: 

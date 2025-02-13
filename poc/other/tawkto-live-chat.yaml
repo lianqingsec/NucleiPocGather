@@ -1,4 +1,4 @@
-id: tawkto-live-chat-d8607bf05b2677fd43b713213f9de155
+id: tawkto-live-chat
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/4c3ee9fa-5d66-4f84-818f-ceec2f0c0b96?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: wp-full-stripe-free-080a5561255af98399eb27da1263ccaf
+id: wp-full-stripe-free
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/2afbc0a4-32ad-4fc4-9b10-5c06784f72f3?source=api-scan
   classification:
     cvss-metrics: 

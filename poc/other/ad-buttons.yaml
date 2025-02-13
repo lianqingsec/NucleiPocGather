@@ -1,4 +1,4 @@
-id: ad-buttons-3b1c14d7b655dc0ad1cbe33ed9397c50
+id: ad-buttons
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5f36574-b4d0-4b67-baea-f5ef5e6618d1?source=api-scan
   classification:
     cvss-metrics: 

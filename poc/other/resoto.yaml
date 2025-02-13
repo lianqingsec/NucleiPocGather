@@ -1,4 +1,4 @@
-id: resoto-3808cfa2578893bf9cb207bf581de3eb
+id: resoto
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb5c5e82-d6e5-4237-958f-12fc4698e77e?source=api-scan
   classification:
     cvss-metrics: 

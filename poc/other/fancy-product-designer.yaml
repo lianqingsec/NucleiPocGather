@@ -1,23 +1,23 @@
-id: fancy-product-designer-783c4d94254598f582d9fd08e4582c78
+id: fancy-product-designer
 
 info:
-  name: "Fancy Product Designer <= 4.5.0 - Stored Cross-Site Scripting"
+  name: >
+    Fancy Product Designer <= 4.5.0 - Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
-  description: "The Fancy Product Designer plugin for WordPress is vulnerable to Stored Cross-Site Scripting via SVG file uploads in versions up to, and including, 4.5.0 due to insufficient file sanitization. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  severity: high
+  description: >
+    
   reference:
-    - https://packetstormsecurity.com/files/160120/
-    - https://wpscan.com/vulnerability/f4e2cd49-5c12-4b38-92c0-de07401c42c9
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-fancy-product-designer-woocommerce-cross-site-scripting-4-5-0/
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a80c306e-323b-4ab4-955b-4e264625731c?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/fancy-product-designer/"
     google-query: inurl:"/wp-content/plugins/fancy-product-designer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fancy-product-designer,medium
+  tags: cve,wordpress,wp-plugin,fancy-product-designer,high
 
 http:
   - method: GET

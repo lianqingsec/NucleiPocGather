@@ -1,4 +1,4 @@
-id: shipping-labels-for-woo-0cbf14291d4583ffd61b35718dfcb26d
+id: shipping-labels-for-woo
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f770bc3-8ccc-4160-9e79-e1c0dee42b73?source=api-scan
   classification:
     cvss-metrics: 

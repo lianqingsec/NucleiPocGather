@@ -1,4 +1,4 @@
-id: wp-embed-facebook-46271cb9435e601a00f47d55a2fb4eb1
+id: wp-embed-facebook
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/88ade7a7-da31-4752-b100-40dae81735b0?source=api-scan
   classification:
     cvss-metrics: 

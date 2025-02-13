@@ -1,4 +1,4 @@
-id: se-html5-album-audio-player-b033c81c151869660008e6a9ef43d4cf
+id: se-html5-album-audio-player
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/fbdd01b3-153b-4783-b686-558874d2856e?source=api-scan
   classification:
     cvss-metrics: 

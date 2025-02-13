@@ -1,4 +1,4 @@
-id: zd-youtube-flv-player-c6df06151e057efcef20c859d9df09e4
+id: zd-youtube-flv-player
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/f6f26854-7e25-4e64-9f03-916ece6fde03?source=api-scan
   classification:
     cvss-metrics: 

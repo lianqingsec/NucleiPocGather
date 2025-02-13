@@ -1,4 +1,4 @@
-id: yousaytoo-auto-publishing-plugin-6be45672f441bb54d95f8bd4d63bcfba
+id: yousaytoo-auto-publishing-plugin
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/02325b2a-af00-4b99-91ae-64163a8980fc?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: timesheet-0d4740d214c07d31944e165e3cec2f06
+id: timesheet
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/7e0f903a-e882-4de9-953a-c377b591004e?source=api-scan
   classification:
     cvss-metrics: 

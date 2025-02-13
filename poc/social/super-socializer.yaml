@@ -1,18 +1,17 @@
-id: super-socializer-590b3d9d056cbe76fbb9b6a40ede0489
+id: super-socializer
 
 info:
   name: >
-    Super Socializer <= 7.13.53 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
+    Social Share, Social Login and Social Comments Plugin – Super Socializer <= 7.13.63 - Authenticated (Admin+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
-    The Super Socializer plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugins [TheChamp-Counter] and [TheChamp-Sharing] shortcodes in versions up to, and including, 7.13.53 due to insufficient input sanitization and output escaping on the url user supplied attribute. This makes it possible for authenticated attackers with contributor-level and above permissions to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
+    
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/755454cc-b1a8-4a38-9e73-c47a6ef562a2?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/47e6840e-9f6c-44eb-a6bd-e25e4c5c0bf7?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/super-socializer/"
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 7.13.53')
+          - compare_versions(version, '<= 7.13.63')

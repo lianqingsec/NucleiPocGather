@@ -1,15 +1,14 @@
-id: seur-a3b06a9eaef8c9e7e76c1f6ce446151f
+id: seur
 
 info:
   name: >
-    SEUR Oficial <= 2.2.10.2 - Unauthenticated SQL Injection
+    SEUR Oficial <= 1.6.0 - Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/820b289c-f907-42b1-8b22-52d614398fba?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f3543ce7-328e-4db8-8993-8cd78af997de?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/seur/"
     google-query: inurl:"/wp-content/plugins/seur/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,seur,critical
+  tags: cve,wordpress,wp-plugin,seur,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.10.2')
+          - compare_versions(version, '< 1.7.0')

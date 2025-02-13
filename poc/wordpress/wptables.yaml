@@ -1,4 +1,4 @@
-id: wptables-1c8f16aeda7755bc222dcfdc54f2e9b8
+id: wptables
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/099dfb18-fc73-4a19-b017-1675c9acfa2f?source=api-scan
   classification:
     cvss-metrics: 

@@ -1,4 +1,4 @@
-id: wordpress-twitterbot-d36dd4bc6c1a3d5b4f0aafd5b7b723c5
+id: wordpress-twitterbot
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2795202-64e6-488b-a0e1-da2923f6f791?source=api-scan
   classification:
     cvss-metrics: 

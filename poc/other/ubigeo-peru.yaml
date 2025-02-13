@@ -1,4 +1,4 @@
-id: ubigeo-peru-2d4c297b7c1f3ba4a647ee5d39cea97b
+id: ubigeo-peru
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/23521bba-8f3a-4d87-901a-cf2d666eefa4?source=api-scan
   classification:
     cvss-metrics: 

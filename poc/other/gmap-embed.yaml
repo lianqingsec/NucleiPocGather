@@ -1,4 +1,4 @@
-id: gmap-embed-44adadf078ce3ca5b48f3c575f814c87
+id: gmap-embed
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/a7af6721-4886-4bec-8931-992881310f26?source=api-scan
   classification:
     cvss-metrics: 

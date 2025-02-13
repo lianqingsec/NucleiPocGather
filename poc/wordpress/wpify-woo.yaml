@@ -1,23 +1,23 @@
-id: wpify-woo-8c5457e5fc7c175f71ba7e056d51e482
+id: wpify-woo
 
 info:
-  name: "WPify Woo Czech <= 3.5.6 - Reflected Cross-Site Scripting"
+  name: >
+    WPify Woo Czech <= 4.0.8 - Missing Authorization
   author: topscoder
-  severity: medium
-  description: "The WPify Woo Czech plugin for WordPress is vulnerable to Reflected Cross-Site Scripting due to the use of '$_SERVER['PHP_SELF']' with insufficient input sanitization and output escaping in versions up to, and including, 3.5.6. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  severity: high
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/wpify-woo/#developers
-    - https://wpscan.com/vulnerability/5c66c32b-22f2-4b59-a6b2-b8da944cdc3c
-    - https://patchstack.com/database/vulnerability/wpify-woo-/wordpress-wpify-woo-czech-plugin-3-5-6-reflected-cross-site-scripting-xss-vulnerability
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/44f691f2-b3f4-49b7-8710-015b5b11db18?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/wpify-woo/"
     google-query: inurl:"/wp-content/plugins/wpify-woo/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wpify-woo,medium
+  tags: cve,wordpress,wp-plugin,wpify-woo,high
 
 http:
   - method: GET
@@ -55,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.5.6')
+          - compare_versions(version, '<= 4.0.8')

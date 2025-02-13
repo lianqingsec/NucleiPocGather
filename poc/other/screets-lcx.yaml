@@ -1,18 +1,18 @@
-id: screets-lcx-d6cdfc1a84da0fa01b276046051aa4b6
+id: screets-lcx
 
 info:
-  name: "Live Chat Unlimited <= 2.8.3 - Stored Cross-Site Scripting"
+  name: >
+    Live Chat Unlimited <= 2.8.3 - Stored Cross-Site Scripting
   author: topscoder
   severity: high
-  description: "The Live Chat Unlimited plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 2.8.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  description: >
+    
   reference:
-    - https://codecanyon.net/item/wordpress-live-chat-plugin/3952877
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-live-chat-unlimited-cross-site-scripting-2-8-3/
-    - https://wpscan.com/vulnerability/5b22fa8d-7ee7-494b-950f-34c19e6fe99f
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3b874721-6cb9-4ce4-a78e-a457596d15ff?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 7.2
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/screets-lcx/"
     google-query: inurl:"/wp-content/plugins/screets-lcx/"

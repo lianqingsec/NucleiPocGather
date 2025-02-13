@@ -1,4 +1,4 @@
-id: wordapp-b352a8ab6dee8da2af34ec74652f3392
+id: wordapp
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/80440bfa-4a02-4441-bbdb-52d7dd065a9d?source=api-scan
   classification:
     cvss-metrics: 

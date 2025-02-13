@@ -1,4 +1,4 @@
-id: wp-club-manager-12c2488e1eb4d5f3115cd444bbf23738
+id: wp-club-manager
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/64c2c8c2-58f5-4b7d-b226-39ba39e887d5?source=api-scan
   classification:
     cvss-metrics: 

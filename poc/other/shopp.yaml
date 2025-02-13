@@ -1,4 +1,4 @@
-id: shopp-09cfe9514c174b7d01c41eccf43c7958
+id: shopp
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e83ad1b7-e7d6-41cd-87de-c98362e31879?source=api-scan
   classification:
     cvss-metrics: 

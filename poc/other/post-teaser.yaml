@@ -1,4 +1,4 @@
-id: post-teaser-09875439e46c3ed63c2a03f3c27e609a
+id: post-teaser
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5988fb74-01d1-426f-9a38-62336a59211b?source=api-scan
   classification:
     cvss-metrics: 

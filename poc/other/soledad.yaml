@@ -1,15 +1,14 @@
-id: soledad-29fa607193cd3b39b09ca02b2ce4f403
+id: soledad
 
 info:
   name: >
-    Soledad <= 8.5.9 - Unauthenticated Limited Local File Inclusion
+    Soledad <= 8.4.1 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/927674db-05f1-4f3b-8297-8a907955ea87?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f83b36fe-4e46-4ab7-a113-6dcfa7cce625?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/themes/soledad/"
     google-query: inurl:"/wp-content/themes/soledad/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,soledad,critical
+  tags: cve,wordpress,wp-theme,soledad,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 8.5.9')
+          - compare_versions(version, '<= 8.4.1')

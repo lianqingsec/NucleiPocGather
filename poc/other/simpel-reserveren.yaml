@@ -1,4 +1,4 @@
-id: simpel-reserveren-112703e4b406c1e0e0a70c7665eb6d78
+id: simpel-reserveren
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0d443d5f-ccf7-4eed-a5cb-ead0466a9d42?source=api-scan
   classification:
     cvss-metrics: 

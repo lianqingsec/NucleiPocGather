@@ -7,14 +7,12 @@ info:
   reference:
     - https://wordpress.org/plugins/creative-mail-by-constant-contact/
   metadata:
-    max-request: 1
     plugin_namespace: creative-mail-by-constant-contact
     wpscan: https://wpscan.com/plugin/creative-mail-by-constant-contact
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/creative-mail-by-constant-contact/readme.txt"
 
@@ -48,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 490a00463044022065ac9360ebd39fa015cad6f163fd1c8900ff0c04e17615460b87e5e3f0906449022011b948f27efd45dda2749aa23047cd9c613be1f4dba108b9b9cfae854cac929c:922c64590222798bb761d5b6d8e72950

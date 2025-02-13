@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-    shodan-query: "http.title:\"Kopano WebApp\""
+    shodan-query: http.title:"Kopano WebApp"
   tags: panel,kopano,login,detect
 
 http:
@@ -34,4 +34,4 @@ http:
         group: 1
         regex:
           - '\?kv([0-9.]+)"'
-# digest: 490a004630440220499c97ef6976f50be4391e8eeb0ddfeb3fcbe37bec5a7fe24d71c473e6b3d673022070949daf15a245428269d09199e9f2377b400261229944d98137f800b4e0f3a8:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402200559bf199955583fef50d4c9989c34ce5f3b9d7221b3eb6b2b2f87c65db2e28602204c7ea66ac0009f31daf9e1e9ef8d1bc04635b1e0d59403ab76261bd6d3c6f623:922c64590222798bb761d5b6d8e72950

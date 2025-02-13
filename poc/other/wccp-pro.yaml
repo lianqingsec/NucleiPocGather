@@ -1,15 +1,15 @@
-id: wccp-pro-4e4d87b89445b8a056f2e0b39ab86924
+id: wccp-pro
 
 info:
   name: >
-    WP Content Copy Protection & No Right Click (PRO) <= 15.0 - Authenticated (Admin+) Stored Cross-Site Scripting
+    WP Content Copy Protection & No Right Click (PRO) <= 15.0 - Open Redirect
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7d2f30e7-75f2-40c2-a421-aec13d436efc?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fba24935-5bab-4395-b05e-7bb5d5a1694d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

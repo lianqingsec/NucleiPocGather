@@ -1,4 +1,4 @@
-id: prismatic-1401893d8af5a9859c30c849b9b087ae
+id: prismatic
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/42e74152-b79d-42f5-87a2-6e9545699483?source=api-scan
   classification:
     cvss-metrics: 

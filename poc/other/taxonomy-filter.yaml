@@ -1,4 +1,4 @@
-id: taxonomy-filter-0e62b3929a0e34c815501e3190c37d3f
+id: taxonomy-filter
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/e74ff260-48af-4fc2-80d8-1ff2403f8f33?source=api-scan
   classification:
     cvss-metrics: 

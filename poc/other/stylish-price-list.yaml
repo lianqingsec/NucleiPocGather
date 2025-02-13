@@ -1,4 +1,4 @@
-id: stylish-price-list-1bda064ae790506808dea7dd753065df
+id: stylish-price-list
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/0d9cea4e-b619-4935-bb7c-a64ddf52d480?source=api-scan
   classification:
     cvss-metrics: 

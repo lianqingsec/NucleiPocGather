@@ -1,24 +1,23 @@
-id: simple-301-redirects-7d2391b00c38bb4e76bca69e6d8581cb
+id: simple-301-redirects
 
 info:
   name: >
-    Simple 301 Redirects <= 2.0.7 - Cross-Site Request Forgery via 'clicked'
+    Simple 301 Redirects by BetterLinks <= 2.0.7 - Missing Authorization via clicked
   author: topscoder
-  severity: medium
+  severity: high
   description: >
-    The Simple 301 Redirects plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 2.0.7. This is due to missing or incorrect nonce validation on the 'clicked' function. This makes it possible for unauthenticated attackers to enable or disable click tracking via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
+    
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9945c85b-a97a-4ad0-9d0a-69faf157563a?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ddacd612-0cd5-4b07-9184-bec6f1adbb4c?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
-    cvss-score: 5.4
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/simple-301-redirects/"
     google-query: inurl:"/wp-content/plugins/simple-301-redirects/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,simple-301-redirects,medium
+  tags: cve,wordpress,wp-plugin,simple-301-redirects,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.0.8')
+          - compare_versions(version, '<= 2.0.7')

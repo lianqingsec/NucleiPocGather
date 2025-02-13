@@ -1,11 +1,11 @@
 id: telnet
 info:
-  name: Dovado 4GR WAP telnetd
+  name: PRICOM 3100 print server telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    device_type: WAP
+    device_type: print server
     rarity: 0
     version: $1
 tcp:
@@ -18,4 +18,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^This is version ([\w._-]+) of the API\nSMS is enabled and HOMEAUTOMATION is enabled for you\n>> '
+    - '^\xff\xfd\x03\xff\xfb\x01\xff\xfb\x03PRICOM 3100 Ver ([\w._-]+) TELNET server\.\r\0\nCopyright \(C\) 2002-2004 silex technology, Inc\.\r\0\nlogin:'

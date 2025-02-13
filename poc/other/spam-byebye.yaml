@@ -1,4 +1,4 @@
-id: spam-byebye-9c4ed13a59352187937417840bd59288
+id: spam-byebye
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/5f8e0021-f305-45c1-b658-405ad22334ac?source=api-scan
   classification:
     cvss-metrics: 

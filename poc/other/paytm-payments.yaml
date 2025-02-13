@@ -1,4 +1,4 @@
-id: paytm-payments-01c59356c8979a37095e89f6b060308a
+id: paytm-payments
 
 info:
   name: >
@@ -8,7 +8,6 @@ info:
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
     - https://www.wordfence.com/threat-intel/vulnerabilities/id/6fa560b2-6283-42ab-a482-1e02d08181f8?source=api-scan
   classification:
     cvss-metrics: 
