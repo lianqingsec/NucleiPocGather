@@ -7,6 +7,7 @@ info:
   tags: generic,headers,noisy,miscellaneous
 
 http:
+  # This template doesn't listen to the openapi data
   - pre-condition:
       - type: dsl
         dsl:

@@ -1,12 +1,15 @@
 id: smtp-proxy
 info:
-  name: Avast! anti-virus smtp proxy
+  name: Kerio Connect smtp proxy
   author: nmap,cn-kali-team
   tags: detect,tech,smtp-proxy,service
   severity: info
   metadata:
-    operating_system: Windows
+    info: access denied
+    product: connect
     rarity: 0
+    vendor: kerio
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +20,4 @@ tcp:
   - name: smtp-proxy
     type: regex
     regex:
-    - ^220 [-\w_.]+ avast! SMTP proxy ready\.\r\n
+    - ^554 5\.7\.1 Access denied\r\n$

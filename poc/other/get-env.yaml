@@ -1,8 +1,8 @@
-id: get-env
+id: Env Exposed
 info:
   name: Find Exposed Env
   author: Clark
-  severity: medium
+  severity: meduim
 requests:
   - method: GET
     path:

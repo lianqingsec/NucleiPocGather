@@ -11,10 +11,11 @@ flow: |
   javascript()
 
 http:
+  # This template doesn't listen to the openapi data
   - pre-condition:
       - type: dsl
         dsl:
-          - 'method == "OPTIONS"'
+          - 'False'
 
     fuzzing:
       - part: header
@@ -45,7 +46,7 @@ http:
 
 javascript:
   - code: |
-      template.found.split(',').filter(v => !["GET", "HEAD", "OPTIONS"].includes(v.trim()))
+      template.found?.split(',').filter(v => !["GET", "HEAD", "OPTIONS"].includes(v.trim()))
 
     extractors:
       - type: regex

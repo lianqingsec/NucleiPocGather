@@ -7,14 +7,12 @@ info:
   reference:
     - https://wordpress.org/plugins/disable-gutenberg/
   metadata:
-    max-request: 1
     plugin_namespace: disable-gutenberg
     wpscan: https://wpscan.com/plugin/disable-gutenberg
   tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/disable-gutenberg/readme.txt"
 
@@ -48,3 +46,4 @@ http:
         part: body
         regex:
           - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4b0a00483046022100c650919bcc3a8c83db5eb0483f1c4f76025367bf0a503cb8201500e09c31477802210083c66521e3de1e6572e427005de741fac8b35cf25ebfebb0e413b6e039126990:922c64590222798bb761d5b6d8e72950
