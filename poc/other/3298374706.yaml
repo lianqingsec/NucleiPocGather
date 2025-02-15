@@ -1,12 +1,11 @@
 id: ftp
 info:
-  name: Bay Networks MicroAnnex terminal server ftpd
+  name: Lanier $1 ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    device_type: terminal server
-    hostname: $1
+    device_type: printer
     rarity: 0
     version: $2
 tcp:
@@ -19,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 ([-.+\w]+) FTP server \(Version (MICRO-[-.\w:#+ ]+)\) ready\.\r\n
+    - ^220 LANIER ([\w\d /-]+) FTP server \(([\d+.]+)\) ready\.\r\n
