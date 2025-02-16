@@ -1,11 +1,16 @@
 id: telnet
 info:
-  name: Ascentia DataStage telnetd
+  name: Cisco router telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
+    device_type: router
+    operating_system: IOS
+    product: telnet
     rarity: 0
+    vendor: cisco
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -16,4 +21,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^\xff\xfb\x01Welcome to the DataStage Telnet Server\.\r\0\r\nEnter user name: '
+    - ^\xff\xfb\x01\xff\xfb\x03\xff\xfd\x18\xff\xfd\x1f$
