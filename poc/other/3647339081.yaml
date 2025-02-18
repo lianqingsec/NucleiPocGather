@@ -1,6 +1,6 @@
 id: smtp
 info:
-  name: jMailer smtpd
+  name: Lyris smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
@@ -16,4 +16,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - ^220 jMailer SMTP Server\r\n$
+    - ^220  ESMTP Lyris service ready\r\n

@@ -1,13 +1,13 @@
 id: telnet
 info:
-  name: Avaya P333R switch telnetd
+  name: Broadcom $1 ADSL router telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    device_type: switch
+    device_type: broadband router
     rarity: 0
-    version: $1
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +18,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^\xff\xfd\x03\xff\xfb\x01\r\n\r\n\t\tWelcome to P333R\r\n\t\tSW version ([\d.]+)\r\n\r\n\r\nLogin: '
+    - '^\xff\xfd\x01\xff\xfd!\xff\xfb\x01\xff\xfb\x03(BCM\w+) ADSL Router version ([\w._-]+ \([\w._-]+\))\r\nLogin: '
