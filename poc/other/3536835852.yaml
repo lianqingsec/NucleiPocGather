@@ -1,13 +1,16 @@
 id: ftp
 info:
-  name: Dreambox ftpd
+  name: FileZilla ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    device_type: media device
-    operating_system: Linux
+    info: Mandatory SSL
+    operating_system: Windows
+    product: filezilla_server
     rarity: 0
+    vendor: filezilla-project
+    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +21,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 Welcome to the OpenDreambox FTP service\.\r\n
+    - ^431 Could not initialize SSL connection\r\n

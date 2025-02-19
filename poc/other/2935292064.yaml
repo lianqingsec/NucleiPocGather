@@ -1,15 +1,14 @@
 id: http
 info:
-  name: Virtual Programming Lab for Moodle
+  name: micro_httpd
   author: nmap,cn-kali-team
   tags: detect,tech,http,service
   severity: info
   metadata:
-    product: vpl
+    product: micro_httpd
     rarity: 0
-    vendor: ulpgc
+    vendor: acme
     verified: true
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +19,4 @@ tcp:
   - name: http
     type: regex
     regex:
-    - '^HTTP/1\.1 408 Request Time-out\r\nServer: vpl-jail-system ([\d.]+)\r\n'
+    - '^HTTP/1\.1 \d\d\d .*\r\nServer: micro_httpd\r\n'
