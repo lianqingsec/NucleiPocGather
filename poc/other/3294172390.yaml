@@ -1,16 +1,17 @@
 id: imap
 info:
-  name: SurgeMail imapd
+  name: IceWarp imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
-    hostname: $1
-    product: surgemail
+    info: time zone $3
+    operating_system: Linux
+    product: mail_server
     rarity: 0
-    vendor: netwin
+    vendor: icewarp
     verified: true
-    version: $2
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +22,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK IMAP ([-\w_.]+) \(Version ([-\w.]+)\)\r\n
+    - ^\* OK IceWarp ([\w._-]+) RHEL(\d+) x64 IMAP4rev1 .* ([-+]\d+)\r\n

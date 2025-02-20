@@ -1,15 +1,12 @@
 id: imap-proxy
 info:
-  name: PGP Universal imap proxy
+  name: Mailfront imapfront imap proxy
   author: nmap,cn-kali-team
   tags: detect,tech,imap-proxy,service
   severity: info
   metadata:
-    info: 'Banner: $1'
-    product: universal_server
+    info: with stunnel
     rarity: 0
-    vendor: pgp
-    verified: true
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +17,4 @@ tcp:
   - name: imap-proxy
     type: regex
     regex:
-    - '^\* OK PGP Universal IMAP4rev1 service ready \(proxied server greeted us with: ([^)]+)\)\r\n'
+    - ^\* OK imapfront ready\. \+ stunnel\r\n

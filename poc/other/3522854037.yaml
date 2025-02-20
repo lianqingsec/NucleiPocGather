@@ -1,6 +1,6 @@
 id: backdoor
 info:
-  name: CAFEiNi trojan
+  name: JTRAM backdoor
   author: nmap,cn-kali-team
   tags: detect,tech,backdoor,service
   severity: info
@@ -18,4 +18,4 @@ tcp:
   - name: backdoor
     type: regex
     regex:
-    - ^220 CAFEiNi [-\w_.]+ FTP server\r\n$
+    - ^echo o [\d.]+ \d+ >s\r\necho common>> s\r\necho common>> s\r\necho bin>> s\r\necho get m220\.exe

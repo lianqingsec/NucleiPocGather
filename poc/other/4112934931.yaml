@@ -1,12 +1,13 @@
 id: smtp
 info:
-  name: IA eMailServer Standard
+  name: Norton Antivirus Gateway NAVGW
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
+    hostname: $1
     rarity: 0
-    version: $1
+    version: $2
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +18,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - '^220.*SMTP Welcome to the IA eMailServer Standard Edition Version: ([\d.]+ Build: [\d]+)'
+    - ^220 ([-.\w]+) SMTP NAVGW (\d[-.\w]+);

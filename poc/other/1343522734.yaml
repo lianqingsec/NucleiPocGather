@@ -10,7 +10,7 @@ info:
     rarity: 0
     vendor: varnish-cache
     verified: true
-    version: 2.1.4
+    version: $3
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +21,4 @@ tcp:
   - name: varnish-cli
     type: regex
     regex:
-    - ^200 \d+ +\n-----------------------------\nVarnish HTTP accelerator CLI.\n-----------------------------\n([^,]+),([^,]+),[^\n]*\n\nType 'help' for command list\.\nType 'quit' to close CLI session\.\n
+    - ^200 \d+ +\n-----------------------------\nVarnish Cache CLI 1.0\n-----------------------------\n([^,]+),([^,]+),[^\n]*\nvarnish-([\w._-]+) revision [0-9a-f]+\n\nType 'help' for command list\.\nType 'quit' to close CLI session\.\n\n

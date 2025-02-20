@@ -1,16 +1,14 @@
 id: ftp
 info:
-  name: FileZilla ftpd
+  name: SpeedStream 5660 ADSL router
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    operating_system: Windows
-    product: filezilla_server
+    device_type: router
+    info: Runs ENI-ftpd/$1 on VxWorks
+    operating_system: VxWorks
     rarity: 0
-    vendor: filezilla-project
-    verified: true
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +19,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - (?i)^220-.*\r\n220-\r\n220 using FileZilla FileZilla Server version ([^\r\n]+)\r\n
+    - ^220 VxWorks \(ENI-ftpd ([\d.]+)\) FTP server ready\r\n
