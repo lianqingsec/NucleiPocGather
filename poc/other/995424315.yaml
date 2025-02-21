@@ -1,6 +1,6 @@
 id: sip
 info:
-  name: SJphone SIP client
+  name: Tely sipd
   author: nmap,cn-kali-team
   tags: detect,tech,sip,service
   severity: info
@@ -20,4 +20,4 @@ tcp:
   - name: sip
     type: regex
     regex:
-    - '(?i)^SIP/2\.0 501 Not Implemented.*\r\nServer: SJphone/([-\w_.]+) \(SJ Labs\)\r\n'
+    - '(?i)^SIP/2\.0 200 OK\r\n(?:[^\r\n]+\r\n)*?User-Agent: Tely_v([\d.-]+)\r\n'

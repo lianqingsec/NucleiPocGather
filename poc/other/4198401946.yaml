@@ -1,6 +1,6 @@
 id: pop3
 info:
-  name: TMSOFT pop3d
+  name: WebEasyMail pop3d
   author: nmap,cn-kali-team
   tags: detect,tech,pop3,service
   severity: info
@@ -18,4 +18,4 @@ tcp:
   - name: pop3
     type: regex
     regex:
-    - ^\+OK TMSOFT POP3 Server v([\w._-]+) ready <\w+>\r\n
+    - ^\+OK POP3 on WebEasyMail \[([\d.]+)\] ready\.  http://www\.51webmail\.com\r\n
