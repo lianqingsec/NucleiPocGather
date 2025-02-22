@@ -1,14 +1,13 @@
 id: nntp
 info:
-  name: Diablo NNTP service
+  name: Microsoft NNTP Service
   author: nmap,cn-kali-team
   tags: detect,tech,nntp,service
   severity: info
   metadata:
-    hostname: $1
-    info: 'Admin: $2'
+    operating_system: Windows 2000
     rarity: 0
-    version: $3
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +18,4 @@ tcp:
   - name: nntp
     type: regex
     regex:
-    - ^200 ([-.\w]+) NNTP Service Ready - ([-.\w]+@[-.\w]+) \(DIABLO (\d[-.\w ]+)\)\r\n
+    - '^200 NNTP Service ([\w._-]+) Version: [\w._-]+ Posting Allowed \r\n'

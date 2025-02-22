@@ -1,13 +1,11 @@
 id: imap
 info:
-  name: Worldmail imapd
+  name: Arvixe imapd
   author: nmap,cn-kali-team
   tags: detect,tech,imap,service
   severity: info
   metadata:
-    operating_system: Windows
     rarity: 0
-    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -18,4 +16,4 @@ tcp:
   - name: imap
     type: regex
     regex:
-    - ^\* OK IMAP4 server ready \(Worldmail ([\d.]+)\)\r\n
+    - ^\* OK Welcome to Arvixe IMAP server\.\r\n

@@ -1,12 +1,13 @@
 id: ftp
 info:
-  name: Mitsubishi Q-series PLC ftpd
+  name: IBM NPS 540+/542+ print server ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    device_type: specialized
+    device_type: print server
     rarity: 0
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -17,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220 QnUDVCPU FTP server ready\.\r\n
+    - '^220 IBM NPS 540\+/542\+ FTP Printer Server V([\w._-]+) '
