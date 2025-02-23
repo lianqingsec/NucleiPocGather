@@ -2,13 +2,14 @@ id: rating-bws
 
 info:
   name: >
-    Rating by BestWebSoft < 0.2 - Reflected Cross-Site Scripting
+    Rating by BestWebSoft <= 1.5 - Rating Denial of Service
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5c23952-3732-4316-aa43-ddab88a6ba79?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3511a3d3-1e6e-41ba-a8b9-67f8f7eef157?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/rating-bws/"
     google-query: inurl:"/wp-content/plugins/rating-bws/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,rating-bws,medium
+  tags: cve,wordpress,wp-plugin,rating-bws,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 0.2')
+          - compare_versions(version, '<= 1.5')

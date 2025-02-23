@@ -1,49 +1,58 @@
-id: wordpress-updraftplus
+id: updraftplus
 
 info:
-  name: UpdraftPlus' WP Backup & Migration Plugin Detection
-  author: ricardomaia
-  severity: info
+  name: "UpdraftPlus WordPress Backup <= 1.9.6.3 - Cross-Site Scripting"
+  author: topscoder
+  severity: medium
+  description: "The UpdraftPlus WordPress plugin for WordPress is vulnerable to Cross-Site Scripting via the 'add_query_arg()' and 'remove_query_arg()' functions in versions up to, and including, 1.9.6.3 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser."
   reference:
-    - https://wordpress.org/plugins/updraftplus/
+    - https://blog.sucuri.net/2015/04/security-advisory-xss-vulnerability-affecting-multiple-wordpress-plugins.html
+    - https://plugins.trac.wordpress.org/changeset/1139198/updraftplus
+    - https://wpscan.com/vulnerability/a5b82ddc-b6b5-45ec-824d-aeea20c3aca1
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cve-id:
   metadata:
-    plugin_namespace: updraftplus
-    wpscan: https://wpscan.com/plugin/updraftplus
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/updraftplus/"
+    google-query: inurl:"/wp-content/plugins/updraftplus/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,updraftplus,medium
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/updraftplus/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/updraftplus.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "updraftplus"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100f25382925a8062b5b103d50ef21c0a90c9cb5957325854517bff9fc969401f6502207b0682a373a7ffc7ba75c7db9da996553fc70ba7e5000cd2ce35a8090db987b5:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.9.6.3')

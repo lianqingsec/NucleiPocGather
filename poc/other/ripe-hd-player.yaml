@@ -1,25 +1,21 @@
 id: ripe-hd-player
 
 info:
-  name: "Ripe HD FLV <= 1.1 - SQL Injection"
+  name: "Ripe HD FLV <= 1.1 - Full Path Disclosure"
   author: topscoder
-  severity: critical
-  description: "The Ripe HD FLV plugin for WordPress is vulnerable to generic SQL Injection via the 'id' parameter in the 'config.php' file in versions up to, and including, 1.1 due to insufficient escaping on the user-supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
+  severity: low
+  description: "The Ripe HD FLV plugin for WordPress is vulnerable to Sensitive Data Exposure in versions up to, and including, 1.1 via the 'index.php' and 'installer.php' files. This can allow unauthenticated attackers to extract sensitive data including the full path of the installation."
   reference:
-    - https://exchange.xforce.ibmcloud.com/vulnerabilities/81415
-    - https://packetstormsecurity.com/files/119679/WordPress-Ripe-HD-FLV-Player-SQL-Injection-Path-Disclosure.html
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-hitasoft-flv-player-id-parameter-sql-injection-1-1/
-    - https://wpscan.com/vulnerability/d4a8e58f-2fe9-4bac-8f3e-f02d3ecb5508
-    - https://wordpress.org/plugins/ripe-hd-player/
+
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
+    cvss-metrics:
+    cvss-score:
     cve-id:
   metadata:
     fofa-query: "wp-content/plugins/ripe-hd-player/"
     google-query: inurl:"/wp-content/plugins/ripe-hd-player/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ripe-hd-player,critical
+  tags: cve,wordpress,wp-plugin,ripe-hd-player,low
 
 http:
   - method: GET
@@ -57,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1')
+          - compare_versions(version, '<=  1.1')

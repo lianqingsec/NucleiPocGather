@@ -2,13 +2,14 @@ id: bricks
 
 info:
   name: >
-    Bricks <= 1.9.6 - Unauthenticated Remote Code Execution
+    Bricks <= 1.8.1 - Cross-Site Request Forgery via save_settings
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b97b1c86-22a4-462b-9140-55139cf02c7a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d58fd503-84d0-4d62-9290-870b1dd32be7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/bricks/"
     google-query: inurl:"/wp-content/themes/bricks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,bricks,low
+  tags: cve,wordpress,wp-theme,bricks,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.9.6')
+          - compare_versions(version, '<= 1.8.1')

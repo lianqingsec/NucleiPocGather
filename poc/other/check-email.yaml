@@ -2,13 +2,14 @@ id: check-email
 
 info:
   name: >
-    Check & Log Email <= 1.0.3 - Reflected Cross-Site Scripting
+    Check & Log Email <= 1.0.9 - Unauthenticated Hook Injection
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fa4bf7dc-07be-4397-957c-ef0c1d61b40a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9ae9307c-680c-43c7-8246-a3e6149c1fb6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/check-email/"
     google-query: inurl:"/wp-content/plugins/check-email/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,check-email,medium
+  tags: cve,wordpress,wp-plugin,check-email,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.0.4')
+          - compare_versions(version, '<= 1.0.9')

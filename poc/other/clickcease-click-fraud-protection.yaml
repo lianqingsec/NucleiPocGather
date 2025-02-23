@@ -2,13 +2,14 @@ id: clickcease-click-fraud-protection
 
 info:
   name: >
-    ClickCease Click Fraud Protection <= 3.2.4 - Improper Authorization to sensitive information exposure via get_settings
+    ClickCease Click Fraud Protection <= 3.2.5 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5d572cac-b8e3-4c52-9b35-80fe5ee9e900?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e03f95ae-c1ba-4679-888b-055293e1351f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/clickcease-click-fraud-protection/"
     google-query: inurl:"/wp-content/plugins/clickcease-click-fraud-protection/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,clickcease-click-fraud-protection,low
+  tags: cve,wordpress,wp-plugin,clickcease-click-fraud-protection,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.2.4')
+          - compare_versions(version, '<= 3.2.5')

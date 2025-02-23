@@ -2,13 +2,14 @@ id: templates-patterns-collection
 
 info:
   name: >
-    Cloud Templates & Patterns collection <= 1.2.2 - Sensitive Information Exposure via Log File
+    ThemeIsle SDK  <= Various Versions - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c59baad8-b888-4475-8371-645811a6b569?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6147582f-578a-47ad-b16c-65c37896783d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/templates-patterns-collection/"
     google-query: inurl:"/wp-content/plugins/templates-patterns-collection/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,templates-patterns-collection,low
+  tags: cve,wordpress,wp-plugin,templates-patterns-collection,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.2')
+          - compare_versions(version, '<= 1.2.6')

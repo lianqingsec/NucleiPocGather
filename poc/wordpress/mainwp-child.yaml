@@ -1,49 +1,57 @@
-id: wordpress-mainwp-child
+id: mainwp-child
 
 info:
-  name: MainWP Child – Securely Connects to the MainWP Dashboard to Manage Multiple Sites Detection
-  author: ricardomaia
-  severity: info
+  name: "MainWP Dashboard and MainWP Child <= 2.0.22 - Unspecified Vulnerability"
+  author: topscoder
+  severity: unknown
+  description: "Unspecified vulnerability in the MainWP Dashboard and MainWP Child plugins in versions up to and including 2.0.22 for WordPress has unspecified impact and remote attack vectors."
   reference:
-    - https://wordpress.org/plugins/mainwp-child/
+    - https://plugins.trac.wordpress.org/changeset/1214999
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-mainwp-dashboard-unspecified-vulnerability-2-0-22/
+  classification:
+    cvss-metrics:
+    cvss-score:
+    cve-id:
   metadata:
-    plugin_namespace: mainwp-child
-    wpscan: https://wpscan.com/plugin/mainwp-child
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/mainwp-child/"
+    google-query: inurl:"/wp-content/plugins/mainwp-child/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,mainwp-child,
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/mainwp-child/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/mainwp-child.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "mainwp-child"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a0048304602210083ae07994f9fe72a8143e10f320310e589fd371fee312f467dff24865a77f1a40221009c6175aa3e3481a7e5826d2680ca68905d7c9a78f7798e347de301535545c4ae:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.0.22')

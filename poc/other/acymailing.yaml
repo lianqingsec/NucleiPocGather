@@ -2,13 +2,14 @@ id: acymailing
 
 info:
   name: >
-    AcyMailing SMTP Newsletter < 7.5.0 - Open Redirect
+    AcyMailing SMTP Newsletter <= 8.6.2 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1acc256-c8f5-4738-8788-d52b4e2b80ef?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f82ec7c-72a0-4c3b-8041-c6ad080a48f1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/acymailing/"
     google-query: inurl:"/wp-content/plugins/acymailing/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,acymailing,low
+  tags: cve,wordpress,wp-plugin,acymailing,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 7.5.0')
+          - compare_versions(version, '<= 8.6.2')

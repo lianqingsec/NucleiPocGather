@@ -1,49 +1,59 @@
-id: wordpress-contact-form-cfdb7
+id: contact-form-cfdb7
 
 info:
-  name: Contact Form 7 Database Addon – CFDB7 Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    Contact Form 7 Database Addon <= 1.2.5.3 - SQL Injection
+  author: topscoder
+  severity: low
+  description: >
+    The Contact Form 7 Database Addon plugin for WordPress is vulnerable to SQL Injection in versions up to, and including 1.2.5.3, that makes it possible for attackers to append arbitrary SQL queries into an existing query via the form_id parameter. This can be exploit by authenticated attackers to retrieve sensitive information from the database.
   reference:
-    - https://wordpress.org/plugins/contact-form-cfdb7/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/22f79a03-9195-4d5d-a189-9b5e1d3307c8?source=api-prod
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+    cve-id: 
   metadata:
-    plugin_namespace: contact-form-cfdb7
-    wpscan: https://wpscan.com/plugin/contact-form-cfdb7
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/contact-form-cfdb7/"
+    google-query: inurl:"/wp-content/plugins/contact-form-cfdb7/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,contact-form-cfdb7,low
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/contact-form-cfdb7/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/contact-form-cfdb7.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "contact-form-cfdb7"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100cbcecaddd441d6d1484974051a204e1f4f0ebeaaa4256161ebbe4261a9658cb10220448dfe4ba164ad383bc165a29217442c2a269889c94025abb7c23a9f7d0088c4:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 1.2.5.4')

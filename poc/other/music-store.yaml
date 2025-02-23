@@ -1,18 +1,19 @@
 id: music-store
 
 info:
-  name: "Music Store – WordPress eCommerce < 1.0.15 - Open Redirect"
+  name: >
+    Music Store – WordPress eCommerce < 1.0.15 - Open Redirect
   author: topscoder
   severity: high
-  description: "An open redirect in the Music Store – WordPress eCommerce plugin before 1.0.15 for WordPress allows attackers to redirect a user by adding HTTP referer to ms-core/ms-submit.php."
+  description: >
+    An open redirect in the Music Store – WordPress eCommerce plugin before 1.0.15 for WordPress allows attackers to redirect a user by adding HTTP referer to ms-core/ms-submit.php.
   reference:
-    - https://seclists.org/fulldisclosure/2015/Jul/113
-    - https://plugins.trac.wordpress.org/changeset/1178058/
-    - https://packetstormsecurity.com/files/132841/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c296743a-ec08-4cdd-b3d0-ab3de93f5bb9?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 7.2
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/music-store/"
     google-query: inurl:"/wp-content/plugins/music-store/"

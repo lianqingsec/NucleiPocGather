@@ -2,13 +2,14 @@ id: powr-pack
 
 info:
   name: >
-    Powr Pack <= 2.1.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via shortcode
+    POWR <= 2.1.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0e67ce3b-144f-4ce1-b658-47d865312c6a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c2967eae-82bb-4556-a21a-c5bb6b905c62?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

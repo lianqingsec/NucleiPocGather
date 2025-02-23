@@ -2,13 +2,14 @@ id: fontiran
 
 info:
   name: >
-    Fontiran <= 2.1 - Missing Authorization via fi_add_rule and fi_delete_webfont_php
+    Fontiran <= 2.1 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/518b005d-5a5d-4fec-bb3a-1657af354ec9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/701bf711-d692-4eb1-8459-befa62264b97?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/fontiran/"
     google-query: inurl:"/wp-content/plugins/fontiran/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,fontiran,high
+  tags: cve,wordpress,wp-plugin,fontiran,medium
 
 http:
   - method: GET

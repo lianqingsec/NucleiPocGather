@@ -2,13 +2,14 @@ id: no-captcha-recaptcha-for-woocommerce
 
 info:
   name: >
-    No CAPTCHA reCAPTCHA for WooCommerce <= 1.2.6 - Authenticated(Admin+) Stored Cross-Site Scripting via Plugin Settings
+    No CAPTCHA reCAPTCHA for WooCommerce <= 1.2.6 - Missing Authorization to Notification Dismissal
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9bcc1965-c409-40ba-a942-175646ad8fda?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/efc53d78-a664-48d0-a752-00c56b3f792f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/no-captcha-recaptcha-for-woocommerce/"
     google-query: inurl:"/wp-content/plugins/no-captcha-recaptcha-for-woocommerce/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,no-captcha-recaptcha-for-woocommerce,low
+  tags: cve,wordpress,wp-plugin,no-captcha-recaptcha-for-woocommerce,high
 
 http:
   - method: GET

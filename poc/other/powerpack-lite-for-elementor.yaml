@@ -2,13 +2,14 @@ id: powerpack-lite-for-elementor
 
 info:
   name: >
-    PowerPack Addons for Elementor (Free Widgets, Extensions and Templates) <= 2.7.14 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    PowerPack Addons for Elementor <= 2.7.15 - Authenticated (Contributor+) Stored Cross-Site Scripting via Twitter Buttons Widget
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/036cf299-80c2-48a8-befc-02899ab96e3c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/64480862-c076-4ea9-a03b-9aed81f876d5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.7.14')
+          - compare_versions(version, '<= 2.7.15')

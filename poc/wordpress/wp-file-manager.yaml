@@ -1,49 +1,56 @@
-id: wordpress-wp-file-manager
+id: wp-file-manager
 
 info:
-  name: File Manager Detection
-  author: ricardomaia
-  severity: info
+  name: "File Manager <= 4.8 - Missing Authorization on AJAX Actions"
+  author: topscoder
+  severity: high
+  description: "The File Manager plugin for WordPress is vulnerable to authorization bypass due to missing capability checks on various functions hooked via AJAX actions in versions up to, and including, 4.8. This makes it possible for authenticated attackers with subscriber-level permissions and above to delete back-ups and view sensitive information about back-ups."
   reference:
-    - https://wordpress.org/plugins/wp-file-manager/
+
+  classification:
+    cvss-metrics:
+    cvss-score:
+    cve-id:
   metadata:
-    plugin_namespace: wp-file-manager
-    wpscan: https://wpscan.com/plugin/wp-file-manager
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/wp-file-manager/"
+    google-query: inurl:"/wp-content/plugins/wp-file-manager/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,wp-file-manager,high
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/wp-file-manager/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/wp-file-manager.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "wp-file-manager"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100ab17a3cadeb9d85d175fedc316bbb176b51780da4111f9fd07d24275da18130e02206644d4c8bb6232a0b38ad94b531edf3d57a3231e3e78d782bd4aae72155213eb:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<=  4.8')

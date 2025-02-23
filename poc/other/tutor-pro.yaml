@@ -2,13 +2,14 @@ id: tutor-pro
 
 info:
   name: >
-    Tutor LMS Pro <= 2.7.0 - Missing Authorization to SQL Injection
+    Tutor LMS Pro <= 2.7.2 - Missing Authorization to Authenticated (Subscriber+) Insecure Direct Object Reference
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c647beda-cf73-4372-975f-a8c8ed05217f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aa5c23ed-7239-40e1-a795-1ae8d4c2d6c8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/tutor-pro/"
     google-query: inurl:"/wp-content/plugins/tutor-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,tutor-pro,high
+  tags: cve,wordpress,wp-plugin,tutor-pro,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.7.0')
+          - compare_versions(version, '<= 2.7.2')

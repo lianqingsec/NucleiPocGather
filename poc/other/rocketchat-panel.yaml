@@ -10,7 +10,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-    shodan-query: http.title:"Rocket.Chat"
+    shodan-query: "http.title:\"Rocket.Chat\""
   tags: panel,rocketchat,login,detect
 
 http:
@@ -26,4 +26,4 @@ http:
           - 'status_code == 200'
           - 'contains_any(body, "<title>Rocket.Chat", "content=\"Rocket.Chat")'
         condition: and
-# digest: 490a004630440220033e04196ae5d3e3dfa2d2e4002c34f06bd31d9033b6ca3fe79b1e4b98f8285f02201d5223d270c17cdb518372cdc2092703bfa4adb03532a5a62a71ba226c7fa05d:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220213f92e33c7b93bd760a281dff3427b796dcb4eed73ed550941fb16abddd89180220080a30ead625b8491cb47333aff0f5d45158897773064a2aeb1baddffe94683a:922c64590222798bb761d5b6d8e72950

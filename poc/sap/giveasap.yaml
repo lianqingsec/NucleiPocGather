@@ -2,13 +2,14 @@ id: giveasap
 
 info:
   name: >
-    Simple Giveaways <= 2.45.0 - Authenticated (Editor+) Stored Cross-Site Scripting via Form, Prize, and Sharing Method Fields
+    Simple Giveaways <= 2.36.1 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/240691c4-35c5-40e1-b1ab-a500ffcdac73?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a43db90-2a9e-4223-bf55-fef1a6bb2280?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/giveasap/"
     google-query: inurl:"/wp-content/plugins/giveasap/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,giveasap,low
+  tags: cve,wordpress,wp-plugin,giveasap,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.45.0')
+          - compare_versions(version, '< 2.36.1')

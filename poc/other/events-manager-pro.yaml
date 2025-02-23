@@ -2,16 +2,17 @@ id: events-manager-pro
 
 info:
   name: >
-    Events Manager < 5.9.7.2 & Events Manager Pro < 2.6.7.2 - Unauthenticated CSV Injection
+    Events Manager < 5.3.5 & Events Manager Pro < 2.2.9 - Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
-    The Events Manager Pro, versions up to 2.6.7.2, and Events Manager, versions up to 5.9.7.2, plugins for WordPress are vulnerable to CSV Injection. This allows unauthenticated attackers to embed untrusted input into exported CSV files, which can result in code execution when these files are downloaded and opened on a local system with a vulnerable configuration.
+    
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/74b81d31-8ee6-47cf-a5e8-3cf0900ebea0?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0c4d2829-9f99-4a2d-9bde-476fae2c99a4?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L
-    cvss-score: 7.1
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/events-manager-pro/"
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.6.7.2')
+          - compare_versions(version, '< 2.2.9')

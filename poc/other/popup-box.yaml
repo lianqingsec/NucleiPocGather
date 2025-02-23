@@ -2,13 +2,14 @@ id: popup-box
 
 info:
   name: >
-    Multiple Wow-Company Plugins (Various Versions) -- Reflected Cross-Site Scripting via 'page' parameter
+    Popup Box <= 2.1.2 - Authenticated Local File Inclusion
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a95af34-559c-4644-9941-7bd1551aba33?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c0e53aa4-9acf-4501-9b5e-b7694851fc63?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/popup-box/"
     google-query: inurl:"/wp-content/plugins/popup-box/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,popup-box,medium
+  tags: cve,wordpress,wp-plugin,popup-box,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.1')
+          - compare_versions(version, '<= 2.1.2')

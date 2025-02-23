@@ -2,13 +2,14 @@ id: camptix
 
 info:
   name: >
-    CampTix Event Ticketing < 1.5 - Cross-Site Scripting
+    CampTix Event Ticketing <= 1.4.2 - CSV Injection
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/be091637-0fcb-4d30-8eaa-2fe18d8eb42c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/694005fc-7703-4343-a7b4-d36906869df3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/camptix/"
     google-query: inurl:"/wp-content/plugins/camptix/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,camptix,high
+  tags: cve,wordpress,wp-plugin,camptix,low
 
 http:
   - method: GET

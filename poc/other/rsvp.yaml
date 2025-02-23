@@ -2,13 +2,14 @@ id: rsvp
 
 info:
   name: >
-    RSVP and Event Management <= 2.7.7 - Unauthenticated Sensitive Information Disclosure
+    RSVP and Event Management <= 2.7.4 - Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4ac44e4f-7052-465c-82ab-c3f23a62c898?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6f73b12b-813d-49fa-84a0-3345023a16c6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/rsvp/"
     google-query: inurl:"/wp-content/plugins/rsvp/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,rsvp,low
+  tags: cve,wordpress,wp-plugin,rsvp,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.7.7')
+          - compare_versions(version, '< 2.7.5')

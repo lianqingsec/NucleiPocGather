@@ -2,13 +2,14 @@ id: ws-form
 
 info:
   name: >
-    WS Form LITE <= 1.9.170 - Authenticated(Administrator+) SQL Injection
+    WS Form LITE – Drag & Drop Contact Form Builder for WordPress <= 1.9.244 - Reflected Cross-Site Scripting via URL
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a3171015-227d-420a-ba3a-e6e2dc17ba8c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6cab527f-bd67-4b67-8133-f085098d63dc?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/ws-form/"
     google-query: inurl:"/wp-content/plugins/ws-form/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ws-form,low
+  tags: cve,wordpress,wp-plugin,ws-form,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.9.171')
+          - compare_versions(version, '<= 1.9.244')

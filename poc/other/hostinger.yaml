@@ -1,49 +1,59 @@
-id: wordpress-hostinger
+id: hostinger
 
 info:
-  name: Hostinger Tools Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    Hostinger <= 1.9.7 - Missing Authorization to Maintenance Mode Activation
+  author: topscoder
+  severity: high
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/hostinger/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d89cf759-5e5f-43e2-90a9-a8e554653ee1?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    plugin_namespace: hostinger
-    wpscan: https://wpscan.com/plugin/hostinger
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/hostinger/"
+    google-query: inurl:"/wp-content/plugins/hostinger/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,hostinger,high
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/hostinger/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/hostinger.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "hostinger"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502202cc468a375b57ce2e9d0940535abdbb058170c683ec3792a44da208c3db85a6c022100b4ac4734ed0c9fe8b90acd3df056d25cfbd199d570322e8fa03d4398e6fa01da:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.9.7')

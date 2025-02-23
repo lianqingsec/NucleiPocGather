@@ -1,133 +1,45 @@
-id: open-redirect
+id: Open Redirect
 
 info:
-  name: Open Redirect - Detection
-  author: afaq,melbadry9,Elmahdi,pxmme1337,Regala_,andirrahmani1,geeknik
-  severity: medium
-  description: An open redirect vulnerability was detected. An attacker can redirect a user to a malicious site and possibly obtain sensitive information, modify data, and/or execute unauthorized operations.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
-    cwe-id: CWE-601
-  metadata:
-    max-request: 93
-  tags: redirect,generic
+  name: Open Redirect Issues
+  description: This template can be used to detect Open Redirect vulnerability in the host.
+  author: rahulkadavil
+  severity: Low
+  tags: Open Redirect
 
-http:
+requests:
   - method: GET
     path:
-      - "{{RootURL}}/{{redirect}}"
-
-    payloads:
-      redirect:
-        - '%0a/evil.com/'
-        - '%0d/evil.com/'
-        - '%00/evil.com/'
-        - '%09/evil.com/'
-        - '%5C%5Cevil.com/%252e%252e%252f'
-        - '%5Cevil.com'
-        - '%5cevil.com/%2f%2e%2e'
-        - '%5c{{RootURL}}evil.com/%2f%2e%2e'
-        - '../evil.com'
-        - '.evil.com'
-        - '/%5cevil.com'
-        - '////\;@evil.com'
-        - '////evil.com'
-        - '///evil.com'
-        - '///evil.com/%2f%2e%2e'
-        - '///evil.com@//'
-        - '///{{RootURL}}evil.com/%2f%2e%2e'
-        - '//;@evil.com'
-        - '//\/evil.com/'
-        - '//\@evil.com'
-        - '//\evil.com'
-        - '//\tevil.com/'
-        - '//evil.com/%2F..'
-        - '//evil.com//'
-        - '//%69%6e%74%65%72%61%63%74%2e%73%68'
-        - '//evil.com@//'
-        - '//evil.com\tevil.com/'
-        - '//https://evil.com@//'
-        - '/<>//evil.com'
-        - '/\/\/evil.com/'
-        - '/\/evil.com'
-        - '/\evil.com'
-        - '/evil.com'
-        - '/evil.com/%2F..'
-        - '/evil.com/'
-        - '/evil.com/..;/css'
-        - '/https:evil.com'
-        - '/{{RootURL}}evil.com/'
-        - '/〱evil.com'
-        - '/〵evil.com'
-        - '/ゝevil.com'
-        - '/ーevil.com'
-        - '/ｰevil.com'
-        - '<>//evil.com'
-        - '@evil.com'
-        - '@https://evil.com'
-        - '\/\/evil.com/'
-        - 'evil%E3%80%82com'
-        - 'evil.com'
-        - 'evil.com/'
-        - 'evil.com//'
-        - 'evil.com;@'
-        - 'https%3a%2f%2fevil.com%2f'
-        - 'https:%0a%0devil.com'
-        - 'https://%0a%0devil.com'
-        - 'https://%09/evil.com'
-        - 'https://%2f%2f.evil.com/'
-        - 'https://%3F.evil.com/'
-        - 'https://%5c%5c.evil.com/'
-        - 'https://%5cevil.com@'
-        - 'https://%23.evil.com/'
-        - 'https://.evil.com'
-        - 'https://////evil.com'
-        - 'https:///evil.com'
-        - 'https:///evil.com/%2e%2e'
-        - 'https:///evil.com/%2f%2e%2e'
-        - 'https:///evil.com@evil.com/%2e%2e'
-        - 'https:///evil.com@evil.com/%2f%2e%2e'
-        - 'https://:80#@evil.com/'
-        - 'https://:80?@evil.com/'
-        - 'https://:@\@evil.com'
-        - 'https://:@evil.com\@evil.com'
-        - 'https://;@evil.com'
-        - 'https://\tevil.com/'
-        - 'https://evil.com/evil.com'
-        - 'https://evil.com/https://evil.com/'
-        - 'https://www.\.evil.com'
-        - 'https:/\/\evil.com'
-        - 'https:/\evil.com'
-        - 'https:/evil.com'
-        - 'https:evil.com'
-        - '{{RootURL}}evil.com'
-        - '〱evil.com'
-        - '〵evil.com'
-        - 'ゝevil.com'
-        - 'ーevil.com'
-        - 'ｰevil.com'
-        - 'redirect/evil.com'
-        - 'cgi-bin/redirect.cgi?evil.com'
-        - 'out?evil.com'
-        - 'login?to=http://evil.com'
-        - '1/_https@evil.com'
-        - 'redirect?targeturl=https://evil.com'
-    stop-at-first-match: true
+      - "{{BaseURL}}/?url=http://evil.com"
+      - "{{BaseURL}}/?to=http://evil.com"
+      - "{{BaseURL}}/?forward=http://evil.com"
+      - "{{BaseURL}}/?page=http://evil.com"
+      - "{{BaseURL}}/?checkout=http://evil.com"
+      - "{{BaseURL}}/?dest=http://evil.com"
+      - "{{BaseURL}}/?destination=http://evil.com"
+      - "{{BaseURL}}/?dest_url=http://evil.com"
+      - "{{BaseURL}}/?redirect=http://evil.com"
+      - "{{BaseURL}}/?visit=http://evil.com"
+      - "{{BaseURL}}/?go=http://evil.com"
+      - "{{BaseURL}}/?move=http://evil.com"
+      - "{{BaseURL}}/?target=http://evil.com"
+      - "{{BaseURL}}/?flow=http://evil.com"
+      - "{{BaseURL}}/?out=http://evil.com"
+      - "{{BaseURL}}/?login=http://evil.com"
+      - "{{BaseURL}}/?reach=http://evil.com"
+      - "{{BaseURL}}/?route=http://evil.com"
+      - "{{BaseURL}}/?reroute=http://evil.com"
+      - "{{BaseURL}}/?domain=http://evil.com"
+      - "{{BaseURL}}/?Location=http://evil.com"
+      
 
     matchers-condition: and
-    matchers:
-      - type: regex
-        part: header
-        regex:
-          - '(?m)^(?:Location\s*?:\s*?)(?:https?:\/\/|\/\/|\/\\\\|\/\\)(?:[a-zA-Z0-9\-_\.@]*)evil\.com\/?(\/|[^.].*)?$' # https://regex101.com/r/ZDYhFh/1
-
+    matchers:   
       - type: status
         status:
-          - 301
           - 302
-          - 307
-          - 308
-        condition: or
 
-# digest: 490a004630440220462538caf722bf9755c6b31c0e3e5f197976c7f4404b142f5cbc5e789085e15e02204fd65914784fd2c0dd0966dea8493d8ad7534f2f782bf0150c029715f8c80a0c:922c64590222798bb761d5b6d8e72950
+      - type: regex 
+        regex:
+          - '(?m)^(?:Location\s*?:\s*?)(?:http?://|//)?(?:[a-zA-Z0-9\-_\.@]*)evil\.com.*$'
+        part: header

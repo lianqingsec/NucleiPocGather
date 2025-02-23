@@ -1,23 +1,23 @@
 id: addthis
 
 info:
-  name: >
-    AddThis Sharing Buttons <= 5.0.12 - Authenticated Cross-Site Scripting
+  name: "AddThis <= 5.0.12 - Cross-Site Scripting"
   author: topscoder
-  severity: low
-  description: >
-    
+  severity: medium
+  description: "The AddThis plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 5.0.12 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/49ac9c7c-d457-4709-bc10-c3de8b4f097a?source=api-scan
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-share-buttons-by-addthis-cross-site-scripting-5-0-12/
+    - https://wordpress.org/plugins/addthis/#developers
+    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1218684%40addthis&new=1218684%40addthis&sfp_email=&sfph_mail=
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/addthis/"
     google-query: inurl:"/wp-content/plugins/addthis/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,addthis,low
+  tags: cve,wordpress,wp-plugin,addthis,medium
 
 http:
   - method: GET

@@ -2,13 +2,14 @@ id: swift-performance-lite
 
 info:
   name: >
-    Swift Performance Lite <= 2.3.6.18 - Incorrect Authorization to Authenticated (Subscriber+) Settings Modification
+    Swift Performance Lite <= 2.3.6.14 - Missing Authorization to Unauthenticated Settings Export
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/58b7736a-e3e0-4ecd-9adf-284568b02ef7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8321f68f-da2d-4382-979d-54008de2cae7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/swift-performance-lite/"
     google-query: inurl:"/wp-content/plugins/swift-performance-lite/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,swift-performance-lite,low
+  tags: cve,wordpress,wp-plugin,swift-performance-lite,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.3.6.18')
+          - compare_versions(version, '<= 2.3.6.14')

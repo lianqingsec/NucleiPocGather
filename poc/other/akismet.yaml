@@ -1,49 +1,59 @@
-id: wordpress-akismet
+id: akismet
 
 info:
-  name: Akismet Anti-spam' Spam Protection Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    Akismet <= 3.1.4 - Cross-Site Scripting
+  author: topscoder
+  severity: high
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/akismet/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/51b60e28-fb43-434a-88ca-3c73a8e89d40?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    plugin_namespace: akismet
-    wpscan: https://wpscan.com/plugin/akismet
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/akismet/"
+    google-query: inurl:"/wp-content/plugins/akismet/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,akismet,high
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/akismet/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/akismet.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "akismet"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220565b40d569f6100351ecc01c43bda5fc5d205b7253a97f79a60a8343f300a99c0221008dfb0cc6c67c80c6ea6681db5d5fc3be454fcad5437a96323837e1baae4d8149:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 3.1.5')

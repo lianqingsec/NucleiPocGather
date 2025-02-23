@@ -2,13 +2,14 @@ id: yoo-slider
 
 info:
   name: >
-    Yoo Slider – Image Slider & Video Slider <= 2.0.0 - Cross-Site Request Forgery
+    Yoo Slider plugin <= 2.0.0 - Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5a3a5dd8-1608-4a73-a571-25da811e4605?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1f643bd-a168-4506-9606-0b8b91573ebb?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/yoo-slider/"
     google-query: inurl:"/wp-content/plugins/yoo-slider/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,yoo-slider,medium
+  tags: cve,wordpress,wp-plugin,yoo-slider,high
 
 http:
   - method: GET

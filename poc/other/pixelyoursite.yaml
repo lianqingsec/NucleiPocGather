@@ -1,49 +1,59 @@
-id: wordpress-pixelyoursite
+id: pixelyoursite
 
 info:
-  name: PixelYourSite – Your smart PIXEL (TAG) & API Manager Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    PixelYourSite – Your smart PIXEL (TAG) & API Manager <= 9.7.1 and PixelYourSite PRO <= 10.4.2 - Unauthenticated Information Exposure and Log Deletion
+  author: topscoder
+  severity: low
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/pixelyoursite/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7fd7a515-6389-4152-8dac-d5497dd94f6d?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    plugin_namespace: pixelyoursite
-    wpscan: https://wpscan.com/plugin/pixelyoursite
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/pixelyoursite/"
+    google-query: inurl:"/wp-content/plugins/pixelyoursite/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,pixelyoursite,low
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/pixelyoursite/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/pixelyoursite.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "pixelyoursite"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402202f4bcb99b7d92123ce2433977cf8af70d992e8ae31a88bbbe6e6d376596cee5c022037e3d7fe9c2568ddc3a60c1efd8e17309404e8ca15f6ac32a72bbb9fc37071eb:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 9.7.1')

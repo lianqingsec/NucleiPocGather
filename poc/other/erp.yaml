@@ -2,13 +2,14 @@ id: erp
 
 info:
   name: >
-    WP ERP <= 1.12.6 - Missing Authorization via admin notice dismissal
+    WP ERP <= 1.12.3 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/048277c4-f313-484d-a330-420e0682eee2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a073c2f1-88d3-4410-b9f5-45b04becbfcb?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/erp/"
     google-query: inurl:"/wp-content/plugins/erp/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,erp,high
+  tags: cve,wordpress,wp-plugin,erp,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.12.6')
+          - compare_versions(version, '< 1.12.4')

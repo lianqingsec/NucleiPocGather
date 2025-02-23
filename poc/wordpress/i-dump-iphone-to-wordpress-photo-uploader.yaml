@@ -1,18 +1,16 @@
 id: i-dump-iphone-to-wordpress-photo-uploader
 
 info:
-  name: >
-    iDump iPhone to WordPress Photo Uploader <= 1.8 - Arbitrary File Upload
+  name: "iDump iPhone to WordPress Photo Uploader <= 1.8 - Arbitrary File Upload"
   author: topscoder
   severity: critical
-  description: >
-    The iDump iPhone to WordPress Photo Uploader for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the uploader.php file in versions up to, and including, 1.8. This makes it possible for attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
+  description: "The iDump iPhone to WordPress Photo Uploader for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the uploader.php file in versions up to, and including, 1.8. This makes it possible for attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e37e54b-9c00-4d04-9c81-791242d45d6c?source=api-prod
+
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
-    cve-id: 
+    cvss-metrics:
+    cvss-score:
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/i-dump-iphone-to-wordpress-photo-uploader/"
     google-query: inurl:"/wp-content/plugins/i-dump-iphone-to-wordpress-photo-uploader/"
@@ -55,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.8')
+          - compare_versions(version, '<=  1.8')

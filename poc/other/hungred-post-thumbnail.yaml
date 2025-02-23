@@ -6,12 +6,10 @@ info:
   severity: critical
   description: "The Hungred Post Thumbnail plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the hpt_file_upload.php file in versions up to, and including, 2.1.9. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-    - https://packetstormsecurity.com/files/113402/
-    - https://web.archive.org/web/20200229123404/https%3A//www.securityfocus.com/bid/53898/discuss
-    - https://wordpress.org/plugins/hungred-post-thumbnail/#developers
+
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
+    cvss-metrics:
+    cvss-score:
     cve-id:
   metadata:
     fofa-query: "wp-content/plugins/hungred-post-thumbnail/"
@@ -55,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1.9')
+          - compare_versions(version, '<=  2.1.9')

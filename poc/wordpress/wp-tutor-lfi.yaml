@@ -5,7 +5,7 @@ info:
   author: 0x240x23elu
   severity: high
   reference: https://www.exploit-db.com/exploits/48058
- 
+  tags: wordpress,wp-plugin,lfi
 
 requests:
   - method: GET
@@ -15,5 +15,5 @@ requests:
     matchers:
       - type: regex
         regex:
-          - "root:.*:0:0:"
+          - "root:[x*]:0:0:"
         part: body

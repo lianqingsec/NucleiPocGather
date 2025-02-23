@@ -1,49 +1,59 @@
-id: wordpress-siteguard
+id: siteguard
 
 info:
-  name: SiteGuard WP Plugin Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    SiteGuard WP Plugin <= 1.7.6 - Login Page Disclosure
+  author: topscoder
+  severity: low
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/siteguard/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/458aeb60-8610-49e8-8f77-2e306bfe7277?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    plugin_namespace: siteguard
-    wpscan: https://wpscan.com/plugin/siteguard
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/siteguard/"
+    google-query: inurl:"/wp-content/plugins/siteguard/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,siteguard,low
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/siteguard/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/siteguard.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "siteguard"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502210084a69450bcf5195346c8b3730fb286bce4fb2d85771b8e8a4a1776210528c1a302205872674ab39b9e4f7315d1b9b4f4e47263a018a1c2eab21afaf3e6f9ad4724c5:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.7.6')

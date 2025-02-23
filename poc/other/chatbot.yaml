@@ -2,13 +2,14 @@ id: chatbot
 
 info:
   name: >
-    AI ChatBot <= 4.8.9 and 4.9.2 - Cross-Site Request Forgery on AJAX actions
+    AI ChatBot <= 4.4.7 - Missing Authorization on openai_settings_option_callback
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/846bd929-45cd-4e91-b232-ae16dd2b12a0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b33bf55c-0397-44a2-8c18-ea5f8f1e2ec9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/chatbot/"
     google-query: inurl:"/wp-content/plugins/chatbot/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,chatbot,medium
+  tags: cve,wordpress,wp-plugin,chatbot,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '4.9.2')
+          - compare_versions(version, '<= 4.4.7')

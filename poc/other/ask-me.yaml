@@ -2,13 +2,14 @@ id: ask-me
 
 info:
   name: >
-    Ask Me <= 6.8.1 - Cross-Site Request Forgery
+    Ask Me < 6.8.7 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b191a337-ec45-4357-9b37-6ca0af9cb2f9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6c18938b-6c0d-461e-b83e-26bc8e7bc1b3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 6.8.2')
+          - compare_versions(version, '< 6.8.7')

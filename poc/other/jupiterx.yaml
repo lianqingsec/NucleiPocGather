@@ -2,13 +2,14 @@ id: jupiterx
 
 info:
   name: >
-    JupiterX Theme <= 2.0.6 and JupiterX Core <= 2.0.6 - Authenticated Arbitrary Plugin Deactivation and Settings Modification
+    JupiterX Theme <= 3.0.0  - Authenticated Local File Inclusion via print_pane
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/147b7be2-8bbe-4e95-bfcb-1c4ff8a41a3b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d5abb538-9e69-485e-9389-90a2422510ca?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.6')
+          - compare_versions(version, '<= 3.0.0')

@@ -1,49 +1,59 @@
-id: wordpress-flamingo
+id: flamingo
 
 info:
-  name: Flamingo Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    Flamingo <= 2.1 - CSV Injection
+  author: topscoder
+  severity: medium
+  description: >
+    A CSV Injection vulnerability was discovered in Flamingo up to version 2.1. It allows a user with low level privileges to inject OS command that will be included in the exported CSV file, leading to possible command/code execution.
   reference:
-    - https://wordpress.org/plugins/flamingo/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/78760d4d-04fc-4a6c-8c0d-6bf897335651?source=api-prod
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 6.4
+    cve-id: 
   metadata:
-    plugin_namespace: flamingo
-    wpscan: https://wpscan.com/plugin/flamingo
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/flamingo/"
+    google-query: inurl:"/wp-content/plugins/flamingo/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,flamingo,medium
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/flamingo/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/flamingo.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "flamingo"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220671958931a61d3ec9c08dcb23d0e8e64daf27a114212d5ffea58e299b0a13a08022100f9c2031e75548c0d5cd498b6be4bb94fffd1d7173c52bd5bc36e4c9738d83547:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.1')

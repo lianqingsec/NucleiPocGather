@@ -11,7 +11,7 @@ info:
   metadata:
     verified: true
     max-request: 1
-    shodan-query: http.title:"Passbolt | Open source password manager for teams"
+    shodan-query: "http.title:\"Passbolt | Open source password manager for teams\""
   tags: panel,passbolt,login
 
 http:
@@ -32,4 +32,4 @@ http:
         group: 1
         regex:
           - '(?i)v=([0-9a-z.-]+)'
-# digest: 4a0a00473045022100a88014cf962ec6f61e44d7dbe62cef11b6b5a22d5110345bdaaa9b10872089f20220551fd9f9a94363c082c57e1f5618537241e20297383a8313ff2bf7ef0317111c:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402207f1b9037354038919a4460781c2f126b5ca46c7d67c0af2aa6f9653d51573ce2022048ad39d72b06d3603428ca396cf315280273241fbf01fe026e55d2d9f9a4f964:922c64590222798bb761d5b6d8e72950

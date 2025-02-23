@@ -2,13 +2,14 @@ id: powerpack-elements
 
 info:
   name: >
-    PowerPack Pro for Elementor <= 2.10.6 - Missing Authorization to Settings Reset
+    PowerPack Pro for Elementor <= 2.9.23 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/883e1f3c-7e47-4522-ae8c-a9a6b4160be2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2feabc97-0463-4e50-91a8-234445ca2504?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/powerpack-elements/"
     google-query: inurl:"/wp-content/plugins/powerpack-elements/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,powerpack-elements,high
+  tags: cve,wordpress,wp-plugin,powerpack-elements,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.10.6')
+          - compare_versions(version, '<= 2.9.23')

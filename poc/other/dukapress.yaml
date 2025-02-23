@@ -2,13 +2,14 @@ id: dukapress
 
 info:
   name: >
-    DukaPress <= 2.5.9 - Blind SQL Injection
+    DukaPress < 2.5.4 - Directory Traversal
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d98d1782-a6cc-403a-b0fa-43282daa1136?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9c226d83-2886-4b7c-978c-ad723709145f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/dukapress/"
     google-query: inurl:"/wp-content/plugins/dukapress/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,dukapress,critical
+  tags: cve,wordpress,wp-plugin,dukapress,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.9')
+          - compare_versions(version, '< 2.5.4')

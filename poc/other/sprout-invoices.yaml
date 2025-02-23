@@ -1,18 +1,16 @@
 id: sprout-invoices
 
 info:
-  name: >
-    Client Invoicing by Sprout Invoices – Easy Estimates and Invoices for WordPress <= 9.3 - Missing Authorization
+  name: "Client Invoicing by Sprout Invoices – Easy Estimates and Invoices for WordPress <= 9.3 - Missing Authorization"
   author: topscoder
   severity: high
-  description: >
-    
+  description: "The Client Invoicing by Sprout Invoices – Easy Estimates and Invoices for WordPress plugin for WordPress is vulnerable to authorization bypass in versions up to, and including, 9.3. This is due to various missing capability & nonce checks on functions called via 'init' hooks. This makes it possible for unauthenticated trigger several functions which make it possible to upload arbitrary CSV files and access unreleased JSON API which can lead to createing/viewing the following: clients, payments, estimates, and invoices."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5cdbd5fd-bb12-4202-b6c7-f314ad8987f5?source=api-scan
+
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics:
+    cvss-score:
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/sprout-invoices/"
     google-query: inurl:"/wp-content/plugins/sprout-invoices/"
@@ -55,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 9.3')
+          - compare_versions(version, '<=  9.3')

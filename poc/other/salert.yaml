@@ -2,13 +2,14 @@ id: salert
 
 info:
   name: >
-    SALERT <= 1.2.1 - Missing Authorization via salert_save_settings_with_ajax()
+    SALERT <= 1.2.1 - Authenticated (Subscriber+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c9e45ae8-e5b5-460b-80f8-de562ae7c56a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6748841a-0984-4840-90ba-0eeff8564198?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/salert/"
     google-query: inurl:"/wp-content/plugins/salert/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,salert,high
+  tags: cve,wordpress,wp-plugin,salert,low
 
 http:
   - method: GET

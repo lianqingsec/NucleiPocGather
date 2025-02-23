@@ -2,22 +2,23 @@ id: treepress
 
 info:
   name: >
-    Freemius SDK <= 2.4.2 - Missing Authorization Checks
+    TreePress – Easy Family Trees & Ancestor Profiles <= 2.0.22 - Authenticated (Administrator+) Stored Cross-Site Scripting via 'post_title' parameter
   author: topscoder
-  severity: medium
+  severity: low
   description: >
-    The Freemius SDK, as used by hundreds of WordPress plugin and theme developers, was vulnerable to Cross-Site Request Forgery and Information disclosure due to missing capability checks and nonce protection on the _get_debug_log, _get_db_option, and the _set_db_option functions in versions up to, and including 2.4.2. Any WordPress plugin or theme running a version of Freemius less than 2.4.3 is vulnerable.
+    
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/39fb0499-9ab4-4a2f-b0db-ece86bcf4d42?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fbef8738-d639-48a5-98b7-abf9a7e9fec1?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
-    cvss-score: 6.3
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/treepress/"
     google-query: inurl:"/wp-content/plugins/treepress/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,treepress,medium
+  tags: cve,wordpress,wp-plugin,treepress,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.0.21')
+          - compare_versions(version, '<= 2.0.22')

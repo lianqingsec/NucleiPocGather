@@ -4,7 +4,7 @@ info:
   name: WordPress takeover detection
   author: pdteam,geeknik
   severity: high
- 
+  tags: takeover,wordpress
   reference: https://github.com/EdOverflow/can-i-take-over-xyz
 
 requests:
@@ -12,6 +12,7 @@ requests:
     path:
       - "{{BaseURL}}"
 
+    redirects: true
     matchers-condition: and
     matchers:
       - type: word

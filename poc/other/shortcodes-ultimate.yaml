@@ -1,49 +1,59 @@
-id: wordpress-shortcodes-ultimate
+id: shortcodes-ultimate
 
 info:
-  name: WP Shortcodes Plugin — Shortcodes Ultimate Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    WP Shortcodes Plugin — Shortcodes Ultimate <= 7.0.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+  author: topscoder
+  severity: low
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/shortcodes-ultimate/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/50a89ad1-a3d0-49e3-8d2e-4cb81ac115ba?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    plugin_namespace: shortcodes-ultimate
-    wpscan: https://wpscan.com/plugin/shortcodes-ultimate
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/shortcodes-ultimate/"
+    google-query: inurl:"/wp-content/plugins/shortcodes-ultimate/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,shortcodes-ultimate,low
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/shortcodes-ultimate/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/shortcodes-ultimate.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "shortcodes-ultimate"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502203fa83798fe4e1a7cef95078998735dcabb6d3c1812cd9baf7276d4281d8e27fa022100bc12bf3025f2f4b363024fedad2aa447d0bd1658c91b834a4a89e8c8d1589df4:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 7.0.0')

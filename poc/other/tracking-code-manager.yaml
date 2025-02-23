@@ -2,13 +2,14 @@ id: tracking-code-manager
 
 info:
   name: >
-    Tracking Code Manager <= 2.1.0 - Missing Authorization via change_order()
+    Tracking Code Manager <= 2.0.16 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0d54e5ad-0a97-4dd4-b53b-ad3f885dc506?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a0c962ba-43ef-4713-acd9-1e499f857df8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/tracking-code-manager/"
     google-query: inurl:"/wp-content/plugins/tracking-code-manager/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,tracking-code-manager,high
+  tags: cve,wordpress,wp-plugin,tracking-code-manager,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1.0')
+          - compare_versions(version, '<= 2.0.16')

@@ -2,13 +2,14 @@ id: kingcabs
 
 info:
   name: >
-    Multiple sparklewpthemes Themes (Various versions) - Cross-Site Request Forgery to Arbitrary Plugin Activation
+    Multiple sparklewpthemes Themes (Various versions) - Missing Authorization to Arbitrary Plugin Activation
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/62e30cef-ce5d-4450-989e-f08f09b7638f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c37bfdeb-2d0c-4ace-94cc-b85c16985994?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/kingcabs/"
     google-query: inurl:"/wp-content/themes/kingcabs/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,kingcabs,medium
+  tags: cve,wordpress,wp-theme,kingcabs,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.5')
+          - compare_versions(version, '<= 1.1.8')

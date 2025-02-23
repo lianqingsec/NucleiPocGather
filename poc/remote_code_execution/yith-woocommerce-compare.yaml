@@ -1,51 +1,59 @@
-id: wordpress-yith-woocommerce-compare
+id: yith-woocommerce-compare
 
 info:
-  name: YITH WooCommerce Compare Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    YITH WooCommerce Compare <= 2.37.0 - Cross-Site Request Forgery
+  author: topscoder
+  severity: medium
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/yith-woocommerce-compare/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f822d5b9-46fb-4910-8d92-8c73e01d7e50?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    max-request: 1
-    plugin_namespace: yith-woocommerce-compare
-    wpscan: https://wpscan.com/plugin/yith-woocommerce-compare
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/yith-woocommerce-compare/"
+    google-query: inurl:"/wp-content/plugins/yith-woocommerce-compare/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,yith-woocommerce-compare,medium
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/yith-woocommerce-compare/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/yith-woocommerce-compare.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "yith-woocommerce-compare"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
 
-# digest: 4b0a004830460221009207e43bddfd9e6266c490231fc30dd79ee0224bf8f1289efe0053a1e495d7d3022100c4f1fa58d069197a586ef2b62fb3a9c2ae1784725aa98b0b3e6870804449185d:922c64590222798bb761d5b6d8e72950
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 2.37.0')

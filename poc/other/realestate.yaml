@@ -1,23 +1,24 @@
 id: realestate
 
 info:
-  name: "Real Estate by Templatic (Unknown Version) - Cross-Site Request Forgery to Arbitrary File Upload"
+  name: >
+    Real Estate by Templatic (Unknown Version) - Cross-Site Request Forgery to Arbitrary File Upload
   author: topscoder
-  severity: high
-  description: "The Realestate theme for WordPress is vulnerable to arbitrary file uploads via CSRF due to missing or incorrect nonce validation in the 'upload-file.php' file. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible."
+  severity: medium
+  description: >
+    The Realestate theme for WordPress is vulnerable to arbitrary file uploads via CSRF due to missing or incorrect nonce validation in the 'upload-file.php' file. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible.
   reference:
-    - https://en.0day.today/exploits/22091
-    - https://templatic.com/directory-add-ons/real-estate
-    - https://vulners.com/zdt/1337DAY-ID-22091
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1523db36-fdc6-4a9d-bb2c-d9b28668a3fc?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
     cvss-score: 8.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/realestate/"
     google-query: inurl:"/wp-content/themes/realestate/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,realestate,high
+  tags: cve,wordpress,wp-theme,realestate,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>0')
+          - compare_versions(version, '<= *')

@@ -2,13 +2,14 @@ id: wd-google-analytics
 
 info:
   name: >
-    10WebAnalytics <= 1.2.12 - Missing Authorization via gawd_wd_bp_install_notice_status
+    10WebAnalytics <= 1.2.8 - Cross-Site Request Forgery Bypass
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5dd2a4cb-dd74-4b00-82f5-3bf1452e71a3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/db29f17d-1d2b-4f78-a78d-1579e2a5d975?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wd-google-analytics/"
     google-query: inurl:"/wp-content/plugins/wd-google-analytics/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wd-google-analytics,high
+  tags: cve,wordpress,wp-plugin,wd-google-analytics,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.12')
+          - compare_versions(version, '< 1.2.9')

@@ -1,49 +1,56 @@
-id: wordpress-ga-google-analytics
+id: ga-google-analytics
 
 info:
-  name: GA Google Analytics – Connect Google Analytics to WordPress Detection
-  author: ricardomaia
-  severity: info
+  name: "GA Google Analytics <= 20220517 - Authenticated (Admin+) Stored Cross-Site Scripting"
+  author: topscoder
+  severity: medium
+  description: "The GA Google Analytics plugin for WordPress is vulnerable to Stored Cross-Site Scripting via several tracking fields in versions up to, and including, 20220517 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with administrative privileges to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This only affects multi-site installations and installations where unfiltered_html has been disabled."
   reference:
-    - https://wordpress.org/plugins/ga-google-analytics/
+
+  classification:
+    cvss-metrics:
+    cvss-score:
+    cve-id:
   metadata:
-    plugin_namespace: ga-google-analytics
-    wpscan: https://wpscan.com/plugin/ga-google-analytics
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/ga-google-analytics/"
+    google-query: inurl:"/wp-content/plugins/ga-google-analytics/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,ga-google-analytics,medium
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/ga-google-analytics/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/ga-google-analytics.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "ga-google-analytics"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402205c96892a34b209da167012af5c3750789c74c621aee425eb2e8195830fb0df3f02200fffae7589d9d7188d49c55510ce1bc278db545016aad0008f8059d705aa78e0:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<=  20220517')

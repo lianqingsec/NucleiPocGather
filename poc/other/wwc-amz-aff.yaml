@@ -1,18 +1,16 @@
 id: wwc-amz-aff
 
 info:
-  name: >
-    WooCommerce Amazon Affiliates < 9.0.2.16 - Unauthenticated Arbitrary File Upload
+  name: "WooCommerce Amazon Affiliates < 9.0.2.16 - Unauthenticated Arbitrary File Upload"
   author: topscoder
   severity: critical
-  description: >
-    
+  description: "The WooCommerce Amazon Affiliates plugin for WordPress is vulnerable to Arbitrary File Upload due to missing file type validation in the validate_connection function in versions before 9.0.2.16. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c1f64b77-5c8b-44f3-b1a8-6aa9f13624b7?source=api-scan
+
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics:
+    cvss-score:
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/wwc-amz-aff/"
     google-query: inurl:"/wp-content/plugins/wwc-amz-aff/"
@@ -55,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 9.0.2.16')
+          - compare_versions(version, '<= 9.0.2.16')

@@ -2,22 +2,23 @@ id: cart-lift
 
 info:
   name: >
-    Appsero <= 1.2.1 - Missing Authorization
+    Cart Lift – Abandoned Cart Recovery for WooCommerce and EDD <= 3.1.5 - Reflected Cross-Site Scripting via cart_search
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    The Appsero analytics tool used in several plugins is vulnerable to authorization bypass due to a missing capability check on the uninstall_reason_submission function used for feedback submission in versions up to, and including, 1.2.1. This makes it possible for authenticated attackers, with subscriber-level permissions and above, to invoke this function intended for administrator use.
+    
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/84003388-c47c-41db-8d2d-4643aa375a89?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eebe1bf7-0366-4226-bcbc-027186136008?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
-    cvss-score: 4.3
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/cart-lift/"
     google-query: inurl:"/wp-content/plugins/cart-lift/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,cart-lift,low
+  tags: cve,wordpress,wp-plugin,cart-lift,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.1.3')
+          - compare_versions(version, '<= 3.1.5')

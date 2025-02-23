@@ -2,13 +2,14 @@ id: stageshow
 
 info:
   name: >
-    StageShow < 5.0.9 - Open Redirect
+    StageShow <= 9.8.6 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bbc8ccc1-7b72-44fb-8bf5-e7cb46081ed5?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4c5a6436-1a08-4b3d-ab85-e5f75f216ab8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/stageshow/"
     google-query: inurl:"/wp-content/plugins/stageshow/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,stageshow,low
+  tags: cve,wordpress,wp-plugin,stageshow,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 5.0.9')
+          - compare_versions(version, '<= 9.8.6')

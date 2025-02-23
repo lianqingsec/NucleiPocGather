@@ -2,13 +2,14 @@ id: external-media-without-import
 
 info:
   name: >
-    External Media without Import <= 1.1.2 - Authenticated (Subscriber+) Blind Server-Side Request Forgery
+    External Media without Import < 1.0.0 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6e330894-9a15-4ce3-b388-90fda3d98f8b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cdaaffa7-eb5e-4cb9-aa26-12cfeb7dabd1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/external-media-without-import/"
     google-query: inurl:"/wp-content/plugins/external-media-without-import/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,external-media-without-import,low
+  tags: cve,wordpress,wp-plugin,external-media-without-import,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.2')
+          - compare_versions(version, '< 1.0.0')

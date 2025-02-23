@@ -2,13 +2,14 @@ id: live-composer-page-builder
 
 info:
   name: >
-    Page Builder: Live Composer <= 1.5.25 -  Authenticated (Author+) PHP Object Injection
+    Page Builder: Live Composer <= 1.5.35 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2a0f9f80-e338-4afd-9a4b-e421865c8b0b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c5d96be2-b89a-46b0-a4f1-da44f9b54b2d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/live-composer-page-builder/"
     google-query: inurl:"/wp-content/plugins/live-composer-page-builder/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,live-composer-page-builder,low
+  tags: cve,wordpress,wp-plugin,live-composer-page-builder,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.28')
+          - compare_versions(version, '<= 1.5.35')

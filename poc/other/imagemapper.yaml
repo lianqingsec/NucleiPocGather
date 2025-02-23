@@ -2,13 +2,14 @@ id: imagemapper
 
 info:
   name: >
-    ImageMapper <= 1.2.6 - Cross-Site Request Forgery to Plugin Settings Change via ajax
+    ImageMapper <= 1.2.6 - Cross-Site Request Forgery to Stored Cross-Site Scripting via imgmap_save_area_title
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a128018b-f19b-4b18-a53c-cf1310d3d0e7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bbb67f02-87e8-4ca3-8a9d-6663a700ab5b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

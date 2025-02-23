@@ -1,14 +1,13 @@
 id: telnet
 info:
-  name: Cisco Aironet 1200 router telnetd
+  name: Xylan PizzaSwitch telnetd
   author: nmap,cn-kali-team
   tags: detect,tech,telnet,service
   severity: info
   metadata:
-    product: telnet
+    device_type: switch
     rarity: 0
-    vendor: cisco
-    verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -19,4 +18,4 @@ tcp:
   - name: telnet
     type: regex
     regex:
-    - '^\xff\xfb\x01\n\rno data rcvd for version string\n\rrecv version id unsuccessful\n\rSSH Session task 0x\w+: Version Exchange Failed\n\r'
+    - '(?i)^\xff\xfb\x01\n\r.*Welcome to the Xylan PizzaSwitch! Version (\d[-.\w]+)\n\rlogin   : '

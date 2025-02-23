@@ -2,13 +2,14 @@ id: quiz-maker
 
 info:
   name: >
-    Quiz Maker <= 6.3.9.4 - Content Spoofing
+    Quiz Maker <= 6.4.9.4 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4e285ce1-0896-4eef-aa83-59fb6641960b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/67678796-61d4-423f-b8f4-3f5667184d06?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/quiz-maker/"
     google-query: inurl:"/wp-content/plugins/quiz-maker/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,quiz-maker,low
+  tags: cve,wordpress,wp-plugin,quiz-maker,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.3.9.4')
+          - compare_versions(version, '<= 6.4.9.4')

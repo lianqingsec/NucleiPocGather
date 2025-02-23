@@ -2,13 +2,14 @@ id: my-calendar
 
 info:
   name: >
-    My Calendar <= 3.1.9 - Unauthenticated Cross-Site Scripting
+    My Calendar <= 3.3.16 - Open Redirect
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b0d9362f-3f34-4602-b19f-2d283e4fe22d?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6e77d240-475d-41a2-9b88-1332fc60b72d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/my-calendar/"
     google-query: inurl:"/wp-content/plugins/my-calendar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,my-calendar,high
+  tags: cve,wordpress,wp-plugin,my-calendar,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.1.9')
+          - compare_versions(version, '<= 3.3.16')

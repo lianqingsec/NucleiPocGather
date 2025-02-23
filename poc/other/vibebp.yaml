@@ -1,15 +1,15 @@
-id: vibebp-7cbf3411026194c1ba0af8e15b7cf4a8
+id: vibebp
 
 info:
   name: >
-    VibeBP < 1.9.9.5.1 - Authenticated (Subscriber+) SQL Injection
+    VibeBP <= 1.9.9.4.1 - Unauthenticated Privilege Escalation
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/20066389-f20c-45af-9d86-44549f331b3d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4b585243-943d-48d4-bee3-407ff3ae8078?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.9.9.5.1')
+          - compare_versions(version, '<= 1.9.9.4.1')

@@ -1,49 +1,59 @@
-id: wordpress-add-to-any
+id: add-to-any
 
 info:
-  name: AddToAny Share Buttons Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    AddToAny Share Buttons <= 1.7.45 - Authenticated Stored Cross-Site Scripting
+  author: topscoder
+  severity: low
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/add-to-any/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/791ae60d-f2b7-4a53-9008-35cd2d465124?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    plugin_namespace: add-to-any
-    wpscan: https://wpscan.com/plugin/add-to-any
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/add-to-any/"
+    google-query: inurl:"/wp-content/plugins/add-to-any/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,add-to-any,low
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/add-to-any/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/add-to-any.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "add-to-any"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022100c242068231e7637a68a295e07e03029f407284e8137ebe31cb2c9977713023a5022020baf5004ac154b21e102fb599f7c4dca1c69ab21acfdd403b06e44ea3ad7601:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 1.7.46')

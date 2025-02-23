@@ -1,49 +1,59 @@
-id: wordpress-ewww-image-optimizer
+id: ewww-image-optimizer
 
 info:
-  name: EWWW Image Optimizer Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    EWWW Image Optimizer <= 7.2.0 - Unauthenticated Sensitive Information Exposure via Debug Log
+  author: topscoder
+  severity: low
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/ewww-image-optimizer/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d20ff1a8-8794-41e1-9e66-1cda90f9ff77?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    plugin_namespace: ewww-image-optimizer
-    wpscan: https://wpscan.com/plugin/ewww-image-optimizer
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/ewww-image-optimizer/"
+    google-query: inurl:"/wp-content/plugins/ewww-image-optimizer/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,ewww-image-optimizer,low
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/ewww-image-optimizer/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/ewww-image-optimizer.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "ewww-image-optimizer"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a00473045022022e0701d6a3d67ce246cd4b53ff8e287ca32af15cd7b78a24f1702b7c3e937a5022100c556728da3b3b8a8a3e3d25ef40f599901fe86407b424f6f5984383ce7cc3340:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 7.2.0')

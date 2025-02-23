@@ -2,13 +2,14 @@ id: wptools
 
 info:
   name: >
-    WP Tools <= 3.41 - Missing Authorization leading to Authenticated (Subscriber+) Authorization Bypass
+    WP Tools <= 3.42 - Missing Authorization to Select Plugin Installation
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4eeed189-3c57-4f23-bb6c-3e84603a83fb?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/668a77e4-9d0a-4835-be5c-4c1acfe7ba43?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wptools/"
     google-query: inurl:"/wp-content/plugins/wptools/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wptools,low
+  tags: cve,wordpress,wp-plugin,wptools,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.41')
+          - compare_versions(version, '<= 3.42')

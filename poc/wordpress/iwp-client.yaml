@@ -1,49 +1,59 @@
-id: wordpress-iwp-client
+id: iwp-client
 
 info:
-  name: InfiniteWP Client Detection
-  author: ricardomaia
-  severity: info
+  name: "InfiniteWP Client <= 1.3.7 - Privilege Escalation"
+  author: topscoder
+  severity: critical
+  description: "The InfiniteWP Client plugin for WordPress is vulnerable to Privilege Escalation in versions up to, and including, 1.3.7. This makes it possible for unauthenticated attackers to put the vulnerable site into maintenance mode if the admin's username is known."
   reference:
-    - https://wordpress.org/plugins/iwp-client/
+    - https://blog.sucuri.net/2014/12/security-advisory-high-severity-infinitewp-client-wordpress-plugin.html
+    - https://wpscan.com/vulnerability/7e65fbfe-d4f4-42e6-9c1f-f587afeca6a1
+    - https://wordpress.org/plugins/iwp-client/#developers
+    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=1036480%40iwp-client&new=1036480%40iwp-client&sfp_email=&sfph_mail=
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cve-id:
   metadata:
-    plugin_namespace: iwp-client
-    wpscan: https://wpscan.com/plugin/iwp-client
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/iwp-client/"
+    google-query: inurl:"/wp-content/plugins/iwp-client/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,iwp-client,critical
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/iwp-client/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/iwp-client.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "iwp-client"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4b0a00483046022100a16055b0044d04e2a40783ba095a79bb0de98708e7e5dc52a27abc53784d2bf7022100baf0c71b000d9c14a06ea90f5080e10c7c9a7e362f6d11e18977b120a8a4b0dd:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 1.3.7')

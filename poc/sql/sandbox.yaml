@@ -2,29 +2,30 @@ id: sandbox
 
 info:
   name: >
-    Sandbox <= 1.6.1 - Arbitrary File Upload
+    Sandbox <= 0.4 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
-    The Sandbox theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the uploadify.php file in versions up to, and including 1.6.1. This makes it possible for attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
+    
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a3160602-6522-478d-8a99-d097472d10ac?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3fc752bb-3f1d-4106-9df1-361564905a55?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 9.8
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/themes/sandbox/"
-    google-query: inurl:"/wp-content/themes/sandbox/"
+    fofa-query: "wp-content/plugins/sandbox/"
+    google-query: inurl:"/wp-content/plugins/sandbox/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,sandbox,critical
+  tags: cve,wordpress,wp-plugin,sandbox,medium
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/themes/sandbox/style.css"
+      - "{{BaseURL}}/wp-content/plugins/sandbox/readme.txt"
 
     extractors:
       - type: regex
@@ -33,14 +34,14 @@ http:
         group: 1
         internal: true
         regex:
-          - "(?mi)Version: ([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
         name: version
         part: body
         group: 1
         regex:
-          - "(?mi)Version: ([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.6.1')
+          - compare_versions(version, '<= 0.4')

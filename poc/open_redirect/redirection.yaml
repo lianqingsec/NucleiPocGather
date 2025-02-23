@@ -1,49 +1,58 @@
-id: wordpress-redirection
+id: redirection
 
 info:
-  name: Redirection Detection
-  author: ricardomaia
-  severity: info
+  name: "Redirection <= 3.6.3 - Cross-Site Request Forgery to Remote Code Execution"
+  author: topscoder
+  severity: high
+  description: "The Redirection plugin suffers from a critical Cross-Site Request Forgery vulnerability that allows remote attackers to create a file on the target server and execute arbitrary code.  The attack requires an administrator visit a malicious website set up by the attacker, but does not require more interaction nor do they have to click on anything on the malicious website in order to trigger the exploit."
   reference:
-    - https://wordpress.org/plugins/redirection/
+    - https://plugins.trac.wordpress.org/changeset/1974375/redirection
+    - https://web.archive.org/web/20190328023701/https%3A//www.ripstech.com/php-security-calendar-2018/
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-redirection-cross-site-request-forgery-3-6-2/
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
+    cve-id:
   metadata:
-    plugin_namespace: redirection
-    wpscan: https://wpscan.com/plugin/redirection
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/redirection/"
+    google-query: inurl:"/wp-content/plugins/redirection/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,redirection,high
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/redirection/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/redirection.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "redirection"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 490a0046304402201602f96cd2a2b1dad8131822dfd4150643cf08234b9d1d74579ea2a392d7cdc502206f18e49f8b4da59ced54a8ac29f1cd16cb82ac58512f280d7b53c6c702c4fedc:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 3.6.3')

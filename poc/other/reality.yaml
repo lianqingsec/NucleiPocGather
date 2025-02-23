@@ -1,17 +1,19 @@
 id: reality
 
 info:
-  name: "Reality | Estate Multipurpose WordPress Theme <= 2.5.3 - Reflected Cross-Site Scripting"
+  name: >
+    Reality | Estate Multipurpose WordPress Theme <= 2.5.5 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Reality | Estate Multipurpose WordPress Theme theme for WordPress is vulnerable to Reflected Cross-Site Scripting via the 'label' & 'tab' parameters in versions up to, and including, 2.5.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  description: >
+    The Reality theme for WordPress is vulnerable to Reflected Cross-Site Scripting in versions up to, and including, 2.5.5 due to insufficient input sanitization and output escaping on the 'keyword' parameter. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
   reference:
-    - https://themeforest.net/item/reality-real-estate-wordpress-theme/21627776
-    - https://github.com/vladvector/vladvector.github.io/blob/master/exploit/2020-06-20-reality-estate-multipurpose-wordpress-theme-v2-5-3.txt
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/21a15a21-1d35-4fbc-9c01-ded68287fc65?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/reality/"
     google-query: inurl:"/wp-content/themes/reality/"
@@ -54,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.3')
+          - compare_versions(version, '<= 2.5.5')

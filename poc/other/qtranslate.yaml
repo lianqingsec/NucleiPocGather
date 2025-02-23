@@ -2,13 +2,14 @@ id: qtranslate
 
 info:
   name: >
-    qTranslate <= 2.5.39 - Cross-Site Request Forgery
+    qTranslate <= 2.5.39 - Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8fd1de2b-bb88-4f7c-b9eb-784eb7af17a6?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ec2da093-9f36-44c5-948b-590fd99734e8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/qtranslate/"
     google-query: inurl:"/wp-content/plugins/qtranslate/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,qtranslate,medium
+  tags: cve,wordpress,wp-plugin,qtranslate,high
 
 http:
   - method: GET

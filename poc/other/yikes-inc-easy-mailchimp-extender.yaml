@@ -2,13 +2,14 @@ id: yikes-inc-easy-mailchimp-extender
 
 info:
   name: >
-    Easy Forms for Mailchimp <= 6.8.10 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Easy Forms for Mailchimp <= 6.6.2 - Authenticated Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0926bcf2-9cce-420d-a02f-52675224a71b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a7d0deb3-3d04-4f85-b769-0894d7c6ee7c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.8.10')
+          - compare_versions(version, '< 6.6.3')

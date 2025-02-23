@@ -2,13 +2,14 @@ id: instant-css
 
 info:
   name: >
-    Instant CSS <= 1.1.4 - Missing Authorization via AJAX Actions
+    Instant CSS <= 1.2.1 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b82a9ae8-ff82-40bf-a5d4-5175daab9146?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/30ce93b4-9e2a-4a8c-8590-ffd61d618d31?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/instant-css/"
     google-query: inurl:"/wp-content/plugins/instant-css/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,instant-css,high
+  tags: cve,wordpress,wp-plugin,instant-css,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.4')
+          - compare_versions(version, '<= 1.2.1')

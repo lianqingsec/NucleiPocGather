@@ -2,16 +2,17 @@ id: woocommerce-exporter
 
 info:
   name: >
-    WooCommerce – Store Exporter <= 1.7.5 - Stored Cross-Site Scripting
+    WooCommerce Store Exporter <= 1.7.5 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
-    The WooCommerce – Store Exporter plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the  'export_filename' parameter in versions up to, and including, 1.7.5 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers to inject arbitrary web scripts that execute in a victim's browser.
+    
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/eeae2042-ccad-4e4b-a321-8ea58af9d775?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b59f13b9-8ad3-44a7-90a0-1f959ba55700?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/woocommerce-exporter/"

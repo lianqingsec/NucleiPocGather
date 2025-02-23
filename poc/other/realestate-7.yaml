@@ -2,29 +2,30 @@ id: realestate-7
 
 info:
   name: >
-    Real Estate 7 <= 3.3.4 - Cross-Site Request Forgery
+    WP Pro Real Estate 7 < 3.1.1 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
-    The Real Estate 7 theme for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 3.3.4. This is due to missing or incorrect nonce validation on several of its AJAX actions. This makes it possible for unauthenticated attackers to invoke those functions via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
+    
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/007af51b-95b5-4b12-9f74-abf31f6de341?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/97c24208-46b2-48a0-a87b-78e642c044cd?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:L
-    cvss-score: 5.4
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/themes/realestate-7/"
-    google-query: inurl:"/wp-content/themes/realestate-7/"
+    fofa-query: "wp-content/plugins/realestate-7/"
+    google-query: inurl:"/wp-content/plugins/realestate-7/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,realestate-7,medium
+  tags: cve,wordpress,wp-plugin,realestate-7,medium
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/themes/realestate-7/style.css"
+      - "{{BaseURL}}/wp-content/plugins/realestate-7/readme.txt"
 
     extractors:
       - type: regex
@@ -33,14 +34,14 @@ http:
         group: 1
         internal: true
         regex:
-          - "(?mi)Version: ([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
         name: version
         part: body
         group: 1
         regex:
-          - "(?mi)Version: ([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.3.4')
+          - compare_versions(version, '< 3.1.1')

@@ -1,50 +1,59 @@
-id: wordpress-use-any-font
+id: use-any-font
 
 info:
-  name: Use Any Font | Custom Font Uploader Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    Use Any Font <= 6.2.0 - Unauthenticated Arbitrary CSS Appending
+  author: topscoder
+  severity: low
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/use-any-font/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb6de4da-0d60-4332-be25-5521e430a4fa?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    max-request: 1
-    plugin_namespace: use-any-font
-    wpscan: https://wpscan.com/plugin/use-any-font
-  tags: tech,wordpress,wp-plugin,top-200
+    fofa-query: "wp-content/plugins/use-any-font/"
+    google-query: inurl:"/wp-content/plugins/use-any-font/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,use-any-font,low
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/use-any-font/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/use-any-font.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "use-any-font"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a0047304502205c5ab663c5177cefc638e1335eff763aaff054b2c8e9a6fa9955879dae4f3ea402210096d66e38b9127ee94c9cf13451bf56c3046bf8e8983104b81b109bbc664eef26:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '< 6.2.1')

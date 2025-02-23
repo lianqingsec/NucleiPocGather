@@ -1,17 +1,18 @@
 id: wp-responsive-thumbnail-slider
 
 info:
-  name: "Thumbnail carousel slider < 1.0.1 - Stored Cross-Site Scripting and Cross-Site Request Forgery"
+  name: "Responsive Thumbnail Slider  < 1.0.1 -  Arbitrary File Upload"
   author: topscoder
   severity: high
-  description: "The Thumbnail carousel slider plugin for WordPress is vulnerable to Stored Cross-Site Scripting and Cross-Site Request Forgery via the ‘title’ parameter in versions before 1.0.1 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The Stored Cross-Site scripting vulnerability requires authentication with admin-level privileges while the Cross-Site Request Forgery does not require any authentication."
+  description: "The Responsive Thumbnail Slider plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type sanitization in the via the image uploader in versions up to 1.0.1. This makes it possible for attackers to upload arbitrary files on the affected sites server using a double extension which may make remote code execution possible."
   reference:
-    - https://cxsecurity.com/issue/WLB-2015080167
-    - https://patchstack.com/database/vulnerability/wp-responsive-thumbnail-slider/wordpress-thumbnail-carousel-slider-plugin-1-0-stored-cross-site-scripting-xss-and-cross-site-request-forgery-csrf-vulnerabilities
-    - https://wpscan.com/vulnerability/ab7ac7d5-a68d-4af7-a38a-65aa940337f1
+    - https://cxsecurity.com/issue/WLB-2015080170
+    - https://patchstack.com/database/vulnerability/wp-responsive-thumbnail-slider/wordpress-thumbnail-carousel-slider-plugin-1-0-authenticated-shell-upload-and-cross-site-request-forgery-csrf-vulnerabilities
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-thumbnail-carousel-slider-arbitrary-file-upload-1-0/
+    - https://www.exploit-db.com/exploits/37998
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L
-    cvss-score: 7.1
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 8.8
     cve-id:
   metadata:
     fofa-query: "wp-content/plugins/wp-responsive-thumbnail-slider/"

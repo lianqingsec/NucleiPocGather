@@ -2,13 +2,14 @@ id: a3-portfolio
 
 info:
   name: >
-    a3rev Multiple Plugins <= Various Versions - Cross-Site Request Forgery to Settings Changes
+    a3 Portfolio <= 3.1.0 - Authenticated (Author+) Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9133fa10-036b-4f42-9d0c-8e15d2625f5e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9a190909-4b0f-4a44-8371-d79f64d323c2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/a3-portfolio/"
     google-query: inurl:"/wp-content/plugins/a3-portfolio/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,a3-portfolio,medium
+  tags: cve,wordpress,wp-plugin,a3-portfolio,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.10')
+          - compare_versions(version, '<= 3.1.0')

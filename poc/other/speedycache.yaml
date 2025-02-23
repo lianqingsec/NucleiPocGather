@@ -2,22 +2,23 @@ id: speedycache
 
 info:
   name: >
-    SpeedyCache <= 1.1.2 - Missing Authorization via speedycache_create_test_cache
+    SpeedyCache <= 1.1.2 -  Authenticated (Subscriber+) Server-Side Request Forgery
   author: topscoder
-  severity: medium
+  severity: low
   description: >
-    The SpeedyCache – Cache, Optimization, Performance plugin for WordPress is vulnerable to unauthorized modification of data due to a missing capability check on the speedycache_create_test_cache function in all versions up to, and including, 1.1.2. This makes it possible for authenticated attackers with subscriber-level access or higher to create a sample cache.
+    
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ac7c0dde-5299-4938-beed-eb2fe227a812?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ab922406-4af8-4ef2-bcc8-c326212546b1?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:N/I:L/A:N
-    cvss-score: 4.3
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/speedycache/"
     google-query: inurl:"/wp-content/plugins/speedycache/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,speedycache,medium
+  tags: cve,wordpress,wp-plugin,speedycache,low
 
 http:
   - method: GET

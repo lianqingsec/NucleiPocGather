@@ -2,14 +2,14 @@ id: rover-idx
 
 info:
   name: >
-    Rover IDX <= 3.0.0.2905 - Authenticated (Subscriber+) Authentication Bypass to Administrator
+    Rover IDX <= 3.0.0.2903 - Authenticated (Subscriber+) Missing Authorization via Multiple Functions
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5cf6a9fb-3c3b-48ad-a39b-77a529b89901?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cdf67099-5514-45ba-9a4c-10af984bf593?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.0.2905')
+          - compare_versions(version, '<= 3.0.0.2903')

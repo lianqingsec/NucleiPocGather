@@ -2,13 +2,14 @@ id: if-menu
 
 info:
   name: >
-    If Menu <= 0.16.3 - Missing Authorization to Admin Settings Modification
+    If Menu <= 0.19.1 - Missing Authorization to License Key Update
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3b5fc0ac-7a33-48da-8b0f-566b9eb0f17f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ff6ebf45-4617-44dd-94d8-28aa8bc1609b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.16.3')
+          - compare_versions(version, '<= 0.19.1')

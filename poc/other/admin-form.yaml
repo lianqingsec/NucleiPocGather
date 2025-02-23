@@ -2,13 +2,14 @@ id: admin-form
 
 info:
   name: >
-    ADFO – Custom data in admin dashboard <= 1.9.0 - Cross-Site Request Forgery
+    ADFO – Custom data in admin dashboard <= 1.9.0 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8d797238-f8f3-44d7-8c16-bee23ce12ae0?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e61110fc-cc2d-4207-97b6-b21459334216?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

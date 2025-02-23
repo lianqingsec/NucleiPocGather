@@ -3,20 +3,19 @@ id: lote27
 info:
   name: "lote27 (All Versions) - Arbitrary File Download"
   author: topscoder
-  severity: high
+  severity: low
   description: "The lote27 theme for WordPress is vulnerable to Arbitrary File Download via the 'download' parameter found in the 'download.php' file. This makes it possible for unauthenticated attackers to download any file from the server which may contain sensitive information."
   reference:
-    - https://web.archive.org/web/20150609023120/https%3A//www.intelligentexploit.com/view-details.html?id=19752
-    - https://wpscan.com/vulnerability/9afb53eb-7c4f-49a7-97f6-79b092b17d70
+
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
-    cvss-score: 7.5
+    cvss-metrics:
+    cvss-score:
     cve-id:
   metadata:
-    fofa-query: "wp-content/themes/lote27/"
-    google-query: inurl:"/wp-content/themes/lote27/"
+    fofa-query: "wp-content/unknown/lote27/"
+    google-query: inurl:"/wp-content/unknown/lote27/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,lote27,high
+  tags: cve,wordpress,wp-theme,lote27,low
 
 http:
   - method: GET
@@ -54,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>0')
+          - compare_versions(version, '*')

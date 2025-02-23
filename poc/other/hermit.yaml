@@ -2,13 +2,14 @@ id: hermit
 
 info:
   name: >
-    Hermit 音乐播放器 <= 3.1.6 -  Cross-Site Request Forgery to Stored Cross-Site Scripting
+    Hermit 音乐播放器 <= 3.1.6 - Unauthenticated SQL Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d7b7b31a-2bc4-42b7-ba60-0f29fe65bbe7?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3131eeeb-593d-443e-8641-7470bd1e556b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/hermit/"
     google-query: inurl:"/wp-content/plugins/hermit/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,hermit,medium
+  tags: cve,wordpress,wp-plugin,hermit,critical
 
 http:
   - method: GET

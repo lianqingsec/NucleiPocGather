@@ -2,13 +2,14 @@ id: pdf-poster
 
 info:
   name: >
-    PDF Poster - PDF Embedder Plugin for WordPress <= 2.1.17 - Reflected Cross-Site Scripting
+    PDF.js < 4.2.67 - Arbitrary JavaScript Execution
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/341516d3-b785-4daf-98de-76f4f94b8c96?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8ce7aa01-7e79-4048-a84d-fcb9541d5f8b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/pdf-poster/"
     google-query: inurl:"/wp-content/plugins/pdf-poster/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,pdf-poster,medium
+  tags: cve,wordpress,wp-plugin,pdf-poster,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.1.17')
+          - compare_versions(version, '<= 2.1.21')

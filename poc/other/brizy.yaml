@@ -2,13 +2,14 @@ id: brizy
 
 info:
   name: >
-    Brizy - Page Builder < 1.0.114 - Missing Authorization to Settings Update
+    Brizy – Page Builder <= 2.4.43 - Authenticated (Contributor+) Stored Cross-Site Scripting via Custom Attributes
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ba98a282-39ee-4a84-b988-ecfc0c4cd297?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2c955905-bf14-4afa-a282-0a8c74cd3b87?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/brizy/"
     google-query: inurl:"/wp-content/plugins/brizy/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,brizy,high
+  tags: cve,wordpress,wp-plugin,brizy,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.0.114')
+          - compare_versions(version, '<= 2.4.43')

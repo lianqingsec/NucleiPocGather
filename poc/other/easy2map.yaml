@@ -2,13 +2,14 @@ id: easy2map
 
 info:
   name: >
-    Easy2Map <= 1.2.9 - Directory Traversal and Local File Inclusion
+    Easy2Map <= 1.2.9 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1f5b4f9a-4067-4514-9027-b645921d807f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e3cc99df-b709-40e7-a911-ea19f5af2c82?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/easy2map/"
     google-query: inurl:"/wp-content/plugins/easy2map/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,easy2map,critical
+  tags: cve,wordpress,wp-plugin,easy2map,medium
 
 http:
   - method: GET

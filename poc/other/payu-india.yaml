@@ -2,13 +2,14 @@ id: payu-india
 
 info:
   name: >
-    PayU India <= 3.8.2 - Reflected Cross-Site Scripting via type
+    PayU CommercePro Plugin <= 3.8.3 - Unauthenticated Privilege Escalation
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e4a5dc4f-3eb6-410e-af3d-e3b0639319f3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bf037e4a-2dd7-4296-b86b-635901d2d68f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/payu-india/"
     google-query: inurl:"/wp-content/plugins/payu-india/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,payu-india,medium
+  tags: cve,wordpress,wp-plugin,payu-india,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.8.2')
+          - compare_versions(version, '<= 3.8.3')

@@ -2,13 +2,14 @@ id: mashsharer
 
 info:
   name: >
-    Social Media Share Buttons <= 3.8.1 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Social Media Share Buttons | MashShare < 2.3.1 - Information Disclosure
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cc0e133d-b1c7-42c4-bd1f-7b91f0ec4fb3?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a1af63f6-329e-40b6-b786-302c608ac577?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.8.1')
+          - compare_versions(version, '< 2.3.1')

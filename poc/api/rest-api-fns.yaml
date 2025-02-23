@@ -2,14 +2,14 @@ id: rest-api-fns
 
 info:
   name: >
-    WP REST API FNS <= 1.0.0 - Unauthenticated Arbitrary File Upload
+    WP REST API FNS <= 1.0.0 - Privilege Escalation
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0685abc6-eac6-46c5-87ae-52e2af9301c2?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2d58322f-e24d-40fd-8dab-20752b386bb9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/rest-api-fns/"
     google-query: inurl:"/wp-content/plugins/rest-api-fns/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,rest-api-fns,critical
+  tags: cve,wordpress,wp-plugin,rest-api-fns,low
 
 http:
   - method: GET

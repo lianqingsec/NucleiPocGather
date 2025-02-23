@@ -2,13 +2,14 @@ id: userswp
 
 info:
   name: >
-    UsersWP <= 1.2.6 - Authenticated(Contributor+) Stored Cross-Site Scripting via Shortcode
+    UsersWP – Front-end login form, User Registration, User Profile & Members Directory plugin for WP <= 1.2.11 - Unauthenticated Information Disclosure via Unprotected Directories
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ef53c2c-01fb-41b6-b329-d952ce3424e8?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d95295ed-4878-414d-be6b-bfb3e9076cca?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.6')
+          - compare_versions(version, '<= 1.2.11')

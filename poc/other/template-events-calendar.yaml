@@ -1,23 +1,21 @@
 id: template-events-calendar
 
 info:
-  name: >
-    Titan Framework <= (Various Versions) - Reflected Cross-Site Scripting
+  name: "Cool Plugins (Various Versions) - Arbitrary Plugin Installation and Activation"
   author: topscoder
-  severity: medium
-  description: >
-    
+  severity: low
+  description: "Several WordPress plugins developed by Cool Plugins are vulnerable to arbitrary plugin installation and activation that can lead to remote code execution by authenticated attackers."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fcae647f-7eed-4ecd-83b8-482b55b86ec9?source=api-scan
+
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics:
+    cvss-score:
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/template-events-calendar/"
     google-query: inurl:"/wp-content/plugins/template-events-calendar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,template-events-calendar,medium
+  tags: cve,wordpress,wp-plugin,template-events-calendar,low
 
 http:
   - method: GET
@@ -55,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.7.2')
+          - compare_versions(version, '<=  1.9.4')

@@ -2,13 +2,14 @@ id: wp-pipes
 
 info:
   name: >
-    WP Pipes <= 1.4.0 - Cross-Site Request Forgery to Settings Update
+    WP Pipes <= 1.33 - Authenticated (Admin+) SQL Injection
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/094bf4e2-b774-4015-b6c6-c829c16556eb?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/bca8b173-8e7c-41ad-9316-b38cc2ce0e66?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-pipes/"
     google-query: inurl:"/wp-content/plugins/wp-pipes/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-pipes,medium
+  tags: cve,wordpress,wp-plugin,wp-pipes,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.4.1')
+          - compare_versions(version, '1.9')

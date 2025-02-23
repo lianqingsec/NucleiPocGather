@@ -1,49 +1,59 @@
-id: wordpress-redux-framework
+id: redux-framework
 
 info:
-  name: Redux Framework Detection
-  author: ricardomaia
-  severity: info
+  name: >
+    Gutenberg Template Library & Redux Framework <= 4.2.11 - Missing Authorization to Sensitive Information Disclosure
+  author: topscoder
+  severity: high
+  description: >
+    
   reference:
-    - https://wordpress.org/plugins/redux-framework/
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5b5c2a74-c1e8-4381-8d0d-66a2ed3b937e?source=api-scan
+  classification:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
-    plugin_namespace: redux-framework
-    wpscan: https://wpscan.com/plugin/redux-framework
-  tags: tech,wordpress,wp-plugin,top-100,top-200
+    fofa-query: "wp-content/plugins/redux-framework/"
+    google-query: inurl:"/wp-content/plugins/redux-framework/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,redux-framework,high
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/redux-framework/readme.txt"
 
-    payloads:
-      last_version: helpers/wordpress/plugins/redux-framework.txt
-
     extractors:
       - type: regex
+        name: version
         part: body
+        group: 1
         internal: true
-        name: internal_detected_version
-        group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
       - type: regex
+        name: version
         part: body
-        name: detected_version
         group: 1
         regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
+          - "(?mi)Stable tag: ([0-9.]+)"
 
-    matchers-condition: or
+    matchers-condition: and
     matchers:
-      - type: dsl
-        name: "outdated_version"
-        dsl:
-          - compare_versions(internal_detected_version, concat("< ", last_version))
+      - type: status
+        status:
+          - 200
 
-      - type: regex
+      - type: word
+        words:
+          - "redux-framework"
         part: body
-        regex:
-          - '(?i)Stable.tag:\s?([\w.]+)'
-# digest: 4a0a004730450220695036bbd85ec403733bfed1ffcfa15a8ec3be1165b025550cd733a2ffd6feac0221009e878175049a9ed92a74b783b0ba10215501a32efaf5710b2c8ed443e79ad83f:922c64590222798bb761d5b6d8e72950
+
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<= 4.2.11')

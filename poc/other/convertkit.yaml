@@ -2,13 +2,14 @@ id: convertkit
 
 info:
   name: >
-    ConvertKit <= 2.2.0 - Reflected Cross-Site Scripting
+    ConvertKit <= 2.4.5 - Unauthenticated Sensitive Information Exposure
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cf3a16b6-7256-4fad-b3f2-d1d9d833f45e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4dd3c146-534f-41be-b805-7eef2483614e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/convertkit/"
     google-query: inurl:"/wp-content/plugins/convertkit/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,convertkit,medium
+  tags: cve,wordpress,wp-plugin,convertkit,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.0')
+          - compare_versions(version, '<= 2.4.5')

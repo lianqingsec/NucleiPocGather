@@ -2,13 +2,14 @@ id: responsive-lightbox
 
 info:
   name: >
-    Responsive Lightbox <= 2.4.5 - Authenticated (Author+) Stored Cross-Site Scripting via name
+    Responsive Lightbox & Gallery <= 2.4.1 - Authenticated (Administrator+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4b60c1e2-5a4b-4a7a-8224-f1afd3888e08?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d99d7a26-3645-4ff5-8c48-17b6fa77a228?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4.5')
+          - compare_versions(version, '<= 2.4.1')

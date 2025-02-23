@@ -2,22 +2,23 @@ id: wp_rokstories
 
 info:
   name: >
-    RokStories <= 1.25 - Cross-Site Scripting
+    RokStories <= 1.25 - Arbitrary File Upload
   author: topscoder
-  severity: high
+  severity: critical
   description: >
-    The RokStories plugin for WordPress is vulnerable to Cross-Site Scripting via the 'src' parameter in the 'thumb.php' file in versions up to, and including, 1.25 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser.
+    The RokStories plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the 'src' parameter in the 'thumb.php' file in versions up to, and including, 1.25. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4517bd04-20ce-4686-a933-d34464a5b691?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d73ca391-97a3-4701-8429-e73f5914e65e?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
-    cvss-score: 6.1
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/wp_rokstories/"
     google-query: inurl:"/wp-content/plugins/wp_rokstories/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp_rokstories,high
+  tags: cve,wordpress,wp-plugin,wp_rokstories,critical
 
 http:
   - method: GET

@@ -2,13 +2,14 @@ id: wp-radio
 
 info:
   name: >
-    WP Radio – Worldwide Online Radio Stations Directory for WordPress <= 3.1.9 - Missing Authorization via multiple AJAX actions
+    WP Radio – Worldwide Online Radio Stations Directory for WordPress <= 3.1.9 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b46e9771-37ff-4825-9af9-02ecde424653?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/874e9e14-1330-40f0-8199-8abcaae58e98?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-radio/"
     google-query: inurl:"/wp-content/plugins/wp-radio/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-radio,high
+  tags: cve,wordpress,wp-plugin,wp-radio,medium
 
 http:
   - method: GET

@@ -2,13 +2,14 @@ id: tera-charts
 
 info:
   name: >
-    Tera Charts < 1.0 - Directory Traversal
+    Tera Charts <= 1.0 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6bcc353f-cdf2-4e28-a0e0-ad149ecb1c3b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2bbf5adc-df9c-4629-909c-932998c50508?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/tera-charts/"
     google-query: inurl:"/wp-content/plugins/tera-charts/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,tera-charts,low
+  tags: cve,wordpress,wp-plugin,tera-charts,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.1')
+          - compare_versions(version, '<= 1.0')

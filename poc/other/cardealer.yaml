@@ -2,13 +2,14 @@ id: cardealer
 
 info:
   name: >
-    Car Dealer <= 3.04 - Missing Authorization to Arbitrary Plugin Installation
+    Car Dealer <= 4.15 - Authenticated (Admin+) Content Injection
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/621e3b3f-9647-41ec-aa06-e961e3525fea?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/db25e8f7-07f2-470e-850e-b8cd3388baea?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/cardealer/"
     google-query: inurl:"/wp-content/plugins/cardealer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,cardealer,high
+  tags: cve,wordpress,wp-plugin,cardealer,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.04')
+          - compare_versions(version, '<= 4.15')

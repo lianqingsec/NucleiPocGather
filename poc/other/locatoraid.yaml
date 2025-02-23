@@ -2,13 +2,14 @@ id: locatoraid
 
 info:
   name: >
-    Locatoraid Store Locator <= 3.9.11 - Cross Site Request Forgery in grab
+    Locatoraid Store Locator <= 3.9.23 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7feecce5-f2ce-4278-b648-e363b1fa5d7a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/64d2174e-ee69-4e71-b8cb-ff7a1ba0f52f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/locatoraid/"
     google-query: inurl:"/wp-content/plugins/locatoraid/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,locatoraid,low
+  tags: cve,wordpress,wp-plugin,locatoraid,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.9.11')
+          - compare_versions(version, '<= 3.9.23')

@@ -2,13 +2,14 @@ id: resads
 
 info:
   name: >
-    ResAds < 1.0.2 - Reflected Cross-Site Scripting
+    ResAds <= 2.0.6 - Reflected Cross-Site Scripting via Multiple Parameters
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d634ba5c-842c-44d0-b919-01c297a779f2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1c0a544a-b5f3-41bf-9313-28188662ea56?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.0.2')
+          - compare_versions(version, '<= 2.0.6')

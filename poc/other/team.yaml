@@ -2,13 +2,14 @@ id: team
 
 info:
   name: >
-    Team Showcase <= 1.22.15 - Object Injection
+    Team Showcase <= 1.22.15 - Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1da8894c-fd19-4ea1-9c05-e519c0131061?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/52bb3328-956c-4379-879a-d321d68c39ee?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/team/"
     google-query: inurl:"/wp-content/plugins/team/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,team,low
+  tags: cve,wordpress,wp-plugin,team,high
 
 http:
   - method: GET

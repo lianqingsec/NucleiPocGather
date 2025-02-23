@@ -1,33 +1,21 @@
 id: jupyter-ipython-unauth
-
 info:
-  name: Jupyter ipython - Authorization Bypass
-  author: pentest_swissky
-  severity: critical
-  description: Jupyter was able to be accessed without authentication.
-  classification:
-    cvss-metrics: AV:N/AC:L/PR:N/UI:N/S:C/C:H/I:H/A:H
-    cvss-score: 10
-    cwe-id: CWE-288
-  metadata:
-    max-request: 1
-  tags: unauth,jupyter,misconfig
+  name: Jupyter ipython Unauth
+  risk: Critical
 
-http:
+params:
+  - root: '{{.BaseURL}}'
+
+requests:
   - method: GET
-    path:
-      - "{{BaseURL}}/ipython/tree"
+    redirect: false
+    url: >-
+      {{.root}}/ipython/tree
+    headers:
+      - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+    detections:
+      - >-
+        StatusCode() == 200 && StringSearch("body", "ipython/static/components") && StringSearch("response", "ipython/kernelspecs")
 
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - ipython/static/components
-          - ipython/kernelspecs
-        part: body
-
-# digest: 4a0a00473045022100cc5c45ed73827622a401836262656f8fb9e79bbc669e16419b65551211bbf9d8022054d04becd629b9bbb56f47747034eb68f980424b0e3392d268316cefa2b6bf14:922c64590222798bb761d5b6d8e72950
+references:
+  - poc: "import os;os.popen('cat /etc/passwd').read()"

@@ -2,13 +2,14 @@ id: mailster
 
 info:
   name: >
-    Mailster <= 2.4.5.1 - Stored Cross-Site Scripting
+    Mailster <= 1.0.3 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f3584b5b-ff93-4a47-b6e6-f95335ee88b6?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cc030c9a-3cda-4eb8-9a7f-94a4b65a4272?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mailster/"
     google-query: inurl:"/wp-content/plugins/mailster/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mailster,high
+  tags: cve,wordpress,wp-plugin,mailster,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4.5.1')
+          - compare_versions(version, '<= 1.0.3')
