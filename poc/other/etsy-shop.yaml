@@ -2,14 +2,13 @@ id: etsy-shop
 
 info:
   name: >
-    Etsy Shop <= 3.0.4 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
+    Etsy Shop <= 3.0.3 - Cross-Site Request Forgery to Plugin Settings Update
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e4696f7a-8b87-4376-b4c9-596eca30b38c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/474494ad-6713-4167-b40d-c29c533f169e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/etsy-shop/"
     google-query: inurl:"/wp-content/plugins/etsy-shop/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,etsy-shop,low
+  tags: cve,wordpress,wp-plugin,etsy-shop,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.4')
+          - compare_versions(version, '<= 3.0.3')

@@ -2,14 +2,14 @@ id: divi
 
 info:
   name: >
-    Elegant Themes Divi 3.23 - 4.0.9, Divi Extra 2.23 - 4.0.9, Divi Builder 2.23 - 4.0.9 - PHP Code Injection
+    Elegant Themes (Multiple Versions) - Arbitrary File Upload
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/82ce66d0-dc53-4433-b499-30bfd48efaf2?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3e03bc79-b42e-4015-8476-2b0488c71028?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/Divi/"
     google-query: inurl:"/wp-content/themes/Divi/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,Divi,low
+  tags: cve,wordpress,wp-theme,Divi,critical
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>= 3.23', '<= 4.0.9')
+          - compare_versions(version, '<= 4.3.2')

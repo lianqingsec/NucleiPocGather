@@ -1,18 +1,18 @@
 id: saico
 
 info:
-  name: "SAICO <= 1.0.2 - Arbitrary File Upload"
+  name: >
+    SAICO <= 1.0.2 - Arbitrary File Upload
   author: topscoder
   severity: critical
-  description: "The SAICO theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the php.php file in versions up to, and including, 1.0.2. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
+  description: >
+    The SAICO theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the php.php file in versions up to, and including, 1.0.2. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
   reference:
-    - https://en.0day.today/exploits/21440
-    - https://www.exploit-db.com/exploits/29150
-    - https://vulners.com/vulnerlab/VULNERLAB%3A817
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/056d26da-6e43-4cc6-b2fd-13a5947a814e?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/saico/"
     google-query: inurl:"/wp-content/themes/saico/"

@@ -2,14 +2,13 @@ id: wordtube
 
 info:
   name: >
-    wordTube <= 1.43 - Remote File Inclusion
+    wordTube <= 1.43 - Directory Traversal and File Inclusion
   author: topscoder
   severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/42ff1e17-ccc2-478b-a3b5-88e3bea28a5e?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8c652a98-2762-4ecf-8037-58377d6e1b5a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

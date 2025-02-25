@@ -2,14 +2,13 @@ id: jet-menu
 
 info:
   name: >
-    Multiple Plugins by Crocoblock <= (Various Versions) - Missing Authorization
+    Multiple Plugins by Crocoblock <= (Various Versions) - Missing Authorization to Unauthenticated Unauthorized Action
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/893500ba-cc16-4429-bbe1-725aa65589c9?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7addc83b-cde5-4f91-b286-70db6f384a9f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -2,23 +2,22 @@ id: all-in-one-event-calendar
 
 info:
   name: >
-    Timely All-in-One Events Calendar <= 2.5.38 - Cross-Site Scripting
+    Timely All-in-One Events Calendar < 1.10 - Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: high
   description: >
-    The Timely All-in-One Events Calendar plugin for WordPress is vulnerable to Cross-Site Scripting via several parameters related to event input in versions up to, and including, 2.5.38 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser.
+    
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d4f28285-bfa3-4063-bc8b-303db72d0156?source=api-prod
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cc8e2524-b77d-447e-aea9-0dfef33809f9?source=api-scan
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
+    cvss-metrics: 
+    cvss-score: 
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/all-in-one-event-calendar/"
     google-query: inurl:"/wp-content/plugins/all-in-one-event-calendar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,all-in-one-event-calendar,medium
+  tags: cve,wordpress,wp-plugin,all-in-one-event-calendar,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.5.38')
+          - compare_versions(version, '< 1.10')

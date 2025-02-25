@@ -1,19 +1,18 @@
 id: ithemes2
 
 info:
-  name: >
-    iThemes2 < 1.4.3 - Arbitrary File Upload
+  name: "iThemes2 < 1.4.3 - Arbitrary File Upload"
   author: topscoder
   severity: critical
-  description: >
-    
+  description: "The iThemes2 Theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the themify-ajax.php file in versions up to 1.4.3. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/878420ce-3a39-494d-9169-44220b2c3307?source=api-scan
+    - https://packetstormsecurity.com/files/124097/
+    - https://en.0day.today/exploits/22090
+    - https://themify.me/blog/urgent-vulnerability-found-in-themify-framework-please-read
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
+    cve-id:
   metadata:
     fofa-query: "wp-content/themes/ithemes2/"
     google-query: inurl:"/wp-content/themes/ithemes2/"

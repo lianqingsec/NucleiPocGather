@@ -1,59 +1,49 @@
-id: wordpress-seo
+id: wordpress-wordpress-seo
 
 info:
-  name: >
-    Yoast SEO <= 20.2 - Authenticated (Contributor+) Stored Cross-Site Scripting
-  author: topscoder
-  severity: low
-  description: >
-    The Yoast SEO plugin for WordPress is vulnerable to DOM-based Cross-Site Scripting via individual post SEO details in versions up to, and including, 20.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with contributor-level requirements and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
+  name: Yoast SEO Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c0e58807-bccc-469f-82c3-a4bbf088a626?source=api-prod
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
-    cve-id: 
+    - https://wordpress.org/plugins/wordpress-seo/
   metadata:
-    fofa-query: "wp-content/plugins/wordpress-seo/"
-    google-query: inurl:"/wp-content/plugins/wordpress-seo/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wordpress-seo,low
+    plugin_namespace: wordpress-seo
+    wpscan: https://wpscan.com/plugin/wordpress-seo
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
+
     path:
       - "{{BaseURL}}/wp-content/plugins/wordpress-seo/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/wordpress-seo.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "wordpress-seo"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 20.2')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'

@@ -2,14 +2,13 @@ id: jet-tabs
 
 info:
   name: >
-    JetTabs <= 2.2.3 - Authenticated (Contributor+) Arbitrary Local File Inclusion
+    Multiple Plugins by Crocoblock <= (Various Versions) - Missing Authorization to Unauthenticated Unauthorized Action
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a401a2dd-9b31-47d9-b841-f2e7042b8333?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7addc83b-cde5-4f91-b286-70db6f384a9f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/jet-tabs/"
     google-query: inurl:"/wp-content/plugins/jet-tabs/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,jet-tabs,low
+  tags: cve,wordpress,wp-plugin,jet-tabs,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.3')
+          - compare_versions(version, '<= 2.1.25.1')

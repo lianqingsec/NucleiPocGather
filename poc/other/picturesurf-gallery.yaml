@@ -6,10 +6,11 @@ info:
   severity: critical
   description: "The Picturesurf Gallery plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation via the upload.php file in versions up to, and including, 1.2. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-picturesurf-gallery-upload-php-arbitrary-file-upload-1-2/
+    - https://packetstormsecurity.com/files/113405/WordPress-Picturesurf-Gallery-1.2-Shell-Upload.html
   classification:
-    cvss-metrics:
-    cvss-score:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id:
   metadata:
     fofa-query: "wp-content/plugins/picturesurf-gallery/"
@@ -53,4 +54,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<=  1.2')
+          - compare_versions(version, '<= 1.2')

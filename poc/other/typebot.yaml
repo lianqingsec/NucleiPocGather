@@ -2,14 +2,13 @@ id: typebot
 
 info:
   name: >
-    Typebot <= 3.6.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Typebot | Build beautiful conversational forms < 1.4.3 - Authenticated (Admin+) Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1312ad63-02ed-414d-b807-1a0666da7cf1?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8f45c31-6e35-4f28-8f49-74cb08ff65bd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.6.0')
+          - compare_versions(version, '< 1.4.3')

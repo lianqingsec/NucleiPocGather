@@ -2,14 +2,13 @@ id: soledad
 
 info:
   name: >
-    Soledad <= 8.4.1 - Authenticated (Contributor+) SQL Injection
+    Soledad <= 8.4.1 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7a9846c4-4678-4c25-84fd-b05d21ea34fb?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f83b36fe-4e46-4ab7-a113-6dcfa7cce625?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/themes/soledad/"
     google-query: inurl:"/wp-content/themes/soledad/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,soledad,low
+  tags: cve,wordpress,wp-theme,soledad,medium
 
 http:
   - method: GET

@@ -2,14 +2,13 @@ id: eightstore-lite
 
 info:
   name: >
-    AccessPress Themes and Plugin <= Various Versions - Authenticated (Subscriber+) Arbitrary File Upload
+    AccessPress Themes and Plugin <= Various Versions - Missing Authorization to Arbitrary Plugin Deactivation/Activation
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4ef1a097-955c-4a0e-a1a2-b34ae2903d0e?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e15727a-35c4-42c0-9997-cdcd40ac8e5f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/themes/eightstore-lite/"
     google-query: inurl:"/wp-content/themes/eightstore-lite/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,eightstore-lite,low
+  tags: cve,wordpress,wp-theme,eightstore-lite,high
 
 http:
   - method: GET

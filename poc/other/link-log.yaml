@@ -2,14 +2,13 @@ id: link-log
 
 info:
   name: >
-    Link Log – external link click monitor <= 1.4 - HTTP Response Splitting
+    Link Log – external link click monitor < 2.1 - SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/71371a44-fed4-4aea-9f86-a37ca26a57b1?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e8088547-650f-41b1-bb53-18be38f4aeb2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/link-log/"
     google-query: inurl:"/wp-content/plugins/link-log/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,link-log,low
+  tags: cve,wordpress,wp-plugin,link-log,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4')
+          - compare_versions(version, '< 2.1')

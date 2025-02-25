@@ -2,14 +2,13 @@ id: shortcode-imdb
 
 info:
   name: >
-    Shortcode IMDB <= 6.0.8 - Authenticated (Administrator+) SQL Injection
+    Shortcode IMDB <= 6.0.8 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ae6bf2e-b39a-4bb3-9203-22ff4c23ddf4?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/088e0d77-06bf-4420-88fb-2c6f8051ece5?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/shortcode-imdb/"
     google-query: inurl:"/wp-content/plugins/shortcode-imdb/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,shortcode-imdb,low
+  tags: cve,wordpress,wp-plugin,shortcode-imdb,medium
 
 http:
   - method: GET

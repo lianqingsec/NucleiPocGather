@@ -1,24 +1,24 @@
 id: customize-login
 
 info:
-  name: >
-    WP Customize Login <= 1.1 - Authenticated (Admin+) Stored Cross-Site Scripting
+  name: "WP Customize Login <= 1.1 - Authenticated (Admin+) Stored Cross-Site Scripting"
   author: topscoder
-  severity: low
-  description: >
-    The WP Customize Login plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the ‘changelogourl’ and ‘cuslog_logotitle’ parameters in versions up to, and including, 1.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page.
+  severity: medium
+  description: "The WP Customize Login plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the ‘changelogourl’ and ‘cuslog_logotitle’ parameters in versions up to, and including, 1.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/58b8e6f5-5cf8-4dbb-89e9-69266bdc1a30?source=api-prod
+    - https://ithemes.com/blog/wordpress-vulnerability-report-august-2021-part-2/
+    - https://wpscan.com/vulnerability/ccc25afb-e8a8-4caa-88e7-042eb04cd2a0
+    - https://wordpress.org/plugins/customize-login/
+    - https://www.exploit-db.com/exploits/50174
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:H/UI:N/S:C/C:L/I:L/A:N
     cvss-score: 5.5
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/customize-login/"
     google-query: inurl:"/wp-content/plugins/customize-login/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,customize-login,low
+  tags: cve,wordpress,wp-plugin,customize-login,medium
 
 http:
   - method: GET

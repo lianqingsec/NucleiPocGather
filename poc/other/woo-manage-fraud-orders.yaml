@@ -2,14 +2,14 @@ id: woo-manage-fraud-orders
 
 info:
   name: >
-    Woo Manage Fraud Orders <= 6.1.7 - Unauthenticated Information Exposure via Log Files
+    Woo Manage Fraud Orders <= 6.1.7 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a62df5f6-64b0-4489-9dde-0d472040ee12?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fc8b0944-f669-40d3-899b-d7f91b1a1fea?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/woo-manage-fraud-orders/"
     google-query: inurl:"/wp-content/plugins/woo-manage-fraud-orders/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,woo-manage-fraud-orders,low
+  tags: cve,wordpress,wp-plugin,woo-manage-fraud-orders,medium
 
 http:
   - method: GET

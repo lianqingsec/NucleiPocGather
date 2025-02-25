@@ -1,19 +1,18 @@
 id: fraction-theme
 
 info:
-  name: >
-    Faction <= 1.1.1 - Arbitrary Options Update
+  name: "Faction <= 1.1.1 - Arbitrary Options Update"
   author: topscoder
   severity: critical
-  description: >
-    The Faction theme for WordPress is vulnerable to Privilege Escalation in versions up to, and including, 1.1.1. This is due to a missing capabilities check on the ot_save_options function. This makes it possible for unauthenticated attackers to update arbitrary site options that can allow them to escalate their privileges to that of an administrator which can lead to a full site takeover.
+  description: "The Faction theme for WordPress is vulnerable to Privilege Escalation in versions up to, and including, 1.1.1. This is due to a missing capabilities check on the ot_save_options function. This makes it possible for unauthenticated attackers to update arbitrary site options that can allow them to escalate their privileges to that of an administrator which can lead to a full site takeover."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/570f680b-b688-49ad-9eed-0bc966a4cdf7?source=api-prod
+    - https://web.archive.org/web/20150324084929/https%3A//research.evex.pw/?vuln=8
+    - https://themeforest.net/item/fraction-multipurpose-news-magazine-theme/8655281
+    - https://packetstormsecurity.com/files/130738/
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/themes/fraction-theme/"
     google-query: inurl:"/wp-content/themes/fraction-theme/"

@@ -2,14 +2,13 @@ id: wp-stripe-checkout
 
 info:
   name: >
-    WP Stripe Checkout <= 1.2.2.41 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
+    WP Stripe Checkout <= 1.2.2.37 - Sensitive Information Exposure via Debug Log
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fe5227f0-3f7f-4d31-8d46-de2eec44b514?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3f244b8e-94ae-4d95-83a7-53b826e98656?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.2.41')
+          - compare_versions(version, '<= 1.2.2.37')

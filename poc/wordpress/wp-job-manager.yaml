@@ -1,25 +1,23 @@
 id: wp-job-manager
 
 info:
-  name: "WP Job Manager < 1.23.8 - Multiple Cross-Site Scripting"
+  name: "WP Job Manager <= 1.31.2 - PHP Object Injection via PHAR Deserialization"
   author: topscoder
-  severity: medium
-  description: "The WP Job Manager plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘create_account_email' and 'create_account_username’ parameters in versions up to, and including, 1.23.7 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+  severity: high
+  description: "TheWP Job Manager plugin for WordPress is vulnerable to PHP Object Injection in versions up to, and including, 1.31.2 via deserialization of user-controlled input allowing a phar wrapper. This allows attackers to inject a PHP Object. No known POP chain is present in the vulnerable plugin. If a POP chain is present via an additional plugin or theme installed on the target system, it could allow the attacker to delete arbitrary files, retrieve sensitive data, or execute code."
   reference:
-    - http://cinu.pl/research/wp-plugins/mail_8addc2c3e5d15a89ccc4e6f9d4b06833.html
-    - http://blog.cinu.pl/2015/11/php-static-code-analysis-vs-top-1000-wordpress-plugins.html
-    - https://github.com/Automattic/WP-Job-Manager/blob/master/changelog.txt
-    - https://wpscan.com/vulnerability/b581499c-7ccf-48fe-88f1-c27a04ad5aaf
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-wp-job-manager-cross-site-scripting-1-23-7/
+    - https://wordpress.org/plugins/wp-job-manager/#developers
+    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-wp-job-manager-php-object-injection-1-31-2/
+    - https://web.archive.org/web/20200924093740/https%3A//www.ripstech.com/php-security-calendar-2018/
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:L/I:L/A:N
-    cvss-score: 5.4
+    cvss-metrics: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 7.5
     cve-id:
   metadata:
     fofa-query: "wp-content/plugins/wp-job-manager/"
     google-query: inurl:"/wp-content/plugins/wp-job-manager/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-job-manager,medium
+  tags: cve,wordpress,wp-plugin,wp-job-manager,high
 
 http:
   - method: GET
@@ -57,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.23.8')
+          - compare_versions(version, '< 1.31.3')

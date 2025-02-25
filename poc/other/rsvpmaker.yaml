@@ -2,14 +2,13 @@ id: rsvpmaker
 
 info:
   name: >
-    RSVPMaker  <= 10.5.4 - Authenticated (Administrator+) SQL Injection via 'resend'
+    RSVPMaker <= 9.2.5 - Unauthenticated SQL Injection
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6709f9b0-0915-4361-9fb0-1f2696e26c2f?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6031edec-4274-4e42-9e3a-ce0c94958b17?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/rsvpmaker/"
     google-query: inurl:"/wp-content/plugins/rsvpmaker/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,rsvpmaker,low
+  tags: cve,wordpress,wp-plugin,rsvpmaker,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 10.5.5')
+          - compare_versions(version, '<= 9.2.5')

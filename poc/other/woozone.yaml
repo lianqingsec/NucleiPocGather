@@ -2,14 +2,13 @@ id: woozone
 
 info:
   name: >
-    WooCommerce Amazon Affiliates - Wordpress Plugin <= 14.0.10 - Missing Authorization
+    WooCommerce Amazon Affiliates - Wordpress Plugin <= 14.0.10 - Unauthenticated SQL Injection
   author: topscoder
-  severity: high
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7193052f-1bef-426c-b0fe-4d70931f47ed?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ca88c62d-0f27-40e0-9dd2-21d3d133fda3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/woozone/"
     google-query: inurl:"/wp-content/plugins/woozone/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,woozone,high
+  tags: cve,wordpress,wp-plugin,woozone,critical
 
 http:
   - method: GET

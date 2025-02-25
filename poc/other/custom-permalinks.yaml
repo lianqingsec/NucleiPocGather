@@ -2,14 +2,13 @@ id: custom-permalinks
 
 info:
   name: >
-    Custom Permalinks <= 1.1 - Authenticated SQL Injection
+    Custom Permalinks <= 1.1 -Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c9a5613-770f-4294-997e-17fd5194ab70?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0d1a12b9-ac2e-4c60-8dd5-484944bb0ab8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/custom-permalinks/"
     google-query: inurl:"/wp-content/plugins/custom-permalinks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,custom-permalinks,low
+  tags: cve,wordpress,wp-plugin,custom-permalinks,high
 
 http:
   - method: GET

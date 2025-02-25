@@ -1,21 +1,23 @@
 id: charitable
 
 info:
-  name: "Charitable – Donation Plugin <= 1.6.50 - Unauthenticated Stored Cross-Site Scripting"
+  name: >
+    Donation Forms by Charitable <= 1.7.0.12 - Unauthenticated Privilege Escalation
   author: topscoder
-  severity: high
-  description: "The Charitable – Donation Plugin plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 1.6.50 due to insufficient input sanitization and output escaping on the 'first_name' parameter. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  severity: low
+  description: >
+    
   reference:
-
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/522ecc1c-5834-4325-9234-79cf712213f3?source=api-scan
   classification:
-    cvss-metrics:
-    cvss-score:
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/charitable/"
     google-query: inurl:"/wp-content/plugins/charitable/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,charitable,high
+  tags: cve,wordpress,wp-plugin,charitable,low
 
 http:
   - method: GET
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<=  1.6.50')
+          - compare_versions(version, '<= 1.7.0.12')

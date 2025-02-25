@@ -1,21 +1,23 @@
 id: video-synchro-pdf
 
 info:
-  name: "Videos sync PDF <= 1.7.4 - Authenticated (Admin+) Stored Cross-Site Scripting"
+  name: >
+    Videos sync PDF <= 1.7.4 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: medium
-  description: "The Videos sync PDF plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin's settings in versions up to, and including, 1.7.4 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers with admin-level privileges to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  severity: critical
+  description: >
+    
   reference:
-
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/068d9502-705e-45dc-a7fb-e75866226fdd?source=api-scan
   classification:
-    cvss-metrics:
-    cvss-score:
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/video-synchro-pdf/"
     google-query: inurl:"/wp-content/plugins/video-synchro-pdf/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,video-synchro-pdf,medium
+  tags: cve,wordpress,wp-plugin,video-synchro-pdf,critical
 
 http:
   - method: GET
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<=  1.7.4')
+          - compare_versions(version, '<= 1.7.4')

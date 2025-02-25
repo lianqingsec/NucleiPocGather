@@ -2,14 +2,14 @@ id: sully
 
 info:
   name: >
-    SULly <= 4.3.0 - Authenticated (Admin+) Stored Cross-Site Scripting
+    SULly <= 4.3 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0b270ec6-8dc1-432b-bf68-671966a9761a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8b968849-32ef-4cc9-8ac6-5477b2906952?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/sully/"
     google-query: inurl:"/wp-content/plugins/sully/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,sully,low
+  tags: cve,wordpress,wp-plugin,sully,medium
 
 http:
   - method: GET

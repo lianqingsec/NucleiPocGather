@@ -2,14 +2,13 @@ id: geo-mashup
 
 info:
   name: >
-    Geo Mashup <= 1.13.12 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Geo Mashup - < 1.10.4 - Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ff449224-d405-453f-8c45-5c6f79bc76d6?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b4e812f2-78f2-4dde-96ec-2ee114ebaa60?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/geo-mashup/"
     google-query: inurl:"/wp-content/plugins/geo-mashup/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,geo-mashup,low
+  tags: cve,wordpress,wp-plugin,geo-mashup,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.13.12')
+          - compare_versions(version, '< 1.10.4')

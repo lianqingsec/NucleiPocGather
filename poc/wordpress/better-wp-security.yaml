@@ -1,58 +1,49 @@
-id: better-wp-security
+id: wordpress-better-wp-security
 
 info:
-  name: "Better WP Security <= 3.5.3 - Stored Cross-Site Scripting"
-  author: topscoder
-  severity: high
-  description: "The Better WP Security plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'inc/secure.php' file in versions up to, and including, 3.5.3 due to insufficient input sanitization and output escaping on logged data. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  name: Solid Security – Password, Two Factor Authentication, and Brute Force Protection Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://github.com/wpscanteam/wpscan/issues/251
-    - https://wpscan.com/vulnerability/aca181eb-a018-4010-90fe-1746c7a1e976
-    - http://web.archive.org/web/20191021091912/https%3A//packetstormsecurity.com/files/122615/
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 7.2
-    cve-id:
+    - https://wordpress.org/plugins/better-wp-security/
   metadata:
-    fofa-query: "wp-content/plugins/better-wp-security/"
-    google-query: inurl:"/wp-content/plugins/better-wp-security/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,better-wp-security,high
+    plugin_namespace: better-wp-security
+    wpscan: https://wpscan.com/plugin/better-wp-security
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
+
     path:
       - "{{BaseURL}}/wp-content/plugins/better-wp-security/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/better-wp-security.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "better-wp-security"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 3.5.3')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'

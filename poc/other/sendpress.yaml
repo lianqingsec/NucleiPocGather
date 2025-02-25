@@ -2,14 +2,13 @@ id: sendpress
 
 info:
   name: >
-    SendPress Newsletters <= 1.23.11.6 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    SendPress Newsletters <= 1.23.11.6 - Cross-Site Request Forgery
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5d173077-06c4-4a23-a664-0be8516053ec?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fb70339c-0f1a-4acc-af7a-8a0320fdfe71?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/sendpress/"
     google-query: inurl:"/wp-content/plugins/sendpress/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,sendpress,low
+  tags: cve,wordpress,wp-plugin,sendpress,medium
 
 http:
   - method: GET

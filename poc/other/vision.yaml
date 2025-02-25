@@ -1,24 +1,23 @@
 id: vision
 
 info:
-  name: >
-    Vision Interactive <= 1.5.3 - Authenticated (Contributor+) Stored Cross-Site Scripting
+  name: "Vision Interactive For WordPress <= 1.5.1 - Reflected Cross-Site Scripting"
   author: topscoder
-  severity: low
-  description: >
-    
+  severity: medium
+  description: "The 'Vision Interactive For WordPress' plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘page’ parameter in versions up to, and including, 1.5.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e99c10d-6632-4520-9239-9b831becd103?source=api-scan
+    - https://wpscan.com/vulnerability/dfa607af-6595-4906-95a0-1010859b6ce1
+    - https://wordpress.org/plugins/vision/#developers
+    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=2790118%40vision&new=2790118%40vision&sfp_email=&sfph_mail=
   classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
+    cvss-score: 6.1
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/vision/"
     google-query: inurl:"/wp-content/plugins/vision/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,vision,low
+  tags: cve,wordpress,wp-plugin,vision,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.5.3')
+          - compare_versions(version, '<= 1.5.1')
