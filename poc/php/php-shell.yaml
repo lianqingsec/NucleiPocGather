@@ -1,16 +1,18 @@
 id: php-shell
 
 info:
-  name: "PHP Shell (All Versions) - Backdoor"
+  name: >
+    PHP Shell (All Versions) - Backdoor
   author: topscoder
   severity: low
-  description: "The PHP Shell plugin for WordPress is used for Remote Code Execution in all versions up to, and including, 1.0. This allows unauthenticated attackers to execute code on the server."
+  description: >
+    
   reference:
-
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b8cbd521-f2d4-4cf6-a50f-ed42f4d21989?source=api-scan
   classification:
-    cvss-metrics:
-    cvss-score:
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/php-shell/"
     google-query: inurl:"/wp-content/plugins/php-shell/"
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '*')
+          - compare_versions(version, '<= *')

@@ -1,59 +1,50 @@
-id: coming-soon
+id: wordpress-coming-soon
 
 info:
-  name: >
-    Coming Soon Page, Under Construction & Maintenance Mode by SeedProd <= 6.17.4 - Authenticated (Editor+) Stored Cross-Site Scripting
-  author: topscoder
-  severity: low
-  description: >
-    
+  name: Website Builder by SeedProd — Theme Builder, Landing Page Builder, Coming Soon Page, Maintenance Mode Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dc4c4f01-cc48-47a3-a7b7-025b261ab54c?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    - https://wordpress.org/plugins/coming-soon/
   metadata:
-    fofa-query: "wp-content/plugins/coming-soon/"
-    google-query: inurl:"/wp-content/plugins/coming-soon/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,coming-soon,low
+    max-request: 1
+    plugin_namespace: coming-soon
+    wpscan: https://wpscan.com/plugin/coming-soon
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/coming-soon/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/coming-soon.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "coming-soon"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 6.17.4')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a004730450221009774ab3256d0022a2225512717aff64e9489ba663c73f90235b522461abfaf890220509167c6326484a0c6cec67103be52966d981c519759ab34a4d27c1af24fa376:922c64590222798bb761d5b6d8e72950

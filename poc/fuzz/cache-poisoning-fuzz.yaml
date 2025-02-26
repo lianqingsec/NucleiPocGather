@@ -6,7 +6,7 @@ info:
   severity: info
   reference:
     - https://youst.in/posts/cache-poisoning-at-scale/
- 
+  tags: cache,fuzz
 
 requests:
   - raw:

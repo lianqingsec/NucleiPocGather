@@ -2,14 +2,13 @@ id: realty
 
 info:
   name: >
-    Realty by BestWebSoft <= 1.1.5 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Realty by BestWebSoft < 1.1.0 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/be860b7c-f0ac-4c28-8d7b-dc19f495476b?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f9ab89a5-bc01-446e-8cea-40544ddec4d4?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/realty/"
     google-query: inurl:"/wp-content/plugins/realty/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,realty,low
+  tags: cve,wordpress,wp-plugin,realty,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.1.5')
+          - compare_versions(version, '< 1.1.0')

@@ -2,14 +2,13 @@ id: jet-compare-wishlist
 
 info:
   name: >
-    Multiple Plugins by Crocoblock <= (Various Versions) - Cross-Site Request Forgery
+    Multiple Plugins by Crocoblock <= (Various Versions) - Missing Authorization to Unauthenticated Unauthorized Action
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1c85e5e0-d8ee-46d3-99b1-df6c6744f020?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7addc83b-cde5-4f91-b286-70db6f384a9f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/jet-compare-wishlist/"
     google-query: inurl:"/wp-content/plugins/jet-compare-wishlist/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,jet-compare-wishlist,medium
+  tags: cve,wordpress,wp-plugin,jet-compare-wishlist,high
 
 http:
   - method: GET

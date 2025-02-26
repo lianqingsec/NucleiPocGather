@@ -2,14 +2,13 @@ id: canto
 
 info:
   name: >
-    Canto <= 1.9.0 - Blind Server-Side Request Forgery via get.php
+    Canto <= 3.0.4 - Unauthenticated Remote File Inclusion
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a330416-f867-4a1a-a692-6003e231ed54?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a76077c6-700a-4d21-a930-b0d6455d959c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.9.0')
+          - compare_versions(version, '<= 3.0.4')

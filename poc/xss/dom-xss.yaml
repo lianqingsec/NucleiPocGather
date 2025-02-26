@@ -2,22 +2,23 @@ id: dom-xss
 
 info:
   name: DOM Cross Site Scripting
-  author: shelled
+  author: theamanrawat
   severity: medium
-  tags: xss,dom-xss
+  tags: xss,dom,dast
 
 variables:
-  first: 'javascript:alert(1)'
+  num: "{{rand_int(10000, 99999)}}"
 
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+headless:
+  - steps:
+      - action: navigate
+        args:
+          url: "{{BaseURL}}"
+      - action: waitload
 
     payloads:
       reflection:
-        - 'href="javascript:alert(1)"'
-        - 'href=javascript:alert(1)'
+        - "'\"><h1>{{num}}</h1>"
 
     fuzzing:
       - part: query
@@ -32,9 +33,13 @@ requests:
       - type: word
         part: body
         words:
-          - "{{reflection}}"
+          - "<h1>{{num}}</h1>"
 
       - type: word
         part: header
         words:
           - "text/html"
+
+      - type: status
+        status:
+          - 200

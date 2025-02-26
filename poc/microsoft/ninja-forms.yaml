@@ -1,58 +1,50 @@
-id: ninja-forms
+id: wordpress-ninja-forms
 
 info:
-  name: "Ninja Forms Contact Form <= 2.9.28 - Stored Cross-Site Scripting"
-  author: topscoder
-  severity: high
-  description: "The Ninja Forms Contact Form plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 2.9.28 due to insufficient input sanitization and output escaping during form submission. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser."
+  name: Ninja Forms Contact Form – The Drag and Drop Form Builder for WordPress Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://wordpress.org/plugins/ninja-forms/changelog/
-    - https://www.acunetix.com/vulnerabilities/web/wordpress-plugin-ninja-forms-contact-form-the-drag-and-drop-form-builder-for-wordpress-cross-site-scripting-2-9-28/
-    - https://plugins.trac.wordpress.org/browser/ninja-forms/tags/2.9.58/readme.txt#L359
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 7.2
-    cve-id:
+    - https://wordpress.org/plugins/ninja-forms/
   metadata:
-    fofa-query: "wp-content/plugins/ninja-forms/"
-    google-query: inurl:"/wp-content/plugins/ninja-forms/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ninja-forms,high
+    max-request: 1
+    plugin_namespace: ninja-forms
+    wpscan: https://wpscan.com/plugin/ninja-forms
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/ninja-forms/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/ninja-forms.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "ninja-forms"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 2.9.28')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100d596e46725dd6de4119f2a71712a92884d3639585abd29027e003470e479c98a02204fe4f2f7d097dad7ba853360f5fe6b3b9e27080c02bfbf9305a8c9c3278ae5c8:922c64590222798bb761d5b6d8e72950

@@ -2,14 +2,13 @@ id: gigpress
 
 info:
   name: >
-    GigPress <= 2.3.10 - Reflected Cross-Site Scripting
+    GigPress <= 2.3.8 - SQL Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/be4f5da0-77ec-41eb-85bd-c019e71d4c9d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8f4a9f9f-a342-4053-b4e0-cbaa9796e4ba?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/gigpress/"
     google-query: inurl:"/wp-content/plugins/gigpress/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,gigpress,medium
+  tags: cve,wordpress,wp-plugin,gigpress,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.3.10')
+          - compare_versions(version, '< 2.3.9')

@@ -2,14 +2,13 @@ id: cforms
 
 info:
   name: >
-    cformsII <= 10.4 - Cross-Site Scripting
+    Cforms <= 10.1 - Cross-Site Scripting
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0e7b694f-8926-4bba-be77-42ade5d1c3b4?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2cbd3bf0-6b20-41c2-8265-786dbba123d7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 10.5')
+          - compare_versions(version, '<= 10.1')

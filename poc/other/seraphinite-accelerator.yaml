@@ -2,14 +2,13 @@ id: seraphinite-accelerator
 
 info:
   name: >
-    Seraphinite Accelerator <= 2.20.47 - Unauthenticated Sensitive Information Exposure via Log File
+    Seraphinite Accelerator <= 2.20.52 - Authenticated (Subscriber+) Server-Side Request Forgery in OnAdminApi_HtmlCheck
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a5991df2-1aab-4d07-9e30-1257aa9ec884?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/07287a85-df00-408a-8b02-978fd3116155?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.20.47')
+          - compare_versions(version, '<= 2.20.52')

@@ -2,14 +2,13 @@ id: post-grid
 
 info:
   name: >
-    Post Grid, Form Maker, Popup Maker, WooCommerce Blocks, Post Blocks, Post Carousel – Combo Blocks <= 2.2.80 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Post Grid Combo – 36+ Gutenberg Blocks <= 2.2.64 - Authenticated (Contributor+) Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/84bc611c-c38a-4282-9a9b-5bb9157fb1de?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ab777672-6eef-4078-932d-24bb784107fa?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.80')
+          - compare_versions(version, '<= 2.2.64')

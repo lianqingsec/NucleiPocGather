@@ -1,59 +1,50 @@
-id: all-in-one-seo-pack
+id: wordpress-all-in-one-seo-pack
 
 info:
-  name: >
-    All in One SEO  <= 2.1.5 - Missing Authorization
-  author: topscoder
-  severity: low
-  description: >
-    The All in One SEO plugin for WordPress is vulnerable to authorization bypass due to a missing capability check on the aioseop_ajax_save_meta() function in versions up to, and including, 2.1.5. This makes it possible for authenticated attackers with subscriber level permissions and above to modify some of the SEO settings of the plugin for any given post.
+  name: All in One SEO – Best WordPress SEO Plugin – Easily Improve SEO Rankings & Increase Traffic Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/55a942b7-5d3e-4ddf-8bc3-61ff90a7fdbd?source=api-prod
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L
-    cvss-score: 6.3
-    cve-id: 
+    - https://wordpress.org/plugins/all-in-one-seo-pack/
   metadata:
-    fofa-query: "wp-content/plugins/all-in-one-seo-pack/"
-    google-query: inurl:"/wp-content/plugins/all-in-one-seo-pack/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,all-in-one-seo-pack,low
+    max-request: 1
+    plugin_namespace: all-in-one-seo-pack
+    wpscan: https://wpscan.com/plugin/all-in-one-seo-pack
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/all-in-one-seo-pack/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/all-in-one-seo-pack.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "all-in-one-seo-pack"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 2.1.5')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100b2f096c8924484e07ea853b51aee095d6bb3526b2cee555078c79f45f85e9a5b02203bb660fe4a0d0e3a97a0d4d509edba66e5a43004a6fd1ebdf93fa0a58b82b5ba:922c64590222798bb761d5b6d8e72950

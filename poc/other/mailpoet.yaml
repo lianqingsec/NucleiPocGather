@@ -1,59 +1,50 @@
-id: mailpoet
+id: wordpress-mailpoet
 
 info:
-  name: >
-    MailPoet – emails and newsletters in WordPress <= 3.23.1 - Reflected Cross-Site Scripting via URL parameter
-  author: topscoder
-  severity: medium
-  description: >
-    
+  name: MailPoet – Newsletters, Email Marketing, and Automation Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/075e64fb-acaf-4f0f-bbc8-db7855184970?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    - https://wordpress.org/plugins/mailpoet/
   metadata:
-    fofa-query: "wp-content/plugins/mailpoet/"
-    google-query: inurl:"/wp-content/plugins/mailpoet/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mailpoet,medium
+    max-request: 1
+    plugin_namespace: mailpoet
+    wpscan: https://wpscan.com/plugin/mailpoet
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/mailpoet/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/mailpoet.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "mailpoet"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '< 3.23.2')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a0047304502205c7b7b108592d38de3147d8fdd6846ec47b10608eae950a3ea72c4609c0528b602210084423e26d9622ea9cce9757f2e5b9ba7d1c540a3797baed1999a1e3f11ce38e3:922c64590222798bb761d5b6d8e72950

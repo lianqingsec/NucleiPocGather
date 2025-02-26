@@ -1,24 +1,24 @@
 id: plugin-central
 
 info:
-  name: >
-    Plugin Central < 2.5.1 - Reflected Cross-Site Scripting
+  name: "Plugin Central < 2.5.1 - Reflected Cross-Site Scripting"
   author: topscoder
-  severity: medium
-  description: >
-    The Plugin Central plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘file' and 'name' parameters in versions before 2.5.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
+  severity: high
+  description: "The Plugin Central plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘file' and 'name' parameters in versions before 2.5.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9dd71a06-b3b5-431a-b6da-3b7db3a3907c?source=api-prod
+    - http://cinu.pl/research/wp-plugins/mail_012c731e327310e27ab1836445ab96e2.html
+    - http://blog.cinu.pl/2015/11/php-static-code-analysis-vs-top-1000-wordpress-plugins.html
+    - https://wordpress.org/plugins/plugin-central/#developers
+    - https://plugins.trac.wordpress.org/changeset/1292638
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:L
     cvss-score: 7.1
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/plugin-central/"
     google-query: inurl:"/wp-content/plugins/plugin-central/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,plugin-central,medium
+  tags: cve,wordpress,wp-plugin,plugin-central,high
 
 http:
   - method: GET

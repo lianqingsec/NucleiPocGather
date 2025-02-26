@@ -1,19 +1,17 @@
 id: uploader
 
 info:
-  name: >
-    Uploader <= 1.0.4 - Arbitrary File Upload
+  name: "Uploader <= 1.0.4 - Arbitrary File Upload"
   author: topscoder
   severity: critical
-  description: >
-    The Uploader plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the '/uploadify/uploadify.php' file in versions up to, and including, 1.0.4. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible.
+  description: "The Uploader plugin for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the '/uploadify/uploadify.php' file in versions up to, and including, 1.0.4. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected sites server which may make remote code execution possible."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/14f86410-a21c-43ee-8d78-6fcce3a5b99b?source=api-prod
+    - https://packetstormsecurity.com/files/119219/
+    - https://wpscan.com/vulnerability/d25d68f4-7668-4d4e-ad81-40366f9b6d8d
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
     cvss-score: 9.8
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/uploader/"
     google-query: inurl:"/wp-content/plugins/uploader/"

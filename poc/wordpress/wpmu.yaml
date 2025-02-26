@@ -2,21 +2,20 @@ id: wpmu
 
 info:
   name: >
-    WordPress Core & WordPress MU < 2.8.1 - Username Enumeration
+    WordPress Core & WordPress MU < 2.8.1 - Full Path Disclosure
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/08f83fd1-5e8c-472f-819a-6078a5d2a56b?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/79ea853e-9d1d-4be0-8fd4-a80a924018ae?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-core,medium
+  tags: cve,wordpress,wp-core,low
 
 http:
   - method: GET

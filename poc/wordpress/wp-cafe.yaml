@@ -2,14 +2,13 @@ id: wp-cafe
 
 info:
   name: >
-    WPCafe – Online Food Ordering, Restaurant Menu, Delivery, and Reservations for WooCommerce <= 2.2.25 - Authenticated (Contributor+) File inclusion via Shortcode
+    WPCafe <= 2.2.22 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5c5e7ed1-7eb8-4ce7-9dd6-0f7937b6f671?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4261bc62-a091-408b-8643-e6fa61d62103?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/wp-cafe/"
     google-query: inurl:"/wp-content/plugins/wp-cafe/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-cafe,low
+  tags: cve,wordpress,wp-plugin,wp-cafe,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.25')
+          - compare_versions(version, '<= 2.2.22')

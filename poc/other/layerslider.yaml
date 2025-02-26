@@ -2,14 +2,13 @@ id: layerslider
 
 info:
   name: >
-    LayerSlider <= 6.2.0 - Cross-Site Request Forgery
+    LayerSlider <= 7.7.9 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/174e6344-3919-4c73-8810-33de379ff463?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9225ebc6-bff9-4176-a86e-022ff8ec3b05?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.2.0')
+          - compare_versions(version, '<= 7.7.9')

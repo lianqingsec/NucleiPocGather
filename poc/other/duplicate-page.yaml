@@ -1,58 +1,50 @@
-id: duplicate-page
+id: wordpress-duplicate-page
 
 info:
-  name: "Duplicate Page Plugins <= (Various Versions) - SQL Injection"
-  author: topscoder
-  severity: high
-  description: "The Duplicate Page and Post, WP Post Page Clone and Duplicate Page plugins for WordPress are vulnerable to SQL Injection via the ‘post’ parameter in versions up to, and including, 2.5.6, 1.1, and 3.3 respectively, due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query.  This makes it possible for attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
+  name: Duplicate Page Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://blog.sucuri.net/2020/04/duplicated-vulnerabilities-in-wordpress-plugins.html
-    - https://wpscan.com/vulnerability/196cdf4f-a62b-4dec-8f0b-df14bcf8419c
-    - https://plugins.trac.wordpress.org/changeset/2248703
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H
-    cvss-score: 8.8
-    cve-id:
+    - https://wordpress.org/plugins/duplicate-page/
   metadata:
-    fofa-query: "wp-content/plugins/duplicate-page/"
-    google-query: inurl:"/wp-content/plugins/duplicate-page/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,duplicate-page,high
+    max-request: 1
+    plugin_namespace: duplicate-page
+    wpscan: https://wpscan.com/plugin/duplicate-page
+  tags: tech,wordpress,wp-plugin,top-100,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/duplicate-page/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/duplicate-page.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "duplicate-page"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '< 3.4')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100aefc6f5c400982da77e05ac97e741261a881435c00347b1e58bf92cea69af5f102204affc989ceaee780b381a8f5dcdb81f5d9d4863571af905c181ff858a6840973:922c64590222798bb761d5b6d8e72950

@@ -1,24 +1,24 @@
 id: joan
 
 info:
-  name: >
-    Jock on air now <= 5.6.1 - Cross-Site Request Forgery to Settings Update
+  name: "Jock on air now <= 5.6.2 - Unauthenticated Stored Cross-Site Scripting"
   author: topscoder
-  severity: medium
-  description: >
-    The Jock on air now plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 5.6.1. This is due to missing or incorrect nonce validation when saving its settings. This makes it possible for unauthenticated attackers to change arbitrary plugin settings via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
+  severity: high
+  description: "The Jock on air now plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the plugin settings and 'show-time-curd' AJAX action in versions up to, and including, 5.6.2 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/898ba68f-2b0c-462a-87ee-272ee624396e?source=api-prod
+    - https://ithemes.com/blog/wordpress-vulnerability-report-august-2021-part-4/#ib-toc-anchor-2
+    - https://wpscan.com/vulnerability/c557ff04-31d5-4774-b101-1865a102bf16
+    - https://wordpress.org/plugins/joan/#developers
+    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=2583176%40joan&new=2583176%40joan&sfp_email=&sfph_mail=
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:H/A:N
-    cvss-score: 6.5
-    cve-id: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/joan/"
     google-query: inurl:"/wp-content/plugins/joan/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,joan,medium
+  tags: cve,wordpress,wp-plugin,joan,high
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.6.1')
+          - compare_versions(version, '<= 5.6.2')

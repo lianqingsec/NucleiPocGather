@@ -2,14 +2,13 @@ id: wp-docs
 
 info:
   name: >
-    WP Docs <= 1.9.8 - Cross-Site Request Forgery to folder management
+    WP Docs <= 1.9.9 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6003b1bf-b176-4ca9-9de2-58133259e0f6?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7ac15c0d-74d3-4121-a63e-97dbbe594274?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.9.8')
+          - compare_versions(version, '< 2.0.0')

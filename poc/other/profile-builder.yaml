@@ -2,14 +2,13 @@ id: profile-builder
 
 info:
   name: >
-    Profile Builder <= 3.1.0 - Privilege Escalation
+    Profile Builder <= 3.9.7 - Missing Authorization to Initial Page Creation
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8fcf7283-eb6c-4fee-b606-79026e2227fc?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7d25cca1-eb57-4ba2-8923-a3c56f41ce22?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/profile-builder/"
     google-query: inurl:"/wp-content/plugins/profile-builder/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,profile-builder,low
+  tags: cve,wordpress,wp-plugin,profile-builder,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.1.1')
+          - compare_versions(version, '< 3.9.8')

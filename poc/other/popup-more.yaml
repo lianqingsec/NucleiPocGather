@@ -2,14 +2,13 @@ id: popup-more
 
 info:
   name: >
-    Popup More Popups <= 2.3.2 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    Popup More <= 2.2.4 - Authenticated (Admin+) Directory Traversal to Limited Local File Inclusion
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ffa92cb6-7444-4794-81c1-264ff5a08fa5?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7894a19c-b873-4c5b-8c82-6656cc306ee2?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.3.2')
+          - compare_versions(version, '2.1.6')

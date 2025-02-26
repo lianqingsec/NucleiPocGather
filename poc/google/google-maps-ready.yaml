@@ -1,18 +1,18 @@
 id: google-maps-ready
 
 info:
-  name: "Ready! Google Maps <= 1.1.5 - Cross-Site Scripting"
+  name: >
+    Ready! Google Maps <= 1.1.5 - Cross-Site Scripting
   author: topscoder
   severity: medium
-  description: "The Ready! Google Maps plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 1.1.5 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser."
+  description: >
+    The Ready! Google Maps plugin for WordPress is vulnerable to Cross-Site Scripting in versions up to, and including, 1.1.5 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser.
   reference:
-    - https://vexatioustendencies.com/wordpress-plugin-vulnerability-dump-part-1/
-    - https://wpscan.com/vulnerability/4db40cbf-5143-41a8-a018-7d598a941c3a
-    - https://patchstack.com/database/vulnerability/google-maps-ready/wordpress-google-maps-ready-plugin-1-1-5-multiple-vulnerabilities
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/db5764f7-3e5e-4a0f-8280-c851ccb7dbc3?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/google-maps-ready/"
     google-query: inurl:"/wp-content/plugins/google-maps-ready/"

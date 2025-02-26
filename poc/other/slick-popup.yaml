@@ -2,14 +2,13 @@ id: slick-popup
 
 info:
   name: >
-    Slick Popup: Contact Form 7 Popup Plugin <= 1.7.14 - Authenticated (Admin+) Stored Cross-Site Scripting
+    Slick Popup <= 1.7.1 - Privilege Escalation
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/54019f42-488d-484f-b34e-2b5bd5b0a1dd?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e4b16cf2-7e29-47c5-921e-188e2db33084?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.7.15')
+          - compare_versions(version, '< 1.7.2')

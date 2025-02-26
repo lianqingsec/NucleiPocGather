@@ -1,59 +1,50 @@
-id: table-of-contents-plus
+id: wordpress-table-of-contents-plus
 
 info:
-  name: >
-    Table of Contents Plus <= 2408 - Authenticated (Editor+) Stored Cross-Site Scripting
-  author: topscoder
-  severity: low
-  description: >
-    
+  name: Table of Contents Plus Detection
+  author: ricardomaia
+  severity: info
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e1ae8f2-dd2e-46f9-bef1-aaaee26435a1?source=api-scan
-  classification:
-    cvss-metrics: 
-    cvss-score: 
-    cve-id: 
+    - https://wordpress.org/plugins/table-of-contents-plus/
   metadata:
-    fofa-query: "wp-content/plugins/table-of-contents-plus/"
-    google-query: inurl:"/wp-content/plugins/table-of-contents-plus/"
-    shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,table-of-contents-plus,low
+    max-request: 1
+    plugin_namespace: table-of-contents-plus
+    wpscan: https://wpscan.com/plugin/table-of-contents-plus
+  tags: tech,wordpress,wp-plugin,top-200
 
 http:
   - method: GET
-    redirects: true
-    max-redirects: 3
     path:
       - "{{BaseURL}}/wp-content/plugins/table-of-contents-plus/readme.txt"
 
+    payloads:
+      last_version: helpers/wordpress/plugins/table-of-contents-plus.txt
+
     extractors:
       - type: regex
-        name: version
         part: body
-        group: 1
         internal: true
+        name: internal_detected_version
+        group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
       - type: regex
-        name: version
         part: body
+        name: detected_version
         group: 1
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - '(?i)Stable.tag:\s?([\w.]+)'
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - "table-of-contents-plus"
-        part: body
-
       - type: dsl
+        name: "outdated_version"
         dsl:
-          - compare_versions(version, '<= 2408')
+          - compare_versions(internal_detected_version, concat("< ", last_version))
+
+      - type: regex
+        part: body
+        regex:
+          - '(?i)Stable.tag:\s?([\w.]+)'
+# digest: 4a0a00473045022100ea6d40e7439350af059e6946ef246c8734ea7f0c9ab208345a866e494c879cd702203ae3a50c864689eea037f8aeeb9ed1b79e469848351ff276f927b292b2f9bde7:922c64590222798bb761d5b6d8e72950

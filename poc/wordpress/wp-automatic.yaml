@@ -2,14 +2,13 @@ id: wp-automatic
 
 info:
   name: >
-    WordPress Automatic Plugin <= 2.0.3 - Cross-Site Request Forgery to SQL Injection
+    Automatic <= 3.92.0 - Unauthenticated SQL Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fa45d830-fa28-4d94-a6d5-2dc2b8456cf2?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a8b319be-f312-4d02-840f-e2a91c16b67a?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/wp-automatic/"
     google-query: inurl:"/wp-content/plugins/wp-automatic/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-automatic,medium
+  tags: cve,wordpress,wp-plugin,wp-automatic,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.3')
+          - compare_versions(version, '<= 3.92.0')

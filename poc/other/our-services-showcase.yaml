@@ -1,16 +1,18 @@
 id: our-services-showcase
 
 info:
-  name: "Our Services Showcase <= 2.0 - Missing Authorization"
+  name: >
+    Our Services Showcase <= 2.0 - Missing Authorization
   author: topscoder
   severity: high
-  description: "The Our Services Showcase plugin for WordPress is vulnerable to authorization bypass due to a missing capability check on the smartcat_services_update_order() function which is called via an AJAX action in versions up to, and including, 2.0. This makes it possible for authenticated attackers with subscriber level permissions and above to modify the sc_member_order value for any post."
+  description: >
+    
   reference:
-
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e62a58ec-4ea5-4241-8148-fc8801bd59b3?source=api-scan
   classification:
-    cvss-metrics:
-    cvss-score:
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/our-services-showcase/"
     google-query: inurl:"/wp-content/plugins/our-services-showcase/"
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<=  2.0')
+          - compare_versions(version, '<= 2.0')

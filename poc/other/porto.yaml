@@ -2,14 +2,13 @@ id: porto
 
 info:
   name: >
-    Porto <= 7.1.0 - Authenticated (Contributor+) Local File Inclusion via Post Meta
+    Porto <= 7.1.0 - Unauthenticated Local File Inclusion via porto_ajax_posts
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4bc3da9e-4b5f-4200-9df9-0ae953571377?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/98ccc604-79c6-4be9-acb0-23fc82a31dfa?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/themes/porto/"
     google-query: inurl:"/wp-content/themes/porto/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,porto,low
+  tags: cve,wordpress,wp-theme,porto,critical
 
 http:
   - method: GET
