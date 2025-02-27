@@ -2,13 +2,14 @@ id: relevanssi-premium
 
 info:
   name: >
-    Relevanssi - A Better Search Free & Premium <= 2.16.3 & 4.14.3 - Stored Cross-Site Scripting
+    Relevanssi – A Better Search <= 4.22.1 - Unauthenticated Second Order CSV Injection
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8e12d132-c036-4665-bb8d-e31e2b155fbd?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9960bae9-6f19-49eb-8f24-fdde4933671e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/relevanssi-premium/"
     google-query: inurl:"/wp-content/plugins/relevanssi-premium/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,relevanssi-premium,high
+  tags: cve,wordpress,wp-plugin,relevanssi-premium,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.16.3')
+          - compare_versions(version, '<= 2.25.1')

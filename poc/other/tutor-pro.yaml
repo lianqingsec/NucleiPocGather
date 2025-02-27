@@ -2,13 +2,14 @@ id: tutor-pro
 
 info:
   name: >
-    Tutor LMS Pro <= 2.7.0 - Missing Authorization to SQL Injection
+    Tutor LMS Pro <= 2.7.0 - Missing Authorization to Privilege Escalation
   author: topscoder
   severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c647beda-cf73-4372-975f-a8c8ed05217f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/59859583-49e5-4a80-8659-b9ca7ddc089d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

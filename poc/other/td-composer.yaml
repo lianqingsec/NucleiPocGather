@@ -2,13 +2,14 @@ id: td-composer
 
 info:
   name: >
-    tagDiv Composer <= 4.1 - Authenticated (Admin+) Stored Cross-Site Scripting
+    tagDiv Composer < 3.5 - Unauthorized Account Access and Privilege Escalation
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3861f675-1a26-4947-91ef-8ab04646704f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b8347b4e-a5ba-49c5-9ae6-690a1a5c9aac?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.1')
+          - compare_versions(version, '< 3.5')

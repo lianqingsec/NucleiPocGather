@@ -2,13 +2,14 @@ id: betterlinks
 
 info:
   name: >
-    BetterLinks – Shorten, Track and Manage any URL <= 1.2.5 - Stored Cross-Site Scripting
+    BetterLinks <= 2.1.7 - Authenticated (Administrator+) SQL Injection
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/793082f8-5b5e-4973-819c-d2f11d1a596e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5f4e6daf-9f89-4f34-ad07-82f63fd730da?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/betterlinks/"
     google-query: inurl:"/wp-content/plugins/betterlinks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,betterlinks,high
+  tags: cve,wordpress,wp-plugin,betterlinks,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 1.2.6')
+          - compare_versions(version, '<= 2.1.7')

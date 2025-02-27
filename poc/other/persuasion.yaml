@@ -1,18 +1,19 @@
 id: persuasion
 
 info:
-  name: >
-    Persuasion <= 2.4 - Arbitrary File Deletion
+  name: "Persuasion <= 2.4 - Arbitrary File Deletion"
   author: topscoder
   severity: high
-  description: >
-    The Persuasion Theme for WordPress is vulnerable to Arbitrary File Deletion in versions up to, and including, 2.4. This is due to the '_mysite_delete_skin_zip' parameter in the 'dl-skin.php' file. This makes it possible for unauthenticated attackers to delete any file on the server of the vulnerable service.
+  description: "The Persuasion Theme for WordPress is vulnerable to Arbitrary File Deletion in versions up to, and including, 2.4. This is due to the '_mysite_delete_skin_zip' parameter in the 'dl-skin.php' file. This makes it possible for unauthenticated attackers to delete any file on the server of the vulnerable service."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/aab42989-b928-492f-a610-d2a5546751e0?source=api-prod
+    - https://packetstormsecurity.com/files/124547/
+    - https://www.exploit-db.com/exploits/30443
+    - https://web.archive.org/web/20150428103657/http%3A//mysitemyway.com/docs/Persuasion_Changelog
+    - https://web.archive.org/web/20210213163844/https%3A//www.securityfocus.com/bid/64501/
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
     cvss-score: 7.5
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/themes/persuasion/"
     google-query: inurl:"/wp-content/themes/persuasion/"

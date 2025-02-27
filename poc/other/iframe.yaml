@@ -2,13 +2,14 @@ id: iframe
 
 info:
   name: >
-    iframe <= 4.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via 'iframe' Shortcode
+    iFrame <= 4.0 - Stored Cross-Site Scripting
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3706deed-55f2-4dfb-bfed-7a14872cd15a?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c7bcd458-71bf-4961-a7ce-3f88593f6f5e?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/iframe/"
     google-query: inurl:"/wp-content/plugins/iframe/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,iframe,low
+  tags: cve,wordpress,wp-plugin,iframe,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.6')
+          - compare_versions(version, '<= 4.0')

@@ -2,13 +2,14 @@ id: sniplets
 
 info:
   name: >
-    Sniplets < 1.2.3 - Remote Code Execution
+    Sniplets < 1.2.3 - Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/dfe41d6f-5026-4fcb-9ba0-a5180a03222c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cf4d42a2-746b-4c23-b0fe-b66eafb76303?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/sniplets/"
     google-query: inurl:"/wp-content/plugins/sniplets/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,sniplets,critical
+  tags: cve,wordpress,wp-plugin,sniplets,high
 
 http:
   - method: GET

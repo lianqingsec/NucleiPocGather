@@ -2,13 +2,14 @@ id: dt-the7
 
 info:
   name: >
-    The7 <= 11.6.0 - Reflected Cross-Site Scripting
+    The7 — Website and eCommerce Builder for WordPress <= 11.13.0 - Authenticated (Contributor+) Stored Cross-Site Scripting via url Attribute
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/24c67243-0452-4820-bfb4-b7ac4804aa4b?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c4555cd1-5ae5-42b3-938f-ffce5ba4fe56?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/dt-the7/"
     google-query: inurl:"/wp-content/themes/dt-the7/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,dt-the7,medium
+  tags: cve,wordpress,wp-theme,dt-the7,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 11.6.0')
+          - compare_versions(version, '<= 11.13.0')

@@ -2,13 +2,14 @@ id: visibility-logic-elementor
 
 info:
   name: >
-    Visibility Logic for Elementor <= 2.3.4 - Missing Authorization via admin_post 'toggle_option'
+    Appsero <= 1.2.0 - Cross-Site Request Forgery
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/72c04de6-78d2-4a45-834a-01ed879b528f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e869800a-6fbc-4a1a-97fd-92ecbf3305ff?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/visibility-logic-elementor/"
     google-query: inurl:"/wp-content/plugins/visibility-logic-elementor/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,visibility-logic-elementor,high
+  tags: cve,wordpress,wp-plugin,visibility-logic-elementor,medium
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 2.3.5')
+          - compare_versions(version, '<= 2.3.3')

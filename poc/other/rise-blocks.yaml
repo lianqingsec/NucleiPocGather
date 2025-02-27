@@ -2,13 +2,14 @@ id: rise-blocks
 
 info:
   name: >
-    Rise Blocks – A Complete Gutenberg Page Builder <= 3.1 - Cross-Site Request Forgery
+    Rise Blocks – A Complete Gutenberg Page Builder <= 3.6 - Authenticated (Contributor+) Stored Cross-Site Scripting via TitleTag Parameter
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2b249842-c480-495a-8eec-6c7d0893ef1c?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2ec012e7-b997-466e-8676-8e9467473eae?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/rise-blocks/"
     google-query: inurl:"/wp-content/plugins/rise-blocks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,rise-blocks,medium
+  tags: cve,wordpress,wp-plugin,rise-blocks,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.1')
+          - compare_versions(version, '<= 3.6')

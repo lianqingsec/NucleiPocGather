@@ -2,13 +2,14 @@ id: stopbadbots
 
 info:
   name: >
-    Block Bad Bots and Stop Bad Bots Crawlers and Spiders and Anti Spam Protection < 6.6.7 - Reflected Cross-Site Scripting
+    Block Bad Bots and Stop Bad Bots Crawlers and Spiders and Anti Spam Protection <= 10.24 - Missing Authorization to Information Expsoure
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/507fe5f4-3ac3-4e48-835e-66bad8bffc88?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c77d94ae-528d-4525-b16d-96529bee08c0?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/stopbadbots/"
     google-query: inurl:"/wp-content/plugins/stopbadbots/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,stopbadbots,medium
+  tags: cve,wordpress,wp-plugin,stopbadbots,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 6.67')
+          - compare_versions(version, '<= 10.24')

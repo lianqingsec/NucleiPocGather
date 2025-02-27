@@ -1,18 +1,19 @@
 id: magic-post-thumbnail
 
 info:
-  name: >
-    Magic Post Thumbnail <= 3.3.6 - Reflected Cross-Site Scripting
+  name: "Magic Post Thumbnail <= 3.3.6 - Reflected Cross-Site Scripting"
   author: topscoder
   severity: medium
-  description: >
-    The Magic Post Thumbnail plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘ids’ parameter in versions up to, and including, 3.3.6 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link.
+  description: "The Magic Post Thumbnail plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the ‘ids’ parameter in versions up to, and including, 3.3.6 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/55c586a0-bb91-4702-a9f2-d7503f247da3?source=api-prod
+    - https://ithemes.com/blog/wordpress-vulnerability-report-july-2021-part-2/#ib-toc-anchor-2
+    - https://wpscan.com/vulnerability/0486b15f-1c41-450e-b705-038d7ff102ed
+    - https://wordpress.org/plugins/magic-post-thumbnail/#developers
+    - https://plugins.trac.wordpress.org/changeset?sfp_email=&sfph_mail=&reponame=&old=2557313%40magic-post-thumbnail&new=2557313%40magic-post-thumbnail&sfp_email=&sfph_mail=
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:L/A:N
     cvss-score: 6.1
-    cve-id: 
+    cve-id:
   metadata:
     fofa-query: "wp-content/plugins/magic-post-thumbnail/"
     google-query: inurl:"/wp-content/plugins/magic-post-thumbnail/"

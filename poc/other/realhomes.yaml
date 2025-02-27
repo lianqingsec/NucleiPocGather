@@ -2,13 +2,14 @@ id: realhomes
 
 info:
   name: >
-    RealHomes <= 4.0.2 - Missing Authorization
+    RealHomes <= 4.3.6 - Unauthenticated Privilege Escalation
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3ee6004-03d1-4216-b22e-0aadc1f4d9de?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1540bf3e-2928-476c-8e5b-241b80dd699f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/realhomes/"
     google-query: inurl:"/wp-content/themes/realhomes/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,realhomes,high
+  tags: cve,wordpress,wp-theme,realhomes,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.0.2')
+          - compare_versions(version, '<= 4.3.6')

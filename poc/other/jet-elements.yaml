@@ -2,13 +2,14 @@ id: jet-elements
 
 info:
   name: >
-    Multiple Plugins by Crocoblock <= (Various Versions) - Missing Authorization to Unauthenticated Unauthorized Action
+    JetElements <= 2.6.10 - Authenticated (Contributor+) Remote Code Execution
   author: topscoder
-  severity: high
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7addc83b-cde5-4f91-b286-70db6f384a9f?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/73fca37e-c6cf-420c-b984-3ef89acf3216?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/jet-elements/"
     google-query: inurl:"/wp-content/plugins/jet-elements/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,jet-elements,high
+  tags: cve,wordpress,wp-plugin,jet-elements,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.6.13')
+          - compare_versions(version, '<= 2.6.10')

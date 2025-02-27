@@ -7,23 +7,20 @@ info:
   description: Redis service was detected.
   classification:
     cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 2
     verified: true
+    max-request: 2
     shodan-query: product:"redis"
-  tags: network,redis
-
+  tags: network,redis,detect
 tcp:
   - inputs:
       - data: "*1\r\n$4\r\ninfo\r\n"
 
     host:
       - "{{Hostname}}"
-      - "{{Host}}:6379"
-      - "tls://{Hostname}}"
-      - "tls://{{Host}}:6380"
+      - "tls://{{Hostname}}"
+    port: 6379,6380
     read-size: 1024
 
     matchers:
@@ -33,5 +30,4 @@ tcp:
           - "CONFIG REWRITE"
           - "NOAUTH Authentication"
         condition: or
-
-# Enhanced by md on 2023/02/06
+# digest: 4a0a0047304502200bc9506e22373d4c7518dc473876f7c058ca64ad227eb2734ffbbb1739828e20022100fbe3393100160e628557dde8d0d5272c3607241173e9a48b057c03cebea744b5:922c64590222798bb761d5b6d8e72950

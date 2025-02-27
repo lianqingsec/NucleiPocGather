@@ -1,15 +1,15 @@
-id: turbosmtp-62a84c7e266fe0c3414570c743239650
+id: turbosmtp
 
 info:
   name: >
-    turboSMTP <= 4.6 - Reflected Cross-Site Scripting via 'page'
+    turboSMTP <= 4.6 - Reflected Cross-Site Scripting
   author: topscoder
   severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cca9f71c-42e6-416f-94f2-cb79bbdfc69a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e031dbef-1f7a-4c17-803a-fd467978d7f3?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

@@ -2,13 +2,14 @@ id: extra
 
 info:
   name: >
-    ElegantThemes <= 1.2.3 - Privilege Escalation
+    Elegant Themes (Multiple Versions) - Arbitrary File Upload
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/18b5777c-d176-4214-81ac-b92188704196?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3e03bc79-b42e-4015-8476-2b0488c71028?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/extra/"
     google-query: inurl:"/wp-content/themes/extra/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,extra,low
+  tags: cve,wordpress,wp-theme,extra,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.3')
+          - compare_versions(version, '<= 4.3.2')

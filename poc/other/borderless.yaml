@@ -2,13 +2,14 @@ id: borderless
 
 info:
   name: >
-    Borderless – Widgets, Elements, Templates and Toolkit for Elementor & Gutenberg <= 1.4.8 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    Borderless – Widgets, Elements, Templates and Toolkit for Elementor & Gutenberg <= 1.5.9 - Authenticated (Administrator+) Remote Code Execution
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb93a5f2-9bcf-4b06-aad7-ba36c7dea714?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/643b8b82-c4e1-4b81-a7e0-aee0f9270702?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.8')
+          - compare_versions(version, '<= 1.5.9')

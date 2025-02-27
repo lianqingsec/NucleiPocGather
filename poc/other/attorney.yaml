@@ -2,13 +2,14 @@ id: attorney
 
 info:
   name: >
-    Attorney <= 3 - Missing Authorization to Unauthenticated Arbitrary Content Deletion
+    Attorney <= 3 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7bc875b3-8250-4447-b921-243926849fa2?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/026443b6-4ab5-4f31-8a8d-2019097bde4c?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/themes/attorney/"
     google-query: inurl:"/wp-content/themes/attorney/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,attorney,high
+  tags: cve,wordpress,wp-theme,attorney,medium
 
 http:
   - method: GET

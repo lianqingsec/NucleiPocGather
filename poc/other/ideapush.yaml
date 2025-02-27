@@ -2,13 +2,14 @@ id: ideapush
 
 info:
   name: >
-    IdeaPush <= 8.52 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    IdeaPush <= 8.57 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3673a86c-1e11-45ad-8944-84a38aad53dd?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5811fc63-da34-43cb-ae33-a34a8795bb72?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/ideapush/"
     google-query: inurl:"/wp-content/plugins/ideapush/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ideapush,low
+  tags: cve,wordpress,wp-plugin,ideapush,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 8.52')
+          - compare_versions(version, '<= 8.57')

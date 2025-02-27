@@ -2,13 +2,14 @@ id: mobile-menu
 
 info:
   name: >
-    Titan Framework <= (Various Versions) - Reflected Cross-Site Scripting
+    WP Mobile Menu – The Mobile-Friendly Responsive Menu <= 2.8.4.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Image Alt
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fcae647f-7eed-4ecd-83b8-482b55b86ec9?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7bcbc6b6-ed05-4709-bf05-214418798339?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/mobile-menu/"
     google-query: inurl:"/wp-content/plugins/mobile-menu/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,mobile-menu,medium
+  tags: cve,wordpress,wp-plugin,mobile-menu,low
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.8.2.2')
+          - compare_versions(version, '<= 2.8.4.2')
