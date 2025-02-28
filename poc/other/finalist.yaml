@@ -2,23 +2,22 @@ id: finalist
 
 info:
   name: >
-    Finalist (All Versions) - Cross-Site Scripting
+    Finalist (All Versions) - SQL Injection
   author: topscoder
-  severity: high
+  severity: critical
   description: >
-    
+    The Finalist plugin for WordPress is vulnerable to SQL Injection via the ‘id’ parameter in all known versions due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/30b4b98e-c566-4249-85a4-bfb0b5d5ac5d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b10a4561-1724-4e98-bff2-ca5416b217dc?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H
+    cvss-score: 9.8
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/finalist/"
     google-query: inurl:"/wp-content/plugins/finalist/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,finalist,high
+  tags: cve,wordpress,wp-plugin,finalist,critical
 
 http:
   - method: GET

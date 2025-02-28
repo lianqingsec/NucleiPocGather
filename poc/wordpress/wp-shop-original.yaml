@@ -2,14 +2,13 @@ id: wp-shop-original
 
 info:
   name: >
-    WP Shop <= 3.4.3.18 - Cross-Site Request Forgery to Stored Cross-Site Scripting
+    WP Shop < 3.4.3.16 - SQL Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/115f966d-b0f4-46c0-af05-48dd5bf72098?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/3f4806a3-643e-45b0-953f-6c0628359495?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/wp-shop-original/"
     google-query: inurl:"/wp-content/plugins/wp-shop-original/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-shop-original,medium
+  tags: cve,wordpress,wp-plugin,wp-shop-original,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.4.3.19')
+          - compare_versions(version, '< 3.4.3.16')

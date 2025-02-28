@@ -2,14 +2,14 @@ id: searchpro
 
 info:
   name: >
-    BerqWP <= 1.7.6 - Unauthenticated Arbitrary File Uplaod
+    BerqWP <= 1.7.5 - Unauthenticated Server-Side Request Forgery
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/56465338-f9be-49c5-8125-c6729287d590?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5887cf20-dc15-45be-8573-e893d5367995?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.7.6')
+          - compare_versions(version, '<= 1.7.5')

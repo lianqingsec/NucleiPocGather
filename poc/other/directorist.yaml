@@ -2,14 +2,13 @@ id: directorist
 
 info:
   name: >
-    Directorist – AI-Powered WordPress Business Directory Plugin with Classified Ads Listings <= 8.0.12 - Unauthenticated User Information Exposure
+    Directorist <= 7.5.4 - Authenticated (Subscriber+) Insecure Direct Object Reference to Arbitrary Post Deletion in listing_task
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/0d9817ff-ca56-4941-97bc-f26defe7ddd5?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b47edd57-cac7-463f-88cc-8922f1b34612?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 8.0.12')
+          - compare_versions(version, '<= 7.5.4')

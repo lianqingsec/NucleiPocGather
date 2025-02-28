@@ -1,16 +1,18 @@
 id: accessally
 
 info:
-  name: "AccessAlly < 3.3.2 - Arbitrary Code Execution"
+  name: >
+    AccessAlly <= 3.5.6 - Information Exposure
   author: topscoder
   severity: low
-  description: "The AccessAlly plugin for WordPress is vulnerable to Arbitrary Code Execution in versions before 3.3.2 via the login_error function. This allows unauthenticated attackers to execute code on the server."
+  description: >
+    
   reference:
-
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b4ce6cb2-a02a-4b4c-8887-22ee6115509f?source=api-scan
   classification:
-    cvss-metrics:
-    cvss-score:
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/accessally/"
     google-query: inurl:"/wp-content/plugins/accessally/"
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.3.2')
+          - compare_versions(version, '<= 3.5.6')

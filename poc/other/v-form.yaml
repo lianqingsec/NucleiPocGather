@@ -2,14 +2,14 @@ id: v-form
 
 info:
   name: >
-    VForm <= 3.0.0 - Reflected Cross-Site Scripting
+    Lifetime free Drag & Drop Contact Form Builder for WordPress VForm <= 2.1.5 - Unauthenticated Stored Cross-Site Scripting
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9cac974f-a7d7-47d0-8472-9df7e09e02ca?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/61a63ba6-129a-4ce2-be40-89c2fa44a670?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/v-form/"
     google-query: inurl:"/wp-content/plugins/v-form/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,v-form,medium
+  tags: cve,wordpress,wp-plugin,v-form,high
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.0.0')
+          - compare_versions(version, '<= 2.1.5')

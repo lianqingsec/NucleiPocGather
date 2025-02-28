@@ -2,14 +2,13 @@ id: seo-booster
 
 info:
   name: >
-    SEO Booster <= 3.8.9 - Cross-Site Request Forgery
+    SEO Booster <= 3.7 - Admin+ SQL Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a87c261-5452-48c9-ab4a-2cf6af0fef56?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a7adba0a-2f3b-43d8-b00a-8521dd0c6a2d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/seo-booster/"
     google-query: inurl:"/wp-content/plugins/seo-booster/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,seo-booster,medium
+  tags: cve,wordpress,wp-plugin,seo-booster,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.8.9')
+          - compare_versions(version, '<= 3.7')

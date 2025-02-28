@@ -1,22 +1,21 @@
 id: zoner
 
 info:
-  name: "Zoner - Real Estate <= 4.1 - Cross-Site Scripting"
+  name: "Zoner - Real Estate WordPress Theme < 4.2 - Cross-Site Scripting"
   author: topscoder
-  severity: medium
-  description: "The Zoner - Real Estate theme for WordPress is vulnerable to Multiple Cross-Site Scripting in versions up to, and including, 4.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated and unauthenticated attackers (NOTE: depending on which type of XSS the attacker is performing) to inject arbitrary web scripts that execute in a victim's browser."
+  severity: high
+  description: "The "Zoner - Real Estate WordPress Theme" theme for WordPress is vulnerable to Cross-Site Scripting via the 'Address' field in versions before 4.2 due to insufficient input sanitization and output escaping. This makes it possible for attackers to inject arbitrary web scripts that execute in a victim's browser."
   reference:
-    - https://themeforest.net/item/zoner-real-estate-wordpress-theme/9099226
-    - https://www.cybersecurity-help.cz/vulnerabilities/19039/
+
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N
-    cvss-score: 6.4
+    cvss-metrics:
+    cvss-score:
     cve-id:
   metadata:
-    fofa-query: "wp-content/themes/zoner/"
-    google-query: inurl:"/wp-content/themes/zoner/"
+    fofa-query: "wp-content/unknown/zoner/"
+    google-query: inurl:"/wp-content/unknown/zoner/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,zoner,medium
+  tags: cve,wordpress,wp-theme,zoner,high
 
 http:
   - method: GET
@@ -54,4 +53,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.1')
+          - compare_versions(version, '<= 4.2')

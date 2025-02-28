@@ -2,23 +2,22 @@ id: ht-builder
 
 info:
   name: >
-    HT Builder – WordPress Theme Builder for Elementor <= 1.3.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    HT Builder <= 1.2.9 - Cross-Site Request Forgery via plugin_activation
   author: topscoder
-  severity: low
+  severity: medium
   description: >
-    
+    The HT Builder plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 1.2.9. This is due to missing nonce validation on the plugin_activation() function. This makes it possible for unauthenticated attackers to activate arbitrary plugins, via a forged request granted they can trick a site administrator into performing an action such as clicking on a link.
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5a86958f-b68d-4436-bcc7-d8dc2fc86f47?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/df413b9d-5c22-4276-a11b-4f193c48740d?source=api-prod
   classification:
-    cvss-metrics: 
-    cvss-score: 
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:N/I:L/A:N
+    cvss-score: 4.3
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/ht-builder/"
     google-query: inurl:"/wp-content/plugins/ht-builder/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,ht-builder,low
+  tags: cve,wordpress,wp-plugin,ht-builder,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.3.0')
+          - compare_versions(version, '<= 1.2.9')

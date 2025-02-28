@@ -2,14 +2,13 @@ id: mailmunch
 
 info:
   name: >
-    MailMunch – Grow your Email List <= 3.1.8 - Reflected Cross-Site Scripting
+    MailMunch – Grow your Email List <= 3.1.2 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b1e45860-16c4-4d13-aad9-c742a8eced37?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f6409626-c8cb-412c-aff3-cbb2da212e5d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.1.8')
+          - compare_versions(version, '<= 3.1.2')

@@ -2,14 +2,13 @@ id: custom-404-pro
 
 info:
   name: >
-    Custom 404 Pro <= 3.10.0 - Unauthenticated Stored Cross-Site Scripting via logging
+    Custom 404 Pro <= 3.2.8 - Reflected Cross-Site Scripting
   author: topscoder
-  severity: high
+  severity: medium
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1106e7b2-eac7-459d-8eb3-fe84c76f3b67?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c4aceec4-4832-4d83-98b3-f705c391b0c9?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/custom-404-pro/"
     google-query: inurl:"/wp-content/plugins/custom-404-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,custom-404-pro,high
+  tags: cve,wordpress,wp-plugin,custom-404-pro,medium
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.10.0')
+          - compare_versions(version, '< 3.2.9')

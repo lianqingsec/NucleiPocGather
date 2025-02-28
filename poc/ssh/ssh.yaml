@@ -1,15 +1,13 @@
 id: ssh
 info:
-  name: Syncplify.me Server sftpd
+  name: HP Integrated Lights-Out mpSSH
   author: nmap,cn-kali-team
   tags: detect,tech,ssh,service
   severity: info
   metadata:
-    info: protocol $1
-    product: syncplify.me_server
+    info: protocol 2.0
     rarity: 0
-    vendor: syncplify
-    verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +18,4 @@ tcp:
   - name: ssh
     type: regex
     regex:
-    - ^SSH-([\d.]+)-Syncplify\.me\r\n
+    - ^SSH-2\.0-mpSSH_([\d.]+)\r?\n

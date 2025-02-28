@@ -1,11 +1,13 @@
 id: smtp-proxy
 info:
-  name: Python SMTP Proxy
+  name: SpamFilter for ISP smtpd
   author: nmap,cn-kali-team
   tags: detect,tech,smtp-proxy,service
   severity: info
   metadata:
     hostname: $1
+    info: Unregistered
+    operating_system: Windows
     rarity: 0
     version: $2
 tcp:
@@ -18,4 +20,4 @@ tcp:
   - name: smtp-proxy
     type: regex
     regex:
-    - ^220 ([\w._-]+) Python SMTP proxy version ([\w._-]+)\r\n
+    - ^220 ([-\w_.]+) Welcome SpamFilter for ISP SMTP Server v([\d.]+) - Unlicensed Evaluation Copy\r\n

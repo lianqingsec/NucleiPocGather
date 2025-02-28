@@ -2,14 +2,13 @@ id: page-list
 
 info:
   name: >
-    Page-list <= 5.6 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Page-list <= 5.2 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b9d39796-ad51-4b52-af8a-f3334e6ca68d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/983a5b15-adf7-4f34-bf2a-30857ada2753?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.6')
+          - compare_versions(version, '<= 5.2')

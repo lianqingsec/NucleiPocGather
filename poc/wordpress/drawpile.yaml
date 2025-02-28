@@ -5,12 +5,12 @@ info:
   tags: detect,tech,drawpile,service
   severity: info
   metadata:
-    info: 'protocol 9; flags: $1'
+    info: 'protocol 10; flags: $1'
     product: drawpile
     rarity: 0
     vendor: calle_laakkonen
     verified: true
-    version: 0.8.6
+    version: 0.9.0 - 0.9.1
 tcp:
 - name: 'null'
   inputs:
@@ -21,4 +21,4 @@ tcp:
   - name: drawpile
     type: regex
     regex:
-    - (?i)^..\0DRAWPILE 9 ([A-Z,]+)
+    - (?i)^..\0DRAWPILE 10 ([A-Z,]+)

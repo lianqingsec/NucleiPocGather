@@ -2,14 +2,13 @@ id: arforms
 
 info:
   name: >
-    ARForms - Premium WordPress Form Builder <= 6.4.0 - Reflected Cross-Site Scripting
+    ARForms <= 6.4 - Missing Authorization to Arbitrary Option Deletion
   author: topscoder
-  severity: medium
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b23989c2-6cd7-4e55-b019-324644e7521a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/78c6c5ff-8658-4a3d-be01-2141d1cff8bf?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/arforms/"
     google-query: inurl:"/wp-content/plugins/arforms/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,arforms,medium
+  tags: cve,wordpress,wp-plugin,arforms,high
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.4.0')
+          - compare_versions(version, '<= 6.4')

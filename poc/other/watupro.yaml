@@ -2,14 +2,13 @@ id: watupro
 
 info:
   name: >
-    WatuPRO < 4.9.0.8 - Cross-Site Request Forgery
+    WatuPRO < 5.5.3.7 - SQL Injection
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/48f39d6c-621b-4c78-9459-68bb67a94f57?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d6226ae5-3b75-4521-b060-004f291203c7?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/watupro/"
     google-query: inurl:"/wp-content/plugins/watupro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,watupro,medium
+  tags: cve,wordpress,wp-plugin,watupro,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 4.9.0.8')
+          - compare_versions(version, '< 5.5.3.7')

@@ -2,14 +2,13 @@ id: icon
 
 info:
   name: >
-    Web Icons <= 1.0.0.10 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Web Icons <= 1.0.0.10 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8af960cd-6f39-4ce1-888a-f32f01b833df?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/efe6d975-310d-4286-af2a-e599990e3b0b?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

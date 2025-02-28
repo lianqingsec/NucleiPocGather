@@ -1,21 +1,23 @@
 id: reviewx
 
 info:
-  name: "WooCommerce Reviews Plugin with Multi-criteria Rating by ReviewX < 1.2.9 - Cross-Site Request Forgery"
+  name: >
+    ReviewX <= 1.6.7 - Unauthenticated CSV Injection
   author: topscoder
-  severity: medium
-  description: "The WooCommerce Reviews Plugin with Multi-criteria Rating by ReviewX plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions before 1.2.9. This is due to missing nonce validation in the ~/app/Controllers/Storefront/ReviewxPublic.php file. This makes it possible for unauthenticated attackers to perform unauthorized AJAX actions via a forged request granted they can trick a site administrator into performing an action such as clicking on a link."
+  severity: low
+  description: >
+    
   reference:
-
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cc465757-4295-4a75-90f6-92c4be4e8944?source=api-scan
   classification:
-    cvss-metrics:
-    cvss-score:
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/reviewx/"
     google-query: inurl:"/wp-content/plugins/reviewx/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,reviewx,medium
+  tags: cve,wordpress,wp-plugin,reviewx,low
 
 http:
   - method: GET
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.9')
+          - compare_versions(version, '<= 1.6.7')

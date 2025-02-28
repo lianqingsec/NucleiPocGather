@@ -2,14 +2,13 @@ id: jet-blocks
 
 info:
   name: >
-    Multiple Plugins by Crocoblock <= (Various Versions) - Cross-Site Request Forgery
+    JetBlocks For Elementor <= 1.3.8 - Reflected Cross Site Scripting
   author: topscoder
-  severity: medium
+  severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1c85e5e0-d8ee-46d3-99b1-df6c6744f020?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/2614ca26-6efc-49f5-8cee-5b078721acc1?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/jet-blocks/"
     google-query: inurl:"/wp-content/plugins/jet-blocks/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,jet-blocks,medium
+  tags: cve,wordpress,wp-plugin,jet-blocks,low
 
 http:
   - method: GET

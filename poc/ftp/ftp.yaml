@@ -1,11 +1,11 @@
 id: ftp
 info:
-  name: Novonyx ftpd
+  name: FreeBSD ftpd
   author: nmap,cn-kali-team
   tags: detect,tech,ftp,service
   severity: info
   metadata:
-    operating_system: NetWare
+    operating_system: FreeBSD
     rarity: 0
     version: $1
 tcp:
@@ -18,4 +18,4 @@ tcp:
   - name: ftp
     type: regex
     regex:
-    - ^220-  Novonyx FTP Server for NetWare, v([\d.]+) \(
+    - ^220  FTP server \(Version ([\w.]+)\) ready\.\r\n

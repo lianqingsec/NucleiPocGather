@@ -5,6 +5,7 @@ info:
   tags: detect,tech,modbus,service
   severity: info
   metadata:
+    info: gateway
     rarity: 1
 tcp:
 - name: get-request
@@ -17,4 +18,4 @@ tcp:
   - name: modbus
     type: regex
     regex:
-    - ^GE\0\0\0\x03H\xd4[\x01-\x03]
+    - ^GET [\0/]\x03H\xd4[\x0a-\x0b]

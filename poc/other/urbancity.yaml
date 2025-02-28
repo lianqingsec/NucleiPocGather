@@ -1,16 +1,18 @@
 id: urbancity
 
 info:
-  name: "Urban City (All Versions) - Arbitrary File Download"
+  name: >
+    Urban City (All Versions) - Arbitrary File Download
   author: topscoder
   severity: medium
-  description: "The Urban City theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the download.php file. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible."
+  description: >
+    The Urban City theme for WordPress is vulnerable to arbitrary file uploads due to missing file type validation in the download.php file. This makes it possible for unauthenticated attackers to upload arbitrary files on the affected site's server which may make remote code execution possible.
   reference:
-    - https://packetstormsecurity.com/files/128185/
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/9f70f3d2-c267-4802-9a54-4f64c4507dba?source=api-prod
   classification:
     cvss-metrics: CVSS:3.1/AV:L/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
     cvss-score: 6.2
-    cve-id:
+    cve-id: 
   metadata:
     fofa-query: "wp-content/themes/urbancity/"
     google-query: inurl:"/wp-content/themes/urbancity/"
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '>0')
+          - compare_versions(version, '<= *')

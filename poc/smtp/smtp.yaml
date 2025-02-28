@@ -1,12 +1,12 @@
 id: smtp
 info:
-  name: Novonyx Novell NetMail smtpd
+  name: Novell GroupWise
   author: nmap,cn-kali-team
   tags: detect,tech,smtp,service
   severity: info
   metadata:
     hostname: $1
-    product: netmail
+    product: groupwise
     rarity: 0
     vendor: novell
     verified: true
@@ -21,4 +21,4 @@ tcp:
   - name: smtp
     type: regex
     regex:
-    - '^220 ([-.+\w]+) Novonyx SMTP ready \$Re..sion: *([\d.]+) *\$\r\n'
+    - ^220 ([-.+\w]+) GroupWise Internet Agent (\S+) .*Novell, Inc\..*\r\n

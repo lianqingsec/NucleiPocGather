@@ -5,11 +5,12 @@ info:
   tags: detect,tech,mysql,service
   severity: info
   metadata:
-    info: unauthorized; French
-    product: mysql
+    operating_system: Linux
+    product: mariadb
     rarity: 0
-    vendor: mysql
+    vendor: mariadb
     verified: true
+    version: $1
 tcp:
 - name: 'null'
   inputs:
@@ -20,4 +21,4 @@ tcp:
   - name: mysql
     type: regex
     regex:
-    - ^.\0\0\0\xff..Le h\xf4te '[-.\w]+' n'est pas authoris\xe9 \xe0 se connecter \xe0 ce serveur MySQL$
+    - (?i)^.\0\0\0\x0a(5\.[-_~.+:\w]+MariaDB-[-_~.+:\w]+~bionic)\0

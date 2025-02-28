@@ -2,14 +2,13 @@ id: wpdiscuz
 
 info:
   name: >
-    wpDiscuz <= 7.6.10 - Insufficient Authorization to Comment Submission on Deleted Posts
+    Comments - wpDiscuz <= 7.3.0 - Authenticated Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/4a1fe36b-75d2-48c3-bfac-af965eb9363f?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/afbf555a-1b70-4966-9b05-46e9de04e660?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 7.6.10')
+          - compare_versions(version, '<= 7.3.0')

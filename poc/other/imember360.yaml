@@ -2,14 +2,13 @@ id: imember360
 
 info:
   name: >
-    iMember360 < 3.9.001 - Missing Authorization and Sensitive Data Exposure
+    iMember360 3.8.012 - 3.9.001 - Remote Code Execution
   author: topscoder
-  severity: high
+  severity: critical
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ffffedb4-633a-4490-98f1-9bc827c8ba1c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/509097ae-5b20-4e91-9d82-cc6e3b64e518?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/imember360/"
     google-query: inurl:"/wp-content/plugins/imember360/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,imember360,high
+  tags: cve,wordpress,wp-plugin,imember360,critical
 
 http:
   - method: GET
@@ -56,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 3.9.001')
+          - compare_versions(version, '>= 3.8.012', '<= 3.9.001')

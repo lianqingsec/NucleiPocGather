@@ -2,14 +2,13 @@ id: vslider
 
 info:
   name: >
-    vSlider Multi Image Slider <= 4.1.2 - Authenticated (Contributor+) Stored Cross-Site Scripting via Shortcode
+    vSlider Multi Image Slider <= 4.1.2 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/72a2449c-4292-45e6-bfe8-106f8043fcad?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f0c7324f-4c22-44e0-8d2a-9b95fd89467d?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +17,7 @@ info:
     fofa-query: "wp-content/plugins/vslider/"
     google-query: inurl:"/wp-content/plugins/vslider/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,vslider,low
+  tags: cve,wordpress,wp-plugin,vslider,high
 
 http:
   - method: GET

@@ -1,23 +1,20 @@
 id: tftp
 info:
-  name: Cisco tftpd
+  name: Enistic zone controller tftpd
   author: nmap,cn-kali-team
   tags: detect,tech,tftp,service
   severity: info
   metadata:
-    product: tftp_server
-    rarity: 5
-    vendor: cisco
-    verified: true
+    rarity: 6
 tcp:
-- name: dnsstatus-request
+- name: xdmcp
   inputs:
-  - data: \0\0\x10\0\0\0\0\0\0\0\0\0
+  - data: \0\x01\0\x02\0\x01\0
   host:
   - '{{Hostname}}'
-  port: 53,69,135,1761,26198
+  port: '177'
   extractors:
   - name: tftp
     type: regex
     regex:
-    - ^\0\x05\0\0Invalid TFTP Opcode
+    - ^\0\x05\0\x01File not found\.\0$

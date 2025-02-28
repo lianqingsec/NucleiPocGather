@@ -1,16 +1,18 @@
 id: ppc-fraud-detctor
 
 info:
-  name: "PPC Tracker WordPress <= 2.0 - Stored Cross-Site Scripting via IP"
+  name: >
+    PPC Tracker WordPress <= 2.0 - Stored Cross-Site Scripting via IP
   author: topscoder
   severity: high
-  description: "The PPC Tracker WordPress plugin for WordPress is vulnerable to Stored Cross-Site Scripting via spoofed IP addresses in versions up to, and including, 2.0."
+  description: >
+    
   reference:
-
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b1c27c27-f597-4867-a8d8-a83a3a1bf5f6?source=api-scan
   classification:
-    cvss-metrics:
-    cvss-score:
-    cve-id:
+    cvss-metrics: 
+    cvss-score: 
+    cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/ppc-fraud-detctor/"
     google-query: inurl:"/wp-content/plugins/ppc-fraud-detctor/"
@@ -53,4 +55,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<=  2.0')
+          - compare_versions(version, '<= 2.0')
