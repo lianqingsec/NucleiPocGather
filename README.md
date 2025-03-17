@@ -4,18 +4,18 @@ NucleiPocGather，每日更新
 这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub Action 每日自动运行脚本。
 # POC 详情统计
 
-> **当前项目 POC 更新时间：**`2025-03-16 13:17`
+> **当前项目 POC 更新时间：**`2025-03-17 13:23`
 
 | ID | 标签      | 数量 | 目录       | 数量 | 严重性   | 数量 |
 |:---| :-------- | :--- | :--------- | :--- | :------- | :--- |
-| 1 | cve | 36262 | cve | 30631 | info | 21629 |
-| 2 | wordpress | 32277 | other | 25969 | medium | 20745 |
-| 3 | wp-plugin | 29986 | wordpress | 1517 | high | 13216 |
-| 4 | tech | 15723 | auth | 1393 | low | 8829 |
-| 5 | detect | 14860 | detect | 1287 | critical | 6937 |
+| 1 | cve | 36270 | cve | 30640 | info | 21629 |
+| 2 | wordpress | 32277 | other | 25968 | medium | 20745 |
+| 3 | wp-plugin | 29986 | wordpress | 1517 | high | 13218 |
+| 4 | tech | 15723 | auth | 1394 | low | 8829 |
+| 5 | detect | 14860 | detect | 1287 | critical | 6944 |
 | 6 | medium | 14668 | remote_code_execution | 1201 | unknown | 90 |
 | 7 | service | 11681 | sql_injection | 910 | informative | 16 |
-| 8 | low | 7421 | default | 864 | hight | 16 |
+| 8 | low | 7421 | default | 863 | hight | 16 |
 | 9 | high | 6004 | exposed | 763 | meduim | 5 |
 | 10 | http | 4354 | api | 698 | cretical | 2 |
 
