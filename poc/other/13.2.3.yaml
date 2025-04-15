@@ -1,19 +1,16 @@
-id: ASVS-4-0-3-V14-5-2
+id: ASVS-4-0-3-V13-2-3
 
 info:
-  name: ASVS 14.5.2 Check
-  author: Hamed Salimian
-  severity: low
+  name: ASVS 13.2.3 Check
+  author: Masoud Abdaal
+  severity: medium
   classification:
-    cwe-id: CWE-346
+    cwe-id: CWE-352
   reference:
-    - https://snbig.github.io/Vulnerable-Pages/ASVS_14_5_2/
-  tags: asvs,14.5.2
+    - https://github.com/OWASP/ASVS/blob/master/4.0/en/0x21-V13-API.md#v132-restful-web-service
+  tags: asvs,13.2.3
   description: |
-    Verify that the supplied Origin header is not used for authentication or access control decisions, as the Origin header can easily be changed by an attacker.
-
-variables:
-  forbidden_status_code: 403
+     Verify that RESTful web services that utilize cookies are protected from Cross-Site Request Forgery via the use of at least one or more of the following: double submit cookie pattern, CSRF nonces, or Origin request header checks
 
 http:
   - raw:
@@ -46,4 +43,4 @@ http:
         dsl:
           - status_code < 210 && status_code >= 200
           - to_number(forbidden_status_code) != status_code
-# digest: 4b0a00483046022100dee307ac580c08c30516144b38c8f4ea9d17d0406f1a6b2365fb23f7b5b3f476022100effd3e26b9477bf834811cc0d8d1d231f3a36adf25c6ae2a492d403649db76b0:236a7c23afe836fbe231d6e037cff444
+# digest: 490a00463044022050741006143f221ad95a93394da23c3bd73610d9f22873f039394a22c85958b602205cf0afc9b7f7a0628148c24168902290446034a0a136daab47024b7cd8750ef8:236a7c23afe836fbe231d6e037cff444
