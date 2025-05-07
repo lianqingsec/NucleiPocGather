@@ -1,9 +1,12 @@
 id: couchdb-adminparty
+
 info:
-  name: couchdb admin party
+  name: CouchDB Admin Party
   author: organiccrap
   severity: high
-  # commonly runs on port 5984/http
+  description: Requests made against CouchDB is done in the context of an admin user.
+  tags: couchdb
+
 requests:
   - method: GET
     path:

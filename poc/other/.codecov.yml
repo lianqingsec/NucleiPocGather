@@ -1,8 +1,7 @@
 coverage:
+  round: nearest
   status:
     project:
       default:
-        target: 40%
-        threshold: null
+        threshold: 1
     patch: false
-    changes: false

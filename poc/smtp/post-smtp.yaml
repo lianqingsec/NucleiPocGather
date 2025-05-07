@@ -1,7 +1,7 @@
 id: wordpress-post-smtp
 
 info:
-  name: POST SMTP – The #1 WordPress SMTP Plugin with Advanced Email Logging and Delivery Failure Notifications Detection
+  name: Post SMTP Mailer/Email Log – Best Mail SMTP For WP Detection
   author: ricardomaia
   severity: info
   reference:
@@ -11,7 +11,7 @@ info:
     wpscan: https://wpscan.com/plugin/post-smtp
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
 
     path:

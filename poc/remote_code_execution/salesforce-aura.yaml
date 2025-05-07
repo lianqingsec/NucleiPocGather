@@ -4,9 +4,8 @@ info:
   name: Detect the exposure of Salesforce Lightning aura API
   author: aaron_costello (@ConspiracyProof)
   severity: info
-  reference:
-    - https://www.enumerated.de/index/salesforce
-  tags: aura,unauth,salesforce,exposure
+  reference: https://www.enumerated.de/index/salesforce
+  tags: aura,unauth,salesforce
 
 requests:
   - method: POST
@@ -19,6 +18,6 @@ requests:
 
     matchers:
       - type: word
-        part: body
         words:
           - 'aura:invalidSession'
+        part: body
