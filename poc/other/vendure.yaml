@@ -18,4 +18,3 @@ http:
   - type: word
     words:
     - vendure
-    case-insensitive: true
