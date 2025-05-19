@@ -15,6 +15,7 @@ http:
       - "{{BaseURL}}/_vti_pvt/service.pwd"
       - "{{BaseURL}}_vti_pvt/administrators.pwd"
       - "{{BaseURL}}_vti_pvt/authors.pwd"
+
     matchers-condition: and
     matchers:
       - type: word
