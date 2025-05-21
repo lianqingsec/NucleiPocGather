@@ -1,9 +1,9 @@
-id: Slash-Url-Redirection
+id: slash-url-redirection
 
 info:
   name: Slash Url Redirection
   author: SirBugs
-  severity: low
+  severity: medium
   description: |
     This template checks for a URL redirection vulnerability By adding "////" after the affected domain and then the website.
     where an attacker can redirect users to a malicious website using a specially crafted URL.
