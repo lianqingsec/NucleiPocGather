@@ -12,7 +12,6 @@ http:
   - method: GET
     path:
       - "{{BaseURL}}/public/index.php"
-      - "{{BaseURL}}:3000/public/index.php"
 
     matchers-condition: and
     matchers:

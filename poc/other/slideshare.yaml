@@ -1,24 +1,44 @@
 id: slideshare
 
 info:
-  name: Slideshare User Name Information - Detect
-  author: dwisiswant0
-  severity: info
-  description: Slideshare user name information check was conducted.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
-  metadata:
-    max-request: 1
-  tags: osint,osint-social,slideshare
+  name: "SlideShare for WordPress by Yoast <= 1.9.1 - Admin+ Cross-Site Scripting"
+  author: topscoder
+  severity: high
+  description: "The SlideShare for WordPress by Yoast plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the $id variable in versions up to, and including, 1.9.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with administrative level capabilities, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+  reference:
 
-self-contained: true
+  classification:
+    cvss-metrics:
+    cvss-score:
+    cve-id:
+  metadata:
+    fofa-query: "wp-content/plugins/slideshare/"
+    google-query: inurl:"/wp-content/plugins/slideshare/"
+    shodan-query: 'vuln:'
+  tags: cve,wordpress,wp-plugin,slideshare,high
 
 http:
   - method: GET
+    redirects: true
+    max-redirects: 3
     path:
-      - "https://www.slideshare.net/{{user}}"
+      - "{{BaseURL}}/wp-content/plugins/slideshare/readme.txt"
+
+    extractors:
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        internal: true
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -27,8 +47,10 @@ http:
           - 200
 
       - type: word
-        part: body
         words:
-          - "photo user-photo"
+          - "slideshare"
+        part: body
 
-# digest: 4a0a00473045022100ce6eb7dc53e380dc98128bfec6585f9609c09e085b2ca590b78fee858b65a459022057c5db154cfe72e7fdd8e9b9de0a2b97007942cd00deea4fa822253d957e0c7c:922c64590222798bb761d5b6d8e72950
+      - type: dsl
+        dsl:
+          - compare_versions(version, '<=  1.9.1')
