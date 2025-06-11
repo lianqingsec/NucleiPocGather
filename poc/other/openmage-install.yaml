@@ -9,7 +9,7 @@ info:
     shodan-query: title:"OpenMage Installation Wizard"
   tags: misconfig,openmage,install,exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/index.php/install/"

@@ -1,14 +1,22 @@
 id: atlassian-crowd-panel
+
 info:
   name: Atlassian Crowd panel detect
   author: organiccrap
-  severity: low
+  severity: info
+  tags: panel
+
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/crowd/console/login.action'
-    headers:
-      User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /crowd/console/login.action HTTP/1.1
+        Host: {{Subdomains}}
+    matchers-condition: and
     matchers:
       - type: word
         words:

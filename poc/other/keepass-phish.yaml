@@ -8,8 +8,9 @@ info:
     A keepass phishing website was detected
   reference:
     - https://keepass.info
+  metadata:
+    max-request: 1
   tags: phishing,keepass,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"keepass.info")'
-# digest: 490a004630440220175e90ff9879f96b1fd8db60ba9b28ce25f4762066560a54916d1f382b5e7f27022011ad515c20bddefc3e8585da4a8e9aeeb4940e03dea5d5991db67feaad8f074b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022033b4bbf493ca8f7038d5e34f141c22bba01ed82f5092140fb72ebd45e7befd3e022100d3f2a434bd338d407770b3dc9a07f7685557bc337f6a9638b60b004660c0764b:922c64590222798bb761d5b6d8e72950

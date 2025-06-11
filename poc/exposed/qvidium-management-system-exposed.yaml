@@ -9,7 +9,7 @@ info:
     shodan-query: html:"QVidium Management"
   tags: misconfig,qvidium
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

@@ -11,8 +11,8 @@ info:
     - https://developers.cloudflare.com/speed/optimization/content/rocket-loader/enable/
     - https://developers.cloudflare.com/fundamentals/reference/policies-compliances/content-security-policies/#product-requirements
   metadata:
-    verified: true
     max-request: 1
+    verified: true
   tags: misconfig,cloudflare,htmli
 
 http:

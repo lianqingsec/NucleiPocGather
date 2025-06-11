@@ -9,7 +9,7 @@ info:
     shodan-query: title:"LinkTap Gateway"
   tags: misconfig,linktap,iot,exposure
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

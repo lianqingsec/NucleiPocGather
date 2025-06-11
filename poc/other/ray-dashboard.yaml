@@ -9,7 +9,7 @@ info:
     shodan-query: title:"Ray Dashboard"
   tags: misconfig,exposure,ray
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

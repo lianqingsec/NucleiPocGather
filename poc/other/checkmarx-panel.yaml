@@ -4,13 +4,18 @@ info:
   name: Checkmarx WebClient detector
   author: joanbono
   severity: info
-  tags: panel,checkmarx
+  tags: panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/cxwebclient/Login.aspx"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET /cxwebclient/Login.aspx HTTP/1.1
+        Host: {{Subdomains}}
     matchers:
       - type: word
         words:

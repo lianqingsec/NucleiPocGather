@@ -4,11 +4,18 @@ info:
   name: Cisco ASA VPN panel detect
   author: organiccrap
   severity: info
+  tags: cisco,panel
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/+CSCOE+/logon.html"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /+CSCOE+/logon.html HTTP/1.1
+        Host: {{Subdomains}}
     matchers:
       - type: word
         words:

@@ -7,19 +7,18 @@ info:
   reference:
     - https://wordpress.org/plugins/php-compatibility-checker/
   metadata:
-    max-request: 1
     plugin_namespace: php-compatibility-checker
     wpscan: https://wpscan.com/plugin/php-compatibility-checker
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
 
     path:
       - "{{BaseURL}}/wp-content/plugins/php-compatibility-checker/readme.txt"
 
     payloads:
-      last_version: helpers/wordpress/plugins/php-compatibility-checker.txt
+      last_version: ../../../helpers/wordpress/plugins/php-compatibility-checker.txt
 
     extractors:
       - type: regex

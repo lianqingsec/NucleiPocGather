@@ -9,7 +9,7 @@ info:
     shodan-query: html:"sendgrid.env"
   tags: exposure,sendgrid,key,api,files
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/sendgrid.env"

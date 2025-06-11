@@ -9,7 +9,7 @@ info:
     shodan-query: title:"phpMemcachedAdmin"
   tags: phpmemcached,exposure,misconfig
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

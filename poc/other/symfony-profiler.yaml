@@ -4,12 +4,19 @@ info:
   name: Symfony Profiler
   author: pdteam
   severity: high
-  tags: config,exposure,symfony
+  tags: config,exposure
 
 requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/_profiler/empty/search/results?limit=10"
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
+
+    raw:
+      - |
+        GET /_profiler/empty/search/results?limit=10 HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers:
       - type: word
         words:

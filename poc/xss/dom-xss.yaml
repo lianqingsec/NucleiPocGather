@@ -1,11 +1,17 @@
 id: dom-xss
 
 info:
-  name: DOM XSS Sources & Sinks
-  reference: https://portswigger.net/blog/introducing-dom-invader
+  name: DOM Invader - Cross-Site Scripting
   author: geeknik
-  severity: info
-  tags: dom,xss
+  severity: high
+  description: DOM Invader contains a cross-site scripting vulnerability in Sources & Sinks functionality.
+  reference:
+    - Inspired by https://portswigger.net/blog/introducing-dom-invader
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N
+    cvss-score: 7.2
+    cwe-id: CWE-79
+  tags: xss,file
 
 file:
   - extensions:
@@ -22,7 +28,7 @@ file:
         name: sink
         part: body
         regex:
-          - 'jQuery(\.globalEval|\.\$|\..constructor|\.parseHTML|\.has|\.init|\.index|\.add|\.append|\.appendTo|\.after|\.insertAfter|\.before|\.insertBefore|\.html|\.prepend|\.prependTo|\.replaceWith|\.replaceAll|\.wrap|\.wrapALL|\.wrapInner|\.prop\.innerHTML|\.prop\.outerHTML|\.attr\.onclick|\.attr\.onmouseover|\.attr.onmousedown|\.attr\.onmouseup|\.attr\.onkeydown|\.attr\.onkeypress|\.attr\.onkeyup|\.attr\.href|\.attr\.src|\.attr\.data|\.attr\.action|\.attr\.formaction|\.prop\.href|\.prop\.src|\.prop\.data|\.prop\.action|\.prop\.formaction)'
+          - 'jQuery(\.globalEval|\.\$|\.constructor|\.parseHTML|\.has|\.init|\.index|\.add|\.append|\.appendTo|\.after|\.insertAfter|\.before|\.insertBefore|\.html|\.prepend|\.prependTo|\.replaceWith|\.replaceAll|\.wrap|\.wrapALL|\.wrapInner|\.prop\.innerHTML|\.prop\.outerHTML|\.attr\.onclick|\.attr\.onmouseover|\.attr.onmousedown|\.attr\.onmouseup|\.attr\.onkeydown|\.attr\.onkeypress|\.attr\.onkeyup|\.attr\.href|\.attr\.src|\.attr\.data|\.attr\.action|\.attr\.formaction|\.prop\.href|\.prop\.src|\.prop\.data|\.prop\.action|\.prop\.formaction)'
           - 'eval|Function|execScript|msSetImmediate|fetch(\.body)?|form\.action|websocket|RegExp|javascriptURL|createContextualFragment|webdatabase\.executeSql|JSON\.parse'
           - 'fetch(\.body)?'
           - 'history(\.pushState|\.replaceState)'
@@ -43,3 +49,5 @@ file:
           - 'location(\.href|\.hash|\.search|\.pathname)?'
           - 'window\.name'
           - 'document(\.URL|\.referrer|\.documentURI|\.baseURI|\.cookie)'
+
+# Enhanced by mp on 2022/09/14

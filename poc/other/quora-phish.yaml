@@ -8,8 +8,9 @@ info:
     A quora phishing website was detected
   reference:
     - https://quora.com
+  metadata:
+    max-request: 1
   tags: phishing,quora,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"quora.com")'
-# digest: 490a0046304402203422d1f3d4dd74cee0f0319aa3177ed21ceea3480d84141627c494aedac2660d02201d99f64d16184fde5a826066797a30a35a59692cbf1d638e62774b65d97cc223:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100d861c477cdcd7a5b27f313b389331fe8db1d668068335810c6a67b1f1d172492022100cb48dce8575b935f344fe6df65c5e405f8ffe6d50e671f8c4aa9eca22637842f:922c64590222798bb761d5b6d8e72950
