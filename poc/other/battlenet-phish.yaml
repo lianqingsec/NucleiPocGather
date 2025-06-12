@@ -8,8 +8,9 @@ info:
     A battlenet phishing website was detected
   reference:
     - https://eu.account.battle.net/login
+  metadata:
+    max-request: 1
   tags: phishing,battlenet,osint
-
 http:
   - method: GET
     path:
@@ -32,4 +33,4 @@ http:
         dsl:
           - '!contains(host,"battle.net")'
           - '!contains(host,"blizzard.com")'
-# digest: 490a0046304402203bea3c1dd9fb63a61a832a03324af28b099a5161e5933dd946fa0e3dffb763fc02200c5fe17b1d60b1a2ab16cb1c9a65f2770c75b9d66a2bf996e85575858e59164e:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100aac9139d0c1b40c36d60b94e6595a85db4d22ca434352dc21dcde830b13f0e5502210093e178c6113f9fb56d1ad79c9e35c4ccb49b2f953e09f8cef38765bfa81d14d8:922c64590222798bb761d5b6d8e72950
