@@ -1,38 +1,15 @@
+# info to search signature
 id: php-debug-bar
 info:
   name: PHP Debug bar
-  author: dhiyaneshDk
-  severity: high
-  tags: debug,logs,exposure
+  risk: High
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    redirect: true
+    url: >-
+      {{.BaseURL}}/_debugbar/open?max=20&offset=0
+    detections:
+      - >-
+        StatusCode() == 200 && StringSearch("response", '{"id":"')
 
-    raw:
-      - |
-        GET /_debugbar/open?max=20&offset=0 HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-
-      - type: word
-        words:
-          - '"id":"'
-          - '"datetime":'
-          - '"method"'
-        condition: and
-        part: body
-
-      - type: word
-        words:
-          - "application/json"
-        part: header

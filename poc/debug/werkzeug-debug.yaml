@@ -3,7 +3,7 @@ id: werkzeug-debug
 info:
   name: werkzeug-debug
   author: notnotnotveg
-  severity: info
+  severity: informative
 
 requests:
   - method: GET

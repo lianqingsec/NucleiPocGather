@@ -2,13 +2,14 @@ id: wp-gotowebinar
 
 info:
   name: >
-    WP GoToWebinar <= 14.45 - Authenticated (Administrator+) Stored Cross-Site Scripting via settings
+    WP GoToWebinar <= 15.6 - Missing Authorization
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e40f07b5-9e6e-430b-86fc-3bb863a51b01?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8314f607-5904-4da8-b2a2-5d77e2edc764?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/wp-gotowebinar/"
     google-query: inurl:"/wp-content/plugins/wp-gotowebinar/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-gotowebinar,low
+  tags: cve,wordpress,wp-plugin,wp-gotowebinar,high
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 14.45')
+          - compare_versions(version, '<= 15.6')

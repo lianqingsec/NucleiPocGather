@@ -8,9 +8,8 @@ info:
     A royal-mail phishing website was detected
   reference:
     - https://royalmail.com
-  metadata:
-    max-request: 1
   tags: phishing,royal-mail,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"royalmail.com")'
-# digest: 4a0a00473045022100be34b7133ac6cc634dad6fa8cd715bb5157bf97c3465891dcffae3172cc4f58d02202bc6208e0daa3458168202a37bec563f2f9dcd07cb5977f555278ffdd659c737:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502207843293b4946801357abd4fd97bded6dad9cdd9b2e80b6380477da2c5a68d621022100b424546ce06fd289bc4398aa991c80d180071883b279253bc257e6a2398c0d78:922c64590222798bb761d5b6d8e72950

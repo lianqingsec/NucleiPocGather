@@ -1,22 +1,23 @@
 id: terramaster-login
 
 info:
-  name: TerraMaster Login Panel
+  name: Terramaster Login Panel - Detect
   author: gy741
   severity: info
-  tags: panel,terramaster
+  description: Terramaster login panel was detected.
+  classification:
+    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
+  tags: panel,terramaster,login
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
-    raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko)
     matchers-condition: or
     matchers:
       - type: word
@@ -30,3 +31,5 @@ requests:
           - "X-Powered-By: TerraMaster"
         condition: or
         part: header
+
+# digest: 490a0046304402207b416b4cc0f5d78722b54ea970169a8e22bb8d22554515f6024222b2287f41bf0220468c35a932628d4655b3314074aacca51dcee81a93fce39f1a2532279a23f7a1:922c64590222798bb761d5b6d8e72950

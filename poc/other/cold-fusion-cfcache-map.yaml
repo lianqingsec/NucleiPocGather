@@ -2,24 +2,20 @@ id: cold-fusion-cfcache-map
 
 info:
   name: Discover Cold Fusion cfcache.map Files
-  reference: https://securiteam.com/windowsntfocus/5bp081f0ac/
   author: geeknik
   severity: low
-  tags: exposure,coldfusion,adobe
+  reference:
+    - https://securiteam.com/windowsntfocus/5bp081f0ac/
+  metadata:
+    max-request: 1
+    shodan-query: http.component:"Adobe ColdFusion"
+  tags: exposure,coldfusion,adobe,files
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/cfcache.map"
 
-    raw:
-      - |
-        GET /cfcache.map HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
       - type: word
@@ -31,3 +27,5 @@ requests:
       - type: status
         status:
           - 200
+
+# digest: 4b0a00483046022100d9ad28f3fcc7ddf07ffdd737a6c13baf4ff5c05cfb1ddfb78af4623642fd1cc3022100c6db64db229bde0e5a54a66ac71a63ea89f1ad0825820506273e09fde155febf:922c64590222798bb761d5b6d8e72950

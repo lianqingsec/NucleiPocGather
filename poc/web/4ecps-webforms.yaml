@@ -2,13 +2,14 @@ id: 4ecps-webforms
 
 info:
   name: >
-    4ECPS Web Forms <= 0.2.17 - Authenticated (Administrator+) Stored Cross-Site Scripting
+    4ECPS Web Forms <= 0.2.18 - Unauthenticated Arbitrary File Upload
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/550fcbbd-254d-4b3c-a240-8afcf9f6937e?source=api-scan
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/b771199e-937f-46d5-9906-4cbbbcd748cd?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -17,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/4ecps-webforms/"
     google-query: inurl:"/wp-content/plugins/4ecps-webforms/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,4ecps-webforms,low
+  tags: cve,wordpress,wp-plugin,4ecps-webforms,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 0.2.17')
+          - compare_versions(version, '<= 0.2.18')

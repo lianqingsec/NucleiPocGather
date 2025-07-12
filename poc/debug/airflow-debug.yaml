@@ -4,24 +4,19 @@ info:
   name: Airflow Debug Trace
   author: pdteam
   severity: low
-  tags: apache,airflow,fpd
+  metadata:
+    verified: true
+    max-request: 1
+    shodan-query: title:"Airflow - DAGs"
+  tags: apache,airflow,fpd,misconfig
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/admin/airflow/login"
 
-    raw:
-      - |
-        GET /admin/airflow/login HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
     matchers-condition: and
     matchers:
-
       - type: word
         part: body
         words:
@@ -32,3 +27,5 @@ requests:
       - type: status
         status:
           - 500
+
+# digest: 4b0a00483046022100b0ea0db6c142be41661edcaf91e3bb8d88c6132645bbf40c5e4697385296b834022100f8a1945ee062c86ee2c263742a596de6b4c2fea61711a88cfb27ccf78026d656:922c64590222798bb761d5b6d8e72950

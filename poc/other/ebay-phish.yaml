@@ -8,9 +8,8 @@ info:
     A ebay phishing website was detected
   reference:
     - https://ebay.com
-  metadata:
-    max-request: 1
   tags: phishing,ebay,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"ebay.com")'
-# digest: 490a0046304402200914241c16d74273105ddcbb395237308ab9582f63a7a6b40177aec67c116de2022043f49bf2b706761b8363b03329d6cebba15924980d40d4d16feae3cda0c555e0:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200a670e62c7204a5bf659e564abd9f1a198f3ad0fa1f42abf8b1ef2b827f64479022100a687a998ad104ebda14363e512d103ce127b28d559c9a5c48b4b61a2e58d97ca:922c64590222798bb761d5b6d8e72950

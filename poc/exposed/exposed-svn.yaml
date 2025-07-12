@@ -1,22 +1,23 @@
 id: exposed-svn
 
 info:
-  name: Exposed SVN Directory
+  name: SVN Configuration - Detect
   author: udit_thakkur,dwisiswant0
   severity: medium
+  description: SVN configuration was detected.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:L/I:N/A:N
+    cvss-score: 5.3
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
   tags: config,exposure,svn
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/.svn/entries"
 
-    raw:
-      - |
-        GET /.svn/entries HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers-condition: and
     matchers:
       - type: regex
@@ -32,3 +33,5 @@ requests:
         part: header
         words:
           - "text/plain"
+
+# digest: 490a00463044022005396383a0f6f9d24fe35d0f3efbae1bd4f4462c98c3afa66e54576a7d185a38022051a53f8ba6064ade4a69b39f3717bd47017f1d5d9220dfa53ce3c016435c8a09:922c64590222798bb761d5b6d8e72950

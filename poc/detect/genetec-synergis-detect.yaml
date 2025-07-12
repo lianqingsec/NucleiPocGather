@@ -17,22 +17,14 @@ http:
     path:
       - "{{BaseURL}}/System/FirmwareVersion"
 
-    matchers-condition: and
+    extractors:
+      - type: regex
+        name: version
+        group: 1
+        regex:
+          - "<Version>([\\d\\.]+)</Version>"
+
     matchers:
       - type: status
         status:
           - 200
-
-      - type: word
-        part: body
-        condition: and
-        words:
-          - "<Version>"
-          - "<Response>"
-          - "<BuildDate>"
-
-    extractors:
-      - type: regex
-        group: 1
-        regex:
-          - "<Version>([\\d\\.]+)</Version>"
