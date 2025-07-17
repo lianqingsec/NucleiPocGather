@@ -1,4 +1,4 @@
-name: 🔄 Sync & Alert on new Nuclei templates
+name: 🔄 Sync & Alert
 
 on:
   push:
@@ -41,7 +41,7 @@ jobs:
         id: detect
         run: |
           git diff --name-status origin/main..upstream/main \
-            | awk '($1=="A"||$1=="M") && \.ya?ml$/{print $1 ":" $2}' \
+            | awk '($1=="A" || $1=="M") && $2 ~ /\.yaml$/ {print $1 ":" $2}' \
             > changes.txt || true
           echo "count=$(wc -l < changes.txt)" >> $GITHUB_OUTPUT
 
@@ -64,6 +64,7 @@ jobs:
         if: steps.detect.outputs.count != '0'
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK_FLYSEC: ${{ secrets.DISCORD_WEBHOOK_FLYSEC }}
         run: |
           while read -r change; do
             status=${change%%:*}
