@@ -65,6 +65,7 @@ jobs:
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
           DISCORD_WEBHOOK_FLYSEC: ${{ secrets.DISCORD_WEBHOOK_FLYSEC }}
+          SHODAN_KEY: ${{ secrets.SHODAN_KEY }}
         run: |
           while read -r change; do
             status=${change%%:*}
