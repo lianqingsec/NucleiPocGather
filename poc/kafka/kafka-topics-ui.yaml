@@ -1,26 +1,23 @@
 id: kafka-topics-ui
 
 info:
-  name: Apache Kafka Topics Panel - Detect
+  name: Apache Kafka Topics UI Exposure
   author: pdteam
-  severity: info
-  description: Apache Kafka Topics panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
-  metadata:
-    max-request: 1
-  tags: panel,kafka,apache
+  severity: low
+  tags: panel,kafka
 
-http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
+requests:
+  - payloads:
+      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+    attack: sniper
+    threads: 100
 
+    raw:
+      - |
+        GET / HTTP/1.1
+        Host: {{Subdomains}}
+        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers:
       - type: word
         words:
           - '<title>Kafka Topics UI - Browse Kafka Data</title>'
-
-# digest: 4a0a00473045022100aca78d3675a6d22c134547043be71dcd4c32ef7b4c2cebfd7d7b72d995c7f0f802201bbdb2cfb1d6b1fe6662427c9fc51bfac51c4c72304e8231a0574b01860f2049:922c64590222798bb761d5b6d8e72950

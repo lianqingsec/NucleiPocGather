@@ -1,80 +1,17 @@
-
-name: Create Release And Upload assets
-
-on:
-  push:
-    # Sequence of patterns matched against refs/tags
-    tags:
-      - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Create Release File To Upload
-        id: create_release_file
-        env:
-          RELEASE_VERSION: ${{github.ref}}
-        run: |
-          git clone https://github.com/riskscanner/riskscanner-installer.git --depth=1
-          cd riskscanner-installer
-          rm -rf hudson.* .travis.yml .git .github
-          chmod +x rsctl.sh
-          cd ..
-          version=`echo ${RELEASE_VERSION##*/}`
-          filename=riskscanner-installer-$version
-          mv riskscanner-installer $filename
-          echo $version > $filename/config_init/conf/version
-          sed -i "s@VERSION=.*@VERSION=${version}@g" $filename/static.env
-          sed -i "s@Version=.*@Version=${version}@g" $filename/quick_start.sh
-          tar -czvf $filename.tar.gz $filename
-          echo "::set-output name=VERSION::$(echo $version)"
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.ref }}
-          release_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
-          body: |
-            # 快速开始
-            仅需两步快速安装 RiskScanner：
-              1.  准备一台不小于 4 G内存的 64位 Linux 主机；
-              2.  以 root 用户执行如下命令一键安装 RiskScanner。
-            ```sh
-              curl -sSL https://github.com/riskscanner/riskscanner/releases/latest/download/quick_start.sh | bash
-            ```
-            如果您已经部署旧版本，可通过如下命令一键升级至最新版本:
-            ```sh
-              # 升级
-              ./rsctl.sh check_update
-            ```
-            # 产品文档
-            点击 [完整文档](https://docs.riskscanner.io/) 查看完整的安装和使用文档
-      - name: Upload Release Asset
-        id: upload-release-asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./riskscanner-installer-${{ steps.create_release_file.outputs.VERSION }}.tar.gz
-          asset_name: riskscanner-installer-${{ steps.create_release_file.outputs.VERSION }}.tar.gz
-          asset_content_type: application/zip
-
-      - name: Upload Quick Start Script
-        id: upload-release-quick-start-shell
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps
-          asset_path: ./riskscanner-installer-${{ steps.create_release_file.outputs.VERSION }}/quick_start.sh
-          asset_name: quick_start.sh
-          asset_content_type: application/text
+changelog:
+  exclude:
+    authors:
+      - dependabot
+  categories:
+    - title: 🎉 New Features
+      labels:
+        - "Type: Enhancement"
+    - title: 🐞 Bug Fixes
+      labels:
+        - "Type: Bug" 
+    - title: 🔨 Maintenance
+      labels:
+        - "Type: Maintenance" 
+    - title: Other Changes
+      labels:
+        - "*"
