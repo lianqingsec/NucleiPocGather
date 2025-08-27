@@ -1,15 +1,28 @@
 language: go
-go_import_path: github.com/sirupsen/logrus
-git:
-  depth: 1
-env:
-  - GO111MODULE=on
-go: 1.15.x
-os: linux
-install:
-  - ./travis/install.sh
-script:
-  - cd ci
-  - go run mage.go -v -w ../ crossBuild
-  - go run mage.go -v -w ../ lint
-  - go run mage.go -v -w ../ test
+matrix:
+    include:
+        - os: linux
+          go: tip
+        - os: linux
+          go: tip
+          env:
+            - JS=1
+        - os: osx
+          go: tip
+        - os: windows
+          go: 1.x
+#Added power jobs
+        - os: linux
+          go: tip
+          arch: ppc64le
+        - os: linux
+          go: tip
+          arch: ppc64le
+          env:
+            - JS=1
+script: bash .travis.sh script
+notifications:
+  webhooks: https://coveralls.io/webhook
+  email:
+    on_success: never
+    on_failure: change

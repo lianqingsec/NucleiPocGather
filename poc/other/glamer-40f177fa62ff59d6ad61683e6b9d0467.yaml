@@ -1,31 +1,31 @@
-id: kalium-2ef3b33d111ae97ceef960c4c41a8c01
+id: glamer-40f177fa62ff59d6ad61683e6b9d0467
 
 info:
   name: >
-    Kalium <= 3.18.3 - Cross-Site Request Forgery
+    Glamer <= 1.0.2 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: medium
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/966159e8-e393-4eba-a8cd-8f343762b0b8?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/61df94e9-0fda-4c0f-941b-090a6f4562e8?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/themes/kalium/"
-    google-query: inurl:"/wp-content/themes/kalium/"
+    fofa-query: "wp-content/themes/glamer/"
+    google-query: inurl:"/wp-content/themes/glamer/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-theme,kalium,medium
+  tags: cve,wordpress,wp-theme,glamer,critical
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/themes/kalium/style.css"
+      - "{{BaseURL}}/wp-content/themes/glamer/style.css"
 
     extractors:
       - type: regex
@@ -51,9 +51,9 @@ http:
 
       - type: word
         words:
-          - "kalium"
+          - "glamer"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.18.3')
+          - compare_versions(version, '<= 1.0.2')
