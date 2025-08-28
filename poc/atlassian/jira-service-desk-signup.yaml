@@ -1,29 +1,18 @@
 id: jira-service-desk-signup
+
 info:
-  name: Jira service desk signup Exposed
-  risk: Medium
+  name: Jira Service Desk Signup
+  author: TechbrunchFR
+  severity: medium
+  verified: false
 
-params:
-  - root: '{{.BaseURL}}'
-
-variables:
-  - prefix: |
-      /
-      /jira/
-      /wiki/
-      /confluence/
-      /desk/
-
-requests:
-  - method: GET
-    redirect: false
-    url: >-
-     {{.root}}{{.prefix}}servicedesk/customer/user/signup
-    headers:
-      - User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55.0
-    detections:
-      - >-
-        StatusCode() == 200 && StringSearch("response", 'Service Desk') && StringSearch("response", 'public.signup')
-
-reference:
-  - link: https://medium.com/@intideceukelaire/hundreds-of-internal-servicedesks-exposed-due-to-covid-19-ecd0baec87bd
+rules:
+    r0:
+        request:
+            method: POST
+            path: /servicedesk/customer/user/signup
+            headers:
+              Content-Type: application/json
+            body: '{"email":"invalid","signUpContext":{},"secondaryEmail":"","usingNewUi":true}'
+        expression: response.status == 400 && response.body.bcontains(b'signup.validation.errors')
+expression: r0()
