@@ -1,7 +1,7 @@
 id: openai-tcr9i-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via OpenAI TCR9I
+  name: Content-Security-Policy Bypass - OpenAI TCR9I
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,openai-tcr9i
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "openai.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "openai_tcr9i_csp_xss == true"
-# digest: 490a0046304402203647b8109482a7b739362d9afdd53ea8a7cca0169b65d672090d1c0217568f1302206a0c9e6ce946a3eb76c847d85aaf252c613740e61acb5ca4ca20abafbb2ca39e:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502205f2d36ec668492437e728752685a3bf044847ec87eb6b08ed38ac3ff364af97b022100a41a09f6178f5b7f6e84081f1ae31adc033e00987c3552896783e771fc6349fe:922c64590222798bb761d5b6d8e72950

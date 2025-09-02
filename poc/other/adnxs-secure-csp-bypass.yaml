@@ -1,7 +1,7 @@
 id: adnxs-secure-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Adnxs Secure
+  name: Content-Security-Policy Bypass - Adnxs Secure
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,adnxs-secure
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "adnxs.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "adnxs_secure_csp_xss == true"
-# digest: 4b0a00483046022100deb056b662b8ae8a860c2b0bda0ca99c5bbe6e8c169a36d3c3b0eb8868d218c70221008c519c52c995501504590a817d9ac82321e96fcda60856fde09de2595bc25a4c:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402200d816f8c65ff3a5d22e5f940fe9114af1056e4a3280a5016dfbad2eb4cec3c9102200c2ab648d60610ac9be87bd1d9d34fd2155f8e73ff9b2d2c15f8914ef40498ca:922c64590222798bb761d5b6d8e72950

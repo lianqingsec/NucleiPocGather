@@ -1,7 +1,7 @@
 id: bebezoo-1688-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Bebezoo 1688
+  name: Content-Security-Policy Bypass - Bebezoo 1688
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,bebezoo-1688
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "1688.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "bebezoo_1688_csp_xss == true"
-# digest: 4a0a0047304502210084e5fbc0b4c1e333c471dde8bc10df935259414e128eb34ce2024bcff936c149022052bee4fd3269e291bcdf8b59af4c8ed4d7b90eb399cf28b93e6ef9eda4b9ae96:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f9987433ae5733a3fe0b96ec9be03483bfcfdb1fd69553ee131227676af840b1022100c91314082cad6df1d3580b526d92666199bcba5e9223ef86716b67a0538122ce:922c64590222798bb761d5b6d8e72950

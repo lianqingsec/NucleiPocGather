@@ -1,7 +1,7 @@
 id: bild-don-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Bild Don
+  name: Content-Security-Policy Bypass - Bild Don
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,bild-don
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "bild.de"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "bild_don_csp_xss == true"
-# digest: 4a0a00473045022048613615dbb05eb6d5b66576931d7338155795be9fa85eee04edebb756ec8d90022100fe8a23970803e357d22a774b93266173db62cf5cce8f7ac71307ec695119c159:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100d266b14efbc81e408c9950b0790d59fcafce49921badc65641448f6d5fcb7cac02202ffffac96c583acbf2d6251516eeaf2c0f1ec72b96c4084875636c7967ae666c:922c64590222798bb761d5b6d8e72950

@@ -1,7 +1,7 @@
 id: roblox-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Roblox API
+  name: Content-Security-Policy Bypass - Roblox API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,roblox-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "roblox.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "roblox_api_csp_xss == true"
-# digest: 490a00463044022049530f6f9482479bd96fe9ac0e666443ad7f178c34ba0036f1b899d3cbe4678d022031c07f0049e6fea8c20f1e9507cf786a9646deb574fce9943cd05b5fe43abf5c:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220074d8a379fe9eaa66cd4b162bb889a2d826465a1399f4342b1f67e2b7be64a16022100ef82ac80b555cdbf3fd961228e6e69b994bb67eb712908ac3b54db967bb450c9:922c64590222798bb761d5b6d8e72950

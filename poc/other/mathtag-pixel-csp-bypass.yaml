@@ -1,7 +1,7 @@
 id: mathtag-pixel-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Mathtag Pixel
+  name: Content-Security-Policy Bypass - Mathtag Pixel
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,mathtag-pixel
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "mathtag.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "mathtag_pixel_csp_xss == true"
-# digest: 490a004630440220257a7972f38368774acfb49a9cf6c93a139f0536bfde4b87fae1d7cb0c23a59802200df62576b2d1fc771659f7df8db43d880e1faf28ca54f73324dde61c605a7065:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022073e4582f4edd67f5e4a8841cdd9d92ed87ceb6d6da23eb2517bd022040ac149b02201aeb317b665de0a8282ffb287577af71dd71c53e5a9ef6281cd01e84d05fc9c9:922c64590222798bb761d5b6d8e72950

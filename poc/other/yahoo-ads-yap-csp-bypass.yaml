@@ -1,7 +1,7 @@
 id: yahoo-ads-yap-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Yahoo Ads Yap
+  name: Content-Security-Policy Bypass - Yahoo Ads Yap
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,yahoo-ads-yap
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "yahoo.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "yahoo_ads_yap_csp_xss == true"
-# digest: 4a0a004730450220512ae910dd9b1662ee094ece5239dd8c44820861a0181be62fa26ef171d90f9d022100846cebbbe13c77c347230c6e5b641871ec0fbc5985f39687d62a7a8565485d88:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ece654c5f735b6df077f6066e604701c6b89f32416c433a04aec5d6811b1a14e0220149bce360e309555503064b3e53a344b514ac89cba4b26bac6e99e40b4f3e0f0:922c64590222798bb761d5b6d8e72950

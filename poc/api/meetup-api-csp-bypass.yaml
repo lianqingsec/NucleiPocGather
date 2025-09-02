@@ -1,7 +1,7 @@
 id: meetup-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Meetup API
+  name: Content-Security-Policy Bypass - Meetup API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,meetup-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "meetup.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "meetup_api_csp_xss == true"
-# digest: 4a0a0047304502204ce19a79449540ba009a505dc89234460bda16e235cb460ad06907e90d56d70d0221008ec46587385a39a65d7177cfee94190fcea895a66051a143a68fd2399ca69873:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100f57ced28116790ae9d886c7eee7a76ea4a71e1b72d4685f7dd23ed87a9e0005002204da70bd3d906d934bc1851af5261e7249a421933c4c81234b207a69f43239245:922c64590222798bb761d5b6d8e72950
