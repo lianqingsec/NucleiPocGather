@@ -2,7 +2,7 @@ id: servfail-refused-hosts
 
 info:
   name: Servfail Host Finder
-  author: pdteam
+  author: pd-team
   severity: info
   tags: dns
 

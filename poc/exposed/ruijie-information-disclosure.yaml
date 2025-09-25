@@ -1,23 +1,26 @@
 id: ruijie-information-disclosure
 
 info:
-  name: Ruijie Information Disclosure
+  name: Ruijie Login Panel - Detect
   author: pikpikcu
   severity: high
-  reference: https://www.cnblogs.com/cHr1s/p/14499858.html
+  description: Ruijie login panel was detected and leaks authentication credentials.
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:N/A:N
+    cvss-score: 7.5
+    cwe-id: CWE-200
+  reference:
+    - https://www.ruijienetworks.com/
+    - https://www.cnblogs.com/cHr1s/p/14499858.html
   tags: ruijie,config,exposure
+  metadata:
+    max-request: 1
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - '{{BaseURL}}/login.php'
 
-    raw:
-      - |
-        GET /login.php HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers-condition: and
     matchers:
 
@@ -30,3 +33,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by cs on 2023/03/02

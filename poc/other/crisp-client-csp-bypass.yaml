@@ -1,7 +1,7 @@
 id: crisp-client-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Crisp Client
+  name: Content-Security-Policy Bypass - Crisp Client
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,crisp-client
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "crisp.chat"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "crisp_client_csp_xss == true"
-# digest: 4a0a0047304502202cc6de3670a51025a2c8cb16958a054cf8adfd871e4afa23aa327e589424dd380221009465c910fbe0ebd4acd21fbbbfb9a6f1c87e7a767dd77906c9d2c86af073a160:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221008b3a815e27f48720154cb839c12e93f59e5163bfe17d6237da8af0e135ce0ef90221009587144e7fd51e2b849e9cd95ac4ee1de6726e9340959c9c7c8013013a712437:922c64590222798bb761d5b6d8e72950

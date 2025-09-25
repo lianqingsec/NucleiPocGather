@@ -1,30 +1,20 @@
 id: manageengine-opmanager
-
 info:
-  name: ZOHO ManageEngine OpManager
-  author: dhiyaneshDK,daffainfo
+  name: manageengine-opmanager
+  author: cn-kali-team
+  tags: detect,tech,manageengine-opmanager
   severity: info
-  reference:
-    - https://www.manageengine.com/
   metadata:
-    shodan-query: http.title:"OpManager Plus"
-  tags: panel,zoho,manageengine
-
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<div class='opmIconsHolder'>"
-          - "<div class='opmLoginFieldHolder'>"
-          - "<div class='opmIconsRight'>"
-        condition: and
-
-      - type: status
-        status:
-          - 200
+    product: manageengine-opmanager
+    vendor: 00_unknown
+    verified: false
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - <a href="http://www.manageengine.com/products/opmanager/index.html" target=
+    - the complete network monitoring software from manageengine
+    case-insensitive: true

@@ -2,11 +2,10 @@ id: campaignmonitor-takeover
 
 info:
   name: campaignmonitor takeover detection
-  author: pdteam
+  author: pdcommunity
   severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz
   tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
 
 requests:
   - method: GET
@@ -16,6 +15,5 @@ requests:
     matchers:
       - type: word
         words:
-          - '<strong>Trying to access your account?</strong>'
-          - 'or <a href="mailto:help@createsend.com'
-        condition: and
+          - "<strong>Trying to access your account?</strong>"
+          - or <a href="mailto:help@createsend.com

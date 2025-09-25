@@ -1,7 +1,7 @@
 id: disqus-links-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Disqus Links
+  name: Content-Security-Policy Bypass - Disqus Links
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,disqus-links
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "disqus.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "disqus_links_csp_xss == true"
-# digest: 490a00463044022021f661f48fe9550b70369e7719708f09a788cf71c3b5b92387c4500ec64c2a9902206fee90f077d1af89e66275cb014a5b745e516b84235361a4ddc0f48973603afd:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100e3ebd7190ac4feb220babfcac0ef6fd5979a3831bc593fda60da64a4905e0a23022100f7acb53ca0bc8abb0187ea7b41c7812fbb7e7a95170e122136677071b3dff3ba:922c64590222798bb761d5b6d8e72950

@@ -5,24 +5,17 @@ info:
   author: dwisiswant0,lu4nx
   severity: info
   reference: https://github.com/Ekultek/WhatWaf
+  tags: waf,tech,misc
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         POST / HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
-        Accept-Encoding: gzip, deflate
-        Accept: */*
+        Host: {{Hostname}}
         Content-Type: application/x-www-form-urlencoded
-        Content-Length: 27
 
         _=<script>alert(1)</script>
+
     matchers:
       - type: regex
         name: instart

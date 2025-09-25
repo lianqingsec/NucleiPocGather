@@ -1,23 +1,19 @@
 id: honeywell-scada-config
 
 info:
-  name: Honeywell Scada System – Information Disclosure
+  name: Honeywell Scada Configuration File - Detect
   author: alperenkesk
   severity: low
-  reference: https://www.exploit-db.com/exploits/44734
-  tags: scada,config,exposure
+  description: Honeywell Scada configuration file was detected. The downloaded file opens with the file name and contains critical information about the destination address.
+  reference:
+    - https://www.exploit-db.com/exploits/44734
+  tags: scada,config,exposure,edb
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+  - method: GET
+    path:
+      - "{{BaseURL}}/web_caps/webCapsConfig"
 
-    raw:
-      - |
-        GET /web_caps/webCapsConfig HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers-condition: and
     matchers:
       - type: word
@@ -29,3 +25,5 @@ requests:
       - type: status
         status:
           - 200
+
+# Enhanced by md on 2023/02/09

@@ -4,8 +4,11 @@ info:
   name: BIG-IP Configuration Utility detected
   author: dwisiswant0
   severity: info
+  tags: tech,bigip
+  metadata:
+    max-request: 3
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/tmui/login.jsp"

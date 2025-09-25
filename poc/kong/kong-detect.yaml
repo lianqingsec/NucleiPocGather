@@ -16,10 +16,10 @@ requests:
       - type: regex
         part: header
         regex:
-          - "[Ss]erver: [Kk]ong+"
+          - kong+
 
     extractors:
       - type: kval
         part: header
         kval:
-          - server
+          - Server
