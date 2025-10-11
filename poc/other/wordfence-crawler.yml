@@ -27,21 +27,28 @@ jobs:
       # run src/main.py for API if there are new vulns found
       - name: Process vulnerabilities of Wordfence API source (production)
         run: |
-          python src/main.py --api_endpoint https://www.wordfence.com/api/intelligence/v2/vulnerabilities/production
+          python src/main.py --clean --api_endpoint https://www.wordfence.com/api/intelligence/v2/vulnerabilities/production --tag production
 
       - name: Process vulnerabilities of Wordfence API source (scanner aka fresh/unfinished issues)
         run: |
-          python src/main.py --api_endpoint https://www.wordfence.com/api/intelligence/v2/vulnerabilities/scanner
+          python src/main.py --api_endpoint https://www.wordfence.com/api/intelligence/v2/vulnerabilities/scanner --tag candidate
 
       - name: Commit new vulnerability templates
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git status | grep "yaml" | while read -r line; do git add "$line" && git commit -m "New Nuclei template for $(basename $line) [$(date)] :robot:" ; done
+          # Commit changed, new of deleted yaml-files
+          CHANGED_FILES="$(git status --porcelain | awk '{print $2}' | grep "yaml" || true)"
+          if [ -n "$CHANGED_FILES" ]; then
+            for file in $CHANGED_FILES; do
+              git add "$file"
+              git commit -m "New Nuclei template for $(basename $file) [$(date)] :robot:" --allow-empty || true
+            done
+          else
+            echo "No YAML files to commit"
+          fi
 
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.SECRET_TOKEN }}
-
-
