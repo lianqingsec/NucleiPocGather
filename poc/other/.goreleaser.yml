@@ -3,8 +3,13 @@ before:
     - go mod tidy
 
 builds:
-- binary: '{{ .ProjectName }}'
-  main: cmd/mapcidr/main.go
+- main: cmd/nuclei/main.go
+  binary: nuclei
+  id: nuclei-cli
+
+  env:
+  - CGO_ENABLED=0
+
   goos: [windows,linux,darwin]
   goarch: [amd64,386,arm,arm64]
   ignore:
@@ -15,10 +20,24 @@ builds:
     - goos: windows
       goarch: arm64
 
+  flags:
+    - -trimpath
+
+#- main: cmd/tmc/main.go
+#  binary: tmc
+#  id: annotate
+#
+#  env:
+#  - CGO_ENABLED=0
+#
+#  goos: [linux]
+#  goarch: [amd64]
+
 archives:
 - format: zip
-  replacements:
-      darwin: macOS
+  id: nuclei
+  builds: [nuclei-cli]
+  name_template: '{{ .ProjectName }}_{{ .Version }}_{{ if eq .Os "darwin" }}macOS{{ else }}{{ .Os }}{{ end }}_{{ .Arch }}'
 
 checksum:
   algorithm: sha256

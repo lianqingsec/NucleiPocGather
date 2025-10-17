@@ -7,16 +7,13 @@ info:
   tags: ssrf,dast,oast
 
 http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
     payloads:
       ssrf:
         - "{{interactsh-url}}"
-        - "{{FQDN}}.{{interactsh-url}}"
-        - "{{RDN}}.{{interactsh-url}}"
 
     fuzzing:
       - part: query

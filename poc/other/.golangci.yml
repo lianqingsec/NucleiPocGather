@@ -1,27 +1,27 @@
-run:
-  deadline: 2m
+linters-settings:
+  staticcheck:
+    checks: [
+      "all",
+      "-SA1019" # There are valid use cases of strings.Title
+    ]
+  nakedret:
+    max-func-lines: 0 # Disallow any unnamed return statement
 
 linters:
-  disable-all: true
   enable:
-    - misspell
-    - govet
-    - staticcheck
+    - deadcode
     - errcheck
-    - unparam
-    - ineffassign
-    - nakedret
-    - gocyclo
-    - dupl
-    - goimports
-    - revive
-    - gosec
     - gosimple
+    - govet
+    - ineffassign
+    - staticcheck
+    - structcheck
     - typecheck
     - unused
-
-linters-settings:
-  gofmt:
-    simplify: true
-  dupl:
-    threshold: 600
+    - varcheck
+    - nakedret
+    - gofmt
+    - rowserrcheck
+    - unconvert
+    - goimports
+    - unparam

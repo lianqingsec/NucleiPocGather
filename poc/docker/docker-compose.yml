@@ -1,8 +1,14 @@
 version: '3'
 
 services:
-  app:
-    build: .
-    image: cve-2022-22965
+  cve202232213:
+    image: node:16-alpine
+    tty: true
+    container_name: cve202232213
     ports:
-      - 8080:8080
+      - "80:80"
+    volumes:
+      - "./:/app"
+
+    entrypoint:
+      - "node /app/testServer.js"
