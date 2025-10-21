@@ -1,22 +1,24 @@
 id: proftpd-config
 
 info:
-  name: ProFTPD Config file disclosure
+  name: ProFTPD Configuration File - Detect
   author: sheikhrishad
-  severity: low
+  severity: info
+  description: ProFTPD configuration file was detected.
+  reference: http://www.proftpd.org/docs/howto/ConfigFile.html
+  classification:
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cvss-score: 0
+    cwe-id: CWE-200
+  metadata:
+    max-request: 1
   tags: config,exposure,proftpd
 
-requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/proftpd.conf"
 
-    raw:
-      - |
-        GET /proftpd.conf HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
     matchers-condition: and
     matchers:
       - type: word
@@ -28,3 +30,5 @@ requests:
       - type: status
         status:
           - 200
+
+# digest: 4a0a00473045022100a1f85bf49a2bcbbbd223c2b1d041953cdcc5ac4b695ab26bb3ad829cffdda455022032042bc1fff446781ebf10c8b6eb0cc4a18fd3ebbb4ecf57c6a5557831aec940:922c64590222798bb761d5b6d8e72950

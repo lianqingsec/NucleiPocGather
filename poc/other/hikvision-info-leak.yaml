@@ -1,22 +1,13 @@
 id: hikvision-info-leak
-
 info:
   name: Hikvision Info Leak
   author: pikpikcu
   severity: medium
-  tags: exposure,config
-
+  tags: exposure,config,hikvision
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
-      - |
-        GET /config/user.xml HTTP/1.1
-        Host: {{Subdomains}}
-        User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101 Firefox/55
+  - method: GET
+    path:
+      - '{{BaseURL}}/config/user.xml'
     matchers-condition: and
     matchers:
       - type: word
@@ -24,7 +15,6 @@ requests:
           - '<user name='
           - 'password='
         condition: and
-
       - type: word
         words:
           - "text/xml"
