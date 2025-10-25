@@ -1,7 +1,7 @@
 id: ipify-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Ipify API
+  name: Content-Security-Policy Bypass - Ipify API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,ipify-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "ipify.org"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "ipify_api_csp_xss == true"
-# digest: 490a0046304402205981483b2f36a3fbc473b6eb36a0ea21be53d9baf7f010748b6cffde846b031302200137168f777ae629497e73f1f5a24c48ddd3b364f2e86764909c942923148b12:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502205cc0e5975615bdf6cbcbe3a8563920813eb55c5d0b3fbc3bd1b5685a36096cf5022100d99d125f0b10e37675219af226153158d2cddd7ee8f088193cf1bb07b3ed8c31:922c64590222798bb761d5b6d8e72950

@@ -1,7 +1,7 @@
 id: meteoprog-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Meteoprog
+  name: Content-Security-Policy Bypass - Meteoprog
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,meteoprog
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "meteoprog.ua"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "meteoprog_csp_xss == true"
-# digest: 4a0a0047304502205881d78b398405bb2cc9e5a33d79434eb3eae7bf4876b574677d285cbd63b271022100a11614742eccc97c7682a9da180c67954ec938982b101e406490654fea049498:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450221009e582731d33d1e6b5cd0c5354cfefda0720fffe977886492d8f04f09561ed8f002202537c82e90b2e89a83f32d37edf1c1ea93c1c7bd1754d50d5bc72a20972e8870:922c64590222798bb761d5b6d8e72950

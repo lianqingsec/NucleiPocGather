@@ -1,7 +1,7 @@
 id: google-analytics-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Google Analytics
+  name: Content-Security-Policy Bypass - Google Analytics
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,google-analytics
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "google-analytics.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "google_analytics_csp_xss == true"
-# digest: 4a0a0047304502202c27b6324e0cf54a0a39d286bff1d02a3f8788a8e2fd9c8f4116fd954897246b0221008cc12d953f00bd7dc93095e963f5e2b9e7c28092ed263b411dc7315d06732cd3:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a2fef6f763025a2cde1ff5de6ebb09d44d43fb81c0d52411957a99b9c7f74fee022100e8f6aa6a764a4866dd394b2510682ada094feac1bc608503d3448f13cd935071:922c64590222798bb761d5b6d8e72950

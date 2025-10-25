@@ -1,7 +1,7 @@
 id: wikipedia-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Wikipedia API
+  name: Content-Security-Policy Bypass - Wikipedia API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,wikipedia-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "wikipedia.org"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "wikipedia_api_csp_xss == true"
-# digest: 4a0a0047304502210088ee429a49a3844ac9850f2a0f8fd7c238ab6109e93b8b3a99f176ea09dddaa302201de4ba692f1e9f7041fa2c1838cddb650e4c25efb73dad3e758212200873080c:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220676919aa9008b6a5875ab3ab49665e773c67ecaa88a5c785a628a5311944e042022100eeb7a8050fabbe963d4e1262e9bb28a32dbd36151d4cd3e7328e4f46eefaaf15:922c64590222798bb761d5b6d8e72950

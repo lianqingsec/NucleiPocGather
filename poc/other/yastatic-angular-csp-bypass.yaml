@@ -1,7 +1,7 @@
 id: yastatic-angular-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Yastatic Angular
+  name: Content-Security-Policy Bypass - Yastatic Angular
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,yastatic-angular
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "yastatic.net"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "yastatic_angular_csp_xss == true"
-# digest: 4a0a0047304502202acc543d6da86b380c874b8dfe45ca479eb8fed3e253ac61b00795acf09342c5022100c4720c19c2f8e6f5c8b5d913659dbe59b29adb6d561ea22b9bb7ef07dae7dc40:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100e2cc1f0e70768da28a776b434f657dbfa70f94abdc74bae70729965369e61ee2022013628b46e592f677c936ec9c184359b647dac915d393d13bccb61e2e6a868a75:922c64590222798bb761d5b6d8e72950

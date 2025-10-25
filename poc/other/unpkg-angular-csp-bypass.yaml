@@ -1,7 +1,7 @@
 id: unpkg-angular-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Unpkg Angular
+  name: Content-Security-Policy Bypass - Unpkg Angular
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,unpkg-angular
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "unpkg.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "unpkg_angular_csp_xss == true"
-# digest: 4a0a004730450221009d7005075d5e3ce947be9ec0f494f6c6f1a49d9c6f9c44fb1879f4c5f35719f5022051e451696d37746f77796839556efa3fc63f90bfcfb29ca5e2fdaf92140c5138:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100a389c4cbf98995bff98587905378141083d2d049a7f0e60b8468409ff0f2d27902205d4876982a2b06be9aa006b3d81c4ec2491f36f557abadd3b8b555abb7d69d13:922c64590222798bb761d5b6d8e72950

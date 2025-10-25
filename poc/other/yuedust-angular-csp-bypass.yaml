@@ -1,7 +1,7 @@
 id: yuedust-angular-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Yuedust Angular
+  name: Content-Security-Policy Bypass - Yuedust Angular
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,yuedust-angular
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "yuedust.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "yuedust_angular_csp_xss == true"
-# digest: 4a0a00473045022100f97181b7b0fc34c16d6c074f8f540e40490693adedc8e362ab64e3d2701d820d0220771fe64a45667f359f4e63b556b73089edc4912243e5f98bee7926979fa8862a:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402205f1ad369646c98ecd77ee3aef328605887553ce4ebf638cedc0838784cc35caa0220075c6277ec7491da2f55ffeea799f4f606b3fdbbf749d1b359e596afb21ca958:922c64590222798bb761d5b6d8e72950

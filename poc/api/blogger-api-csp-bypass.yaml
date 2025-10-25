@@ -1,7 +1,7 @@
 id: blogger-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Blogger API
+  name: Content-Security-Policy Bypass - Blogger API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,blogger-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "blogger.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "blogger_api_csp_xss == true"
-# digest: 490a00463044022020d106749b22799ec93b9a13292b4aa3bc5be2e7ade28cf3dd5a2f10f20712ec022029f11022bf96634826a84341419bc6fc5e006ef06dbecf3b15112fd82886f195:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100bfcf368dac9c18887188c3867de72ff3ee2f83e738195398ec7b884129f739bc02201e4d1a562fa17d65c2bddb783fe887b89a9068ca144419a201b07ada84247f69:922c64590222798bb761d5b6d8e72950

@@ -1,7 +1,7 @@
 id: cxense-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Cxense API
+  name: Content-Security-Policy Bypass - Cxense API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,cxense-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "cxense.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "cxense_api_csp_xss == true"
-# digest: 4a0a0047304502204c1a6b7fc117905dca76ca5a0cee755a005ce1fe60900381a8611481f0d0439f022100818f6d5a2ef1b6263919a533178a2212ec666c6db261410517307e44495b959c:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022073e05a308f56f2ea9502dae6c741f769d1538958054fffadea2db1f51ffc55af02205c4351bcdae686fbffd6c87131f2e5ad999e51195f81e3ce8ffb5ff144fbfd1e:922c64590222798bb761d5b6d8e72950

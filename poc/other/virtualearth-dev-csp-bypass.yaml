@@ -1,7 +1,7 @@
 id: virtualearth-dev-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Virtual Earth Dev
+  name: Content-Security-Policy Bypass - Virtual Earth Dev
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,virtualearth-dev
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "virtualearth.net"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "virtualearth_dev_csp_xss == true"
-# digest: 4a0a00473045022100d7ecf950f5fa2ca3f47ca7339c399b1f05e7fc877f64c951eceadc76ece3221f02203b9ae0c494d459d34cf65001657d8a305ec8c3b674f2fa2a2a0966a99fbc5849:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502201f7c89b3232194f1d0bd676a42ffa7ac4da2a02d776bfd658535f24556bd417f022100ee4caf45cbcc2cec10ec1d88e23061abb94b2b1ab92f0e08c1e5115191fd3a56:922c64590222798bb761d5b6d8e72950
