@@ -4,20 +4,20 @@ NucleiPocGather，每日更新
 这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub Action 每日自动运行脚本。
 # POC 详情统计
 
-> **当前项目 POC 更新时间：**`2025-11-07 13:48`
+> **当前项目 POC 更新时间：**`2025-11-08 13:43`
 
 | ID | 标签      | 数量 | 目录       | 数量 | 严重性   | 数量 |
 |:---| :-------- | :--- | :--------- | :--- | :------- | :--- |
-| 1 | cve | 44886 | cve | 37611 | info | 25343 |
-| 2 | wordpress | 39511 | other | 31883 | medium | 24579 |
-| 3 | wp-plugin | 36506 | wordpress | 1920 | high | 15440 |
-| 4 | tech | 18256 | sql | 1867 | low | 11856 |
-| 5 | detect | 17546 | auth | 1843 | critical | 8754 |
-| 6 | medium | 16883 | detect | 1272 | unknown | 128 |
+| 1 | cve | 44914 | cve | 37615 | info | 25343 |
+| 2 | wordpress | 39536 | other | 31897 | medium | 24582 |
+| 3 | wp-plugin | 36531 | wordpress | 1921 | high | 15443 |
+| 4 | tech | 18256 | sql | 1871 | low | 11876 |
+| 5 | detect | 17546 | auth | 1843 | critical | 8756 |
+| 6 | medium | 16885 | detect | 1272 | unknown | 128 |
 | 7 | service | 13824 | default | 982 | meduim | 4 |
-| 8 | low | 10260 | remote_code_execution | 923 | hight | 3 |
-| 9 | high | 6695 | api | 898 | none | 1 |
-| 10 | http | 4567 | microsoft | 823 | ciritical | 1 |
+| 8 | low | 10280 | remote_code_execution | 923 | hight | 3 |
+| 9 | high | 6697 | api | 898 | none | 1 |
+| 10 | http | 4567 | microsoft | 824 | ciritical | 1 |
 
 **81 个目录，44572 个文件**
 ## 如何使用
