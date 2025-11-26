@@ -1,35 +1,22 @@
 id: brute
 
 info:
-  name: brute
-  author: zander
-  severity: critical
-
-brutes:
-  username:
-    - admin
-    - root
-  password:
-    - "123456"
-    - "111111"
-  phpinfo:
-    - phpinfo.php
-    - php.php
-    - info.php
-    - infophp.php
-    - php_info.php
-    - test.php
-    - i.php
-    - asdf.php
-    - pinfo.php
-    - phpversion.php
+  name: Brute Test
+  author: zan8in
+  severity: info
 
 rules:
   r0:
-    brutes:
-      - phpinfo
+    brute:
+      path:
+        - "php.php"
+        - "info.php"
+        - "phpinfo.php"
+        - "infophp.php"
+        - "php_info.php"
+        - "test.php"
     request:
       method: GET
-      path: /{{phpinfo}}
-    expression: response.status == 200 && response.body.bcontains(b'PHP Extension') && response.body.bcontains(b'PHP Version') && r'>PHP Version <\/td><td class="v">([0-9.]+)'.bmatches(response.body)
+      path: /"{{path}}"
+    expression: response.status == 500
 expression: r0()
