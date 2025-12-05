@@ -3,11 +3,13 @@ id: git-logs-exposure
 info:
   name: Git Logs Disclosure
   author: NullFuzz
-  severity: Info
+  severity: info
   description: Searches Git Logs files and passed URLs.
-  tags: logs,git,exposure
+  metadata:
+    max-request: 1
+  tags: logs,git,exposure,vuln
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/.git/logs/HEAD"
@@ -31,3 +33,4 @@ requests:
       - type: status
         status:
           - 200
+# digest: 4a0a004730450221009d87ac537f327955fb2f81bac1cbaf0c864b20483bed5d4235e0e007d5f1bcb102202c7604532e1e1e0af555597e7c9026a86701fff7a23dad258fafb25d259b2263:922c64590222798bb761d5b6d8e72950
