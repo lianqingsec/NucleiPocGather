@@ -4,20 +4,20 @@ NucleiPocGather，每日更新
 这个项目是一个 Python 脚本，用于批量克隆 GitHub 项目，获取 Nuclei POC，并将 POC 按类别分类存放到文件夹中。同时，使用 GitHub Action 每日自动运行脚本。
 # POC 详情统计
 
-> **当前项目 POC 更新时间：**`2025-12-11 14:02`
+> **当前项目 POC 更新时间：**`2025-12-12 13:53`
 
 | ID | 标签      | 数量 | 目录       | 数量 | 严重性   | 数量 |
 |:---| :-------- | :--- | :--------- | :--- | :------- | :--- |
-| 1 | cve | 68165 | cve | 52304 | medium | 32378 |
-| 2 | wordpress | 62607 | other | 37757 | info | 25490 |
-| 3 | wp-plugin | 58401 | sql | 3063 | low | 22444 |
-| 4 | medium | 24613 | wordpress | 2294 | high | 18739 |
-| 5 | low | 20830 | auth | 2059 | critical | 10925 |
+| 1 | cve | 68331 | cve | 52320 | medium | 32410 |
+| 2 | wordpress | 62765 | other | 37864 | info | 25490 |
+| 3 | wp-plugin | 58553 | sql | 3074 | low | 22540 |
+| 4 | medium | 24644 | wordpress | 2314 | high | 18770 |
+| 5 | low | 20926 | auth | 2060 | critical | 10932 |
 | 6 | tech | 18268 | detect | 1316 | unknown | 127 |
-| 7 | detect | 17557 | default | 1015 | meduim | 4 |
-| 8 | production | 16120 | remote_code_execution | 1010 | hight | 3 |
-| 9 | service | 13829 | microsoft | 999 | none | 1 |
-| 10 | high | 9605 | api | 995 | ciritical | 1 |
+| 7 | detect | 17557 | default | 1011 | meduim | 4 |
+| 8 | production | 16129 | remote_code_execution | 1010 | hight | 3 |
+| 9 | service | 13829 | microsoft | 1002 | none | 1 |
+| 10 | high | 9633 | api | 996 | ciritical | 1 |
 
 **81 个目录，44572 个文件**
 ## 如何使用
