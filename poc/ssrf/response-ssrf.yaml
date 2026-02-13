@@ -9,10 +9,9 @@ info:
   tags: ssrf,dast
 
 http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
     payloads:
       ssrf:

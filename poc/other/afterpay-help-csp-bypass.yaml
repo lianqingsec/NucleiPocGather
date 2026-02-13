@@ -1,7 +1,7 @@
 id: afterpay-help-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Afterpay Help
+  name: Content-Security-Policy Bypass - Afterpay Help
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,afterpay-help
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "afterpay.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "afterpay_help_csp_xss == true"
-# digest: 490a0046304402200d68eedc28847e4e01ad849f49e8f50b837d26444a2356bc4d14c1b4c1974a5702203b921bc2cf15654c653a12427278c7e41e249c4ed6a19e7b533ecc4054cf3df7:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022062a0015429f6d64d7b4c9020cba15edc7d437a346d1e1c376acc241f1181248e022042a237ad36e18e7c996fa2dbe780a40fc620beefc18223ce580ae8f9d05d8730:922c64590222798bb761d5b6d8e72950

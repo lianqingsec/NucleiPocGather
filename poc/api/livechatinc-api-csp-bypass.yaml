@@ -1,7 +1,7 @@
 id: livechatinc-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via LiveChatInc API
+  name: Content-Security-Policy Bypass - LiveChatInc API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,livechatinc-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "livechatinc.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "livechatinc_api_csp_xss == true"
-# digest: 4a0a00473045022100b78542f2c757ee11c757ed486beca48e8c56a7b4c7f8728f34a6436388ddcb9402203307efc25045963e2d9a9f80e1467b3071be85243cf4cea9e8007acc76ba929b:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402202fb32b3184581aee57415916eb40c0e80babfd82f022cc076997677d84aa5285022009e4ab8b0f096a0326dcc6a8b69d1a26e233b829bfeac44bdfda5937730083b1:922c64590222798bb761d5b6d8e72950

@@ -1,7 +1,7 @@
 id: google-apis-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Google APIs
+  name: Content-Security-Policy Bypass - Google APIs
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,google-apis
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "googleapis.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -37,4 +53,4 @@ headless:
       - type: dsl
         dsl:
           - "google_apis_csp_xss == true"
-# digest: 4b0a00483046022100a4b52b0225366f9b28927a2bd2a8e2e9eec9164bc30ac4c9a482faead9ac63050221009207fff2fc8602b8508c1557b0a9927f931facd55c7dfecf665090c9086abfa8:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100a37b836873f99c66f91a8f521d744b45663a9ab46bb487b1db43961475c1130e022100dc67296340fd6791be8420cf4c74ac056834be731cde0fb7c4b69a1c33a9d86f:922c64590222798bb761d5b6d8e72950

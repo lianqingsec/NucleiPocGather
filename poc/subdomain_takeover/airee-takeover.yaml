@@ -2,23 +2,17 @@ id: airee-takeover
 
 info:
   name: Airee Takeover Detection
-  author: pdteam
+  author: pdcommunity
   severity: high
-  reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/104
-  tags: takeover,airee
+  tags: takeover
+  reference: https://github.com/EdOverflow/can-i-take-over-xyz
 
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
         name: airee
         words:

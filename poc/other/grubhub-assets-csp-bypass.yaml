@@ -1,7 +1,7 @@
 id: grubhub-assets-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Grubhub Assets
+  name: Content-Security-Policy Bypass - Grubhub Assets
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,grubhub-assets
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "grubhub.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "grubhub_assets_csp_xss == true"
-# digest: 4a0a00473045022100cc7ddaf9522e902cd3753fd47fb4cf34c81edd08261d1e7d048c7e3dabe3459b02202695bde7f9469a28cf553e86e707e9fe601a66f58f3a2484540266f39698a394:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220394db27a09ce5a3ce72734836a0255ecd808e0e5a180d0e04fde36bc4f703776022100a71a3c4041c60ad0fc1abb890377f0e92afa9c0aab5af585dd828ef1a6c50f77:922c64590222798bb761d5b6d8e72950

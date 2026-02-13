@@ -12,11 +12,10 @@ info:
     cvss-score: 8.3
     cwe-id: CWE-522
   metadata:
-    max-request: 1
     fofa-query: title="RG-UAC登录页面"
   tags: ruijie,cnvd,cnvd2021,disclosure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/get_dkey.php?user=admin"

@@ -5,10 +5,8 @@ info:
   author: pdteam
   severity: medium
   metadata:
-    max-request: 8
-    verified: true
+    max-request: 4
   tags: headless
-
 headless:
   - steps:
       - args:
@@ -18,7 +16,7 @@ headless:
       - action: waitload
 
       - action: script
-        name: extract1
+        name: extract
         args:
           code: |
             () => {
@@ -26,7 +24,7 @@ headless:
             }
     matchers:
       - type: word
-        part: extract1
+        part: extract
         words:
           - "polluted"
 
@@ -90,84 +88,4 @@ headless:
         words:
           - "polluted"
 
-  - steps:
-      - args:
-          url: "{{BaseURL}}?__pro__proto__to__[vulnerableprop]=polluted"
-        action: navigate
-
-      - action: waitload
-
-      - action: script
-        name: extract5
-        args:
-          code: |
-            () => {
-             return window.vulnerableprop
-            }
-    matchers:
-      - type: word
-        part: extract5
-        words:
-          - "polluted"
-
-  - steps:
-      - args:
-          url: "{{BaseURL}}?__pro__proto__to__.vulnerableprop=polluted"
-        action: navigate
-
-      - action: waitload
-
-      - action: script
-        name: extract6
-        args:
-          code: |
-            () => {
-             return window.vulnerableprop
-            }
-    matchers:
-      - type: word
-        part: extract6
-        words:
-          - "polluted"
-
-  - steps:
-      - args:
-          url: "{{BaseURL}}?constconstructorructor[protoprototypetype][vulnerableprop]=polluted"
-        action: navigate
-
-      - action: waitload
-
-      - action: script
-        name: extract7
-        args:
-          code: |
-            () => {
-             return window.vulnerableprop
-            }
-    matchers:
-      - type: word
-        part: extract7
-        words:
-          - "polluted"
-
-  - steps:
-      - args:
-          url: "{{BaseURL}}?constconstructorructor.protoprototypetype.vulnerableprop=polluted"
-        action: navigate
-
-      - action: waitload
-
-      - action: script
-        name: extract8
-        args:
-          code: |
-            () => {
-             return window.vulnerableprop
-            }
-
-    matchers:
-      - type: word
-        part: extract8
-        words:
-          - "polluted"
-# digest: 4a0a00473045022100f13ceb8a2f5cb2951a224b4cae1b6ebba91ff7c1ad2e3862a12f7824d74925080220462e096ee2dc84e717dc95341d96922eab4594202dce02cff5dad9aed5577b00:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100b0180dde262d6546d4eaa2137bba9863bfae06d159d696ecee48335c5687e985022100ffa00bb4141f83c8ee22c5f25bad437dfe42db333565fa6c1285b3d29fae723e:922c64590222798bb761d5b6d8e72950

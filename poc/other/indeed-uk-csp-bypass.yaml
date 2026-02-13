@@ -1,7 +1,7 @@
 id: indeed-uk-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Indeed UK
+  name: Content-Security-Policy Bypass - Indeed UK
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,indeed-uk
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "indeed.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "indeed_uk_csp_xss == true"
-# digest: 4a0a00473045022100e8643b0d817886cbf3b3fb6afe67869f866e84a49f928eb68162b096ac11d07f022074a074f55133fcbf6f6b76ab5e386333e6624de73886fc96a27c979fa0234bda:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220396186a0f50eb5393185e45e1f083417961c9de8ad929426465e325fe8a35091022100cdc57d2ef63ba8ab7d0b6def19c83b8eafe2493fd94bbafec8271bd6f8426c99:922c64590222798bb761d5b6d8e72950

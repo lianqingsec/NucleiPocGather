@@ -1,7 +1,7 @@
 id: twitter-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Twitter API
+  name: Content-Security-Policy Bypass - Twitter API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,twitter-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "twitter.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "twitter_api_csp_xss == true"
-# digest: 4a0a0047304502201e5cfee92c366654b4ee88f2e25bbb6ccb79f9f4629523f5f2a5bb9f5b8b006b022100a6b2f20ea228f6ee1a313dcd1f6232d5cc9334345c4463d7f5ec140cf6d14746:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220616c560eb7a4a96e3afc5f41a05675835cc41ef81d1fa1acf0183241e8c81d120220519a2211bd7af20c6e6facf93cbe32817d1b08dcb0a163a4f72deacb57a325c2:922c64590222798bb761d5b6d8e72950

@@ -1,7 +1,7 @@
 id: tealiumiq-visitor-service-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via TealiumIQ Visitor Service
+  name: Content-Security-Policy Bypass - TealiumIQ Visitor Service
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,tealiumiq-visitor-service
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "tealiumiq.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "tealiumiq_visitor_service_csp_xss == true"
-# digest: 4b0a00483046022100eaf1e82d21be3a399339504c461e4a2209688a542432b2094b24e15d89898441022100e7eabffdb8f949fe98f8d1e4e5af81337417b54a634b0f96c2071c76178c6404:922c64590222798bb761d5b6d8e72950
+# digest: 490a004630440220257b594810f6660cbf90dbb103a5c3bc9074c564b6fd32dd2800ce908a975ae102201e2ed2fa5f17c8739ae2b86c8dce32f6a5122ac78e7620d1787a7176a3191629:922c64590222798bb761d5b6d8e72950

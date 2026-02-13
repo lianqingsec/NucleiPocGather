@@ -1,7 +1,7 @@
 id: elastic-info-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Elastic Info
+  name: Content-Security-Policy Bypass - Elastic Info
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,elastic-info
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "elastic.co"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "elastic_info_csp_xss == true"
-# digest: 4a0a0047304502210095b94c38cc14ef65bdebbdec570a0f00014c97d3aaee15db443fdb75593f61cb02206a6efa158e781c0e05ae4e1d702922f80f3bf3ce76a1ea2dadb068096fafd608:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100caba2947d455377b63edf748cdd0348e0db1627aeeeee54d295b9467f1f8f7c7022029fd86ccf2830f3851162f887f73d581f88fd632d2c251809b37df027fb290c9:922c64590222798bb761d5b6d8e72950

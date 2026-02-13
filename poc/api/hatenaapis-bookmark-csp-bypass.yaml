@@ -1,7 +1,7 @@
 id: hatenaapis-bookmark-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Hatena APIs Bookmark
+  name: Content-Security-Policy Bypass - Hatena APIs Bookmark
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,hatenaapis-bookmark
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "hatenaapis.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "hatenaapis_bookmark_csp_xss == true"
-# digest: 4a0a004730450220414e222cd68e206503bafa0714ff913e97e52dbed64a33b0be6a0e51f6c4de78022100a73cb62715fc4b927fb2e3551f3c14540d0b8e5519806b169c6e7e4c4310b8dd:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022045491ec56843c145e0c3c1c1d9b25e56b17d556285dd459c23f3bcc441702b5f022100a45034393fc54c983349a5fa2c9abf645a40f33400cd2a30f5cbda27b9060ade:922c64590222798bb761d5b6d8e72950

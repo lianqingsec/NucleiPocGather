@@ -33,6 +33,7 @@ http:
 
       - type: word
         words:
+          - "MongoDB over HTTP on the native"
           - "application/javascript"
           - "application/x-javascript"
           - "application/json"
@@ -45,5 +46,3 @@ http:
         part: response
         negative: true
         condition: or
-
-# Enhanced by mp on 2023/02/05

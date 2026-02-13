@@ -1,7 +1,7 @@
 id: opendatasoft-docs-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Opendatasoft Docs
+  name: Content-Security-Policy Bypass - Opendatasoft Docs
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,opendatasoft-docs
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "opendatasoft.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "opendatasoft_docs_csp_xss == true"
-# digest: 4a0a004730450221009f01f499495d1dea94e8d34fc888a44e4b4b9f91b8098fb56f032075636b4be7022009548e17a1e80ac53dd7bef530c71bdf48b899af98db2f39d1e8df3f24f2723a:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022012915e6f4f4fd6026ee3c747ebc291264d8e4c0a2f8f8feae2ff967a37eb7f3b02201fa2220d83baeae4d39d8eaec5d5fee0938299c85886695bf0e7a8cdd0a7a66f:922c64590222798bb761d5b6d8e72950

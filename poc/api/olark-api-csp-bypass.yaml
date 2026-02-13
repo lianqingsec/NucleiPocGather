@@ -1,7 +1,7 @@
 id: olark-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Olark API
+  name: Content-Security-Policy Bypass - Olark API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,olark-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "olark.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "olark_api_csp_xss == true"
-# digest: 4a0a004730450220760e8bbace195676b336699ba0d4da17deefbc8e04e8333cd43ce89ce5abd702022100c5fca25852488ef29c5c417b5f2ac85befdbfa911a18d2f781aa4ed713b3fd86:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100a4451c0a6366fd2afc9f940d5722e00866a148823116bd5d3ed93e0acb25ecb4022018e91382c715635a43d9667ad5b973ed90cffffb0ae63e5b9346655d45d03bcd:922c64590222798bb761d5b6d8e72950

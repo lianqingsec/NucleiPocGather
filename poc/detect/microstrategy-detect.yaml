@@ -1,14 +1,19 @@
 id: microstrategy-detect
+
 info:
   name: MicroStrategy Instances Detection Template
   author: philippedelteil,Retr02332
   severity: info
   description: Detect if MicroStrategy instances exist in your URLS
-  tags: microstrategy,panel
-requests:
+  metadata:
+    max-request: 16
+  tags: microstrategy,panel,tech
+
+http:
   - method: GET
     path:
       - "{{BaseURL}}/{{path}}"
+
     payloads:
       path:
         - MicroStrategy/servlet/mstrWebAdmin/
@@ -27,6 +32,7 @@ requests:
         - servlet/mstrWeb
         - asp/Main.aspx
         - MicroStrategy/asp
+
     stop-at-first-match: true
     matchers:
       - type: dsl
@@ -35,14 +41,18 @@ requests:
           - 'contains(body, "MicroStrategy, Incorporated.")'
           - 'contains(body, "microstrategy.servletName")'
           - 'contains(body, "mstrHiddenInput")'
+
     extractors:
       - type: regex
         part: body
         group: 1
         regex:
           - 'ProductHelp/([0-9.A-Z]+)'
+
       - type: regex
         part: body
         group: 1
         regex:
           - 'WELCOME. MicroStrategy ([0-9]+)'
+
+# digest: 4b0a00483046022100bfea2298db5ce833db3230dd2b2c0a0287cc5b720cebd118c25578a1b658f6680221009da1b968a466fac0fe362e98d24738b89178daea8fde2789f0881b3f33d81717:922c64590222798bb761d5b6d8e72950

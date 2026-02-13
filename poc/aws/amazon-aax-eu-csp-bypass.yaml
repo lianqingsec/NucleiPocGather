@@ -1,7 +1,7 @@
 id: amazon-aax-eu-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Amazon AAX EU
+  name: Content-Security-Policy Bypass - Amazon AAX EU
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,amazon-aax-eu
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "amazon-adsystem.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "amazon_aax_eu_csp_xss == true"
-# digest: 4b0a0048304602210089cc14a0daa48096347319379a4c8944370cc5d2c56082f35ddf015835f99e8e022100b61940dcad2a9492532d4d570429054176ba68cd9a64df02c8db2431e298cf39:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402204dbe782c91986a3540fc88f719500f36c30c406095529fada818e0e1c6a43b2702205e3b1017315a618d7b4fc2bdbf38fb9d2c2c225cf8c9e866be095731b2ee67c6:922c64590222798bb761d5b6d8e72950

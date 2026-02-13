@@ -2,7 +2,7 @@ id: text_to_audio-f1d72e60-182f-4210-a190-e0a7f0237ed1
 
 info:
   name: >
-    Text To Speech TTS Accessibility <= 1.9.24 - Missing Authorization
+    Text To Speech TTS Accessibility <= 1.9.30 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -32,16 +32,8 @@ http:
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.9.24')
+          - compare_versions(version, '<= 1.9.30')

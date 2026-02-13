@@ -3,9 +3,8 @@ info:
   name: CGI Test page
   author: YASH ANAND @yashanand155
   severity: info
-  tags: cgi
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/cgi-bin/test/test.cgi"

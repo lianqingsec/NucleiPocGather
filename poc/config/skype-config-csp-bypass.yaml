@@ -1,7 +1,7 @@
 id: skype-config-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Skype Config
+  name: Content-Security-Policy Bypass - Skype Config
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,skype-config
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "skype.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "skype_config_csp_xss == true"
-# digest: 4b0a004830460221008755cd18f5698b71a3f5d2b753ae746b9f5fec2cd9dc2e099e7df6b50eb891d3022100a14e480b3c7e01b0bf13a19013e67c18fb13460c27c1c6c82bd748c43cec94df:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450220129ae447006a49b4a9ec32ef3dfc6a4c8c2ab1c35931f61a44b2aafec0dfee4c022100d071373f632c94f10f6d7718e138b8c729bdbf8feb1c00e684a19e77e05a1c63:922c64590222798bb761d5b6d8e72950

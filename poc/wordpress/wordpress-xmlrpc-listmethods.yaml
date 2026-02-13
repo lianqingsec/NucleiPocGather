@@ -1,14 +1,11 @@
 id: wordpress-xmlrpc-listmethods
-
 info:
   name: Wordpress XML-RPC List System Methods
   author: 0ut0fb4nd
   severity: info
   tags: wordpress
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: POST
     path:
       - "{{BaseURL}}/xmlrpc.php"

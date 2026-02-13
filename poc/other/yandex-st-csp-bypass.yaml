@@ -1,7 +1,7 @@
 id: yandex-st-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Yandex ST
+  name: Content-Security-Policy Bypass - Yandex ST
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,yandex-st
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "yandex.ru"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "yandex_st_csp_xss == true"
-# digest: 4a0a00473045022039184111880b6092726dfa24f5bb0947241ee368db910e40f541e6d32c4a981d022100a16ca0c68d139e8c296ab48ada1d870cff8795c747c5970f07f4668b8b0530e5:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100b8244911da3aa583a2435b9f73a1c44c691bc8a0cc613fafadca5ce954e7d14402205d8add6669e120508311640b455104356cd9e173a0cd5a4e2e79cf8a34bf22b2:922c64590222798bb761d5b6d8e72950

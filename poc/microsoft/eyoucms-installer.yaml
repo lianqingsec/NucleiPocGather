@@ -9,6 +9,8 @@ info:
     verified: true
     max-request: 1
     fofa-query: title="eyoucms"
+    product: eyoucms
+    vendor: eyoucms
   tags: misconfig,eyoucms,install
 
 http:
@@ -30,4 +32,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022005864c291f566f94cb1cc5267ab73f7b7b0d2b18a6f1c698c2a27afc1dbace6b02210096de625a1792dfa0a8ef36f8cf036acd78968f54f7726da711d3a777b31fe1a5:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100ace8bed2165bced5f9481f32d2facc21fc95e95ee3d1e7d2234554663a396b15022032d5dd94c18f6741993503fdc5066e13dc1243c9c19321a5dc88a002d1f77f59:922c64590222798bb761d5b6d8e72950

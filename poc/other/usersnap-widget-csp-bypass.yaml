@@ -1,7 +1,7 @@
 id: usersnap-widget-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Usersnap Widget
+  name: Content-Security-Policy Bypass - Usersnap Widget
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,usersnap-widget
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "usersnap.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "usersnap_widget_csp_xss == true"
-# digest: 4b0a004830460221008436c87ac4ecb6d12f5047794a78c80dc8e6b5e787e168aa4990d3b3e4f09722022100c12075de61049c9e58d69e29db175a8258dd8fbf7c7bbf3bd95c43e82dc9d109:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502206985d66c3aae69863559052ced1f0d437c3d28cc7168cdb0a04fb629c63b8f32022100e5679d311a376cb607a5993177b4d0b53c7f9c260793b0ae5679c51c08fd5a04:922c64590222798bb761d5b6d8e72950

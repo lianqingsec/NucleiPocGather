@@ -1,7 +1,7 @@
 id: criteo-gum-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Criteo Gum
+  name: Content-Security-Policy Bypass - Criteo Gum
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,criteo-gum
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "criteo.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "criteo_gum_csp_xss == true"
-# digest: 490a00463044022010aae9750cfb02d4971149cc9898b8288a93aaf27279aa1d8112fbe509ccc33a022027c1c6b32e7512a3f98ec349430fbbbda441b418d6380fbc855fb8c72edd04ac:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a004830460221009e00a9e8f93b6ec3d7ededabc5f2789dd4e870566e8947e638006925cc10d0e4022100859f22251098bc5aa943cd613c8b85cdbf524ec024a2d6a66e7da4d6c058eecc:922c64590222798bb761d5b6d8e72950

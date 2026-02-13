@@ -7,10 +7,9 @@ info:
   tags: ssrf,dast,oast
 
 http:
-  - pre-condition:
-      - type: dsl
-        dsl:
-          - 'method == "GET"'
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
     payloads:
       ssrf:

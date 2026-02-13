@@ -1,7 +1,7 @@
 id: arkoselabs-cdn-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Arkose Labs CDN
+  name: Content-Security-Policy Bypass - Arkose Labs CDN
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,arkoselabs-cdn
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "arkoselabs.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "arkoselabs_cdn_csp_xss == true"
-# digest: 490a004630440220687fe424276ac76f70c425c998b71e7b1564e9e964ee395affa2f7571412b6cd02201df4298b6671b6aa60699ded86806ba5e8537a098b8eef6de0eca1fa473d7cd2:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100f9b7094354de2746b719bdf24e14f1c7acc1e137496634ed9c27e7da106f1637022100ee794bb53048c21fd01f13b0898f94fc8e1e8745f06b38a163ac2362e795cdef:922c64590222798bb761d5b6d8e72950

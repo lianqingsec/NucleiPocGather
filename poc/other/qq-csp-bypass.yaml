@@ -1,7 +1,7 @@
 id: qq-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via QQ
+  name: Content-Security-Policy Bypass - QQ
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,qq
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "qq.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "qq_csp_xss == true"
-# digest: 4b0a00483046022100b1d1ffec4138b9262db0662ef18e39dd6059c6c57185a948c4590c4aa55c2854022100da3e85b8037d36e3e7ba50cce1f7d941f85efb0d179fd2256f4203e5ded29fe2:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100ab6db7497fd0b9315bccab3ec29557db6d2fcf07fc267675c112b73ca5eae83c022100a8ac9f552599555c1441ccd4c7432c9da2c455c58c5eee726de40873e1a0245f:922c64590222798bb761d5b6d8e72950

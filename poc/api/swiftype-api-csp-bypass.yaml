@@ -1,7 +1,7 @@
 id: swiftype-api-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via Swiftype API
+  name: Content-Security-Policy Bypass - Swiftype API
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,swiftype-api
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "swiftype.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "swiftype_api_csp_xss == true"
-# digest: 490a0046304402201e101af3f6a4fb6efec43275daf5d7a9d9c6792e10403e631aff2b985e03f6fe0220043087ee4b624b1611d0a83047c7b0efeab397e1ea745d966dad3189223aa80f:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402206553b43493dec93d26c82696798c1ed48cc6ba07212731a0f7f435978da9b65502205423ffc17002348471528fa4602caff2fcbd241afbf75185f0ab2b8f5b0ac7e5:922c64590222798bb761d5b6d8e72950

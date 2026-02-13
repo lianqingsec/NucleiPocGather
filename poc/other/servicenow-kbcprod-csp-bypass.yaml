@@ -1,7 +1,7 @@
 id: servicenow-kbcprod-csp-bypass
 
 info:
-  name: Content-Security-Policy Bypass via ServiceNow KBCProd
+  name: Content-Security-Policy Bypass - ServiceNow KBCProd
   author: renniepak,DhiyaneshDK
   severity: medium
   reference:
@@ -9,6 +9,22 @@ info:
   metadata:
     verified: true
   tags: xss,csp-bypass,servicenow-kbcprod
+
+flow: http(1) && headless(1)
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+
+    matchers:
+      - type: word
+        part: header
+        words:
+          - "Content-Security-Policy"
+          - "servicenow.com"
+        condition: and
+        internal: true
 
 headless:
   - steps:
@@ -36,4 +52,4 @@ headless:
       - type: dsl
         dsl:
           - "servicenow_kbcprod_csp_xss == true"
-# digest: 490a00463044022017aa3470ee9db61e960840c24a7e2b5bbc2b59eb93f6dbd6bf6e97e9e585b8f402205a223ee19908af507a1e562043ad240e51530de7cb67e715f007705b9fd5de9b:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022018b73965b2e3fe4ca716c45deb838ec0f55b5a9247d398b5be8b191a13450800022100b2616a8487359497659fb19e8b41c8b417435bf971bec3c4fef3cee7dc209e64:922c64590222798bb761d5b6d8e72950

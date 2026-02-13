@@ -8,8 +8,9 @@ info:
     A figma phishing website was detected
   reference:
     - https://figma.com
+  metadata:
+    max-request: 1
   tags: phishing,figma,osint
-
 http:
   - method: GET
     path:
@@ -31,4 +32,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"figma.com")'
-# digest: 490a00463044022027fe9088c2c17ab7eb8701d281a0ecd3a906f9a5a360f4b2edea0b0ab8ac23de022066ee340b05ebd19a4f5ae08b9fddd30fe0733e6645e7d601beebc765d65072ec:922c64590222798bb761d5b6d8e72950
+# digest: 490a0046304402207ae97ce26a6336d69f2084f4ae433128475a68a04a9a83dff84c80ddc814b025022079454913c60722b3382a3e35c5820755ed1ee1ff409e5366c9816639d3387a3f:922c64590222798bb761d5b6d8e72950
