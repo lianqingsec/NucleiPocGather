@@ -8,9 +8,8 @@ info:
     A github phishing website was detected
   reference:
     - https://github.com
-  metadata:
-    max-request: 1
   tags: phishing,github,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"github.com")'
-# digest: 4b0a00483046022100e50995ed7783485e66d9af7733a6856eab8062c2ddfce0fdf5ab243871a8acdd022100b8636ac50b38f1ed4e5b9188651c4c76599e9a09c21b0ea101e0321ffad67bdf:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022039f4d801cbf609cdecd30bc865b98473ec8726869ef9af371e3e994c244ee006022100aadaf1fd2951a3fc425db75599f3755d09eeb44d5148709ec01442384ab48082:922c64590222798bb761d5b6d8e72950

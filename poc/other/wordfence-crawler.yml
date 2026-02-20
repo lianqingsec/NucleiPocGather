@@ -3,6 +3,7 @@ name: 🕷 Wordfence crawler
 on:
   schedule:
     - cron: '25 3 * * *'
+
   workflow_dispatch:
 
 jobs:
@@ -11,8 +12,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Set up Python 3.10
         uses: actions/setup-python@v3
@@ -25,70 +24,24 @@ jobs:
           pip install flake8 pytest
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
-      - name: Process vulnerabilities from Wordfence API (production)
+      # run src/main.py for API if there are new vulns found
+      - name: Process vulnerabilities of Wordfence API source (production)
         run: |
-          python src/main.py --api_endpoint https://www.wordfence.com/api/intelligence/v2/vulnerabilities/production --tag production --clean
+          python src/main.py --api_endpoint https://www.wordfence.com/api/intelligence/v2/vulnerabilities/production
 
-      - name: Process vulnerabilities from Wordfence API (scanner)
+      - name: Process vulnerabilities of Wordfence API source (scanner aka fresh/unfinished issues)
         run: |
-          python src/main.py --api_endpoint https://www.wordfence.com/api/intelligence/v2/vulnerabilities/scanner --tag candidate
+          python src/main.py --api_endpoint https://www.wordfence.com/api/intelligence/v2/vulnerabilities/scanner
 
-      - name: Restore unchanged files to prevent false modifications
-        shell: bash
+      - name: Commit new vulnerability templates
         run: |
-          set -euo pipefail
-          
-          echo "=== Checking for files with identical content to HEAD ==="
-          
-          # Loop door alle gewijzigde YAML/YML bestanden
-          git diff --name-only --diff-filter=M | while IFS= read -r file; do
-            [[ "$file" == *.yaml || "$file" == *.yml ]] || continue
-            
-            # Vergelijk de byte-voor-byte inhoud met HEAD
-            if git show "HEAD:$file" | cmp -s - "$file"; then
-              echo "Restoring unchanged file: $file"
-              # Herstel het bestand naar de versie in HEAD (identieke inhoud)
-              git checkout HEAD -- "$file"
-            else
-              echo "File has real changes: $file"
-            fi
-          done
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git status | grep "yaml" | while read -r line; do git add "$line" && git commit -m "New Nuclei template for $(basename $line) [$(date)] :robot:" ; done
 
-      - name: Commit only real content changes (per-file)
-        shell: bash
-        run: |
-          set -euo pipefail
-
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git config core.filemode false
-
-          echo "Commit deleted YAML files (one commit each)..."
-          git ls-files --deleted | while IFS= read -r file; do
-            [ -z "$file" ] && continue
-            [[ "$file" == *.yaml || "$file" == *.yml ]] || continue
-            git rm -q -- "$file" || true
-            git commit -m "Delete template: $(basename "$file") 🤖" || true
-          done
-
-          echo "Commit new YAML files..."
-          git ls-files --others --exclude-standard | while IFS= read -r file; do
-            [ -z "$file" ] && continue
-            [[ "$file" == *.yaml || "$file" == *.yml ]] || continue
-            git add -- "$file"
-            git commit -m "Add template: $(basename "$file") 🤖" || true
-          done
-
-          echo "Commit modified YAML files (only real changes remain)..."
-          for file in $(git diff --name-only --diff-filter=M); do
-            [[ "$file" == *.yaml || "$file" == *.yml ]] || continue
-            [ -f "$file" ] || continue
-            echo "Processing modified file: $file"
-            git add -- "$file"
-            git commit -m "Update template: $(basename "$file") 🤖" || true
-          done
-
-      - name: Push all commits
+      - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.SECRET_TOKEN }}
+
+

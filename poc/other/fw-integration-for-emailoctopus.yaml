@@ -1,15 +1,15 @@
-id: fw-integration-for-emailoctopus-8e7552e7cd793d412fbdf40ec04f6c79
+id: fw-integration-for-emailoctopus
 
 info:
   name: >
-    EO4WP <= 1.0.8.4 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    EO4WP <= 1.0.7 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/fb04865e-e238-4227-bd9b-e05dcb0d3c53?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1bcb9ba1-63f9-4de9-b1da-405231cd1d14?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.0.8.4')
+          - compare_versions(version, '<= 1.0.7')

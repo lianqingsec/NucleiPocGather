@@ -23,4 +23,3 @@ http:
   - type: word
     words:
     - change detection
-    case-insensitive: true

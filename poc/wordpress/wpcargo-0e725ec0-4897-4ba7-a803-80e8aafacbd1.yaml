@@ -2,7 +2,7 @@ id: wpcargo-0e725ec0-4897-4ba7-a803-80e8aafacbd1
 
 info:
   name: >
-    WPCargo Track & Trace <= 8.0.2 - Unauthenticated SQL Injection
+    WPCargo Track & Trace <= 8.0.1 - Unauthenticated SQL Injection
   author: topscoder
   severity: critical
   description: >
@@ -32,8 +32,16 @@ http:
         name: version
         part: body
         group: 1
+        internal: true
         regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -48,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 8.0.2')
+          - compare_versions(version, '<= 8.0.1')

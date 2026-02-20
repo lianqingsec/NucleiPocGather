@@ -1,15 +1,15 @@
-id: fusedesk-0c36004773dba5e4a9ba239ad03c1440
+id: fusedesk
 
 info:
   name: >
-    FuseDesk <= 6.7 - Authenticated (Contributor+) Stored Cross-Site Scripting via successredirect Parameter
+    FuseDesk <= 6.6.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/baf12413-eb45-44c3-a6c9-f5a048d6500d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/a69a99af-3d1d-4ad2-b6b5-e4fcea56be51?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.7')
+          - compare_versions(version, '<= 6.6.1')
