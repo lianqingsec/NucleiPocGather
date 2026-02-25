@@ -2,7 +2,7 @@ id: wp_popups_lite-302b004c-0443-4f47-8493-8bc7c5a25788
 
 info:
   name: >
-    WP Popups <= 2.2.0.3 - Missing Authorization
+    WP Popups <= 2.2.0.5 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.2.0.3')
+          - compare_versions(version, '<= 2.2.0.5')
