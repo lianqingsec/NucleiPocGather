@@ -1,15 +1,15 @@
-id: pathomation-71c7ad1fe36f8b90f7cf43b90fc069e5
+id: pathomation-083aa923bcb34813f0785603b86842f2
 
 info:
   name: >
-    Pathomation <= 2.5.1 - Unauthenticated Arbitrary File Upload
+    Pathomation <= 2.5.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e8f71cc-3197-4cdb-9e3b-a544f689df2d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/85950e4c-59fe-4ad3-8c43-e161259d6ded?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/pathomation/"
     google-query: inurl:"/wp-content/plugins/pathomation/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,pathomation,critical
+  tags: cve,wordpress,wp-plugin,pathomation,low
 
 http:
   - method: GET

@@ -2,20 +2,18 @@ id: http-missing-security-headers
 
 info:
   name: HTTP Missing Security Headers
-  author: socketz,geeknik,G4L1T0,convisoappsec,kurohost,dawid-czarnecki,forgedhallpass,jub0bs
+  author: socketz,geeknik,G4L1T0,convisoappsec,kurohost,dawid-czarnecki,forgedhallpass
   severity: info
   description: |
     This template searches for missing HTTP security headers. The impact of these missing headers can vary.
-  tags: misconfig,headers,generic
-  metadata:
-    max-request: 1
+  tags: misconfig,generic
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 3
     matchers-condition: or
     matchers:
@@ -34,9 +32,9 @@ http:
         condition: and
 
       - type: dsl
-        name: permissions-policy
+        name: permission-policy
         dsl:
-          - "!regex('(?i)permissions-policy', all_headers)"
+          - "!regex('(?i)permission-policy', all_headers)"
           - "status_code != 301 && status_code != 302"
         condition: and
 
@@ -93,5 +91,47 @@ http:
         name: cross-origin-resource-policy
         dsl:
           - "!regex('(?i)cross-origin-resource-policy', all_headers)"
+          - "status_code != 301 && status_code != 302"
+        condition: and
+
+      - type: dsl
+        name: access-control-allow-origin
+        dsl:
+          - "!regex('(?i)access-control-allow-origin', all_headers)"
+          - "status_code != 301 && status_code != 302"
+        condition: and
+
+      - type: dsl
+        name: access-control-allow-credentials
+        dsl:
+          - "!regex('(?i)access-control-allow-credentials', all_headers)"
+          - "status_code != 301 && status_code != 302"
+        condition: and
+
+      - type: dsl
+        name: access-control-expose-headers
+        dsl:
+          - "!regex('(?i)access-control-expose-headers', all_headers)"
+          - "status_code != 301 && status_code != 302"
+        condition: and
+
+      - type: dsl
+        name: access-control-max-age
+        dsl:
+          - "!regex('(?i)access-control-max-age', all_headers)"
+          - "status_code != 301 && status_code != 302"
+        condition: and
+
+      - type: dsl
+        name: access-control-allow-methods
+        dsl:
+          - "!regex('(?i)access-control-allow-methods', all_headers)"
+          - "status_code != 301 && status_code != 302"
+        condition: and
+
+      - type: dsl
+        name: access-control-allow-headers
+        dsl:
+          - "!regex('(?i)access-control-allow-headers', all_headers)"
           - "status_code != 301 && status_code != 302"
         condition: and

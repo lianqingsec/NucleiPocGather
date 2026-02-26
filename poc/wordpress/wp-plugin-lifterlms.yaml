@@ -3,15 +3,12 @@ id: wordpress-plugins-lifterlms
 info:
   name: WordPress Plugin lifterlms Listing
   author: pussycat0x
-  severity: info
-  description: Searches for sensitive directories present in the lifterlms plugin.
-  reference:
-    - https://www.exploit-db.com/ghdb/6420
-  tags: wordpress,listing,plugin,edb
-  metadata:
-    max-request: 1
+  severity: low
+  description: Searches for sensitive directories present in the wordpress-plugins plugin.
+  reference: https://www.exploit-db.com/ghdb/6420
+  tags: wordpress,listing
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/plugins/lifterlms/"

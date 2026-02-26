@@ -7,7 +7,7 @@ info:
   tags: aem
 
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/.json'
@@ -66,8 +66,6 @@ http:
       - '{{BaseURL}}///etc.children.json/FNZ.html'
       - '{{BaseURL}}///etc.children.json/FNZ.png'
       - '{{BaseURL}}///etc.children.json/FNZ.ico'
-
-    stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: status

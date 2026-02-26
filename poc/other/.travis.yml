@@ -1,17 +1,13 @@
 language: go
 
 go:
-  - 1.9.x
-  - 1.12.x
-  - 1.13.x
-  - 1.14.x
-  - 1.15.x
+  - tip
 
 install:
-  - go get golang.org/x/net/html/charset
-  - go get github.com/antchfx/xpath
-  - go get github.com/mattn/goveralls
-  - go get github.com/golang/groupcache
+  - export GOPATH="$HOME/gopath"
+  - mkdir -p "$GOPATH/src/golang.org/x"
+  - mv "$TRAVIS_BUILD_DIR" "$GOPATH/src/golang.org/x/oauth2"
+  - go get -v -t -d golang.org/x/oauth2/...
 
 script:
-  - $HOME/gopath/bin/goveralls -service=travis-ci
+  - go test -v golang.org/x/oauth2/...

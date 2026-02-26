@@ -5,16 +5,15 @@ info:
   author: ffffffff0x
   severity: info
   metadata:
-    max-request: 1
     fofa-query: app="ActiveCollab"
   tags: acsoft,tech,activecollab
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"
 
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:

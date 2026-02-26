@@ -4,9 +4,8 @@ info:
   name: Jira Service Desk Signup
   author: TechbrunchFR
   severity: medium
-  tags: jira,atlassian,service
 
-http:
+requests:
   - method: POST
     path:
       - "{{BaseURL}}/servicedesk/customer/user/signup"
