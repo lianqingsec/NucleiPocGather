@@ -2,7 +2,7 @@ id: lms-659eb886-dbee-4e5f-a769-17447aad8f33
 
 info:
   name: >
-    LMS <= 9.1 - Unauthenticated SQL Injection
+    LMS <= 9.2 - Unauthenticated SQL Injection
   author: topscoder
   severity: critical
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 9.1')
+          - compare_versions(version, '<= 9.2')

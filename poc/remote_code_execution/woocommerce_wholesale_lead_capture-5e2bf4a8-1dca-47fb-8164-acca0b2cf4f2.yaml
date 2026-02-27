@@ -2,7 +2,7 @@ id: woocommerce_wholesale_lead_capture-5e2bf4a8-1dca-47fb-8164-acca0b2cf4f2
 
 info:
   name: >
-    Woocommerce Wholesale Lead Capture <= 1.17.8 - Unauthenticated Arbitrary File Upload
+    Woocommerce Wholesale Lead Capture <= 2.0.3.1 - Unauthenticated Arbitrary File Upload
   author: topscoder
   severity: critical
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.17.8')
+          - compare_versions(version, '<= 2.0.3.1')

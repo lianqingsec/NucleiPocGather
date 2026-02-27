@@ -2,7 +2,7 @@ id: healsoul-bca0bc1d-c373-4ccf-928e-14f3bd4bc53c
 
 info:
   name: >
-    Healsoul <= 2.0.2 - Unauthenticated Local File Inclusion
+    Healsoul <= 2.2.3 - Unauthenticated Local File Inclusion
   author: topscoder
   severity: critical
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.2')
+          - compare_versions(version, '<= 2.2.3')

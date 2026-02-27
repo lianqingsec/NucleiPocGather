@@ -2,7 +2,7 @@ id: themify_ptb-3cccfdcc-643c-4330-b345-aca4025e3327
 
 info:
   name: >
-    Post Type Builder <= 2.0.8 - Missing Authorization to Arbitrary Post/Page Creation
+    Post Type Builder < 2.1.4 - Missing Authorization to Arbitrary Post/Page Creation
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.8')
+          - compare_versions(version, '< 2.1.4')

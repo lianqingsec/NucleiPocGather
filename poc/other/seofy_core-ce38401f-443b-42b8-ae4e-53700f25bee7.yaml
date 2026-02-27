@@ -2,7 +2,7 @@ id: seofy_core-ce38401f-443b-42b8-ae4e-53700f25bee7
 
 info:
   name: >
-    Seofy Core <= 1.4.5 - Unauthenticated Local File Inclusion
+    Seofy Core <= 1.6.8 - Unauthenticated Local File Inclusion
   author: topscoder
   severity: critical
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.4.5')
+          - compare_versions(version, '<= 1.6.8')

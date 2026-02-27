@@ -2,7 +2,7 @@ id: wprentals-a31cf5d0-1c37-46bf-bf0c-ca820a281bfc
 
 info:
   name: >
-    WP Rentals <= 3.13.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    WP Rentals <= 3.16.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.13.1')
+          - compare_versions(version, '<= 3.16.1')
