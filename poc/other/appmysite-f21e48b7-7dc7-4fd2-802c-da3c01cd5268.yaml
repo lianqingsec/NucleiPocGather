@@ -2,7 +2,7 @@ id: appmysite-f21e48b7-7dc7-4fd2-802c-da3c01cd5268
 
 info:
   name: >
-    AppMySite <= 3.14.0 - Missing Authorization
+    AppMySite <= 3.15.0 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -32,16 +32,8 @@ http:
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.14.0')
+          - compare_versions(version, '<= 3.15.0')
