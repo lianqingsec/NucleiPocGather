@@ -9,7 +9,8 @@ info:
 requests:
   - method: GET
     path:
-      - "{{BaseURL}}"
+      - "{{BaseURL}}/"
+      - "{{BaseURL}}:3000"
 
     matchers-condition: and
     matchers:

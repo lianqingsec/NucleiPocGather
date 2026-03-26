@@ -4,6 +4,7 @@ info:
   name: Wishpond Takeover Detection
   author: pdteam
   severity: high
+  description: Wishpond takeover was detected.
   reference:
     - https://github.com/EdOverflow/can-i-take-over-xyz
   metadata:
@@ -26,4 +27,9 @@ http:
           - https://www.wishpond.com/404?campaign=true
           - 'Oops! There isn’t a Wishpond Campaign published to this page.'
         condition: or
-# digest: 4a0a00473045022100edee89a2f8ec721f554c9e6f6b670fe95d640f18236ab8a497bf1326a10cba46022075c7f78e236a42364bb7cc52b0f58045548f5f8519a31d57e88d02bdf9bcc128:922c64590222798bb761d5b6d8e72950
+
+    extractors:
+      - type: dsl
+        dsl:
+          - cname
+# digest: 4b0a00483046022100f49fae77e7b3baef7855bf1f7c97a8201d6cdbb9a9e273e8aa3e2b6bcc18fe4b02210084614f5dd4503bcffcc3e0c4732fba1c00f9f6ea8cc26464433faff6fe854e68:922c64590222798bb761d5b6d8e72950

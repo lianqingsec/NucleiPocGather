@@ -1,15 +1,15 @@
-id: revy-97d9157afa2e36b24297da5e222a765b
+id: revy
 
 info:
   name: >
-    Revy <= 1.18 - Unauthenticated Arbitrary File Upload
+    Revy <= 1.18 - Unauthenticated SQL Injection
   author: topscoder
   severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/6827dc47-669c-41de-8716-7932ce8e5259?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/50192909-9351-4cf5-b578-f34be72aeda6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

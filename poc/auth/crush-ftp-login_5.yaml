@@ -1,7 +1,7 @@
 id: crushftp-login
 
 info:
-  name: CrushFTP WebInterface Panel - Detect
+  name: CrushFTP WebInterface Login Panel - Detect
   author: dhiyaneshDK
   severity: info
   description: CrushFTP WebInterface login panel was detected.
@@ -13,8 +13,7 @@ info:
     cwe-id: CWE-200
   metadata:
     max-request: 1
-    verified: true
-  tags: panel,edb,crushftp,detect
+  tags: panel,edb
 
 http:
   - method: GET
@@ -26,10 +25,9 @@ http:
       - type: word
         words:
           - '<title>CrushFTP WebInterface</title>'
-          - '<title>CrushFTP - Login</title>'
-        condition: or
 
       - type: status
         status:
           - 200
-# digest: 490a00463044022039c5b5c66ef0ac78ca177251c83f29a53e622b48702411d9b15df09c3d0d2a24022027ea2a94e4dafe473db08e83ae43734959e36ce0eef782571009dd4989ac3502:922c64590222798bb761d5b6d8e72950
+
+# digest: 4a0a00473045022100c5dc89ed48c74ef5d1d917130eb3d7a9e91a4b194555bd27410548372038afeb0220678ae4a603fa37159c592903ae3af48da878969bff6413f21d738ffd2a8eaa0a:922c64590222798bb761d5b6d8e72950
