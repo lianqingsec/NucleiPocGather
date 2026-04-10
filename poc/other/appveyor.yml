@@ -1,69 +1,49 @@
-version: 1.0.{build}
+# version format
+version: "{build}"
 
-image:
-  - Visual Studio 2015
+# Operating system (build VM template)
+os: Windows Server 2012 R2
 
-clone_folder: c:\gopath\src\github.com\denisenkom\go-mssqldb
+# Platform.
+platform: x64
 
+clone_folder: c:\gopath\src\github.com\dgraph-io\badger
+
+# Environment variables
 environment:
+  GOVERSION: 1.12
   GOPATH: c:\gopath
-  HOST: localhost
-  SQLUSER: sa
-  SQLPASSWORD: Password12!
-  DATABASE: test
-  GOVERSION: 113
-  matrix:
-    - GOVERSION: 18
-      SQLINSTANCE: SQL2017
-    - GOVERSION: 19
-      SQLINSTANCE: SQL2017
-    - GOVERSION: 110
-      SQLINSTANCE: SQL2017
-    - GOVERSION: 111
-      SQLINSTANCE: SQL2017
-    - GOVERSION: 112
-      SQLINSTANCE: SQL2017
-    - SQLINSTANCE: SQL2017
-    - SQLINSTANCE: SQL2016
-    - SQLINSTANCE: SQL2014
-    - SQLINSTANCE: SQL2012SP1
-    - SQLINSTANCE: SQL2008R2SP2
+  GO111MODULE: on
 
-    #  Go 1.14+ and SQL2019 are available on the Visual Studio 2019 image only
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      GOVERSION: 114
-      SQLINSTANCE: SQL2019
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      GOVERSION: 115
-      SQLINSTANCE: SQL2019
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      GOVERSION: 115
-      SQLINSTANCE: SQL2017
-    - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2019
-      GOVERSION: 116
-      SQLINSTANCE: SQL2017
-
+# scripts that run after cloning repository
 install:
-  - set GOROOT=c:\go%GOVERSION%
-  - set PATH=%GOPATH%\bin;%GOROOT%\bin;%PATH%
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
   - go version
   - go env
-  - go get -u github.com/golang-sql/civil
-  - go get -u github.com/golang-sql/sqlexp
+  - python --version
 
+# To run your custom scripts instead of automatic MSBuild
 build_script:
-  - go build
+  # We need to disable firewall - https://github.com/appveyor/ci/issues/1579#issuecomment-309830648
+  - ps: Disable-NetFirewallRule -DisplayName 'File and Printer Sharing (SMB-Out)'
+  - cd c:\gopath\src\github.com\dgraph-io\badger
+  - git branch
+  - go get -t ./...
 
-before_test:
-  # setup SQL Server
-  - ps: |
-      $instanceName = $env:SQLINSTANCE
-      Start-Service "MSSQL`$$instanceName"
-      Start-Service "SQLBrowser"
-  - sqlcmd -S "(local)\%SQLINSTANCE%" -Q "Use [master]; CREATE DATABASE test;"
-  - sqlcmd -S "(local)\%SQLINSTANCE%" -h -1 -Q "set nocount on; Select @@version"
-  - pip install codecov
-
+# To run your custom scripts instead of automatic tests
 test_script:
-  - go test -race -cpu 4 -coverprofile=coverage.txt -covermode=atomic
-  - codecov -f coverage.txt
+  # Unit tests
+  - ps: Add-AppveyorTest "Unit Tests" -Outcome Running
+  - go test -v github.com/dgraph-io/badger/...
+  - go test -v -vlog_mmap=false github.com/dgraph-io/badger/...
+  - ps: Update-AppveyorTest "Unit Tests" -Outcome Passed
+
+notifications:
+  - provider: Email
+    to:
+      - pawan@dgraph.io
+    on_build_failure: true
+    on_build_status_changed: true
+# to disable deployment
+deploy: off
+

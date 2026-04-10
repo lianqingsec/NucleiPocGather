@@ -1,15 +1,15 @@
-id: homey
+id: homey-964c892c7fae7acefa9202ef68d5da68
 
 info:
   name: >
-    Homey <= 2.4.1 - Authenticated (Subscriber+) Privilege Escalation
+    Homey - Booking and Rentals WordPress Theme <= 2.4.4 - Missing Authorization to Authenticated (Subscriber+) Arbitrary Reservation & Post Deletion
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/76e4bde3-e815-49c1-9098-c09a54e2274a?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/c0ef3ae7-b3c0-4f54-a95d-9f8cf9497d8f?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4.1')
+          - compare_versions(version, '<= 2.4.4')

@@ -13,7 +13,7 @@ info:
     max-request: 1
     shodan-query: html:"private gpt"
     product: private-gpt
-  tags: panel,privategpt,detect,discovery
+  tags: panel,privategpt,detect
 
 http:
   - method: GET
@@ -33,4 +33,4 @@ http:
       - type: status
         status:
           - 200
-# digest: 4a0a00473045022100d44ffb1649e2d2320719c44d1feece87394d5541186a9e469bbc38d59e66490102202816d0016d911903da1c9a48ef24895a9d3a43d29958f3710cf4b671066a8ae7:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100c7d7d2c808652357c4fbdead51708ee3303a5fe5fc4b282ec0d1ffd16bf768ba022040bd5e7741c67e6e136367ac00ab0b6e752a13708cae5f1435bfca43791bb938:922c64590222798bb761d5b6d8e72950

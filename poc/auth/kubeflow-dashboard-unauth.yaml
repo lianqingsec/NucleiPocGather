@@ -1,20 +1,36 @@
 id: kubeflow-dashboard-unauth
+
 info:
-  name: Kubeflow Dashboard unauth
-  risk: High
+  name: Kubeflow Unauth
+  author: dhiyaneshDk
+  severity: high
+  description: Kubeflow internal data is exposed.
+  reference:
+    - https://github.com/kubeflow/kubeflow
+  metadata:
+    max-request: 1
+  tags: kubeflow,unauth,misconfig
 
-params:
-  - root: '{{.BaseURL}}'
-
-
-requests:
+http:
   - method: GET
-    redirect: false
-    url: >-
-     {{.root}}/pipeline/apis/v1beta1/runs?page_size=5&sort_by=created_at%20desc
-    detections:
-      - >-
-        StatusCode() == 200 && StringSearch("response", "application/json") && StringSearch("body", '{"runs":[{"id":') && StringSearch("body", "resource_references")
+    path:
+      - '{{BaseURL}}/pipeline/apis/v1beta1/runs?page_size=5&sort_by=created_at%20desc'
 
-reference:
-  - link: https://github.com/kubeflow/kubeflow
+    matchers-condition: and
+    matchers:
+      - type: word
+        words:
+          - '{"runs":[{"id":'
+          - 'resource_references'
+        condition: and
+        part: body
+
+      - type: word
+        words:
+          - "application/json"
+        part: header
+
+      - type: status
+        status:
+          - 200
+# digest: 490a0046304402204acd47be467840b7381161d23c059940a5e3fa762863360094e23cd2cb67ff480220419c6fd7afd2459f0e795d36777b49bcacb1c521bb0da183c34f1aec330eb8b4:922c64590222798bb761d5b6d8e72950

@@ -2,25 +2,19 @@ id: avtech-dvr-exposure
 
 info:
   name: Avtech AVC798HA DVR Information Exposure
-  description: Under the /cgi-bin/nobody folder every CGI script can be accessed without authentication.
-  reference: http://www.avtech.com.tw/
   author: geeknik
   severity: low
-  tags: dvr,exposure,avtech
+  verified: true
+  description: |
+    Under the /cgi-bin/nobody folder every CGI script can be accessed without authentication.
+    app="AVTECH-视频监控"
+  reference: 
+    - http://www.avtech.com.tw/
 
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/cgi-bin/nobody/Machine.cgi?action=get_capability"
-
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: word
-        words:
-          - "Firmware.Version="
-          - "MACAddress="
-          - "Product.Type="
-        condition: and
+rules:
+    r0:
+        request:
+            method: GET
+            path: /cgi-bin/nobody/Machine.cgi?action=get_capability
+        expression: response.status == 200 && response.body.bcontains(b"Firmware.Version=") && response.body.bcontains(b"MACAddress=") && response.body.bcontains(b"Product.Type=")
+expression: r0()

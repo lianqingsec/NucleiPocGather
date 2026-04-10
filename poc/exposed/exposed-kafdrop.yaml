@@ -4,9 +4,9 @@ info:
   name: Publicly exposed Kafdrop Interface
   author: dhiyaneshDk
   severity: low
-  tags: exposure,misconfig
+  tags: exposure,misconfig,kafdrop
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}'

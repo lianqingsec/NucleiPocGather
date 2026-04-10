@@ -13,7 +13,7 @@ requests:
         PUT /testing-put.txt HTTP/1.1
         Content-Type: text/plain
 
-        {{randstr}}
+        testing-payload
 
       - |
         GET /testing-put.txt HTTP/1.1
@@ -22,5 +22,6 @@ requests:
     req-condition: true
     matchers:
       - type: dsl
+        name: multi-req
         dsl:
-          - 'contains(body_2, "{{randstr}}")'
+          - 'contains(body_2, "testing-payload") == true'

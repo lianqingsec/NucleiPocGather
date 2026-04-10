@@ -16,7 +16,7 @@ info:
     product: openmetadata
     fofa-query: title="OpenMetadata"
     shodan-query: title:"OpenMetadata"
-  tags: tech,openmetadata,detect,discovery
+  tags: tech,openmetadata,detect
 
 http:
   - method: GET

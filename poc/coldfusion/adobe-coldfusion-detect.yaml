@@ -1,13 +1,10 @@
-id: adobe-coldfusion-detect
+id: adobe-coldfusion-detector
 
 info:
   name: Adobe ColdFusion Detector
   author: philippedelteil
   severity: info
   description: With this template we can detect the version number of Coldfusion instances based on their logos.
-  metadata:
-    verified: true
-    shodan-query: http.component:"Adobe ColdFusion"
   tags: adobe,coldfusion
 
 requests:

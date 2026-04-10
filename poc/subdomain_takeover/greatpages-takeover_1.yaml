@@ -12,7 +12,7 @@ info:
     verified: true
     fofa-query: cname="cname.greatpages.com.br"
     max-request: 1
-  tags: takeover,greatpages,vuln
+  tags: takeover,greatpages
 
 http:
   - method: GET
