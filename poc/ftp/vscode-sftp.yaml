@@ -1,24 +1,32 @@
-id: vscode-sftp-exposure
+id: vscode-sftp
 
 info:
-  name: VSCode SFTP Configuration Exposure
-  author: SirBugs
+  name: vscode sftp credentials
+  author: geeknik
+  description: Created by vscode-sftp for VSCode, contains SFTP/SSH server details and credentials
   severity: high
-  description: Checks for exposed VSCode SFTP configuration file.
-  tags: exposure
+  tags: vscode,sftp,ssh
 
 requests:
   - method: GET
     path:
+      - "{{BaseURL}}/sftp.json"
+      - "{{BaseURL}}/.config/sftp.json"
       - "{{BaseURL}}/.vscode/sftp.json"
 
     matchers-condition: and
     matchers:
       - type: word
-        condition: or
+        part: header
         words:
-          - '"protocol":'
-          - '"port":'
-          - '"username":'
-          - '"password":'
-        part: body
+          - "application/json"
+      - type: status
+        status:
+          - 200
+      - type: word
+        words:
+          - "name"
+          - "host"
+          - "protocol"
+          - "username"
+        condition: and

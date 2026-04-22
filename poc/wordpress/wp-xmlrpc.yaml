@@ -1,14 +1,12 @@
-id: wordpress-xmlrpc-file
+id: wordpress-xmlrpc-file-1
 
 info:
   name: WordPress xmlrpc
   author: udit_thakkur
   severity: info
   tags: wordpress
-  metadata:
-    max-request: 1
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/xmlrpc.php"

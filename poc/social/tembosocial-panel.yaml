@@ -1,5 +1,4 @@
 id: tembosocial-panel
-
 info:
   name: TemboSocial Administration Panel
   author: DhiyaneshDK
@@ -8,20 +7,17 @@ info:
     verified: true
     shodan-query: title:"TemboSocial Administration"
   tags: panel,tembosocial
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/admin.php"
-
-    host-redirects: true
+    redirects: true
     max-redirects: 2
     matchers-condition: and
     matchers:
       - type: word
         words:
           - '<title>TemboSocial Administration</title>'
-
       - type: status
         status:
           - 200

@@ -8,9 +8,8 @@ info:
     An adobe phishing website was detected
   reference:
     - https://adobe.com
-  metadata:
-    max-request: 1
   tags: phishing,adobe,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"adobe.com")'
-# digest: 4b0a00483046022100c58b5847aec1f819d442b13b01d212b61194f6443afb771c715b2aa42341431f022100c46b640319ad208c3fcd2b650b2a953bbd0e8bd77147e75f04bb7d9c08c82460:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022100f699ca414d445deca850b3b92ea2bcc0032e483942d6055deb959fb843a413ef02204bf10e292e686531317af7c2b28854febccea9fb1ab9ee7487a5304b529b072b:922c64590222798bb761d5b6d8e72950

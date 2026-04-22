@@ -2,22 +2,23 @@ id: wp-slimstat
 
 info:
   name: >
-    Slimstat Analytics <= 4.8.3 - Cross-Site Request Forgery to Stored Cross-Site Scripting
+    Slimstat Analytics < 3.9.6 - Unauthenticated Blind SQL Injection
   author: topscoder
-  severity: high
+  severity: critical
   description: >
-    The Slimstat Analytics plugin for WordPress is vulnerable to Cross-Site Request Forgery in versions up to, and including, 4.8.3. This is due to missing or incorrect nonce validation on the update_settings function. This makes it possible for unauthenticated attackers to inject arbitrary web scripts that execute in a victim's browser via forged request granted they can trick a site administrator into performing an action such as clicking on a link.
+    The Slimstat Analytics plugin for WordPress is vulnerable to blind SQL Injection via the ‘_data’ parameter in versions before 3.9.6 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database.
   reference:
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/f87e78c5-e7f4-4af6-b64f-444fef23e890?source=api-prod
+    - https://github.com/topscoder/nuclei-wordfence-cve
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e2c11005-dcb3-40b3-863a-0612132acb08?source=api-prod
   classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:U/C:H/I:H/A:H
-    cvss-score: 8.8
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
+    cvss-score: 8.2
     cve-id: 
   metadata:
     fofa-query: "wp-content/plugins/wp-slimstat/"
     google-query: inurl:"/wp-content/plugins/wp-slimstat/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,wp-slimstat,high
+  tags: cve,wordpress,wp-plugin,wp-slimstat,critical
 
 http:
   - method: GET
@@ -55,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '< 4.8.4')
+          - compare_versions(version, '< 3.9.6')

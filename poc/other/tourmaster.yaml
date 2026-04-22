@@ -1,15 +1,15 @@
-id: tourmaster-c7d7129e564b86469cccecee26edd341
+id: tourmaster
 
 info:
   name: >
-    Tour Master - Tour Booking, Travel, Hotel <= 5.3.6 - Authenticated (Subscriber+) SQL Injection via review_id Parameter
+    Tour Master - Tour Booking, Travel, Hotel < 5.3.4 - Unauthenticated Stored Cross-Site Scripting via Room Booking
   author: topscoder
-  severity: low
+  severity: high
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7d7f2cb6-5c19-4126-9f39-439cf6057c5b?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/12b1b1b4-a62f-451e-a78d-c1d85202a4cf?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/tourmaster/"
     google-query: inurl:"/wp-content/plugins/tourmaster/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,tourmaster,low
+  tags: cve,wordpress,wp-plugin,tourmaster,high
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.3.6')
+          - compare_versions(version, '< 5.3.4')
