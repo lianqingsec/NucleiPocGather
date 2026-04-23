@@ -20,17 +20,15 @@ info:
 
 variables:
   callback_url: "{{interactsh-url}}"
-  ws_base: "{{replace(replace(BaseURL, 'https://', 'wss://'), 'http://', 'ws://')}}"
 
 websocket:
-  - address: "{{ws_base}}{{ws_path}}"
-    payloads:
-      ws_path:
-        - "/ws"
-        - "/websocket"
-        - "/socket.io/"
-        - "/api/ws"
-        - "/realtime"
+  - address: "{{BaseURL}}"
+    path:
+      - "/ws"
+      - "/websocket"
+      - "/socket.io/"
+      - "/api/ws"
+      - "/realtime"
 
     inputs:
       - data: |
@@ -57,30 +55,12 @@ websocket:
             "retry_failed": true,
             "external_webhook": "{{callback_url}}/external"
           }
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol
-        words:
-          - "http"
-          - "dns"
-        condition: or
-      - type: word
-        part: interactsh_request
-        words:
-          - "webhook"
-          - "events"
-          - "notify"
-          - "callback"
-          - "external"
-        condition: or
 
-  - address: "{{ws_base}}{{ws_path}}"
-    payloads:
-      ws_path:
-        - "/ws/stream"
-        - "/websocket/feed"
-        - "/api/ws/live"
+  - address: "{{BaseURL}}"
+    path:
+      - "/ws/stream"
+      - "/websocket/feed"
+      - "/api/ws/live"
 
     inputs:
       - data: |
@@ -91,27 +71,12 @@ websocket:
             "real_time": true,
             "callback_on_error": "{{callback_url}}/error"
           }
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol
-        words:
-          - "http"
-          - "dns"
-        condition: or
-      - type: word
-        part: interactsh_request
-        words:
-          - "stream"
-          - "error"
-        condition: or
 
-  - address: "{{ws_base}}{{ws_path}}"
-    payloads:
-      ws_path:
-        - "/ws/integration"
-        - "/websocket/external"
-        - "/api/ws/third-party"
+  - address: "{{BaseURL}}"
+    path:
+      - "/ws/integration"
+      - "/websocket/external"
+      - "/api/ws/third-party"
 
     inputs:
       - data: |
@@ -130,19 +95,11 @@ websocket:
             "external_url": "{{callback_url}}/subscribe",
             "callback_events": ["all"]
           }
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: interactsh_protocol
-        words:
-          - "http"
-          - "dns"
-        condition: or
-      - type: word
-        part: interactsh_request
-        words:
-          - "integration"
-          - "auth"
-          - "data"
-          - "subscribe"
-        condition: or
+
+matchers:
+  - type: word
+    part: interactsh_protocol
+    words:
+      - "http"
+      - "dns"
+    condition: or

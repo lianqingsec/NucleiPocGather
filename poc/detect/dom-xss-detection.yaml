@@ -57,7 +57,7 @@ headless:
               } catch(e) {}
             }
 
-      - action: sleep
+      - action: wait
         args:
           duration: 2
 
@@ -95,18 +95,22 @@ headless:
           name: vulnerabilities
           script: "window.vulns || []"
 
-    matchers-condition: and
+    matchers-condition: or
     matchers:
-      # DOM XSS triggers fetch() callbacks - only HTTP interactions are relevant,
-      # not DNS (DNS would indicate network resolution, not JS execution).
       - type: word
         part: interactsh_protocol
         words:
           - "http"
+          - "dns"
+
       - type: word
-        part: interactsh_request
+        part: extract
+        name: vulnerabilities
         words:
-          - "{{xss_id}}"
+          - "eval-overridden"
+          - "document-write-found"
+          - "location-injectable"
+        condition: or
 
     extractors:
       - type: regex

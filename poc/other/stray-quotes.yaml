@@ -1,4 +1,4 @@
-id: stray-quotes
+id: stray-quotes-a41eb35d192009aa2bed9ffe870074a4
 
 info:
   name: >
@@ -9,7 +9,7 @@ info:
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/7141edc6-8b34-4624-8264-9ca1696ccdbf?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/49c717eb-3320-41aa-8dfe-eb23ac7544d6?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

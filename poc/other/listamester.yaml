@@ -1,15 +1,15 @@
-id: listamester
+id: listamester-119b5d7fd3f16d408fd71ecab5d47827
 
 info:
   name: >
-    Listamester <= 2.3.4 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Listamester <= 2.3.5 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/68b4358d-d4b4-415b-a19f-e58b155ceac9?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/880036ab-509b-406e-a11e-d4b638d98450?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.3.4')
+          - compare_versions(version, '<= 2.3.5')

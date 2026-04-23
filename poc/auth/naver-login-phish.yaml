@@ -9,8 +9,9 @@ info:
   reference:
     - https://nid.naver.com
     - https://www.navercorp.com
+  metadata:
+    max-request: 1
   tags: phishing,naver,osint
-
 http:
   - method: GET
     path:
@@ -33,4 +34,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"nid.naver.com")'
-# digest: 4b0a00483046022100b26b957293181bdaf643c0dce686267946384f84fa35eda5e3c45b9a45ae0cb1022100bd92696a2f0c240b267f70f9f7dd60abe35c63f338ca32aef2cf4611b9695629:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022076a95c7ebfc0e23846ae4cb6a11d8f8e78caef35e85b79b27e5aa3664ecc63b302207d78eeceac40eb8f78a690fc2d4d890d170c256591d71f18f43120525270336d:922c64590222798bb761d5b6d8e72950

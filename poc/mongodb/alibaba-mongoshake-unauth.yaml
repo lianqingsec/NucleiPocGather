@@ -4,9 +4,9 @@ info:
   name: Alibaba Mongoshake Unauth
   author: pikpikcu
   severity: info
-  tags: mongoshake,unauth
+  tags: mongoshake,unauth,alibaba
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/'

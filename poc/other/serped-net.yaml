@@ -1,15 +1,15 @@
-id: serped-net
+id: serped-net-b08a731f31c812a0b4d9bbf2fb44244a
 
 info:
   name: >
-    SERPed.net <= 4.4 - Authenticated (Contributor+) SQL Injection
+    SERPed.net <= 4.6 - Unauthenticated Local File Inclusion
   author: topscoder
-  severity: low
+  severity: critical
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/8a756804-4f39-46ce-8a0e-c5632f78686d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/67d3c280-507d-4e53-81c4-621fce05b386?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/serped-net/"
     google-query: inurl:"/wp-content/plugins/serped-net/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,serped-net,low
+  tags: cve,wordpress,wp-plugin,serped-net,critical
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 4.4')
+          - compare_versions(version, '<= 4.6')
