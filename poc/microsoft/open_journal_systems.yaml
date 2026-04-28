@@ -20,4 +20,3 @@ http:
   - type: word
     words:
     - pkp-lib
-    case-insensitive: true

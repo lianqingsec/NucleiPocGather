@@ -1,11 +1,11 @@
 id: smartjob-takeover
 
 info:
-  name: Smartjob Takeover Detection
+  name: smartjob takeover detection
   author: pdteam
   severity: high
   reference:
-    - https://github.com/EdOverflow/can-i-take-over-xyz/issues/139
+    - https://github.com/EdOverflow/can-i-take-over-xyz
   tags: takeover
 
 requests:
@@ -13,12 +13,7 @@ requests:
     path:
       - "{{BaseURL}}"
 
-    matchers-condition: and
     matchers:
-      - type: dsl
-        dsl:
-          - Host != ip
-
       - type: word
         words:
           - Job Board Is Unavailable

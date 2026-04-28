@@ -6,7 +6,7 @@ info:
   severity: low
   tags: exposure,misconfig,kafdrop
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

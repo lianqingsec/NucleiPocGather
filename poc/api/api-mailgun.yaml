@@ -4,8 +4,7 @@ info:
   name: Mailgun API Test
   author: zzeitlin
   severity: info
-  reference:
-    - https://documentation.mailgun.com/en/latest/api-intro.html
+  reference: https://documentation.mailgun.com/en/latest/api-intro.html
   tags: token-spray,mailgun
 
 self-contained: true
