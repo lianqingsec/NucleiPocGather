@@ -4,12 +4,17 @@ info:
   name: WordPress Detect
   author: pdteam,daffainfo,ricardomaia,topscoder,AdamCrosser
   severity: info
+  classification:
+    cpe: cpe:2.3:a:wordpress:wordpress:*:*:*:*:*:*:*:*
   metadata:
     verified: true
     max-request: 4
     vendor: wordpress
     product: wordpress
-    shodan-query: http.component:"WordPress"
+    shodan-query:
+      - http.component:"WordPress"
+      - http.component:"wordpress"
+      - cpe:"cpe:2.3:a:wordpress:wordpress"
     category: cms
   tags: tech,wordpress,cms,wp
 
@@ -31,12 +36,12 @@ http:
         regex:
           - '<generator>https?:\/\/wordpress\.org.*</generator>'
           - 'wp-login.php'
-          - '\/wp-content/themes\/'
-          - '\/wp-includes\/'
           - 'name="generator" content="wordpress'
           - '<link[^>]+s\d+\.wp\.com'
-          - '<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin v([\d.]+) -'
+          - '<!-- This site is optimized with the Yoast (?:WordPress )?SEO plugin
+            v([\d.]+) -'
           - '<!--[^>]+WP-Super-Cache'
+          - '/wp-content/uploads/(.*)'
         condition: or
 
     extractors:
@@ -57,4 +62,4 @@ http:
         group: 1
         regex:
           - 'install\.min\.css\?ver=((\d+\.?)+)\b'
-# digest: 4a0a00473045022066a6edc2215c89b4a127f160b29eefe4b07a0ef0937de9cd49e79633e005a48a022100d1d6083d6576fb33cbb296603faac27d51898245b419cede8ee2c8547fafc361:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502200daeff6c069f67772c1b16fe46bce9b6adfb46144acf90ec47488fdc0e6ca054022100f5d1ae7339974b04a7be30cbe3d05fefa2ef2667314edb3a3c72e0c4b9701b23:922c64590222798bb761d5b6d8e72950

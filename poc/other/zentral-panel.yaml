@@ -1,5 +1,4 @@
 id: zentral-panel
-
 info:
   name: Zentral pANEL Detect
   author: Adam Crosser
@@ -8,12 +7,10 @@ info:
     - https://github.com/zentralopensource/zentral
     - https://zentral.io
   tags: panel,zentral,oss
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}'
-
     matchers:
       - type: word
         words:

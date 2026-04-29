@@ -5,8 +5,10 @@ info:
   author: Suman_Kar
   severity: medium
   tags: wordpress,backup
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/uploads/database-backups/"

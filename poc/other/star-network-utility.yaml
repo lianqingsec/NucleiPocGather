@@ -10,12 +10,11 @@ info:
     cvss-score: 0.0
     cwe-id: CWE-200
   metadata:
-    max-request: 1
     verified: true
     shodan-query: http.html:"Network Utility"
-  tags: panel,utility
+  tags: panel,network,utility
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -1,15 +1,15 @@
-id: s2member-pro
+id: s2member-pro-1fed5f64a734bc2ab355ffa151d640c8
 
 info:
   name: >
-    s2Member Pro <= 241216 - Unauthenticated PHP Object Injection
+    s2Member Pro <= 250214 - Authenticated (Contributor+) Local File Inclusion to Remote Code Execution via Shortcode
   author: topscoder
-  severity: critical
+  severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/65192fdb-86db-475a-8c61-4db922920cfe?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/d3326e9d-504f-444f-baf7-03989594f483?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
@@ -18,7 +18,7 @@ info:
     fofa-query: "wp-content/plugins/s2member-pro/"
     google-query: inurl:"/wp-content/plugins/s2member-pro/"
     shodan-query: 'vuln:'
-  tags: cve,wordpress,wp-plugin,s2member-pro,critical
+  tags: cve,wordpress,wp-plugin,s2member-pro,low
 
 http:
   - method: GET
@@ -56,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 241216')
+          - compare_versions(version, '<= 250214')

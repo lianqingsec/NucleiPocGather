@@ -1,29 +1,32 @@
-id: django-debug-exposure
-
 info:
-  name: Django Debug Exposure
-  author: geeknik
-  severity: high
-  reference:
-    - https://twitter.com/Alra3ees/status/1397660633928286208
-  tags: django,exposure
+  id: django-debug-exposure
+  name: Django Debug Mode Exposure - Detect
+  author: OpenAI
+  description: Template to detect Django debug mode exposure
+  severity: Medium
+  classification:
+    country: any
+    tags:
+      - django
+      - debug
+      - exposure
 
-requests:
-  - method: POST
-    path:
-      - "{{BaseURL}}/admin/login/?next=/admin/"
+  matcher-condition: and
 
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 500
+  requests:
+      method: GET
+      path:
+        - "/settings.py"
+        - "/manage.py"
+      description: Attempt to retrieve Django configuration files
+      condition: and
 
-      - type: word
-        part: body
-        words:
-          - "DB_HOST"
-          - "DB_NAME"
-          - "DJANGO"
-          - "ADMIN_PASSWORD"
-        condition: and
+  matchers:
+    - pattern: 'DEBUG\s*=\s*True'
+      type: body
+      description: Django configuration file with debug mode enabled
+
+  response:
+    - status:
+        - 200
+      description: Successful response status

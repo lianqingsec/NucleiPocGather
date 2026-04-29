@@ -1,12 +1,12 @@
-id: wordpress-directory-listing-1
+id: wordpress-directory-listing
 
 info:
   name: Wordpress directory listing
   author: Manas_Harsh
   severity: info
-  tags: wordpress
+  tags: wordpress-misc,wordpress
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/wp-content/uploads/"

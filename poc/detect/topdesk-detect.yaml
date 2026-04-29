@@ -5,14 +5,13 @@ info:
   author: darses
   severity: info
   description: |
-    Detects the presence of TOPdesk and extract timestamp from static files.
+    Detects the use of TOPdesk, a web-based IT service management (ITSM) and helpdesk platform. Identification is based on unique page titles, HTML patterns.
   metadata:
     verified: true
     max-requests: 1
-    shodan-query: http.favicon.hash:-1177777311
-    fofa-query: icon_hash="1428583669" || icon_hash="589927604" || icon_hash="1123106483" || icon_hash="1431756848" || icon_hash="1986563074"
-    vendor: TOPDesk
-  tags: tech,detect,topdesk
+    shodan-query: html:"TOPdesk"
+    fofa-query: app="TOPdesk"
+  tags: topdesk,tech,detect
 
 http:
   - method: GET
@@ -21,24 +20,27 @@ http:
 
     matchers-condition: and
     matchers:
+      - type: word
+        part: body
+        words:
+          - 'href="/tas/'
+          - "topdeskidploginforwardurl"
+        condition: or
+
       - type: status
         status:
           - 200
-      - type: word
-        words:
-          - 'href="/tas/'
-        part: body
 
     extractors:
       - type: regex
         name: extracted_unix_timestamp
         part: body
         regex:
-          - "timestamp=(\\d{10})"
+          - "auth\\.css\\?timestamp=(\\d{10})"
         group: 1
         internal: true
 
       - type: dsl
-        name: extracted_date
         dsl:
-          - "date_time('%Y-%M-%D', extracted_unix_timestamp)"
+          - '"Release date: " + date_time("%Y-%M-%D", extracted_unix_timestamp)'
+# digest: 4a0a00473045022100f63ab09725df0aaabc6df0d4cdaf6ada609b092d6d2aab997f74ab41850fac1802204e1549278edbcc055065877845fd0d3bc2e6a283e703775e28d77a16e67e25a9:922c64590222798bb761d5b6d8e72950

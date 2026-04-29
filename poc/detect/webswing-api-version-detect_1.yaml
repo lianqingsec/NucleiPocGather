@@ -10,7 +10,7 @@ info:
     verified: true
     max-request: 1
     shodan-query: 'Server: webswing.org'
-  tags: webswing,rest,api,version,detect,discovery
+  tags: webswing,rest,api,version,detect
 
 http:
   - method: GET

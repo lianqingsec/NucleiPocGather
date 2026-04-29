@@ -9,7 +9,7 @@ info:
     shodan-query: http.html:"Ampache Update"
   tags: misconfig,ampache,exposure
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/update.php"
