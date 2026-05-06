@@ -2,7 +2,7 @@ id: tutor_pro-ad4e5243-e41a-4624-b9cd-47ab79637560
 
 info:
   name: >
-    Tutor LMS Pro <= 3.9.4 - Missing Authorization
+    Tutor LMS Pro <= 3.9.8 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 3.9.4')
+          - compare_versions(version, '<= 3.9.8')
