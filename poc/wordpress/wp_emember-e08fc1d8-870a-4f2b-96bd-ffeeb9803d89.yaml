@@ -2,7 +2,7 @@ id: wp_emember-e08fc1d8-870a-4f2b-96bd-ffeeb9803d89
 
 info:
   name: >
-    eMember <= v10.2.2 - Missing Authorization
+    eMember <= 10.2.2 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '* -v10.2.2')
+          - compare_versions(version, '<= 10.2.2')
