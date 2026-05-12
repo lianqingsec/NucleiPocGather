@@ -2,7 +2,7 @@ id: tablesome-8e96b53e-218e-416e-8910-940ed2093f0f
 
 info:
   name: >
-    Tablesome <= 1.2.2 - Missing Authorization
+    Tablesome <= 1.2.8 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.2')
+          - compare_versions(version, '<= 1.2.8')

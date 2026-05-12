@@ -2,7 +2,7 @@ id: stylish_cost_calculator-cca6e588-0fd6-4643-897c-bcc3f482ddda
 
 info:
   name: >
-    Stylish Cost Calculator <= 8.1.9 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    Stylish Cost Calculator < 8.3.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
@@ -48,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 8.1.9')
+          - compare_versions(version, '< 8.3.1')
