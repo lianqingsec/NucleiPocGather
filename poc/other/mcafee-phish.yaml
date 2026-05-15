@@ -8,9 +8,8 @@ info:
     A mcafee phishing website was detected
   reference:
     - https://mcafee.com
-  metadata:
-    max-request: 1
   tags: phishing,mcafee,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"mcafee.com")'
-# digest: 4b0a004830460221008c18f82004fce0ebaee7f70aaef6a540c74c019cb77108634701c1eb6a74a204022100efe43f424cb5841ca404a550f5426dfd0030010be6cd59201f0d77eccd8668b1:922c64590222798bb761d5b6d8e72950
+# digest: 4b0a00483046022100fae519ded008b73c8da9f8d7e66ebc98d4188fe67df22ad90ede994a71cea26c022100f5645d8c10273081edf8b0c070b2fd5cba14081db1e95fa539d38c0a2d6e1584:922c64590222798bb761d5b6d8e72950

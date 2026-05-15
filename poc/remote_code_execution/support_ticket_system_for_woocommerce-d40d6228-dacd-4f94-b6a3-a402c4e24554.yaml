@@ -2,7 +2,7 @@ id: support_ticket_system_for_woocommerce-d40d6228-dacd-4f94-b6a3-a402c4e24554
 
 info:
   name: >
-    Helpdesk Support Ticket System for WooCommerce <= 2.0.2 - Missing Authorization
+    Helpdesk Support Ticket System for WooCommerce <= 2.1.1 - Missing Authorization
   author: topscoder
   severity: high
   description: >
@@ -32,16 +32,8 @@ http:
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.0.2')
+          - compare_versions(version, '<= 2.1.1')

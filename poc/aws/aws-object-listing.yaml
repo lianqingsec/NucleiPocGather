@@ -5,9 +5,9 @@ info:
   author: pdteam
   severity: low
   reference: https://mikey96.medium.com/cloud-based-storage-misconfigurations-critical-bounties-361647f78a29
-  tags: aws,misconfig,bucket
+  tags: aws,misconfig
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}"

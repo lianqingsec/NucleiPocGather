@@ -1,15 +1,15 @@
-id: abc-notation-3e2a8016609fe7dbd6a2bd1a270e73c9
+id: abc-notation
 
 info:
   name: >
-    ABC Notation <= 6.1.3 - Authenticated (Contributor+) Stored Cross-Site Scripting
+    ABC Notation <= 6.1.3 - Authenticated (Contributor+) Arbitrary File Read
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/55430010-f18f-4d8d-bbfa-cc02344369e0?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/e53a2b7a-7005-451a-88f2-c23d420b4aad?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

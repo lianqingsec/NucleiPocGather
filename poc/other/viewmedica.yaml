@@ -1,15 +1,15 @@
-id: viewmedica-6e6ac6ee72d305bf59f17ab3d56d9477
+id: viewmedica
 
 info:
   name: >
-    ViewMedica 9 <= 1.4.15 - Cross-Site Request Forgery to Reflected Cross-Site Scripting
+    ViewMedica Embed <= 1.4.15 - Cross-Site Request Forgery to SQL Injection
   author: topscoder
   severity: medium
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/646ba700-28d5-455f-88de-2864ef8f202c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/58209530-9e68-4d2c-a723-e6a164db7f46?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 

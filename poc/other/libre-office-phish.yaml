@@ -8,9 +8,8 @@ info:
     A libre office phishing website was detected
   reference:
     - https://libreoffice.org
-  metadata:
-    max-request: 1
   tags: phishing,libre-office,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"libreoffice.org")'
-# digest: 4a0a004730450221009554c7f1c3464f5d5e0302ada4f20dde2bc17bdf3d0edcc5197b3ceb8aa0a67102205fb187e75c8e071d9b6d353edb823845c69ca2f5437d90810db842825e1b1ea1:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a00473045022041ac9859bed0a06207c8f6ce36f924a0ad3ee6f71a61ad6aa73417572ab6ff000221009009998f2195168008f4a21bb964a087e93c5e85f319feb5829911ef9152c896:922c64590222798bb761d5b6d8e72950

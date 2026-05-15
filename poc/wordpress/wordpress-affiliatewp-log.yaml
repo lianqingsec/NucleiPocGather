@@ -4,9 +4,8 @@ info:
   name: WordPress Plugin "AffiliateWP – Allowed Products" Log Disclosure
   author: dhiyaneshDK
   severity: low
-  tags: wordpress-misc,low
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/wp-content/uploads/affwp-debug.log'

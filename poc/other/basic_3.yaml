@@ -1,16 +1,14 @@
-id: basic-request
+id: basic-whois-example
 
 info:
-  name: Basic Request
+  name: test template for WHOIS
   author: pdteam
   severity: info
 
-websocket:
-  - address: '{{Scheme}}://{{Hostname}}'
-    inputs:
-      - data: hello
-    matchers:
-      - type: word
-        words:
-          - world
-        part: response
+whois:
+  - query: "{{Host}}"
+    extractors:
+      - type: kval
+        kval:
+          - "expiration date"
+          - "registrar"

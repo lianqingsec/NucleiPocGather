@@ -2,29 +2,32 @@ id: photoprism-panel
 
 info:
   name: PhotoPrism Panel - Detect
-  author: rxerium,ritikchaddha
+  author: rxerium
   severity: info
   description: |
-    PhotoPrism is an AI-powered photos app for the decentralized web. This template detects the presence of PhotoPrism login panel.
+    PhotoPrism Panel was Detected
   reference:
-    - https://docs.photoprism.app/getting-started/
+    - https://photoprism.app/
   metadata:
     verified: true
     max-request: 1
-    shodan-query: title:"PhotoPrism"
-    fofa-query: title="PhotoPrism"
-  tags: photoprism,panel,login,detect
+    shodan-query: http.title:PhotoPrism
+  tags: photoprism,panel
 
 http:
   - method: GET
     path:
-      - "{{BaseURL}}/library/login"
+      - "{{BaseURL}}"
 
+    host-redirects: true
+    matchers-condition: and
     matchers:
+      - type: word
+        part: body
+        words:
+          - "<title>PhotoPrism</title>"
 
-      - type: dsl
-        dsl:
-          - 'status_code == 200'
-          - 'contains_all(body, "PhotoPrism", "login")'
-        condition: and
-# digest: 490a0046304402202a7f82b0ad47fa637d920e122c2e79221b3f23a5364dd1c75f203d1217bfa66602207126fe32568052cc0363ab0092515e9557cf8a61a4efd3fe84f94f3caa83dfbb:922c64590222798bb761d5b6d8e72950
+      - type: status
+        status:
+          - 200
+# digest: 4b0a00483046022100bd84a2e059f1087bf7d4d4557ab05004c7be7471d30351a55b67d00b6e7feb66022100a6bb5de2cbfd14fca103fccd4e3e2043c861e26bf463fa595ba699817ff32a93:922c64590222798bb761d5b6d8e72950

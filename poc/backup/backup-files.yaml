@@ -1,18 +1,139 @@
 id: backup-files
-
 info:
-  name: Compressed Backup File - Detect
-  author: zan8in,toufik-airane,dwisiswant0,ffffffff0x,pwnhxl
-  severity: high
-  verified: true
-  description: Multiple compressed backup files were detected.
-  tags: exposure,backup
-  created: 2023/09/02
+  name: Backup Files Finder (information disclosure)
+  author: Vabro
+  severity: High
+  description: |
+    This template checks for common backup file extensions that may have been left exposed on a target.
 
-rules:
-  r0:
-    request:
-      type: go
-      data: "backup-files"
-    expression: response.raw.bcontains(b'backup-file-url:')
-expression: r0()
+requests:
+  - name: backup-files
+    path:
+      - "/backup"
+      - "/backups"
+      - "/root"
+      - "/www"
+      - "/public_html"
+      - "/ht_docs"
+      - "/files"
+      - "/images"
+      - "/assets"
+      - "/media"
+      - "/documents"
+      - "/resources"
+    method: GET
+    matchers-condition: or
+    matchers:
+      - type: word
+        words:
+          - ".bak"
+          - ".old"
+          - ".zip"
+          - ".tar"
+          - ".tar.gz"
+          - ".tar.bz2"
+          - ".tar.xz"
+          - ".7z"
+          - ".rar"
+          - ".gz"
+          - ".bz2"
+          - ".xz"
+          - ".sql"
+          - ".db"
+          - ".bak"
+          - ".swp"
+          - ".swp"
+          - ".save"
+          - ".save"
+          - ".sav"
+          - ".sav"
+          - ".copy"
+          - ".copy"
+          - ".backup"
+          - ".backup"
+          - ".orig"
+          - ".orig"
+          - ".old"
+          - ".old"
+          - ".tmp"
+          - ".tmp"
+          - ".temp"
+          - ".temp"
+          - ".test"
+          - ".test"
+          - ".demo"
+          - ".demo"
+          - ".dev"
+          - ".dev"
+          - ".sample"
+          - ".sample"
+          - ".example"
+          - ".example"
+          - ".backup"
+          - ".backup"
+          - ".config"
+          - ".config"
+          - ".conf"
+          - ".conf"
+          - ".log"
+          - ".log"
+          - ".txt"
+          - ".txt"
+          - ".doc"
+          - ".doc"
+          - ".docx"
+          - ".xls"
+          - ".xlsx"
+          - ".ppt"
+          - ".pptx"
+          - ".pdf"
+          - ".csv"
+          - ".bak"
+          - ".bak"
+          - ".swp"
+          - ".swp"
+          - ".save"
+          - ".save"
+          - ".sav"
+          - ".sav"
+          - ".copy"
+          - ".copy"
+          - ".backup"
+          - ".backup"
+          - ".orig"
+          - ".orig"
+          - ".old"
+          - ".old"
+          - ".tmp"
+          - ".tmp"
+          - ".temp"
+          - ".temp"
+          - ".test"
+          - ".test"
+          - ".demo"
+          - ".demo"
+          - ".dev"
+          - ".dev"
+          - ".sample"
+          - ".sample"
+          - ".example"
+          - ".example"
+          - ".backup"
+          - ".backup"
+          - ".config"
+          - ".config"
+          - ".conf"
+          - ".conf"
+          - ".log"
+          - ".log"
+          - ".txt"
+          - ".txt"
+          - ".doc"
+          - ".doc"
+          - ".docx"
+          - ".xls"
+          - ".xlsx"
+          - ".ppt"
+          - ".pptx"
+          - ".pdf"
+          - ".csv"

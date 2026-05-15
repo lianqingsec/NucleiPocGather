@@ -1,15 +1,27 @@
-id: EMAIL
+id: extract-emails
 
 info:
-  name: EMAIL
-  author: Saud Alenazi @Dmaral3noz
+  name: Emails extractor
+  author: cipher387
   severity: info
+  description: Extract emails from web page body
+  tags: osint,juicy-info
 
-file:
-  - extensions:
-      - all
+requests:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
 
+    matchers:
+      - type: regex
+        part: body
+        regex:
+          - '[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_.]+'
     extractors:
       - type: regex
+        part: body
         regex:
-          - "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+"
+          - '[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_.]+'
+
+
+#url for test https://cleantalk.org/blacklists/britjaynes13@gmail.com

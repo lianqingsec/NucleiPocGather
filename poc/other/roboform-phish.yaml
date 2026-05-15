@@ -8,9 +8,8 @@ info:
     A roboform phishing website was detected
   reference:
     - https://roboform.com
-  metadata:
-    max-request: 1
   tags: phishing,roboform,osint
+
 http:
   - method: GET
     path:
@@ -35,4 +34,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"roboform.com")'
-# digest: 490a004630440220746e5a7a0dce58947832e952764e44aa6ef243884945100d36d94c4f74844a75022035b313ecec830e168ae0bcef8a42c0daf8df42b468e29a6159f9092592d0ad16:922c64590222798bb761d5b6d8e72950
+# digest: 490a00463044022058334598210c6071f3a9bd674b1446cbc4b617bdf6a9cff1256171cf2d2059f80220144f205f1187279dac08dfdeff6d35fc5490d0c1b29612173e86b5c846111fe6:922c64590222798bb761d5b6d8e72950

@@ -18,4 +18,3 @@ http:
   - type: word
     words:
     - netalert x
-    case-insensitive: true

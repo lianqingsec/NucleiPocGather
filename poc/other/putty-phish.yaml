@@ -8,9 +8,8 @@ info:
     A putty phishing website was detected
   reference:
     - https://putty.org
-  metadata:
-    max-request: 1
   tags: phishing,putty,osint
+
 http:
   - method: GET
     path:
@@ -32,4 +31,4 @@ http:
       - type: dsl
         dsl:
           - '!contains(host,"putty.org")'
-# digest: 4b0a00483046022100897a23157376a34438818c3cc696d2aa33004642135519fb3205b577dc7813ef022100e59b2ac4d1fbb5095e51fc24ec79df6d2088a5d882bdef4a550bd80fe6c2e43d:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a004730450221008fbde5e3c1fcfb3adcc0776f59cb6c5b38f2b2c198e58451d9e9f5adf3a53f0202201691f250da6db7cb753aed33b04e098a6143d08a9a753c934400ca4c0dd9f19d:922c64590222798bb761d5b6d8e72950
