@@ -6,10 +6,10 @@ info:
   severity: medium
   metadata:
     verified: "true"
-    shodan-query: http.title:"LDAP Account Manager"
+    shodan-dork: http.title:"LDAP Account Manager"
   tags: ldap,misconfig,unauth
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/templates/config/profmanage.php'

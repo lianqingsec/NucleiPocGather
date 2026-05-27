@@ -1,25 +1,22 @@
 id: neo4j-browser
-
 info:
-  name: Exposed Neo4j Browser
-  author: DhiyaneshDK
-  severity: low
+  name: neo4j-browser
+  author: cn-kali-team
+  tags: detect,tech,neo4j-browser
+  severity: info
   metadata:
-    shodan-query: http.title:"Neo4j Browser"
-  tags: neo4j,exposure,unauth
-
-requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/browser/'
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '<title>Neo4j Browser</title>'
-
-      - type: status
-        status:
-          - 200
+    product: neo4j-browser
+    vendor: 00_unknown
+    verified: false
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - neo4j://
+    - neo4j_edition
+    - neo4j_version
+    condition: and
+    case-insensitive: true

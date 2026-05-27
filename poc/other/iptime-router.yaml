@@ -1,5 +1,4 @@
 id: iptime-router
-
 info:
   name: ipTIME Router Login
   author: gy741
@@ -7,22 +6,18 @@ info:
   reference:
     - http://pierrekim.github.io/blog/2015-07-01-poc-with-RCE-against-127-iptime-router-models.html
   tags: panel,login,iptime,router
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/sess-bin/login_session.cgi'
-
     matchers-condition: and
     matchers:
       - type: regex
         regex:
           - <TITLE>ipTIME ([A-Z0-9_-]+)<\/TITLE>
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         part: body

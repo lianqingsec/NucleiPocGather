@@ -1,5 +1,4 @@
 id: rancher-panel
-
 info:
   name: Rancher Login Panel
   author: princechaddha, idealphase
@@ -12,12 +11,10 @@ info:
     verified: true
     shodan-query: http.title:"Loading&hellip;"
   tags: panel,rancher,kubernetes,devops,cloud,login
-
 requests:
   - method: GET
     path:
       - "{{BaseURL}}"
-
     matchers-condition: and
     matchers:
       - type: word
@@ -26,11 +23,9 @@ requests:
           - "<title>Loading&hellip;</title>"
           - "ember-basic-dropdown-wormhole"
         condition: and
-
       - type: status
         status:
           - 200
-
     extractors:
       - type: regex
         part: body

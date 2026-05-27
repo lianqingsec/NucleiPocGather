@@ -16,7 +16,7 @@ info:
     shodan-query: title:"PgHero"
   tags: exposure,panel,pghero
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/connections"

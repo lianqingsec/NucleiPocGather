@@ -8,10 +8,11 @@ info:
   classification:
     cwe-id: CWE-200
   metadata:
-    fofa-dork: app="ACEmanager"
-  tags: panel,login,tech,acemanager
+    max-request: 1
+    fofa-query: app="ACEmanager"
+  tags: panel,login,acemanager
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"

@@ -1,5 +1,4 @@
 id: watchguard-panel
-
 info:
   name: Watchguard Panel
   author: ahmetpergamum
@@ -7,12 +6,10 @@ info:
   reference:
     - https://www.exploit-db.com/ghdb/7008
   tags: panel,watchguard
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/sslvpn_logon.shtml'
-
     matchers-condition: and
     matchers:
       - type: word
@@ -20,7 +17,6 @@ requests:
           - '<title>User Authentication'
           - 'WatchGuard Technologies'
         condition: or
-
       - type: status
         status:
           - 200

@@ -10,7 +10,10 @@ requests:
   - method: GET
     path:
       - "{{BaseURL}}/secure/popups/UserPickerBrowser.jspa"
+    matchers-condition: and
     matchers:
       - type: word
         words:
-          - 'user-picker'
+          - 'Email'
+          - 'Full Name'
+          - 'Username'

@@ -1,24 +1,21 @@
 id: minio-browser
-
 info:
-  name: MinIO Browser
-  author: pikpikcu
+  name: minio-browser
+  author: cn-kali-team
+  tags: detect,tech,minio-browser
   severity: info
   metadata:
-    shodan-query: title:"MinIO Browser"
-  tags: panel,minio
-
-requests:
-  - method: GET
-    path:
-      - "{{BaseURL}}/minio/login"
-
-    matchers-condition: and
-    matchers:
-      - type: dsl
-        dsl:
-          - "contains(tolower(body), '<title>minio browser</title>')"
-
-      - type: status
-        status:
-          - 200
+    product: minio-browser
+    vendor: 00_unknown
+    verified: false
+http:
+- method: GET
+  path:
+  - '{{BaseURL}}/'
+  matchers:
+  - type: word
+    words:
+    - <title>minio browser</title>
+    - <title>minio console</title>
+    - href="/minio/loader.css"
+    case-insensitive: true

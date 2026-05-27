@@ -6,8 +6,10 @@ info:
   severity: info
   description: Scans for kube nodes
   tags: tech,k8s,kubernetes,devops,kube
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/api/v1/nodes"

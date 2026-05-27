@@ -1,5 +1,4 @@
 id: cloudphysician-radar
-
 info:
   name: Cloudphysician RADAR
   author: dhiyaneshDK
@@ -9,12 +8,10 @@ info:
   metadata:
     shodan-query: http.title:"Cloudphysician RADAR"
   tags: panel
-
 requests:
   - method: GET
     path:
       - '{{BaseURL}}/login'
-
     matchers-condition: and
     matchers:
       - type: word

@@ -6,10 +6,11 @@ info:
   severity: info
   description: Allows you to detect Atlassian Confluence instances
   metadata:
+    max-request: 4
     shodan-query: http.component:"Atlassian Confluence"
   tags: tech,confluence,atlassian
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}"
@@ -17,7 +18,7 @@ requests:
       - "{{BaseURL}}/confluence"
       - "{{BaseURL}}/wiki"
 
-    redirects: true
+    host-redirects: true
     stop-at-first-match: true
     matchers-condition: or
     matchers:

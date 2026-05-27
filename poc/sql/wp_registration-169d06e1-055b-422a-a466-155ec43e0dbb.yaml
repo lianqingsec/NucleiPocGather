@@ -2,7 +2,7 @@ id: wp_registration-169d06e1-055b-422a-a466-155ec43e0dbb
 
 info:
   name: >
-    Simple User Registration <= 6.7 - Missing Authorization to Account Takeover
+    Simple User Registration <= 6.4 - Missing Authorization to Account Takeover
   author: topscoder
   severity: high
   description: >
@@ -32,8 +32,16 @@ http:
         name: version
         part: body
         group: 1
+        internal: true
         regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -48,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 6.7')
+          - compare_versions(version, '<= 6.4')

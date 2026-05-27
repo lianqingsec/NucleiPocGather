@@ -12,9 +12,11 @@ info:
     cvss-metrics: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:N/A:N
     cvss-score: 5.8
     cwe-id: CWE-522
-  tags: zabbix,unauth
+  tags: edb,packetstorm,zabbix,unauth
+  metadata:
+    max-request: 1
 
-requests:
+http:
   - method: GET
     path:
       - "{{BaseURL}}/zabbix/zabbix.php?action=dashboard.list"

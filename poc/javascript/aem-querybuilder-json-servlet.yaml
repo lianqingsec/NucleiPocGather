@@ -8,7 +8,7 @@ info:
   tags: aem
 
 
-requests:
+http:
   - method: GET
     path:
       - '{{BaseURL}}/bin/querybuilder.json'
@@ -17,6 +17,11 @@ requests:
       - type: status
         status:
           - 200
+
+      - type: word
+        words:
+          - "application/json"
+        part: header
 
       - type: word
         words:

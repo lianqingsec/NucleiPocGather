@@ -2,7 +2,7 @@ id: user_registration_using_contact_form_7-123c0279-a7f6-4a4b-a5e1-79702e295303
 
 info:
   name: >
-    User Registration Using Contact Form 7 <= 2.4 - Cross-Site Request Forgery
+    User Registration Using Contact Form 7 <= 2.3 - Cross-Site Request Forgery
   author: topscoder
   severity: medium
   description: >
@@ -32,8 +32,16 @@ http:
         name: version
         part: body
         group: 1
+        internal: true
         regex:
-          - "(?mi)Stable tag:\\s*([0-9.]+)"
+          - "(?mi)Stable tag: ([0-9.]+)"
+
+      - type: regex
+        name: version
+        part: body
+        group: 1
+        regex:
+          - "(?mi)Stable tag: ([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -48,4 +56,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 2.4')
+          - compare_versions(version, '<= 2.3')
