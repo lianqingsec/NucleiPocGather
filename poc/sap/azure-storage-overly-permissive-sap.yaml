@@ -67,4 +67,4 @@ code:
       - type: dsl
         dsl:
           - 'accountName + " with container " + containerName + " has overly permissive stored access policies"'
-# digest: 490a0046304402205f55a9e3c87c8d7deddd5bfa965a2719337dd923e3546da1f58459e51b67eb7f0220237c0611682c444f26e722516a7ae9912f66601cc142a968fc65d0ce3e930112:922c64590222798bb761d5b6d8e72950
+

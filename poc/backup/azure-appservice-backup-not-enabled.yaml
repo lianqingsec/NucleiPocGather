@@ -53,4 +53,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " does not have automated backups enabled"'
-# digest: 490a00463044022003bf04c5b011a04c6002bcd2f07d378140e59ec341e7d271681e59499f5e455b02203f743bbfd4d5c534e349d0b0b801bc0912f8104257090a4969d2e2cdf060feb4:922c64590222798bb761d5b6d8e72950
+

@@ -55,4 +55,4 @@ code:
       - type: dsl
         dsl:
           - '"The AWS ACM Certificate " + certificate +" is about to expire in 30 days"'
-# digest: 490a0046304402202b2fedb03a19db3f9d0f87fdc3982c926a2478e6e2903d2fbb55b63561d3a29c0220337c43e0512cc540287235d9f3489fb5af0dc783ae118c4341c27e2812a8d8c7:922c64590222798bb761d5b6d8e72950
+

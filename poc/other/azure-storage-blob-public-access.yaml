@@ -45,10 +45,10 @@ code:
     matchers:
       - type: word
         words:
-          - 'false'
+          - 'true'
 
     extractors:
       - type: dsl
         dsl:
           - 'ids + " has public access enabled"'
-# digest: 4a0a0047304502207c1091283a6da6a2b35e2fd856b2c0bb3b6bf6314871e8f7e686b8135f630338022100b481aba3b07994b0a5c68adec920dfbd35d057d5d042c2fff06e3606fe0d7318:922c64590222798bb761d5b6d8e72950
+

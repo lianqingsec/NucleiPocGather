@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'certificatearn + " AWS ACM certificate is a wildcard certificate"'
-# digest: 4a0a00473045022078c25c2aeb4e1ecb7851bfcf3e176bbd0eff547432a2a5ec04d150b1c3fbfdaf022100b3e428a513082fb7357f95e92309d0dfe47823bc6eb40cc403cc2836756ccd60:922c64590222798bb761d5b6d8e72950
+

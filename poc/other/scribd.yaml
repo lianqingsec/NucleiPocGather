@@ -12,7 +12,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: osint,osint-social,scribd
+  tags: osint,osint-social,scribd,discovery
 
 self-contained: true
 
@@ -34,4 +34,4 @@ http:
         words:
           - "Scribd"
           - "user-profile"
-# digest: 490a0046304402207281c9e75c66f096650273d2cf6dd7f86ac55e54922d97d431274d0ada28d07602202c013b16d031f77a0b2e129171ce3e1db1708297c4912c63fc2597ef43082a61:922c64590222798bb761d5b6d8e72950
+

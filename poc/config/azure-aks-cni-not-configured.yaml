@@ -53,4 +53,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in " + resourceGroup + " is using Kubenet instead of Azure CNI"'
-# digest: 490a0046304402200c1f0786613afcab7ef8439c2b38e9d928640eb7ba8e7e6c055a61e5aab76d0502202acc8b6ef94311059a05920c9998d965097b301353b57cf62b821c5d4b15fb0b:922c64590222798bb761d5b6d8e72950
+

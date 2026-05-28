@@ -53,4 +53,4 @@ code:
       - type: dsl
         dsl:
           - 'profileName + " missing critical activity categories in log-profile configuration"'
-# digest: 4b0a004830460221009c6620e6c06edb03355bf2d6abeebed3f7308abd656ed94f4d8537d3021392ce022100dcf8f2b38b3bea119cacbb427d8735146e92fcf91f599b2b8310dc40da50a200:922c64590222798bb761d5b6d8e72950
+

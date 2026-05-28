@@ -12,7 +12,7 @@ info:
   metadata:
     max-request: 1
     verified: true
-  tags: osint,osint-gaming,nationstates
+  tags: osint,osint-gaming,nationstates,discovery
 
 self-contained: true
 
@@ -31,4 +31,4 @@ http:
         part: body
         words:
           - "<title>NationStates | The Republic"
-# digest: 4b0a00483046022100da592ab42a3e7e3b24ea531d58882c73347543779e4efaaf271ca0d5c9e4e8cb022100f3e94e1960d74e732707f0c9ff00a6f75f0035441844be7113b91ce09d2b9012:922c64590222798bb761d5b6d8e72950
+

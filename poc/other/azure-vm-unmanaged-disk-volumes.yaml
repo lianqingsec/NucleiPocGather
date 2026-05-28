@@ -51,4 +51,4 @@ code:
       - type: dsl
         dsl:
           - 'ids + " is not using managed OS/data disk volume(s)"'
-# digest: 490a0046304402206b098caf52729a99df153fff051093b1287352b8d06726d725f93bf278f875b102207eef2c944b927741822ed28eb618f35c602cd824b1158b326aff3d000fc65fba:922c64590222798bb761d5b6d8e72950
+

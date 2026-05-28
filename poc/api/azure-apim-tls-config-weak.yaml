@@ -54,4 +54,4 @@ code:
       - type: dsl
         dsl:
           - 'name + " in resource group " + resourceGroup + " is configured with weak TLS protocols"'
-# digest: 4a0a0047304502204ce8881feed7aa37b2eb7f4599103d58c2bf74b69b59111a48c403695a37a64a022100b630fecbc17691ea5d8598c3116ea83100e3a7fbfe26f43926a83e1a7b573ed3:922c64590222798bb761d5b6d8e72950
+

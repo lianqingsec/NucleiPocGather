@@ -67,4 +67,4 @@ code:
       - type: dsl
         dsl:
           - 'vaultName + " SSL/TLS certificate " + certificateId + " does not have Certificate Transparency enabled"'
-# digest: 4a0a004730450220683ba37722ca45d1934be3ff6f8ab14693e9ddb0dccd08b766d470f942d52999022100bff340bf0fbf8c78a04c31e09f667be68223c76d98560caf9257ecfc93ada837:922c64590222798bb761d5b6d8e72950
+
