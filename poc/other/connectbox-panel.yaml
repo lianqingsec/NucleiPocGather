@@ -1,42 +1,38 @@
-id: connectbox-panel
-
-info:
-  name: Connect Box Login Panel - Detect
-  author: fabaff
-  severity: info
-  description: Connect Box login panel was detected.
-  classification:
-    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
-    cvss-score: 0
-    cwe-id: CWE-200
-  metadata:
-    verified: true
-    max-request: 1
-    shodan-query: 'NET-DK/1.0'
-  tags: panel,connectbox,iot
-
 http:
-  - method: GET
-    path:
-      - '{{BaseURL}}'
-
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: header
-        words:
-          - "NET-DK/1.0"
-
-      - type: regex
-        part: header
-        regex:
-          - "../common_page/(.*).html"
-
-      - type: status
-        status:
-          - 302
-
-# digest: 4b0a00483046022100ab89f3831c9e169b912ca3ca449078f9e0ef5a37f9d4ddbdd6b7ac329c3aaf99022100de80238735115602a95f0bb2e7e80124371db68996a6bb8df30caa877ea74970:922c64590222798bb761d5b6d8e72950
+- host-redirects: true
+  matchers:
+  - part: header
+    type: word
+    words:
+    - NET-DK/1.0
+  - part: header
+    regex:
+    - ../common_page/(.*).html
+    type: regex
+  - status:
+    - 302
+    type: status
+  matchers-condition: and
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: connectbox-panel
+info:
+  author: fabaff
+  classification:
+    cpe: cpe:2.3:o:upc:connect_box_eurodocsis_firmware:*:*:*:*:*:*:*:*
+    cvss-metrics: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:N
+    cwe-id: CWE-200
+  description: Connect Box login panel was detected.
+  metadata:
+    max-request: 1
+    product: connect_box_eurodocsis_firmware
+    shodan-query:
+    - NET-DK/1.0
+    - net-dk/1.0
+    vendor: upc
+    verified: true
+  name: Connect Box Login Panel - Detect
+  severity: info
+  tags: panel,connectbox,iot,upc,discovery
