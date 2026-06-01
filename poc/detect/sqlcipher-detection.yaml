@@ -1,0 +1,12 @@
+file:
+- extensions:
+  - all
+  matchers:
+  - type: word
+    words:
+    - libsqlcipher.so
+id: sqlcipher-detection
+info:
+  author: Christian Angel
+  name: SQL Cipher Detection
+  severity: info

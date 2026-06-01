@@ -1,23 +1,32 @@
-id: solr-admin-query
-
+id: solr-admin-query 1
 info:
-  name: Solr Admin Query Page
   author: dhiyaneshDK
-  severity: high
-  description: |
-    app="APACHE-Solr"
-  reference: 
-    - https://www.exploit-db.com/ghdb/5856
+  name: Solr Admin Query Page
+  reference: https://www.exploit-db.com/ghdb/5856
+  severity: High
+  tags: solr,unauth
+requests:
+- attack: sniper
+  matchers:
+  - type: word
+    words:
+    - <title>Solr admin page</title>
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /admin/ HTTP/1.1
 
-rules:
-    r0:
-        request:
-            method: GET
-            path: /admin/
-        expression: response.status == 200 && response.body.bcontains(b'<title>Solr admin page</title>')
-    r1:
-        request:
-            method: GET
-            path: /solr/admin/
-        expression: response.status == 200 && response.body.bcontains(b'<title>Solr admin page</title>')
-expression: r0() && r1()
+    Host: {{Subdomains}}
+
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
+
+    Accept-Encoding: gzip, deflate
+
+    Accept: */*
+
+    '
+  threads: 100

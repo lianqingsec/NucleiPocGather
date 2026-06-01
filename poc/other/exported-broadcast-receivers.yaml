@@ -1,28 +1,25 @@
-id: exported-broadcast-receivers
-
-info:
-  name: Android Exported Broadcast Receivers in AndroidManifest.xml - Detect
-  author: 7h3b4dger
-  severity: info
-  description: Detect exported Broadcast Receivers in AndroidManifest.xml (excluding disabled receivers and Google/Jetpack libraries)
-  tags: android,file,exportedcomponents
-
 file:
-  - extensions:
-      - xml
-
-    matchers:
-      - type: xpath
-        part: body
-        xpath:
-          - "//receiver[@android:exported='true']"
-          - "//receiver[@android:enabled!='false']"
-        condition: and
-
-    extractors:
-      - type: xpath
-        part: body
-        attribute: android:name
-        xpath:
-          - "//receiver[@android:exported='true'and not(contains(@android:name, 'androidx')) and not(contains(@android:name, 'google'))]"
-
+- extensions:
+  - xml
+  extractors:
+  - attribute: android:name
+    part: body
+    type: xpath
+    xpath:
+    - //receiver[@android:exported='true'and not(contains(@android:name, 'androidx'))
+      and not(contains(@android:name, 'google'))]
+  matchers:
+  - condition: and
+    part: body
+    type: xpath
+    xpath:
+    - //receiver[@android:exported='true']
+    - //receiver[@android:enabled!='false']
+id: exported-broadcast-receivers
+info:
+  author: 7h3b4dger
+  description: Detect exported Broadcast Receivers in AndroidManifest.xml (excluding
+    disabled receivers and Google/Jetpack libraries)
+  name: Android Exported Broadcast Receivers in AndroidManifest.xml - Detect
+  severity: info
+  tags: android,file,exportedcomponents

@@ -1,19 +1,19 @@
 id: value-sharing-template2
-
 info:
-  name: value-sharing-template2
   author: pdteam
+  name: value-sharing-template2
   severity: info
-
 requests:
-  - raw:
-      - |
-        GET / HTTP/1.1
-        Host: {{Hostname}}
-        
-        {{extracted}}
+- matchers:
+  - type: word
+    words:
+    - ok
+  raw:
+  - 'GET / HTTP/1.1
 
-    matchers:
-      - type: word
-        words:
-          - "ok"
+    Host: {{Hostname}}
+
+
+    {{extracted}}
+
+    '

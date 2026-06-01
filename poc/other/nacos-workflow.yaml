@@ -1,0 +1,12 @@
+id: nacos-workflow
+info:
+  author: Co5mos
+  description: 'A simple workflow that runs all Nacos related nuclei templates on
+    a given target.
+
+    '
+  name: Nacos Security Checks
+workflows:
+- subtemplates:
+  - tags: nacos
+  template: http/technologies/nacos-version.yaml

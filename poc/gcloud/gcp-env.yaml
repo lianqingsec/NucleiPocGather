@@ -1,36 +1,33 @@
-id: gcp-env
-
-info:
-  name: GCP Environment Validation
-  author: princechaddha
-  severity: info
-  description: |
-    Checks if Google Cloud CLI (gcloud) is set up and all necessary tools are installed on the environment.
-  reference:
-    - https://console.cloud.google.com/
-  tags: cloud,devops,google,gcp,gcp-cloud-config
-
-self-contained: true
 code:
-  - engine:
-      - sh
-      - bash
-    source: |
-      gcloud config get-value account --format="json"
+- engine:
+  - sh
+  - bash
+  extractors:
+  - internal: true
+    json:
+    - .
+    name: account
+    type: json
+  - dsl:
+    - '"Google Cloud CLI is properly configured for account \"" + account + "\"."'
+    type: dsl
+  matchers:
+  - type: word
+    words:
+    - '@'
+  source: 'gcloud config get-value account --format="json"
 
-    matchers:
-      - type: word
-        words:
-          - '@'
+    '
+id: gcp-env
+info:
+  author: princechaddha
+  description: 'Checks if Google Cloud CLI (gcloud) is set up and all necessary tools
+    are installed on the environment.
 
-    extractors:
-      - type: json
-        name: account
-        json:
-          - '.'
-        internal: true
-
-      - type: dsl
-        dsl:
-          - '"Google Cloud CLI is properly configured for account \"" + account + "\"."'
-
+    '
+  name: GCP Environment Validation
+  reference:
+  - https://console.cloud.google.com/
+  severity: info
+  tags: cloud,devops,google,gcp,gcp-cloud-config
+self-contained: true
