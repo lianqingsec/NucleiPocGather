@@ -1,38 +1,34 @@
-id: writable-xinetdconf
-
-info:
-  name: /etc/(x)inetd.conf Permission Check
-  author: songyaeji
-  severity: high
-  description: |
-    The /etc/xinetd.conf or /etc/inetd.conf file was writable by non-root users, allowing them to register malicious services that executed with root privileges. This check verified that the file was owned by root and had secure permissions.
-  reference:
-    - https://isms.kisa.or.kr/main/csap/notice/
-  tags: linux,code,audit,compliance,local
-
-self-contained: true
-
 code:
-  - engine:
-      - bash
+- engine:
+  - bash
+  source: 'stat -c "%U %G %a" /etc/xinetd.conf 2>/dev/null || echo "not-found"
 
-    source: |
-      stat -c "%U %G %a" /etc/xinetd.conf 2>/dev/null || echo "not-found"
+    '
+- engine:
+  - bash
+  matchers:
+  - part: code_1_response
+    regex:
+    - ^root\s+root\s+(600|640|644)$
+    type: regex
+  - part: code_2_response
+    regex:
+    - ^root\s+root\s+(600|640|644)$
+    type: regex
+  source: 'stat -c "%U %G %a" /etc/inetd.conf 2>/dev/null || echo "not-found"
 
-  - engine:
-      - bash
+    '
+id: writable-xinetdconf
+info:
+  author: songyaeji
+  description: 'The /etc/xinetd.conf or /etc/inetd.conf file was writable by non-root
+    users, allowing them to register malicious services that executed with root privileges.
+    This check verified that the file was owned by root and had secure permissions.
 
-    source: |
-      stat -c "%U %G %a" /etc/inetd.conf 2>/dev/null || echo "not-found"
-
-    matchers:
-      - type: regex
-        part: code_1_response
-        regex:
-          - '^root\s+root\s+(600|640|644)$'
-
-      - type: regex
-        part: code_2_response
-        regex:
-          - '^root\s+root\s+(600|640|644)$'
-
+    '
+  name: /etc/(x)inetd.conf Permission Check
+  reference:
+  - https://isms.kisa.or.kr/main/csap/notice/
+  severity: high
+  tags: linux,code,audit,compliance,local
+self-contained: true

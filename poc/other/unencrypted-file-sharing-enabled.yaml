@@ -1,33 +1,34 @@
-id: unencrypted-file-sharing-enabled
-
-info:
-  name: Unencrypted File Sharing Enabled
-  author: princechaddha
-  severity: medium
-  description: Checks if file sharing is enabled without encryption.
-  impact: |
-    Unencrypted file sharing exposes sensitive data to interception, leading to potential data breaches.
-  remediation: |
-    Enable encryption for file sharing to ensure the confidentiality and integrity of shared files.
-  tags: windows,file-sharing,encryption,code,windows-audit
-
-self-contained: true
-
 code:
-  - pre-condition: |
-      IsWindows();
-    engine:
-      - powershell
-      - powershell.exe
-    args:
-      - -ExecutionPolicy
-      - Bypass
-    pattern: "*.ps1"
-    source: |
-      (Get-SmbServerConfiguration).EncryptData
+- args:
+  - -ExecutionPolicy
+  - Bypass
+  engine:
+  - powershell
+  - powershell.exe
+  matchers:
+  - type: word
+    words:
+    - 'False'
+  pattern: '*.ps1'
+  pre-condition: 'IsWindows();
 
-    matchers:
-      - type: word
-        words:
-          - "False"
+    '
+  source: '(Get-SmbServerConfiguration).EncryptData
 
+    '
+id: unencrypted-file-sharing-enabled
+info:
+  author: princechaddha
+  description: Checks if file sharing is enabled without encryption.
+  impact: 'Unencrypted file sharing exposes sensitive data to interception, leading
+    to potential data breaches.
+
+    '
+  name: Unencrypted File Sharing Enabled
+  remediation: 'Enable encryption for file sharing to ensure the confidentiality and
+    integrity of shared files.
+
+    '
+  severity: medium
+  tags: windows,file-sharing,encryption,code,windows-audit
+self-contained: true

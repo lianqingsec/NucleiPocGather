@@ -1,26 +1,26 @@
-id: suid-sgid
-
-info:
-  name: Root SUID/SGID File Check
-  author: songyaeji
-  severity: high
-  description: |
-    Files owned by root with SUID or SGID permissions could have led to privilege escalation.if misconfigured. This template detected such files for further review.
-  reference:
-    - https://isms.kisa.or.kr
-  tags: linux,local,audit,compliance,privesc,kisas
-
-self-contained: true
-
 code:
-  - engine:
-      - sh
-      - bash
-    source: |
-      find / -user root -type f \( -perm -4000 -o -perm -2000 \) -exec ls -lg {} \; 2>/dev/null | head -n 10
+- engine:
+  - sh
+  - bash
+  matchers:
+  - regex:
+    - ^-rws.*
+    - ^-..s.*
+  source: 'find / -user root -type f \( -perm -4000 -o -perm -2000 \) -exec ls -lg
+    {} \; 2>/dev/null | head -n 10
 
-    matchers:
-      - regex:
-          - "^-rws.*"   # SUID
-          - "^-..s.*"   # SGID
+    '
+id: suid-sgid
+info:
+  author: songyaeji
+  description: 'Files owned by root with SUID or SGID permissions could have led to
+    privilege escalation.if misconfigured. This template detected such files for further
+    review.
 
+    '
+  name: Root SUID/SGID File Check
+  reference:
+  - https://isms.kisa.or.kr
+  severity: high
+  tags: linux,local,audit,compliance,privesc,kisas
+self-contained: true

@@ -1,33 +1,35 @@
-id: windows-system-restore-not-configured
-
-info:
-  name: System Restore Not Configured
-  author: princechaddha
-  severity: medium
-  description: Checks if System Restore is not configured, which can prevent recovery from system issues.
-  impact: |
-    Without System Restore, recovering from system failures may require more drastic measures like reinstallation.
-  remediation: |
-    Configure System Restore to ensure you can roll back changes if needed.
-  tags: windows,code,windows-audit
-
-self-contained: true
-
 code:
-  - pre-condition: |
-      IsWindows();
-    engine:
-      - powershell
-      - powershell.exe
-    args:
-      - -ExecutionPolicy
-      - Bypass
-    pattern: "*.ps1"
-    source: |
-      $restorePoints = Get-ComputerRestorePoint -ErrorAction SilentlyContinue; if ($null -eq $restorePoints) { Write-Output "SystemRestoreUnavailable" }
+- args:
+  - -ExecutionPolicy
+  - Bypass
+  engine:
+  - powershell
+  - powershell.exe
+  matchers:
+  - type: word
+    words:
+    - SystemRestoreUnavailable
+  pattern: '*.ps1'
+  pre-condition: 'IsWindows();
 
-    matchers:
-      - type: word
-        words:
-          - "SystemRestoreUnavailable"
+    '
+  source: '$restorePoints = Get-ComputerRestorePoint -ErrorAction SilentlyContinue;
+    if ($null -eq $restorePoints) { Write-Output "SystemRestoreUnavailable" }
 
+    '
+id: windows-system-restore-not-configured
+info:
+  author: princechaddha
+  description: Checks if System Restore is not configured, which can prevent recovery
+    from system issues.
+  impact: 'Without System Restore, recovering from system failures may require more
+    drastic measures like reinstallation.
+
+    '
+  name: System Restore Not Configured
+  remediation: 'Configure System Restore to ensure you can roll back changes if needed.
+
+    '
+  severity: medium
+  tags: windows,code,windows-audit
+self-contained: true

@@ -1,32 +1,35 @@
-id: windows-anonymous-sid-enumeration-allowed
-
-info:
-  name: Windows Allows Anonymous SID Enumeration
-  author: princechaddha
-  severity: medium
-  description: Checks if anonymous users can enumerate Security Identifiers (SIDs), which can expose user information.
-  impact: |
-    Allowing anonymous SID enumeration can provide attackers with information to target specific users.
-  remediation: |
-    Disable anonymous SID enumeration to protect sensitive user information.
-  tags: windows,anonymous,sid,security,code,windows-audit
-
-self-contained: true
-
 code:
-  - pre-condition: |
-      IsWindows();
-    engine:
-      - powershell.exe
-    args:
-      - -ExecutionPolicy
-      - Bypass
-    pattern: "*.ps1"
-    source: |
-      if ((Get-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Control\Lsa' -Name 'AnonymousSidNameTranslation' -ErrorAction SilentlyContinue).AnonymousSidNameTranslation -eq 1) { Write-Output 'Anonymous SID Enumeration Allowed'; }
+- args:
+  - -ExecutionPolicy
+  - Bypass
+  engine:
+  - powershell.exe
+  matchers:
+  - type: word
+    words:
+    - Anonymous SID Enumeration Allowed
+  pattern: '*.ps1'
+  pre-condition: 'IsWindows();
 
-    matchers:
-      - type: word
-        words:
-          - "Anonymous SID Enumeration Allowed"
+    '
+  source: 'if ((Get-ItemProperty -Path ''HKLM:\SYSTEM\CurrentControlSet\Control\Lsa''
+    -Name ''AnonymousSidNameTranslation'' -ErrorAction SilentlyContinue).AnonymousSidNameTranslation
+    -eq 1) { Write-Output ''Anonymous SID Enumeration Allowed''; }
 
+    '
+id: windows-anonymous-sid-enumeration-allowed
+info:
+  author: princechaddha
+  description: Checks if anonymous users can enumerate Security Identifiers (SIDs),
+    which can expose user information.
+  impact: 'Allowing anonymous SID enumeration can provide attackers with information
+    to target specific users.
+
+    '
+  name: Windows Allows Anonymous SID Enumeration
+  remediation: 'Disable anonymous SID enumeration to protect sensitive user information.
+
+    '
+  severity: medium
+  tags: windows,anonymous,sid,security,code,windows-audit
+self-contained: true
