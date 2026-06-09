@@ -1,23 +1,26 @@
 id: ikev2-transforms-enum
+
 info:
   name: IKEv2 Supported Transforms - Enumeration
   author: pussycat0x
   severity: info
   description: |
-    Enumerates supported IKEv2 encryption cipher suites by sending individual SA_INIT probes with single-algorithm proposals. Accepted ciphers return an SA payload response, while rejected ones return a NO_PROPOSAL_CHOSEN notification.
+   Enumerates supported IKEv2 encryption cipher suites by sending individual SA_INIT probes with single-algorithm proposals. Accepted ciphers return an SA payload response, while rejected ones return a NO_PROPOSAL_CHOSEN notification.
   reference:
     - https://www.rfc-editor.org/rfc/rfc7296
     - https://www.iana.org/assignments/ikev2-parameters
     - https://www.rfc-editor.org/rfc/rfc7634
   metadata:
-    fofa-query: "port=\"500\" && protocol=\"isakmp\""
+    verified: true
     max-request: 6
     shodan-query: "port:500 product:IKE"
-    verified: true
-  tags: ike,ikev2,ipsec,js,network,udp,vpn
+    fofa-query: "port=\"500\" && protocol=\"isakmp\""
+  tags: js,network,udp,ikev2,ipsec,vpn,ike
+
 javascript:
   - pre-condition: |
       isUDPPortOpen(Host, Port);
+
     code: |
       let c = require("nuclei/net");
 
@@ -216,22 +219,26 @@ javascript:
       }
 
       Export(output);
+
     args:
       Host: "{{Host}}"
       Port: "500"
+
     matchers-condition: and
     matchers:
       - type: dsl
         dsl:
           - "success == true"
+
       - type: word
         words:
           - "PROBE:"
           - ":accepted:"
         condition: or
+
     extractors:
       - type: regex
         name: transforms
         regex:
           - 'PROBE:[^\n]+'
-        # digest: 4a0a0047304502205cfb2d48b6dd2413c49e56e1a0f65608dbb2bf7a59c952e73cc2b48e9209e4b2022100a0342ff581ee3003a706d0fca9d451d896ee0624cddd1e74edb7d0651bee9c7f:922c64590222798bb761d5b6d8e72950
+# digest: 4a0a0047304502205cfb2d48b6dd2413c49e56e1a0f65608dbb2bf7a59c952e73cc2b48e9209e4b2022100a0342ff581ee3003a706d0fca9d451d896ee0624cddd1e74edb7d0651bee9c7f:922c64590222798bb761d5b6d8e72950
