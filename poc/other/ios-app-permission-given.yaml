@@ -1,0 +1,19 @@
+file:
+- extensions:
+  - xml
+  extractors:
+  - regex:
+    - NSBluetoothPeripheralUsageDescription
+    - NSCameraUsageDescription
+    - NSContactsUsageDescription
+    - NSLocationAlwaysUsageDescription
+    - NSLocationWhenInUseUsageDescription
+    - NSMicrophoneUsageDescription
+    - NSPhotoLibraryUsageDescription
+    type: regex
+id: ios-app-permission-given
+info:
+  author: adibarsyad
+  description: Check Info.plist for permission given to the application
+  name: iOS App Permission
+  severity: Medium
