@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - world-prayer-time
+  - dsl:
+    - compare_versions(version, '<= 2.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/world-prayer-time/readme.txt'
+  redirects: true
+id: world_prayer_time-3ad2e495-5181-44a7-932f-520620146be7
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/world-prayer-time/
+    google-query: inurl:"/wp-content/plugins/world-prayer-time/"
+    shodan-query: http.html:"wp-content/plugins/world-prayer-time/"
+  name: 'World Prayer Time <= 2.0 - Cross-Site Request Forgery to Reflected Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/3ad2e495-5181-44a7-932f-520620146be7?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,world-prayer-time,medium,candidate

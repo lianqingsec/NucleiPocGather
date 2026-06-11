@@ -1,0 +1,43 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - spider-elements
+  - dsl:
+    - compare_versions(version, '<= 1.6.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/spider-elements/readme.txt'
+  redirects: true
+id: spider_elements-bd34f257-d373-424e-830a-fe3cc56447f7
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/spider-elements/
+    google-query: inurl:"/wp-content/plugins/spider-elements/"
+    shodan-query: http.html:"wp-content/plugins/spider-elements/"
+  name: "Spider Elements \u2013 Addons for Elementor <= 1.6.3 - Missing Authorization\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/bd34f257-d373-424e-830a-fe3cc56447f7?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,spider-elements,high,candidate

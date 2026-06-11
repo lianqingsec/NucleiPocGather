@@ -11,9 +11,8 @@ info:
     wpscan: https://wpscan.com/plugin/all-404-redirect-to-homepage
   tags: tech,wordpress,wp-plugin,top-200
 
-http:
+requests:
   - method: GET
-
     path:
       - "{{BaseURL}}/wp-content/plugins/all-404-redirect-to-homepage/readme.txt"
 

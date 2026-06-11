@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - sku-for-woocommerce
+  - dsl:
+    - compare_versions(version, '<= 1.6.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/sku-for-woocommerce/readme.txt'
+  redirects: true
+id: sku_for_woocommerce-f59ccb78-722b-490b-874e-7026afc3511b
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/sku-for-woocommerce/
+    google-query: inurl:"/wp-content/plugins/sku-for-woocommerce/"
+    shodan-query: http.html:"wp-content/plugins/sku-for-woocommerce/"
+  name: 'SKU Generator for WooCommerce <= 1.6.2 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/f59ccb78-722b-490b-874e-7026afc3511b?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,sku-for-woocommerce,medium,candidate

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - shipyaari-shipping-managment
+  - dsl:
+    - compare_versions(version, '<= 1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/shipyaari-shipping-managment/readme.txt'
+  redirects: true
+id: shipyaari_shipping_managment-a1ce59bf-2d59-4c15-8be1-0d733526d1eb
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/shipyaari-shipping-managment/
+    google-query: inurl:"/wp-content/plugins/shipyaari-shipping-managment/"
+    shodan-query: http.html:"wp-content/plugins/shipyaari-shipping-managment/"
+  name: 'Shipyaari Shipping Management <= 1.2 - Unauthenticated PHP Object Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a1ce59bf-2d59-4c15-8be1-0d733526d1eb?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-plugin,shipyaari-shipping-managment,critical,candidate

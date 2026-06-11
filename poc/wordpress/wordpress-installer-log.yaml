@@ -4,11 +4,9 @@ info:
   name: WordPress Installer Log
   author: dwisiswant0
   severity: info
-  tags: wordpress,log
-  metadata:
-    max-request: 1
+  tags: wordpress,logs
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/installer-log.txt"

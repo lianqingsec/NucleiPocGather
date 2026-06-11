@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - visual-text-editor
+  - dsl:
+    - compare_versions(version, '<= 1.2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/visual-text-editor/readme.txt'
+  redirects: true
+id: visual_text_editor-1e74b877-45dc-457c-b22c-a0629b305706
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/visual-text-editor/
+    google-query: inurl:"/wp-content/plugins/visual-text-editor/"
+    shodan-query: http.html:"wp-content/plugins/visual-text-editor/"
+  name: 'Visual Text Editor <= 1.2.1 - Authenticated (Contributor+) Remote Code Execution
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1e74b877-45dc-457c-b22c-a0629b305706?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,visual-text-editor,low,candidate

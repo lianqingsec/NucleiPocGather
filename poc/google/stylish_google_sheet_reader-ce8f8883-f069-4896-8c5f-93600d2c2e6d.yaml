@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - stylish-google-sheet-reader
+  - dsl:
+    - compare_versions(version, '<= 4.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/stylish-google-sheet-reader/readme.txt'
+  redirects: true
+id: stylish_google_sheet_reader-ce8f8883-f069-4896-8c5f-93600d2c2e6d
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/stylish-google-sheet-reader/
+    google-query: inurl:"/wp-content/plugins/stylish-google-sheet-reader/"
+    shodan-query: http.html:"wp-content/plugins/stylish-google-sheet-reader/"
+  name: 'Stylish Google Sheet Reader <= 4.0 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/ce8f8883-f069-4896-8c5f-93600d2c2e6d?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,stylish-google-sheet-reader,medium,candidate

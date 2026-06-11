@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - shortcodes-for-amp-web-stories-and-elementor-widget
+  - dsl:
+    - compare_versions(version, '<= 1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/shortcodes-for-amp-web-stories-and-elementor-widget/readme.txt'
+  redirects: true
+id: shortcodes_for_amp_web_stories_and_elementor_widget-a2a0940a-8a53-49bc-820b-bfbbfc408121
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/shortcodes-for-amp-web-stories-and-elementor-widget/
+    google-query: inurl:"/wp-content/plugins/shortcodes-for-amp-web-stories-and-elementor-widget/"
+    shodan-query: http.html:"wp-content/plugins/shortcodes-for-amp-web-stories-and-elementor-widget/"
+  name: 'Web Stories Widgets For Elementor <= 1.1 - Authenticated (Contributor+) Stored
+    Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a2a0940a-8a53-49bc-820b-bfbbfc408121?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,shortcodes-for-amp-web-stories-and-elementor-widget,low,candidate

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - variable-inspector
+  - dsl:
+    - compare_versions(version, '< 2.7.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/variable-inspector/readme.txt'
+  redirects: true
+id: variable_inspector-81ab48c6-6add-4eb8-89a4-681af833fa11
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/variable-inspector/
+    google-query: inurl:"/wp-content/plugins/variable-inspector/"
+    shodan-query: http.html:"wp-content/plugins/variable-inspector/"
+  name: 'Variable Inspector < 2.7.1 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/81ab48c6-6add-4eb8-89a4-681af833fa11?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,variable-inspector,high,candidate

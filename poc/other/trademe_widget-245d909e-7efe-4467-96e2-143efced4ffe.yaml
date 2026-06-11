@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - trademe-widget
+  - dsl:
+    - compare_versions(version, '<= 1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/trademe-widget/readme.txt'
+  redirects: true
+id: trademe_widget-245d909e-7efe-4467-96e2-143efced4ffe
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/trademe-widget/
+    google-query: inurl:"/wp-content/plugins/trademe-widget/"
+    shodan-query: http.html:"wp-content/plugins/trademe-widget/"
+  name: 'TradeMe widgets <= 1.2 - Authenticated (Contributor+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/245d909e-7efe-4467-96e2-143efced4ffe?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,trademe-widget,low,candidate

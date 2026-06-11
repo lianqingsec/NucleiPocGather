@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - team-section
+  - dsl:
+    - compare_versions(version, '<= 1.0.9')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/team-section/readme.txt'
+  redirects: true
+id: team_section-9a30c6c2-fd90-421b-b4d7-ebe2605a96a0
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/team-section/
+    google-query: inurl:"/wp-content/plugins/team-section/"
+    shodan-query: http.html:"wp-content/plugins/team-section/"
+  name: 'Team Section Block <= 1.0.9 - Authenticated (Contributor+) Stored Cross-Site
+    Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/9a30c6c2-fd90-421b-b4d7-ebe2605a96a0?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,team-section,low,candidate

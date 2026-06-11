@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - user-referral-free
+  - dsl:
+    - compare_versions(version, '<= 8.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/user-referral-free/readme.txt'
+  redirects: true
+id: user_referral_free-4553a7e7-6f87-4e23-b96e-2cf845d6ba60
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/user-referral-free/
+    google-query: inurl:"/wp-content/plugins/user-referral-free/"
+    shodan-query: http.html:"wp-content/plugins/user-referral-free/"
+  name: 'User Referral <= 8.0 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/4553a7e7-6f87-4e23-b96e-2cf845d6ba60?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,user-referral-free,medium,candidate

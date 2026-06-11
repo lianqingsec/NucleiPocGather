@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - widget-manager-light
+  - dsl:
+    - compare_versions(version, '<= 1.18')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/widget-manager-light/readme.txt'
+  redirects: true
+id: widget_manager_light-ab2a011e-73c5-4fb9-a8d2-aaa2756d93f9
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/widget-manager-light/
+    google-query: inurl:"/wp-content/plugins/widget-manager-light/"
+    shodan-query: http.html:"wp-content/plugins/widget-manager-light/"
+  name: 'Widget Manager Light <= 1.18 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/ab2a011e-73c5-4fb9-a8d2-aaa2756d93f9?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,widget-manager-light,high,candidate

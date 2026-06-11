@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - urdu-formatter-shamil
+  - dsl:
+    - compare_versions(version, '<= 0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/urdu-formatter-shamil/readme.txt'
+  redirects: true
+id: urdu_formatter_shamil-9e3e698e-0f98-43ca-b4c1-d45fe3c9b284
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/urdu-formatter-shamil/
+    google-query: inurl:"/wp-content/plugins/urdu-formatter-shamil/"
+    shodan-query: http.html:"wp-content/plugins/urdu-formatter-shamil/"
+  name: "Urdu Formatter \u2013 Shamil <= 0.1 - Authenticated (Contributor+) Stored\
+    \ Cross-Site Scripting\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/9e3e698e-0f98-43ca-b4c1-d45fe3c9b284?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,urdu-formatter-shamil,low,candidate

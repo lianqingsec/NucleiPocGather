@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wordpress-flat-countdown
+  - dsl:
+    - compare_versions(version, '<= 3.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wordpress-flat-countdown/readme.txt'
+  redirects: true
+id: wordpress_flat_countdown-06c3959a-0b25-4534-b7f6-af561c5aad06
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wordpress-flat-countdown/
+    google-query: inurl:"/wp-content/plugins/wordpress-flat-countdown/"
+    shodan-query: http.html:"wp-content/plugins/wordpress-flat-countdown/"
+  name: 'Responsive Coming Soon Landing Page / Holding Page for WordPress <= 3.0 -
+    Authenticated (Susbcriber+) Privilege Escalation
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/06c3959a-0b25-4534-b7f6-af561c5aad06?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,wordpress-flat-countdown,low,candidate

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - tinycode
+  - dsl:
+    - compare_versions(version, '<= 1.2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/tinycode/readme.txt'
+  redirects: true
+id: tinycode-1af8d91a-f87f-42d4-b277-d4372d580ca0
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/tinycode/
+    google-query: inurl:"/wp-content/plugins/tinycode/"
+    shodan-query: http.html:"wp-content/plugins/tinycode/"
+  name: 'TinyCode <= 1.2.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1af8d91a-f87f-42d4-b277-d4372d580ca0?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,tinycode,low,candidate

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - trusty-whistleblowing-solution
+  - dsl:
+    - compare_versions(version, '<= 2.0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/trusty-whistleblowing-solution/readme.txt'
+  redirects: true
+id: trusty_whistleblowing_solution-cb8fdb10-7b7f-4ba7-a324-5daeb872498e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/trusty-whistleblowing-solution/
+    google-query: inurl:"/wp-content/plugins/trusty-whistleblowing-solution/"
+    shodan-query: http.html:"wp-content/plugins/trusty-whistleblowing-solution/"
+  name: 'Trusty Whistleblowing <= 2.0.1 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/cb8fdb10-7b7f-4ba7-a324-5daeb872498e?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,trusty-whistleblowing-solution,high,candidate

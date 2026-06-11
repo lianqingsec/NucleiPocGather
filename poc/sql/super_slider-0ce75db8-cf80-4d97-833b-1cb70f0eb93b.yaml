@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - super-slider
+  - dsl:
+    - compare_versions(version, '<= 1.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/super-slider/readme.txt'
+  redirects: true
+id: super_slider-0ce75db8-cf80-4d97-833b-1cb70f0eb93b
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/super-slider/
+    google-query: inurl:"/wp-content/plugins/super-slider/"
+    shodan-query: http.html:"wp-content/plugins/super-slider/"
+  name: 'SUPER RESPONSIVE SLIDER <= 1.4 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0ce75db8-cf80-4d97-833b-1cb70f0eb93b?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,super-slider,medium,candidate

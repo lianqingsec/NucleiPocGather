@@ -1,44 +1,48 @@
+---
 run:
-  skip-files:
-    - internal/handshake/cipher_suite.go
-linters-settings:
-  depguard:
-    type: blacklist
-    packages:
-      - github.com/marten-seemann/qtls
-      - github.com/quic-go/qtls-go1-19
-      - github.com/quic-go/qtls-go1-20
-    packages-with-error-message:
-      - github.com/marten-seemann/qtls: "importing qtls only allowed in internal/qtls"
-      - github.com/quic-go/qtls-go1-19: "importing qtls only allowed in internal/qtls"
-      - github.com/quic-go/qtls-go1-20: "importing qtls only allowed in internal/qtls"
-  misspell:
-    ignore-words:
-      - ect
+  timeout: 5m
 
 linters:
-  disable-all: true
   enable:
-    - asciicheck
-    - depguard
-    - exhaustive
-    - exportloopref
-    - goimports
-    - gofmt # redundant, since gofmt *should* be a no-op after gofumpt
-    - gofumpt
-    - gosimple
-    - ineffassign
-    - misspell
-    - prealloc
-    - staticcheck
-    - stylecheck
-    - unconvert
-    - unparam
-    - unused
-    - vet
+  - bodyclose
+  - dogsled
+  - dupl
+  - exportloopref # Replaces scopelint
+  - gochecknoglobals
+  - goconst
+  - gocritic
+  - goimports
+  - goprintffuncname
+  - gosec
+  - misspell
+  - nakedret
+  - nolintlint
+  - revive # Replaces golint
+  - unconvert
+  - unparam
+  - whitespace
+  # TODO the following linters
+  # - gocognit
+  # - gocyclo
+  # - goerr113
+  # - gomnd
+  # - lll
+  # - nestif
+  # - prealloc
+  disable:
+  # Disable soon to deprecated[1] linters that lead to false
+  # positives when build tags disable certain files[2]
+  # 1: https://github.com/golangci/golangci-lint/issues/1841
+  # 2: https://github.com/prometheus/node_exporter/issues/1545
+  - deadcode
+  - unused
+  - structcheck
+  - varcheck
 
-issues:
-  exclude-rules:
-    - path: internal/qtls
-      linters:
-        - depguard
+linters-settings:
+  gofmt:
+    simplify: true
+  gocyclo:
+    min-complexity: 20
+  govet:
+    check-shadowing: true

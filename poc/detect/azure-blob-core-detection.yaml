@@ -1,0 +1,19 @@
+http:
+- matchers:
+  - part: body
+    type: word
+    words:
+    - blob.core.windows.net
+  matchers-condition: and
+  method: GET
+  path:
+  - '{{BaseURL}}'
+id: azure-blob-core-detection
+info:
+  author: ProjectDiscoveryAI
+  description: 'This template detects the presence of ''blob.core.windows.net'' in
+    the response body, indicating potential references to Azure Blob Storage.
+
+    '
+  name: Azure Blob Core Service Detection
+  severity: info

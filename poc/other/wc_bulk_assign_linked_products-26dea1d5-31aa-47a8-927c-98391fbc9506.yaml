@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wc-bulk-assign-linked-products
+  - dsl:
+    - compare_versions(version, '<= 2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wc-bulk-assign-linked-products/readme.txt'
+  redirects: true
+id: wc_bulk_assign_linked_products-26dea1d5-31aa-47a8-927c-98391fbc9506
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wc-bulk-assign-linked-products/
+    google-query: inurl:"/wp-content/plugins/wc-bulk-assign-linked-products/"
+    shodan-query: http.html:"wp-content/plugins/wc-bulk-assign-linked-products/"
+  name: 'Bulk Assign Linked Products For WooCommerce <= 2.1 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/26dea1d5-31aa-47a8-927c-98391fbc9506?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,wc-bulk-assign-linked-products,high,candidate

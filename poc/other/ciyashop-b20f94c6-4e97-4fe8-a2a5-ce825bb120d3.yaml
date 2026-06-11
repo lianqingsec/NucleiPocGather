@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Version:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - ciyashop
+  - dsl:
+    - compare_versions(version, '<= 4.18.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/themes/ciyashop/style.css'
+  redirects: true
+id: ciyashop-b20f94c6-4e97-4fe8-a2a5-ce825bb120d3
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/themes/ciyashop/
+    google-query: inurl:"/wp-content/themes/ciyashop/"
+    shodan-query: http.html:"wp-content/themes/ciyashop/"
+  name: 'CiyaShop <= 4.18.0 - Unauthenticated PHP Object Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/b20f94c6-4e97-4fe8-a2a5-ce825bb120d3?source=api-scan
+  severity: critical
+  tags: cve,wordpress,wp-theme,ciyashop,critical,candidate

@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - speedsize-ai-image-optimizer
+  - dsl:
+    - compare_versions(version, '<= 1.5.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/speedsize-ai-image-optimizer/readme.txt'
+  redirects: true
+id: speedsize_ai_image_optimizer-1404c675-49b3-48a5-8aac-826c58755b8e
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/speedsize-ai-image-optimizer/
+    google-query: inurl:"/wp-content/plugins/speedsize-ai-image-optimizer/"
+    shodan-query: http.html:"wp-content/plugins/speedsize-ai-image-optimizer/"
+  name: 'SpeedSize Image & Video AI-Optimizer <= 1.5.1 - Cross-Site Request Forgery
+    to Clear Cache
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/1404c675-49b3-48a5-8aac-826c58755b8e?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,speedsize-ai-image-optimizer,medium,candidate

@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - shoutcast-icecast-html5-radio-player
+  - dsl:
+    - compare_versions(version, '<= 2.1.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/shoutcast-icecast-html5-radio-player/readme.txt'
+  redirects: true
+id: shoutcast_icecast_html5_radio_player-7e870ae2-abae-457a-b3d1-75a96ec09d41
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/shoutcast-icecast-html5-radio-player/
+    google-query: inurl:"/wp-content/plugins/shoutcast-icecast-html5-radio-player/"
+    shodan-query: http.html:"wp-content/plugins/shoutcast-icecast-html5-radio-player/"
+  name: 'Shoutcast Icecast HTML5 Radio Player <= 2.1.7 - Authenticated (Contributor+)
+    Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7e870ae2-abae-457a-b3d1-75a96ec09d41?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,shoutcast-icecast-html5-radio-player,low,candidate

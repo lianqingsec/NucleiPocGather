@@ -1,0 +1,21 @@
+http:
+- matchers:
+  - condition: or
+    part: body
+    type: word
+    words:
+    - docker run
+    - kubeadm init
+    - kubeadm join
+    - --client-name
+    - --token
+  method: GET
+  path:
+  - '{{BaseURL}}/cheatset'
+id: cheatset-disclosure
+info:
+  author: SirBugs
+  description: This Template checks disclosing secret information via /cheatset
+  name: cheatset Disclosure
+  severity: critical
+  tags: config, secrets, leaks, cheatset, tokens, sql, tokens

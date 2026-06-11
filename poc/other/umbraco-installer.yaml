@@ -9,7 +9,7 @@ info:
     shodan-query: title:"Install Umbraco"
   tags: misconfig,umbraco,install,oss
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}/install'

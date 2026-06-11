@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - smtp2go
+  - dsl:
+    - compare_versions(version, '<= 1.12.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/smtp2go/readme.txt'
+  redirects: true
+id: smtp2go-a27eb4f9-3e8e-42bc-8808-fd47a17d5cd7
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/smtp2go/
+    google-query: inurl:"/wp-content/plugins/smtp2go/"
+    shodan-query: http.html:"wp-content/plugins/smtp2go/"
+  name: 'SMTP2GO <= 1.12.1 - Missing Authorization
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a27eb4f9-3e8e-42bc-8808-fd47a17d5cd7?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,smtp2go,high,candidate

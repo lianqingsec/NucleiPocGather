@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - smallerik-file-browser
+  - dsl:
+    - compare_versions(version, '<= 1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/smallerik-file-browser/readme.txt'
+  redirects: true
+id: smallerik_file_browser-50bc789a-be96-4e65-9a1d-0314c0247613
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/smallerik-file-browser/
+    google-query: inurl:"/wp-content/plugins/smallerik-file-browser/"
+    shodan-query: http.html:"wp-content/plugins/smallerik-file-browser/"
+  name: 'Smallerik File Browser <= 1.1 - Authenticated (Subscriber+) Arbitrary File
+    Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/50bc789a-be96-4e65-9a1d-0314c0247613?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,smallerik-file-browser,low,candidate

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - tsb-occasion-editor
+  - dsl:
+    - compare_versions(version, '<= 1.2.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/tsb-occasion-editor/readme.txt'
+  redirects: true
+id: tsb_occasion_editor-51c98a2c-639e-410b-8665-95ba057167bc
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/tsb-occasion-editor/
+    google-query: inurl:"/wp-content/plugins/tsb-occasion-editor/"
+    shodan-query: http.html:"wp-content/plugins/tsb-occasion-editor/"
+  name: 'TSB Occasion Editor <= 1.2.1 - Authenticated (Subscriber+) SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/51c98a2c-639e-410b-8665-95ba057167bc?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,tsb-occasion-editor,low,candidate

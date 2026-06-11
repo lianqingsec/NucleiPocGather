@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - timeline-designer
+  - dsl:
+    - compare_versions(version, '<= 1.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/timeline-designer/readme.txt'
+  redirects: true
+id: timeline_designer-12349179-e61c-42b8-b0ff-5b49fc4906c1
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/timeline-designer/
+    google-query: inurl:"/wp-content/plugins/timeline-designer/"
+    shodan-query: http.html:"wp-content/plugins/timeline-designer/"
+  name: 'Timeline Designer <= 1.4 - Authenticated (Admin+) SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/12349179-e61c-42b8-b0ff-5b49fc4906c1?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,timeline-designer,low,candidate

@@ -1,0 +1,44 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - taobaoke
+  - dsl:
+    - compare_versions(version, '<= 1.1.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/taobaoke/readme.txt'
+  redirects: true
+id: taobaoke-8aecdd7e-3d51-413e-b181-9b367ccf7931
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/taobaoke/
+    google-query: inurl:"/wp-content/plugins/taobaoke/"
+    shodan-query: http.html:"wp-content/plugins/taobaoke/"
+  name: "WordPress \u6DD8\u5B9D\u5BA2\u63D2\u4EF6 <= 1.1.2 - Reflected Cross-Site\
+    \ Scripting\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/8aecdd7e-3d51-413e-b181-9b367ccf7931?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,taobaoke,medium,candidate

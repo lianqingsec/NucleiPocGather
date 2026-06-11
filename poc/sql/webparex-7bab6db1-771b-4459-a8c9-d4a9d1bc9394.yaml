@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - webparex
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/webparex/readme.txt'
+  redirects: true
+id: webparex-7bab6db1-771b-4459-a8c9-d4a9d1bc9394
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/webparex/
+    google-query: inurl:"/wp-content/plugins/webparex/"
+    shodan-query: http.html:"wp-content/plugins/webparex/"
+  name: 'Shipmozo Courier Tracking <= 1.0 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/7bab6db1-771b-4459-a8c9-d4a9d1bc9394?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,webparex,medium,candidate

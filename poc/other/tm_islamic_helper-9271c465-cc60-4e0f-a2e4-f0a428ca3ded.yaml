@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - tm-islamic-helper
+  - dsl:
+    - compare_versions(version, '<= 1.0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/tm-islamic-helper/readme.txt'
+  redirects: true
+id: tm_islamic_helper-9271c465-cc60-4e0f-a2e4-f0a428ca3ded
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/tm-islamic-helper/
+    google-query: inurl:"/wp-content/plugins/tm-islamic-helper/"
+    shodan-query: http.html:"wp-content/plugins/tm-islamic-helper/"
+  name: 'TM Islamic Helper <= 1.0.1 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/9271c465-cc60-4e0f-a2e4-f0a428ca3ded?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,tm-islamic-helper,medium,candidate

@@ -1,59 +1,43 @@
-id: javascript-env
-
+id: javascript-env 5
 info:
-  name: JavaScript Environment Configuration - Detect
-  author: pdp,geeknik,hetyh,s4e-io
+  author: pdp
+  description: Detects common JavaScript environment configuration files.
+  name: JavaScript Environment Config
   severity: low
-  description: Multiple common JavaScript environment configuration files were detected.
-  metadata:
-    max-request: 8
-  tags: javascript,config,exposure,vuln
+  tags: javascript,config,exposure
+requests:
+- attack: sniper
+  matchers:
+  - status:
+    - 200
+    type: status
+  - dsl:
+    - 'contains(tolower(all_headers), ''content-type: application/javascript'')'
+    part: header
+    type: dsl
+  - condition: or
+    part: body
+    type: word
+    words:
+    - module.exports
+    - const audience
+    - const domain
+    - NODE_ENV
+    - LOG_LEVEL
+    - TOKEN
+    - KEY
+    - PASSWORD
+    - VERSION
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /env.dev.js HTTP/1.1
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/env.js"
-      - "{{BaseURL}}/env.development.js"
-      - "{{BaseURL}}/env.production.js"
-      - "{{BaseURL}}/env.test.js"
-      - "{{BaseURL}}/env.dev.js"
-      - "{{BaseURL}}/env.prod.js"
-      - "{{BaseURL}}/__ENV.js"
-      - "{{BaseURL}}/env-config.js"
+    Host: {{Subdomains}}
 
-    stop-at-first-match: true
-    matchers-condition: and
-    matchers:
-      - type: status
-        status:
-          - 200
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:55.0) Gecko/20100101
+    Firefox/55
 
-      - type: dsl
-        dsl:
-          - "contains(tolower(content_type), 'application/javascript')"
-
-      - type: word
-        part: body
-        words:
-          - "module.exports"
-          - "const audience"
-          - "const domain"
-          - "NODE_ENV"
-          - "LOG_LEVEL"
-          - "TOKEN"
-          - "KEY"
-          - "PASSWORD"
-          - "VERSION"
-          - "window.__ENV ="
-        condition: or
-
-      - type: word
-        part: body
-        words:
-          - "Bootstrap"
-          - "jQuery"
-          - "CSS TRANSITION SUPPORT"
-          - "is_ad_blocked"
-        condition: or
-        negative: true
-# digest: 4b0a00483046022100a40edadbd8c815a585aba9c8fc84b4f1f23d4ae9f89924af8fbdfcb090b49032022100e670cc4c4f817c067cb5f9138363402318da960cabfb0b962dcd6fcb6f8408ff:922c64590222798bb761d5b6d8e72950
+    '
+  threads: 100

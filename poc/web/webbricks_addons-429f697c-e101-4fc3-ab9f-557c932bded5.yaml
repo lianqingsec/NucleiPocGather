@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - webbricks-addons
+  - dsl:
+    - compare_versions(version, '<= 1.1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/webbricks-addons/readme.txt'
+  redirects: true
+id: webbricks_addons-429f697c-e101-4fc3-ab9f-557c932bded5
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/webbricks-addons/
+    google-query: inurl:"/wp-content/plugins/webbricks-addons/"
+    shodan-query: http.html:"wp-content/plugins/webbricks-addons/"
+  name: 'Web Bricks Addons for Elementor <= 1.1.1 - Authenticated (Contributor+) Stored
+    Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/429f697c-e101-4fc3-ab9f-557c932bded5?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,webbricks-addons,low,candidate

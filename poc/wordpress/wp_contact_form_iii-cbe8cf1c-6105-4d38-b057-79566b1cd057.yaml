@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wp-contact-form-iii
+  - dsl:
+    - compare_versions(version, '<= 1.6.2d')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wp-contact-form-iii/readme.txt'
+  redirects: true
+id: wp_contact_form_iii-cbe8cf1c-6105-4d38-b057-79566b1cd057
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wp-contact-form-iii/
+    google-query: inurl:"/wp-content/plugins/wp-contact-form-iii/"
+    shodan-query: http.html:"wp-content/plugins/wp-contact-form-iii/"
+  name: 'WP Contact Form III <= 1.6.2d - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/cbe8cf1c-6105-4d38-b057-79566b1cd057?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,wp-contact-form-iii,medium,candidate

@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - stedb-forms
+  - dsl:
+    - compare_versions(version, '<= 1.0.4')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/stedb-forms/readme.txt'
+  redirects: true
+id: stedb_forms-754deb8f-6118-4a35-9059-7a83ec8bfc81
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/stedb-forms/
+    google-query: inurl:"/wp-content/plugins/stedb-forms/"
+    shodan-query: http.html:"wp-content/plugins/stedb-forms/"
+  name: 'STEdb Forms <= 1.0.4 - Authenticated (Administrator+) SQL Injection
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/754deb8f-6118-4a35-9059-7a83ec8bfc81?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,stedb-forms,low,candidate

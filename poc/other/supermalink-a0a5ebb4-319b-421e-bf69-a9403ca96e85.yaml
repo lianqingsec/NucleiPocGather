@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - supermalink
+  - dsl:
+    - compare_versions(version, '<= 1.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/supermalink/readme.txt'
+  redirects: true
+id: supermalink-a0a5ebb4-319b-421e-bf69-a9403ca96e85
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/supermalink/
+    google-query: inurl:"/wp-content/plugins/supermalink/"
+    shodan-query: http.html:"wp-content/plugins/supermalink/"
+  name: 'Supermalink <= 1.1 - Authenticated (Contributor+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/a0a5ebb4-319b-421e-bf69-a9403ca96e85?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,supermalink,low,candidate

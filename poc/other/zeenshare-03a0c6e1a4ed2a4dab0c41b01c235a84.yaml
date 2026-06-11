@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - zeenshare
+  - dsl:
+    - compare_versions(version, '<= 1.0.1')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/zeenshare/readme.txt'
+  redirects: true
+id: zeenshare-03a0c6e1a4ed2a4dab0c41b01c235a84
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/zeenshare/
+    google-query: inurl:"/wp-content/plugins/zeenshare/"
+    shodan-query: 'vuln:'
+  name: 'Zeenshare <= 1.0.1 - Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/bc4bfa81-c781-42df-91c7-3daed1e6a6f4?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,zeenshare,high

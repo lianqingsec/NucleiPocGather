@@ -1,0 +1,46 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - slider-comparison-image-before-and-after
+  - dsl:
+    - compare_versions(version, '<= 0.8.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/slider-comparison-image-before-and-after/readme.txt'
+  redirects: true
+id: slider_comparison_image_before_and_after-14ab5d7c-ab46-4a53-b0d2-8b331e204cf3
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/slider-comparison-image-before-and-after/
+    google-query: inurl:"/wp-content/plugins/slider-comparison-image-before-and-after/"
+    shodan-query: http.html:"wp-content/plugins/slider-comparison-image-before-and-after/"
+  name: 'Slider comparison image before and after <= 0.8.3 - Authenticated (Contributor+)
+    Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/14ab5d7c-ab46-4a53-b0d2-8b331e204cf3?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,slider-comparison-image-before-and-after,low,candidate

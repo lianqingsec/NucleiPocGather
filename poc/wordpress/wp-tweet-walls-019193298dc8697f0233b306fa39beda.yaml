@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wp-tweet-walls
+  - dsl:
+    - compare_versions(version, '<= 1.0.3')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wp-tweet-walls/readme.txt'
+  redirects: true
+id: wp-tweet-walls-019193298dc8697f0233b306fa39beda
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wp-tweet-walls/
+    google-query: inurl:"/wp-content/plugins/wp-tweet-walls/"
+    shodan-query: 'vuln:'
+  name: 'WP Tweet Walls <= 1.0.3 - Cross-Site Request Forgery
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/fa22a038-3a7e-4821-952f-c163299ddee0?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,wp-tweet-walls,medium

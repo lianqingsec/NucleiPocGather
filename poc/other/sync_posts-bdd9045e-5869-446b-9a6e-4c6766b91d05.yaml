@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - sync-posts
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/sync-posts/readme.txt'
+  redirects: true
+id: sync_posts-bdd9045e-5869-446b-9a6e-4c6766b91d05
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/sync-posts/
+    google-query: inurl:"/wp-content/plugins/sync-posts/"
+    shodan-query: http.html:"wp-content/plugins/sync-posts/"
+  name: 'Sync Posts <= 1.0 - Authenticated (Subscriber+) Arbitrary File Upload
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/bdd9045e-5869-446b-9a6e-4c6766b91d05?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,sync-posts,low,candidate

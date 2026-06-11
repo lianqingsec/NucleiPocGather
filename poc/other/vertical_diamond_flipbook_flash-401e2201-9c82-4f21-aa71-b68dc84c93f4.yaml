@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - vertical-diamond-flipbook-flash
+  - dsl:
+    - compare_versions(version, '<= 1.7')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/vertical-diamond-flipbook-flash/readme.txt'
+  redirects: true
+id: vertical_diamond_flipbook_flash-401e2201-9c82-4f21-aa71-b68dc84c93f4
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/vertical-diamond-flipbook-flash/
+    google-query: inurl:"/wp-content/plugins/vertical-diamond-flipbook-flash/"
+    shodan-query: http.html:"wp-content/plugins/vertical-diamond-flipbook-flash/"
+  name: 'Nature FlipBook WordPress Plugin <= 1.7 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/401e2201-9c82-4f21-aa71-b68dc84c93f4?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,vertical-diamond-flipbook-flash,medium,candidate

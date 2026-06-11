@@ -1,13 +1,16 @@
 id: labtech-panel
+
 info:
   name: LabTech Web Portal
   author: deFr0ggy
   severity: info
   tags: panel,labtech
+
 requests:
   - method: GET
     path:
       - "{{BaseURL}}/WCC2/"
+
     redirects: true
     max-redirects: 2
     matchers-condition: and
@@ -22,6 +25,7 @@ requests:
           - '<form action="/WCC2/Home/Login" autocomplete="off" method="post">'
         part: body
         condition: or
+
       - type: status
         status:
           - 200

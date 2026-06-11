@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - utw-importer
+  - dsl:
+    - compare_versions(version, '<= 0.2')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/utw-importer/readme.txt'
+  redirects: true
+id: utw_importer-218d0d28-16db-4d9c-b643-6cc2edfc74e2
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/utw-importer/
+    google-query: inurl:"/wp-content/plugins/utw-importer/"
+    shodan-query: http.html:"wp-content/plugins/utw-importer/"
+  name: 'Ultimate Tag Warrior Importer <= 0.2 - Cross-Site Request Forgery
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/218d0d28-16db-4d9c-b643-6cc2edfc74e2?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,utw-importer,medium,candidate

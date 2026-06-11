@@ -1,0 +1,43 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - standard-box-sizes
+  - dsl:
+    - compare_versions(version, '<= 1.6.13')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/standard-box-sizes/readme.txt'
+  redirects: true
+id: standard_box_sizes-0daebb47-a9fb-45c7-8519-54f6fd5faa1c
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/standard-box-sizes/
+    google-query: inurl:"/wp-content/plugins/standard-box-sizes/"
+    shodan-query: http.html:"wp-content/plugins/standard-box-sizes/"
+  name: "Standard Box Sizes \u2013 for WooCommerce <= 1.6.13 - Missing Authorization\n"
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0daebb47-a9fb-45c7-8519-54f6fd5faa1c?source=api-scan
+  severity: high
+  tags: cve,wordpress,wp-plugin,standard-box-sizes,high,candidate

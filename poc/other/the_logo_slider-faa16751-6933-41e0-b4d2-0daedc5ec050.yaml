@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - the-logo-slider
+  - dsl:
+    - compare_versions(version, '<= 1.0.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/the-logo-slider/readme.txt'
+  redirects: true
+id: the_logo_slider-faa16751-6933-41e0-b4d2-0daedc5ec050
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/the-logo-slider/
+    google-query: inurl:"/wp-content/plugins/the-logo-slider/"
+    shodan-query: http.html:"wp-content/plugins/the-logo-slider/"
+  name: 'The Logo Slider <= 1.0.0 - Reflected Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/faa16751-6933-41e0-b4d2-0daedc5ec050?source=api-scan
+  severity: medium
+  tags: cve,wordpress,wp-plugin,the-logo-slider,medium,candidate

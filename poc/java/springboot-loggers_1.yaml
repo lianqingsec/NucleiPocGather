@@ -1,40 +1,41 @@
-id: springboot-loggers
-
+id: springboot-loggers 1
 info:
-  name: Detect Springboot Loggers
   author: that_juan_,dwisiswant0,wdahlenb
+  name: Detect Springboot Loggers
   severity: low
-  description: Springboot Loggers is exposed.
-  metadata:
-    max-request: 2
-  tags: springboot,exposure,misconfig
+  tags: springboot,disclosure
+requests:
+- attack: sniper
+  matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"loggers"'
+    - '"levels"'
+  - status:
+    - 200
+    type: status
+  - condition: or
+    part: header
+    type: word
+    words:
+    - application/json
+    - application/vnd.spring-boot.actuator
+    - application/vnd.spring-boot.actuator.v1+json
+  matchers-condition: and
+  payloads:
+    Subdomains: /home/mahmoud/Wordlist/AllSubdomains.txt
+  raw:
+  - 'GET /loggers HTTP/1.1
 
-http:
-  - method: GET
-    path:
-      - "{{BaseURL}}/loggers"
-      - "{{BaseURL}}/actuator/loggers"
+    Host: {{Subdomains}}
 
-    stop-at-first-match: true
+    User-Agent: Mozilla/5.0 (Windows NT 10.0; rv:68.0) Gecko/20100101 Firefox/68.0
 
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - '"loggers"'
-          - '"levels"'
-        condition: and
+    Accept-Encoding: gzip, deflate
 
-      - type: word
-        part: header
-        words:
-          - "application/json"
-          - "application/vnd.spring-boot.actuator"
-          - "application/vnd.spring-boot.actuator.v1+json"
-        condition: or
+    Accept: */*
 
-      - type: status
-        status:
-          - 200
-# digest: 4a0a00473045022100ca166f64f52ded412b61ec006959c4e06b7235418ae58e6ccb5ba3d2827b213702203bd2f3815c1886bce98455368332855df0e66fc6d583585510e3ecc175abae9b:922c64590222798bb761d5b6d8e72950
+    '
+  threads: 100

@@ -9,7 +9,7 @@ info:
     shodan-query: title:"System Properties"
   tags: misconfig,system,exposure
 
-http:
+requests:
   - method: GET
     path:
       - '{{BaseURL}}'

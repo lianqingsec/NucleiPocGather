@@ -1,0 +1,45 @@
+http:
+- extractors:
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - (?mi)Stable tag:\s*([0-9.]+)
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - wm-zoom
+  - dsl:
+    - compare_versions(version, '<= 1.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/wm-zoom/readme.txt'
+  redirects: true
+id: wm_zoom-c366e14c-fa0e-4099-99d7-00f75874e1a2
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/wm-zoom/
+    google-query: inurl:"/wp-content/plugins/wm-zoom/"
+    shodan-query: http.html:"wp-content/plugins/wm-zoom/"
+  name: 'WM Zoom <= 1.0 - Authenticated (Contributor+) Stored Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/c366e14c-fa0e-4099-99d7-00f75874e1a2?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,wm-zoom,low,candidate

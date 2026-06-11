@@ -2,7 +2,7 @@ id: hive_support-5437d812-c08f-4465-841e-47dbdf61b5cf
 
 info:
   name: >
-    Hive Support <= 1.2.7 - Authenticated (Subscriber+) Stored Cross-Site Scripting
+    Hive Support <= 1.2.11 - Authenticated (Subscriber+) Stored Cross-Site Scripting
   author: topscoder
   severity: low
   description: >
@@ -32,16 +32,8 @@ http:
         name: version
         part: body
         group: 1
-        internal: true
         regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
-
-      - type: regex
-        name: version
-        part: body
-        group: 1
-        regex:
-          - "(?mi)Stable tag: ([0-9.]+)"
+          - "(?mi)Stable tag:\\s*([0-9.]+)"
 
     matchers-condition: and
     matchers:
@@ -56,4 +48,4 @@ http:
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 1.2.7')
+          - compare_versions(version, '<= 1.2.11')
