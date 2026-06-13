@@ -40,8 +40,6 @@ info:
     leading to irreversible data loss.
 
     '
-  metadata:
-    max-request: 2
   name: Aurora Cluster Deletion Protection
   reference:
   - https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBInstanceDeletionProtection.html

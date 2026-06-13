@@ -40,8 +40,6 @@ info:
     man-in-the-middle attacks or data breaches.
 
     '
-  metadata:
-    max-request: 2
   name: ACM Certificate Validation Check
   reference:
   - https://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate.html

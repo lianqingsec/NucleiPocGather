@@ -41,8 +41,6 @@ info:
     attacks, potentially allowing attackers to access sensitive instance metadata.
 
     '
-  metadata:
-    max-request: 2
   name: Enforce IMDSv2 on EC2 Instances
   reference:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-service.html

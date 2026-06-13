@@ -38,8 +38,6 @@ info:
     ensuring adherence to the Principle of Least Privilege
 
     '
-  metadata:
-    max-request: 2
   name: Overly Permissive IAM Policies
   reference:
   - https://docs.aws.amazon.com/cli/latest/reference/iam/get-policy-version.html

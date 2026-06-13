@@ -34,8 +34,6 @@ info:
     IAM users with console access in AWS
 
     '
-  metadata:
-    max-request: 2
   name: MFA not enabled for AWS IAM Console User
   reference:
   - https://docs.aws.amazon.com/cli/latest/reference/iam/list-mfa-devices.html

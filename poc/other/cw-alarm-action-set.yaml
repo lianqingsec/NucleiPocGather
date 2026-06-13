@@ -41,8 +41,6 @@ info:
     or notifications, potentially delaying mitigation.
 
     '
-  metadata:
-    max-request: 2
   name: CloudWatch Alarm Action Not Set
   reference:
   - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html

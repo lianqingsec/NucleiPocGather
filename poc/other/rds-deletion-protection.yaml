@@ -40,8 +40,6 @@ info:
     leading to potential data loss and service disruption.
 
     '
-  metadata:
-    max-request: 2
   name: RDS Deletion Protection
   reference:
   - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html

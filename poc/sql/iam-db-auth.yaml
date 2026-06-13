@@ -42,8 +42,6 @@ info:
     internally, increasing the risk of credential leakage and unauthorized access.
 
     '
-  metadata:
-    max-request: 2
   name: IAM Database Authentication
   reference:
   - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html

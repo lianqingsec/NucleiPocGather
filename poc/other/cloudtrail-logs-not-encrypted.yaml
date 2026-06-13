@@ -5,16 +5,11 @@ code:
   extractors:
   - internal: true
     json:
-    - .[] | .[0]
+    - .[]
     name: cloudtrailname
     type: json
-  - internal: true
-    json:
-    - .[] | .[1]
-    name: trailregion
-    type: json
-  source: 'aws cloudtrail list-trails --region $region --query ''Trails[*].[Name,
-    HomeRegion]'' --output json
+  source: 'aws cloudtrail list-trails --region $region --query ''Trails[*].Name''
+    --output json
 
     '
 - engine:
@@ -22,7 +17,7 @@ code:
   - bash
   extractors:
   - dsl:
-    - '"CloudTrail trail " + trail + " is not configured to encrypt log files using
+    - '"CloudTrail trail" + trail + " is not configured to encrypt log files using
       SSE-KMS encryption"'
     type: dsl
   matchers:
@@ -34,7 +29,7 @@ code:
 
     '
 flow: "code(1)\nfor(let CloudTrail of iterate(template.cloudtrailname)){\n  set(\"\
-  trail\", CloudTrail)\n  set(\"region\", template.trailregion)\n  code(2)\n}\n"
+  trail\", CloudTrail)\n  code(2)\n}\n"
 id: cloudtrail-logs-not-encrypted
 info:
   author: princechaddha
@@ -46,8 +41,6 @@ info:
     the integrity and confidentiality of log data.
 
     '
-  metadata:
-    max-request: 2
   name: CloudTrail Logs Not Encrypted
   reference:
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/encrypting-cloudtrail-log-files-with-aws-kms.html
@@ -59,4 +52,4 @@ info:
   tags: cloud,devops,aws,amazon,cloudtrail,aws-cloud-config
 self-contained: true
 variables:
-  region: us-east-1
+  region: ap-south-1

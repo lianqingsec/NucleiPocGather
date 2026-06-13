@@ -1,33 +1,28 @@
-id: photoprism-panel
-
-info:
-  name: PhotoPrism Panel - Detect
-  author: rxerium
-  severity: info
-  description: |
-    PhotoPrism Panel was Detected
-  reference:
-    - https://photoprism.app/
-  metadata:
-    verified: true
-    max-request: 1
-    shodan-query: http.title:PhotoPrism
-  tags: photoprism,panel
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_all(body, "PhotoPrism", "login")
+    type: dsl
+  method: GET
+  path:
+  - '{{BaseURL}}/library/login'
+id: photoprism-panel
+info:
+  author: rxerium,ritikchaddha
+  description: 'PhotoPrism is an AI-powered photos app for the decentralized web.
+    This template detects the presence of PhotoPrism login panel.
 
-    host-redirects: true
-    matchers-condition: and
-    matchers:
-      - type: word
-        part: body
-        words:
-          - "<title>PhotoPrism</title>"
-
-      - type: status
-        status:
-          - 200
-# digest: 4b0a00483046022100bd84a2e059f1087bf7d4d4557ab05004c7be7471d30351a55b67d00b6e7feb66022100a6bb5de2cbfd14fca103fccd4e3e2043c861e26bf463fa595ba699817ff32a93:922c64590222798bb761d5b6d8e72950
+    '
+  metadata:
+    fofa-query: title="PhotoPrism"
+    max-request: 1
+    runzero-match: any(each(service["html.titles"]), {# matches "(?i)PhotoPrism"})
+    shodan-query: title:"PhotoPrism"
+    verified: true
+  name: PhotoPrism Panel - Detect
+  reference:
+  - https://docs.photoprism.app/getting-started/
+  severity: info
+  tags: photoprism,panel,login,detect,discovery

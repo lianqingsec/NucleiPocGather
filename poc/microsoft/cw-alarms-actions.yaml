@@ -40,8 +40,6 @@ info:
     in response to state changes, potentially missing critical alerts.
 
     '
-  metadata:
-    max-request: 2
   name: CloudWatch Alarms Actions Enabled
   reference:
   - https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html

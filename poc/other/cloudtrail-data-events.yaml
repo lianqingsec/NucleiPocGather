@@ -41,8 +41,6 @@ info:
     which could help detect unauthorized access or modifications.
 
     '
-  metadata:
-    max-request: 2
   name: CloudTrail S3 Data Events Logging
   reference:
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html

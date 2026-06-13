@@ -43,8 +43,6 @@ info:
     blast radius in the event of a key compromise.
 
     '
-  metadata:
-    max-request: 2
   name: Wildcard ACM Certificate Usage
   reference:
   - https://docs.aws.amazon.com/acm/latest/userguide/acm-certificate.html

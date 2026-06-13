@@ -54,8 +54,6 @@ info:
     compliance.
 
     '
-  metadata:
-    max-request: 3
   name: CloudTrail MFA Delete
   reference:
   - https://docs.aws.amazon.com/AmazonS3/latest/userguide/MultiFactorAuthenticationDelete.html

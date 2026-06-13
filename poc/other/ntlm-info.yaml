@@ -1,43 +1,45 @@
 id: ntlm-info
-
 info:
-  name: NTLM Information - Detection
   author: pussycat0x
-  severity: info
-  description: |
-    Windows New Technology LAN Manager (NTLM) is a suite of security protocols offered by Microsoft to authenticate users' identity and protect the integrity and confidentiality of their activity. At its core, NTLM is a single sign on (SSO) tool that relies on a challenge-response protocol to confirm the user without requiring them to submit a password.
-  reference:
-    - https://www.crowdstrike.com/cybersecurity-101/ntlm-windows-new-technology-lan-manager/
+  description: 'Windows New Technology LAN Manager (NTLM) is a suite of security protocols
+    offered by Microsoft to authenticate users'' identity and protect the integrity
+    and confidentiality of their activity. At its core, NTLM is a single sign on (SSO)
+    tool that relies on a challenge-response protocol to confirm the user without
+    requiring them to submit a password.
+
+    '
   metadata:
-    shodan-query: "port:445"
+    shodan-query: port:445
     verified: true
-  tags: js,network,smb,enum
-
+  name: NTLM Information - Detection
+  reference:
+  - https://www.crowdstrike.com/cybersecurity-101/ntlm-windows-new-technology-lan-manager/
+  severity: info
+  tags: js,network,smb,enum,discovery
 javascript:
-  - code: |
-      var m = require("nuclei/smb");
-      var c = m.SMBClient();
-      var response = c.ConnectSMBInfoMode(Host, Port);
-      to_json(response);
+- args:
+    Host: '{{Host}}'
+    Port: '445'
+  code: 'var m = require("nuclei/smb");
 
-    args:
-      Host: "{{Host}}"
-      Port: "445"
+    var c = m.SMBClient();
 
-    matchers:
-      - type: dsl
-        dsl:
-          - "len(ntlm) != 0"
+    var response = c.ConnectSMBInfoMode(Host, Port);
 
-    extractors:
-      - type: json
-        internal: true
-        part: response
-        name: ntlm
-        json:
-          - '.NTLM'
+    to_json(response);
 
-      - type: json
-        json:
-          - '"NTLM: "+ .NTLM'
-# digest: 4b0a00483046022100b88c9974500f4dc40564a8681b18d913968e4c28a5b738d4923dce7ff5f1c63a0221008de02bb9e4068ed2254595fefca8fd3dbb1d2e3d150668bd62fbd0865900b268:922c64590222798bb761d5b6d8e72950
+    '
+  extractors:
+  - internal: true
+    json:
+    - .NTLM
+    name: ntlm
+    part: response
+    type: json
+  - json:
+    - '"NTLM: "+ .NTLM'
+    type: json
+  matchers:
+  - dsl:
+    - len(ntlm) != 0
+    type: dsl

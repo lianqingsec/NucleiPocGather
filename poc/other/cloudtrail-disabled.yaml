@@ -41,8 +41,6 @@ info:
     into account activities, hindering anomaly detection and forensic analysis.
 
     '
-  metadata:
-    max-request: 2
   name: CloudTrail Disabled
   reference:
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-getting-started.html

@@ -40,8 +40,6 @@ info:
     aren''t propagated to snapshots, complicating management and compliance.
 
     '
-  metadata:
-    max-request: 2
   name: Aurora Snapshot Tag Copy
   reference:
   - https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Tagging.html

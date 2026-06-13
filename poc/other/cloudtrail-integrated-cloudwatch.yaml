@@ -41,8 +41,6 @@ info:
     actions within AWS environment could be delayed.
 
     '
-  metadata:
-    max-request: 2
   name: CloudTrail CloudWatch Integration
   reference:
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/send-cloudtrail-events-to-cloudwatch-logs.html

@@ -54,8 +54,6 @@ info:
     increasing the risk of unauthorized access and potential data breaches.
 
     '
-  metadata:
-    max-request: 3
   name: RDS Instance Private Subnet
   reference:
   - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_VPC.WorkingWithRDSInstanceinaVPC.html#USER_VPC.Subnets

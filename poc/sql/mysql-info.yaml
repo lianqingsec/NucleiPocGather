@@ -1,0 +1,38 @@
+id: mysql-info
+info:
+  author: pussycat0x
+  description: 'Connects to a MySQL server and prints information such as the protocol
+    and version numbers
+
+    '
+  metadata:
+    max-request: 1
+    shodan-query: port:3306
+  name: MySQL Info - Enumeration
+  reference:
+  - https://nmap.org/nsedoc/scripts/mysql-info.html
+  severity: info
+  tags: js,mssql,network
+javascript:
+- args:
+    Host: '{{Host}}'
+    Port: '3306'
+  code: 'var m = require("nuclei/mysql");
+
+    var c = m.MySQLClient();
+
+    var response = c.FingerprintMySQL(Host,Port);
+
+    Export(response);
+
+    '
+  extractors:
+  - json:
+    - '"Version: "+ .Version '
+    - '"TLS "+ .TLS'
+    - '"Transport: "+ .Transport '
+    type: json
+  matchers:
+  - dsl:
+    - success == true
+    type: dsl

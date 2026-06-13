@@ -40,8 +40,6 @@ info:
     sensitive information contained within these images.
 
     '
-  metadata:
-    max-request: 2
   name: Publicly Shared AMI
   reference:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sharingamis-explicit.html

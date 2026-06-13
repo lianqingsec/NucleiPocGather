@@ -40,8 +40,6 @@ info:
     risking data breach and non-compliance penalties.
 
     '
-  metadata:
-    max-request: 2
   name: RDS Snapshot Encryption
   reference:
   - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_EncryptSnapshot.html

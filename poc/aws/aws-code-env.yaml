@@ -40,8 +40,6 @@ info:
     on the environment.
 
     '
-  metadata:
-    max-request: 2
   name: AWS Cloud Environment Validation
   reference:
   - https://aws.amazon.com/cli/

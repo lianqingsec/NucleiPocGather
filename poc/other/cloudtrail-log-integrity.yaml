@@ -40,8 +40,6 @@ info:
     logs have been tampered with, potentially hiding malicious activity.
 
     '
-  metadata:
-    max-request: 2
   name: CloudTrail Log Integrity Validation not Enabled
   reference:
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-log-file-validation-intro.html

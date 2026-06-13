@@ -37,8 +37,6 @@ info:
     accidental exposures and unauthorized access risks
 
     '
-  metadata:
-    max-request: 2
   name: IAM Access Key Rotation - 90-Day Policy
   reference:
   - https://docs.aws.amazon.com/cli/latest/reference/iam/list-access-keys.html

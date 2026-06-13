@@ -40,8 +40,6 @@ info:
     to higher operational costs.
 
     '
-  metadata:
-    max-request: 2
   name: RDS RI Payment Failure
   reference:
   - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithReservedDBInstances.html

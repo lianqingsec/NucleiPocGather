@@ -1,0 +1,52 @@
+http:
+- extractors:
+  - group: 1
+    internal: true
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  - group: 1
+    name: version
+    part: body
+    regex:
+    - '(?mi)Stable tag: ([0-9.]+)'
+    type: regex
+  matchers:
+  - status:
+    - 200
+    type: status
+  - part: body
+    type: word
+    words:
+    - easyevent
+  - dsl:
+    - compare_versions(version, '<= 1.0.0')
+    type: dsl
+  matchers-condition: and
+  max-redirects: 3
+  method: GET
+  path:
+  - '{{BaseURL}}/wp-content/plugins/easyevent/readme.txt'
+  redirects: true
+id: easyevent-95f2af11ed128a44f10556f754db1061
+info:
+  author: topscoder
+  classification:
+    cve-id: null
+    cvss-metrics: null
+    cvss-score: null
+  description: ''
+  metadata:
+    fofa-query: wp-content/plugins/easyevent/
+    google-query: inurl:"/wp-content/plugins/easyevent/"
+    shodan-query: 'vuln:'
+  name: 'EasyEvent <= 1.0.0 - Authenticated (Admin+) Cross-Site Scripting
+
+    '
+  reference:
+  - https://github.com/topscoder/nuclei-wordfence-cve
+  - https://www.wordfence.com/threat-intel/vulnerabilities/id/0868b6ba-3b73-4b8a-a8b4-3cea8771ba33?source=api-scan
+  severity: low
+  tags: cve,wordpress,wp-plugin,easyevent,low

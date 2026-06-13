@@ -41,8 +41,6 @@ info:
     the integrity and confidentiality of cloud operations.
 
     '
-  metadata:
-    max-request: 2
   name: Public CloudTrail Buckets
   reference:
   - https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html

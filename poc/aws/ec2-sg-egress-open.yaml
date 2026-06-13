@@ -42,8 +42,6 @@ info:
     risk of data exfiltration and malicious external communications.
 
     '
-  metadata:
-    max-request: 2
   name: Open Egress in EC2 Security Group
   reference:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html#sg-rules

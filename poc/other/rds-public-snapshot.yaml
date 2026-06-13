@@ -40,8 +40,6 @@ info:
     to potential data breaches.
 
     '
-  metadata:
-    max-request: 2
   name: RDS Public Snapshot Exposure
   reference:
   - https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ShareSnapshot.html

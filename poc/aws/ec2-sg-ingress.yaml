@@ -42,8 +42,6 @@ info:
     access and potential brute force attacks on EC2 instances.
 
     '
-  metadata:
-    max-request: 2
   name: Unrestricted Access on Uncommon EC2 Ports
   reference:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html

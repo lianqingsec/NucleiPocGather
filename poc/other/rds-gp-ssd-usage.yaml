@@ -40,8 +40,6 @@ info:
     AWS costs without providing necessary performance benefits.
 
     '
-  metadata:
-    max-request: 2
   name: RDS General Purpose SSD Usage
   reference:
   - https://aws.amazon.com/rds/features/storage/

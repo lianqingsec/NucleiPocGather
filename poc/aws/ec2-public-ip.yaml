@@ -40,8 +40,6 @@ info:
     threats, compromising network security.
 
     '
-  metadata:
-    max-request: 2
   name: Public IP on EC2 Instances
   reference:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses

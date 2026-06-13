@@ -1,34 +1,39 @@
-id: openwebui-panel
-
-info:
-  name: Openweb UI Panel - Detect
-  author: rxerium
-  severity: info
-  description: |
-    An OpenWebUI panel was detected
-  reference:
-    - https://openwebui.com/
-  metadata:
-    verified: true
-    max-request: 1
-    shodan-query: http.favicon.hash:-286484075
-  tags: panel,openwebui,login
-
 http:
-  - method: GET
-    path:
-      - "{{BaseURL}}"
+- extractors:
+  - group: 1
+    part: body
+    regex:
+    - '"version"\s*:\s*"([0-9\.]+)"'
+    type: regex
+  host-redirects: true
+  matchers:
+  - condition: and
+    dsl:
+    - status_code == 200
+    - contains_any(to_lower(body), "<title>open webui</title>", "\"name\":\"open webui\"",
+      "<shortname>open webui</shortname>")
+    type: dsl
+  max-redirects: 2
+  method: GET
+  path:
+  - '{{BaseURL}}'
+  - '{{BaseURL}}/api/config'
+  - '{{BaseURL}}/auth'
+  - '{{BaseURL}}/opensearch.xml'
+  stop-at-first-match: true
+id: openwebui-panel
+info:
+  author: rxerium,righettod
+  description: 'OpenWebUI was detected - a platform for running AI on your own terms
 
-    host-redirects: true
-    max-redirects: 2
-
-    matchers-condition: and
-    matchers:
-      - type: word
-        words:
-          - '<title>Open WebUI</title>'
-
-      - type: status
-        status:
-          - 200
-# digest: 4a0a00473045022100e03ae5323831424881627ef0d66e53f75df4d43328ee775271a8ad0f22c7bc20022022b9bcf6f66b41e4ee75ef3846b17df18cfcdb48a353671465401604da54d959:922c64590222798bb761d5b6d8e72950
+    '
+  metadata:
+    max-request: 1
+    runzero-match: service["favicon.ico.image.mmh3"] == "-286484075"
+    shodan-query: http.favicon.hash:-286484075 http.title:"Open WebUI"
+    verified: true
+  name: Openweb UI Panel - Detect
+  reference:
+  - https://openwebui.com/
+  severity: info
+  tags: panel,openwebui,login,detect,discovery
