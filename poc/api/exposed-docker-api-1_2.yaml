@@ -7,7 +7,7 @@ info:
   tags: docker,unauth,devops
 
 
-requests:
+http:
   - raw:
       - |
         GET /version HTTP/1.1

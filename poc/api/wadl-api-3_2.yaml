@@ -10,7 +10,7 @@ info:
    - https://www.nopsec.com/leveraging-exposed-wadl-xml-in-burp-suite/
 
 
-requests:
+http:
   - raw:
       - |
         GET /api/application.wadl HTTP/1.1

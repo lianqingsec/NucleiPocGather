@@ -7,7 +7,7 @@ info:
   name: Bitrix Ultimate Vulnerability Checks
   severity: medium
   tags: bitrix,xss,ssrf,lfd,rce,spoofing,object-injection
-requests:
+http:
 - matchers:
   - type: word
     words:

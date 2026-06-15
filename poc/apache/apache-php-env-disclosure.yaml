@@ -8,7 +8,7 @@ info:
   reference: https://blog.orange.tw/2024/08/confusion-attacks-en.html
   tags: apache,php
 
-requests:
+http:
 http:
   - method: GET
     path:

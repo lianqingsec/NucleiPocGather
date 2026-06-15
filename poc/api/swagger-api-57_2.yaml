@@ -7,7 +7,7 @@ info:
   tags: exposure,api,swagger
 
 
-requests:
+http:
   - raw:
       - |
         GET /apidocs HTTP/1.1

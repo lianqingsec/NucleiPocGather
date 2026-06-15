@@ -7,7 +7,7 @@ info:
   reference: https://book.varnish-software.com/4.0/chapters/Cache_Invalidation.html
   severity: low
   tags: varnish,misconfig,cache
-requests:
+http:
 - attack: sniper
   matchers:
   - condition: or
