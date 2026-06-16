@@ -9,7 +9,7 @@ info:
   - https://www.exploit-db.com/exploits/49933
   severity: critical
   tags: rce,php
-requests:
+http:
 - matchers:
   - type: word
     words:
