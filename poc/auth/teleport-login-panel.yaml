@@ -9,6 +9,7 @@ info:
   reference:
     - https://github.com/gravitational/teleport
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "544208100" || service["favicon.ico.image.mmh3"] == "1854879765" || service["favicon.ico.image.mmh3"] == "-1275955539"
     verified: true
     max-request: 1
     shodan-query:
@@ -21,7 +22,7 @@ info:
       - icon_hash="1854879765"
       - icon_hash="-1275955539"
       - "Set-Cookie: __Host-grv_csrf"
-  tags: panel,teleport,login,oss
+  tags: panel,teleport,login,oss,discovery
 
 http:
   - method: GET
@@ -40,4 +41,4 @@ http:
       - type: json
         json:
           - '"Version: " +.server_version'
-# digest: 4a0a0047304502200720916a434efc5a213b83863d5da32e6dfe15f8295cc8bf28b420cae9bb9a590221008f547722390e1b6fa3ede7b65c2e1480b021d94219e10f4ee7144ca6fad78131:922c64590222798bb761d5b6d8e72950
+

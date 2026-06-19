@@ -1,27 +1,29 @@
-http:
-- matchers:
-  - condition: and
-    dsl:
-    - status_code == 200
-    - contains_all(body, "id_email", "id_password1", "csrfmiddlewaretoken", "seafile-ui.css",
-      "SEAFILE_GLOBAL")
-    type: dsl
-  method: GET
-  path:
-  - '{{BaseURL}}/accounts/register/'
 id: seafile-public-registration
-info:
-  author: theamanrawat
-  description: 'Detected public user registration is enabled on a Seafile instance.
 
-    '
+info:
+  name: Seafile - Public Registration Enabled
+  author: theamanrawat
+  severity: info
+  description: |
+    Detected public user registration is enabled on a Seafile instance.
+  reference:
+    - https://forum.seafile.com/t/seafile-disable-email-registration-for-users/4957
   metadata:
-    fofa-query: title="Seafile"
+    verified: true
     max-requests: 1
     shodan-query: http.title:"Seafile"
-    verified: true
-  name: Seafile - Public Registration Enabled
-  reference:
-  - https://forum.seafile.com/t/seafile-disable-email-registration-for-users/4957
-  severity: info
+    fofa-query: title="Seafile"
   tags: misconfig,seafile,registration,exposure
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}/accounts/register/"
+
+    matchers:
+      - type: dsl
+        dsl:
+          - 'status_code == 200'
+          - 'contains_all(body, "id_email", "id_password1", "csrfmiddlewaretoken", "seafile-ui.css", "SEAFILE_GLOBAL")'
+        condition: and
+

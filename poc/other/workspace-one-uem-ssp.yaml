@@ -13,6 +13,7 @@ info:
     cwe-id: CWE-200
     cpe: cpe:2.3:a:vmware:workspace_one_uem:*:*:*:*:*:*:*:*
   metadata:
+    runzero-match: service["favicon.ico.image.mmh3"] == "321909464" || service["http.body"] matches "(?i)Self-Service Portal"
     verified: true
     max-request: 1
     vendor: vmware
@@ -21,7 +22,7 @@ info:
       - http.favicon.hash:"321909464"
       - http.html:"Self-Service Portal"
     fofa-query: body="ssp loginscreen"
-  tags: panel,workspaceone,vmware,airwatch,ssp,login,detect
+  tags: panel,workspaceone,vmware,airwatch,ssp,login,detect,discovery
 
 http:
   - method: GET
@@ -36,4 +37,4 @@ http:
           - "AirWatch"
         condition: and
         case-insensitive: true
-# digest: 4b0a00483046022100d3c97366fb424ba66894468c67b4180fbe688f5a053811fb771f85f4fad99b8d022100c29cf24f3b582c190c71a36bbfd91ba1080d945277dd448313c088103de932cc:922c64590222798bb761d5b6d8e72950
+
