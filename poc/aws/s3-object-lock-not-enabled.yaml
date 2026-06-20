@@ -56,8 +56,6 @@ info:
     compromising audit trails and violating compliance requirements.
 
     '
-  metadata:
-    max-request: 3
   name: CloudTrail S3 Object Lock
   reference:
   - https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html

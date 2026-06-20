@@ -20,9 +20,15 @@ code:
     type: dsl
   matchers:
   - part: body
-    regex:
-    - \{[^}]*?(?:(?:"Effect"\s*:\s*"Allow"[^}]*?"Principal"\s*:\s*(?:"\*"|\{\s*"AWS"\s*:\s*"\*"\s*\}))|(?:"Principal"\s*:\s*(?:"\*"|\{\s*"AWS"\s*:\s*"\*"\s*\})[^}]*?"Effect"\s*:\s*"Allow"))[^}]*?\}
-    type: regex
+    type: word
+    words:
+    - '"Effect":"Allow"'
+  - part: body
+    type: word
+    words:
+    - '"Principal":"*"'
+    - '"AWS":"*"'
+  matchers-condition: and
   source: 'aws s3api get-bucket-policy --bucket $bucket --query Policy --output text
 
     '
@@ -35,8 +41,6 @@ info:
     public access via bucket policies
 
     '
-  metadata:
-    max-request: 2
   name: Public Access of S3 Buckets via Policy
   reference:
   - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-policy.html

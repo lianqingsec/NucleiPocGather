@@ -37,7 +37,7 @@ code:
     | []'' --output json
 
     '
-flow: "code(1)\nfor(let NACLIDs of iterate(template.nacls)){\n  set(\"naclid\", NACLIDs)\n\
+flow: "code(1)\nfor(let NACLIDs of template.nacls){\n  set(\"naclid\", NACLIDs)\n\
   \  code(2)\n}\n"
 id: unrestricted-admin-ports
 info:
@@ -51,8 +51,6 @@ info:
     access and potential compromise.
 
     '
-  metadata:
-    max-request: 2
   name: Unrestricted Admin Port Access
   reference:
   - https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html

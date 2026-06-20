@@ -35,8 +35,6 @@ info:
     a safeguard for recovering overwritten or deleted objects
 
     '
-  metadata:
-    max-request: 2
   name: S3 Bucket Versioning not Enabled
   reference:
   - https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html

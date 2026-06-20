@@ -1,0 +1,47 @@
+http:
+- matchers:
+  - condition: and
+    part: body
+    type: word
+    words:
+    - '"result":"0"'
+    - '"errorCode":"0"'
+  - part: header
+    type: word
+    words:
+    - ssid=
+  - status:
+    - 200
+    type: status
+  matchers-condition: and
+  raw:
+  - 'POST /LOGIN.cmd HTTP/1.1
+
+    Host: {{Hostname}}
+
+    Origin: {{RootURL}}
+
+    Referer: {{RootURL}}/home/index.html
+
+
+    NAME={{base64(username)}}&PSW={{base64(password)}}
+
+    '
+id: xerox-default-login
+info:
+  author: DhiyaneshDk
+  description: "The default login credentials for Xerox Fuji/VersaLink devices were\
+    \ used to access the admin panel during setup, typically with \u201Cadmin\u201D\
+    \ as the username and a default password like \u201C1111\u201D or the device serial\
+    \ number.\n"
+  metadata:
+    max-request: 1
+    verified: true
+  name: Xerox Fuji/VersaLink - Default Login
+  reference:
+  - https://www.support.xerox.com/en-us/article/KB0136271
+  severity: high
+  tags: xerox,versalink,fuji,default-login
+variables:
+  password: 1111
+  username: admin

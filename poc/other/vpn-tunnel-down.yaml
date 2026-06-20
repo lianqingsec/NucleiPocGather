@@ -27,8 +27,8 @@ code:
     $vpnid --query ''VpnConnections[*].VgwTelemetry[*].Status[]''
 
     '
-flow: "code(1)\nfor(let VpnConnectionIds of iterate(template.vpnconnactions)){\n \
-  \ set(\"vpnid\", VpnConnectionIds)\n  code(2)\n}\n"
+flow: "code(1)\nfor(let VpnConnectionIds of template.vpnconnactions){\n  set(\"vpnid\"\
+  , VpnConnectionIds)\n  code(2)\n}\n"
 id: vpn-tunnel-down
 info:
   author: princechaddha
@@ -40,8 +40,6 @@ info:
     to resources in your VPC, impacting business operations.
 
     '
-  metadata:
-    max-request: 2
   name: AWS VPN Tunnel Down
   reference:
   - https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNConnections.html

@@ -39,8 +39,6 @@ info:
     data breaches and non-compliance with data protection regulations.
 
     '
-  metadata:
-    max-request: 2
   name: Unencrypted AWS AMI
   reference:
   - https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html

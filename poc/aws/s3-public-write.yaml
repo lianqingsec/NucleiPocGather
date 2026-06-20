@@ -34,8 +34,6 @@ info:
     preventing unauthorized modifications to access control permissions.
 
     '
-  metadata:
-    max-request: 2
   name: S3 Bucket with Public WRITE Access
   reference:
   - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-acl.html

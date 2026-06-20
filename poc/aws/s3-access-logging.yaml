@@ -35,8 +35,6 @@ info:
     and audit purposes.
 
     '
-  metadata:
-    max-request: 2
   name: S3 Bucket - Access Logging Not Enabled
   reference:
   - https://docs.aws.amazon.com/cli/latest/reference/s3api/get-bucket-encryption.html
