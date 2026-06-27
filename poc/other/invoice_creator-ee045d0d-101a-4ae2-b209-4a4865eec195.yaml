@@ -1,15 +1,15 @@
-id: invoice_creator-cc0fbe84-e455-4e62-9c48-49340d08f81d
+id: invoice_creator-ee045d0d-101a-4ae2-b209-4a4865eec195
 
 info:
   name: >
-    Invoice Generator <= 1.0.0 - Unauthenticated Account Takeover via Weak Password Reset Validation via 'reset_user_id' Parameter
+    Invoice Generator <= 1.0.0 - Unauthenticated Privilege Escalation via Account Takeover via 'user_id' Parameter
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/cc0fbe84-e455-4e62-9c48-49340d08f81d?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/ee045d0d-101a-4ae2-b209-4a4865eec195?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
