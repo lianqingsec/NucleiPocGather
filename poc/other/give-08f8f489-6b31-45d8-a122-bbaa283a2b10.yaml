@@ -1,31 +1,31 @@
-id: dokan_pro-5bf95020-ac4f-4fb2-8fb4-a9998005991c
+id: give-08f8f489-6b31-45d8-a122-bbaa283a2b10
 
 info:
   name: >
-    Dokan Pro <= 5.0.4 - Authenticated (Subscriber+) SQL Injection via 'orderby' Parameter
+    GiveWP <= 4.16.0 - Authenticated (Author+) Stored Cross-Site Scripting via 'block_id' Shortcode Attribute
   author: topscoder
   severity: low
   description: >
     
   reference:
     - https://github.com/topscoder/nuclei-wordfence-cve
-    - https://www.wordfence.com/threat-intel/vulnerabilities/id/5bf95020-ac4f-4fb2-8fb4-a9998005991c?source=api-scan
+    - https://www.wordfence.com/threat-intel/vulnerabilities/id/08f8f489-6b31-45d8-a122-bbaa283a2b10?source=api-scan
   classification:
     cvss-metrics: 
     cvss-score: 
     cve-id: 
   metadata:
-    fofa-query: "wp-content/plugins/dokan-pro/"
-    google-query: inurl:"/wp-content/plugins/dokan-pro/"
-    shodan-query: 'http.html:"wp-content/plugins/dokan-pro/"'
-  tags: cve,wordpress,wp-plugin,dokan-pro,low,candidate
+    fofa-query: "wp-content/plugins/give/"
+    google-query: inurl:"/wp-content/plugins/give/"
+    shodan-query: 'http.html:"wp-content/plugins/give/"'
+  tags: cve,wordpress,wp-plugin,give,low,candidate
 
 http:
   - method: GET
     redirects: true
     max-redirects: 3
     path:
-      - "{{BaseURL}}/wp-content/plugins/dokan-pro/readme.txt"
+      - "{{BaseURL}}/wp-content/plugins/give/readme.txt"
 
     extractors:
       - type: regex
@@ -43,9 +43,9 @@ http:
 
       - type: word
         words:
-          - "dokan-pro"
+          - "give"
         part: body
 
       - type: dsl
         dsl:
-          - compare_versions(version, '<= 5.0.4')
+          - compare_versions(version, '<= 4.16.0')
